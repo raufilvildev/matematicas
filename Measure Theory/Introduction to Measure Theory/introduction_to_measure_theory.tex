@@ -110,7 +110,7 @@
     \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint sets in $\Sigma$, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}=\sum_{n=1}^{\infty}{\mu\pr{A_n}}$.
   \end{itemize}
 
-  The triple $\pr{X,\Sigma,\mu}$ is called \emph{measure space}.
+  The triple $\pr{X,\Sigma,\mu}$ is called a \emph{measure space}.
 \end{definition}
 
 \section{Measurable functions}
@@ -120,7 +120,24 @@
 \end{definition}
 
 \begin{proposition}
-  \rm Let $\pr{X,\Sigma_1}$ and $\pr{Y,\Sigma_2}$ be two measurable spaces, $\mathcal{B}\subseteq\mathcal{P}\pr{Y}$ a set such that $\Sigma_2=\sigma\pr{Y,\mathcal{B}}$ and $f:X\rightarrow Y$ a map. Then $f$ is $\pr{\Sigma_1,\Sigma_2}$ measurable if and only if $f^{-1}\pr{B}\in\Sigma_1$ for all $B\in\mathcal{B}$.
+  \rm Let $\pr{X,\Sigma_1}$ and $\pr{Y,\Sigma_2}$ be two measurable spaces, $\mathcal{S}\subseteq\mathcal{P}\pr{Y}$ a collection of subsets of $Y$ such that $\Sigma_2=\sigma\pr{Y,\mathcal{S}}$ and $f:X\rightarrow Y$ a map. Then $f$ is $\pr{\Sigma_1,\Sigma_2}$-measurable if and only if $f^{-1}\pr{S}\in\Sigma_1$ for all $S\in\mathcal{S}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  \rm Let $\pr{X,\Sigma_1}$, $\pr{Y,\Sigma_2}$ and $\pr{Z,\Sigma_3}$ be three measurable spaces,  $f:X\rightarrow Y$ a $\pr{\Sigma_1,\Sigma_2}$-measurable map and $g:Y\rightarrow Z$ a $\pr{\Sigma_2,\Sigma_3}$-measurable map. Then $g\circ f$ is a $\pr{\Sigma_1,\Sigma_3}$-measurable map.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  \rm Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, and $\Sigma\subseteq\mathcal{P}\pr{X}$ a $\sigma$-algebra on $X$. If $f:X\rightarrow Y$ is a continuous map, then $f$ is $\pr{\Sigma,\mathscr{B}\pr{Y,\mathcal{T}_2}}$-measurable.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
 \end{proposition}
 
 \begin{definition}
@@ -129,6 +146,9 @@
 
 \begin{proposition}
   Let $\pr{X,\Sigma}$ be a measurable space and $f:X\rightarrow\mathbb{C}$ a map. Then $f$ is $\Sigma$-measurable if and only if $\Re\pr{f},\Im\pr{f}:X\rightarrow\mathbb{R}$ are $\Sigma$-measurable.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
 \end{proposition}
 
 \section{Lebesgue integral}
