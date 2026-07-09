@@ -1,0 +1,50 @@
+\chapter{Introduction to Measure Theory}
+
+\section{Measurable spaces}
+
+\begin{definition}
+  Let $X$ be a set. A \emph{$\sigma$-algebra on $X$} is a collection $\Sigma\subseteq\mathcal{P}\pr{X}$ of subsets of $X$ satisfying the following conditions:
+
+  \begin{itemize}
+    \item $\varnothing\in\Sigma$.
+    \item If $A\in\Sigma$, then   $A^c:=X\setminus A\in\Sigma$.
+    \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of sets in $\Sigma$, then $\bigcup_{n=1}^{\infty}{A_n}\in\Sigma$.
+  \end{itemize}
+
+  The ordered pair $\pr{X,\Sigma}$ is called \emph{measurable space}.
+\end{definition}
+
+\section{Measure spaces}
+
+\begin{definition}
+  \rm Let $\pr{X,\Sigma}$ be a measurable space. A \emph{(positive) measure on $\pr{X,\Sigma}$} is a map $\mu:\Sigma\rightarrow\br{0,+\infty}$ satisfying the following conditions:
+
+  \begin{itemize}
+    \item $\mu\pr{\varnothing}=0$.
+    \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint sets in $\Sigma$, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}=\sum_{n=1}^{\infty}{\mu\pr{A_n}}$.
+  \end{itemize}
+
+  The triple $\pr{X,\Sigma,\mu}$ is called \emph{measure space}.
+\end{definition}
+
+\section{Measurable functions}
+
+\begin{definition}
+  \rm Let $\pr{X,\Sigma_1}$ and $\pr{Y,\Sigma_2}$ be two measurable spaces. We say a map $f:X\rightarrow Y$ is \emph{$\pr{\Sigma_1,\Sigma_2}$-measurable} if $f^{-1}\pr{B}\in\Sigma_1$ for all $B\in\Sigma_2$.
+\end{definition}
+
+\begin{proposition}
+  \rm Let $\pr{X,\Sigma_1}$ and $\pr{Y,\Sigma_2}$ be two measurable spaces, $\mathcal{B}\subseteq\mathcal{P}\pr{Y}$ a set such that $\Sigma_2=\sigma\pr{Y,\mathcal{B}}$ and $f:X\rightarrow Y$ a map. Then $f$ is $\pr{\Sigma_1,\Sigma_2}$ measurable if and only if $f^{-1}\pr{B}\in\Sigma_1$ for all $B\in\mathcal{B}$.
+\end{proposition}
+
+\begin{definition}
+  \rm Let $\pr{X,\Sigma}$ be a measurable space and let $\mathbb{K}\in\set{\mathbb{R},\mathbb{C}}$. A map $f:X\rightarrow\mathbb{K}$ is said to be \emph{$\Sigma$-measurable} if $f^{-1}\pr{G}\in\Sigma$ for every open set $G\subseteq\mathbb{K}$ (with respect to the Euclidean topology), or equivalently, $f$ is $\pr{\Sigma,\mathcal{B}\pr{\mathbb{K}}}$-measurable.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\Sigma}$ be a measurable space and $f:X\rightarrow\mathbb{C}$ a map. Then $f$ is $\Sigma$-measurable if and only if $\Re\pr{f},\Im\pr{f}:X\rightarrow\mathbb{R}$ are $\Sigma$-measurable.
+\end{proposition}
+
+\section{Lebesgue integral}
+
+\section{Convergence theorems}
