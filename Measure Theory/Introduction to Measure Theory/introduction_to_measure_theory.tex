@@ -11,7 +11,7 @@
     \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of sets in $\Sigma$, then $\bigcup_{n=1}^{\infty}{A_n}\in\Sigma$.
   \end{itemize}
 
-  The ordered pair $\pr{X,\Sigma}$ is called a \emph{measurable space}. The elements of $\Sigma$ are called \emph{$\Sigma$-measurable sets}.
+  The ordered pair $\pr{X,\Sigma}$ is called a \emph{measurable space}. The elements of $\Sigma$ are called \emph{measurable sets}.
 \end{definition}
 
 \begin{example}
@@ -29,7 +29,7 @@
 
   \begin{enumerate}
     \item $X\in\Sigma$.
-    \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of sets in $\Sigma$, then $\bigcap_{n=1}^{\infty}{A_n}\in\Sigma$.
+    \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of measurable sets in $\Sigma$, then $\bigcap_{n=1}^{\infty}{A_n}\in\Sigma$.
     \item If $A_1,\dots,A_n\in\Sigma$ with $n\in\mathbb{N}$, then $\bigcup_{k=1}^{n}{A_k},\bigcap_{k=1}^{n}{A_k}\in\Sigma$.
     \item If $A,B\in\Sigma$, then $A\setminus B\in\Sigma$.
   \end{enumerate}
@@ -140,7 +140,7 @@ Observe that $\mathcal{T}_e\pr{\mathbb{R}}\subseteq\mathcal{T}_e\pr{\overline{\m
 
   \begin{itemize}
     \item Measure of the empty set: $\mu\pr{\varnothing}=0$.
-    \item $\sigma$-additivity: If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint $\Sigma$-measurable sets, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}=\sum_{n=1}^{\infty}{\mu\pr{A_n}}$.
+    \item $\sigma$-additivity: If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint measurable sets, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}=\sum_{n=1}^{\infty}{\mu\pr{A_n}}$.
   \end{itemize}
 
   The triple $\pr{X,\Sigma,\mu}$ is called a \emph{measure space}.
@@ -172,10 +172,10 @@ Observe that $\mathcal{T}_e\pr{\mathbb{R}}\subseteq\mathcal{T}_e\pr{\overline{\m
   \begin{enumerate}
     \item If $\nu:\Sigma\rightarrow\br{0,+\infty}$ is a measure on $\pr{X,\Sigma}$ and $\alpha,\beta\in\bpr{0,+\infty}$, then $\alpha\cdot\mu+\beta\cdot\nu$ is a measure on $\pr{X,\Sigma}$ where $0\cdot\pr{+\infty}=\pr{+\infty}\cdot 0=0$ in this context.
     \item If $S\in\Sigma$, then $\rest{\mu}{\Sigma_S}$ is a measure on $\pr{S,\Sigma_S}$.
-    \item Finite additivity: If $A_1,A_2,\dots,A_n\in\Sigma$ with $n\in\mathbb{N}$ are pairwise disjoint $\Sigma$-measurable sets, then $\mu\pr{\bigcup_{k=1}^{n}{A_k}}=\sum_{k=1}^{n}{\mu\pr{A_k}}$.
-    \item Monotonicity: If $A,B\in\Sigma$ are two $\Sigma$-measurable sets such that $A\subseteq B$, then $\mu\pr{A}\leq\mu\pr{B}$.
-    \item Measure of the difference of sets: If $A,B\in\Sigma$ are two $\Sigma$-measurable sets such that $A\subseteq B$ and $\mu\pr{B}<+\infty$, then $\mu\pr{B\setminus A}=\mu\pr{B}-\mu\pr{A}$.
-    \item $\sigma$-subadditivity: If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of $\Sigma$-measurable sets in $\Sigma$, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}\leq\sum_{n=1}^{\infty}{\mu\pr{A_n}}$.
+    \item Finite additivity: If $A_1,A_2,\dots,A_n\in\Sigma$ with $n\in\mathbb{N}$ are pairwise disjoint measurable sets, then $\mu\pr{\bigcup_{k=1}^{n}{A_k}}=\sum_{k=1}^{n}{\mu\pr{A_k}}$.
+    \item Monotonicity: If $A,B\in\Sigma$ are two measurable sets such that $A\subseteq B$, then $\mu\pr{A}\leq\mu\pr{B}$.
+    \item Measure of the difference of sets: If $A,B\in\Sigma$ are two measurable sets such that $A\subseteq B$ and $\mu\pr{B}<+\infty$, then $\mu\pr{B\setminus A}=\mu\pr{B}-\mu\pr{A}$.
+    \item $\sigma$-subadditivity: If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of measurable sets in $\Sigma$, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}\leq\sum_{n=1}^{\infty}{\mu\pr{A_n}}$.
     \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of subsets in $\Sigma$ such that $A_n\subseteq A_{n+1}$ for all $n\in\mathbb{N}$, then $\mu\pr{\bigcup_{n=1}^{\infty}{A_n}}=\lim_{n\to\infty}{\mu\pr{A_n}}$. 
     \item If $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of subsets in $\Sigma$ such that $\mu\pr{A_1}<+\infty$ and $A_{n+1}\subseteq A_n$ for all $n\in\mathbb{N}$, then $\mu\pr{\bigcap_{n=1}^{\infty}{A_n}}=\lim_{n\to\infty}{\mu\pr{A_n}}$.
   \end{enumerate}
@@ -184,7 +184,7 @@ Observe that $\mathcal{T}_e\pr{\mathbb{R}}\subseteq\mathcal{T}_e\pr{\overline{\m
     \begin{enumerate}
       \item Firstly, $\alpha\cdot\mu\pr{\varnothing}+\beta\cdot\nu\pr{\varnothing}=0$.
       
-      Let $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ be a countable collection of pairwise disjoint $\Sigma$-measurable sets. Then:
+      Let $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ be a countable collection of pairwise disjoint measurable sets. Then:
 
       \begin{equation}
         \begin{split}
@@ -195,7 +195,7 @@ Observe that $\mathcal{T}_e\pr{\mathbb{R}}\subseteq\mathcal{T}_e\pr{\overline{\m
 
       Therefore, $\alpha\cdot\mu+\beta\cdot\nu$ is a measure on $\pr{X,\Sigma}$.
       \item Trivial, since $\Sigma_S\subseteq\Sigma$.
-      \item Let $A_m=\varnothing$ for all $m\in\mathbb{N}$ with $m>n$. Then $\set{A_m}_{m\in\mathbb{N}}\subseteq\Sigma$ is a collection of pairwise disjoint $\Sigma$-measurable sets and:
+      \item Let $A_m=\varnothing$ for all $m\in\mathbb{N}$ with $m>n$. Then $\set{A_m}_{m\in\mathbb{N}}\subseteq\Sigma$ is a collection of pairwise disjoint measurable sets and:
       
       \begin{equation}
         \begin{split}
@@ -211,13 +211,13 @@ Observe that $\mathcal{T}_e\pr{\mathbb{R}}\subseteq\mathcal{T}_e\pr{\overline{\m
       \end{equation}
 
       \item Since $A\subseteq B$, $B=\pr{B\setminus A}\cup A$ and $\pr{B\setminus A}\cap A=\varnothing$, we have $\mu\pr{B}=\mu\pr{B\setminus A}+\mu\pr{B\cap A}+\mu\pr{A}$. By monotonicity, $\mu\pr{A}<+\infty$. Therefore, we can isolate $\mu\pr{B\setminus A}$ obtaining $\mu\pr{B\setminus A}=\mu\pr{B}-\mu\pr{A}$.
-      \item Let $B_1:=A_1$ and $B_{n+1}=A_{n+1}\setminus\pr{A_1\cup\dots\cup A_n}$ for all $n\in\mathbb{N}$. Then $\set{B_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint $\Sigma$-measurable sets, $B_n\subseteq A_n$ for all $n\in\mathbb{N}$, $\bigcup_{n=1}^{\infty}{A_n}=\bigcup_{n=1}^{\infty}{B_n}$ and:
+      \item Let $B_1:=A_1$ and $B_{n+1}=A_{n+1}\setminus\pr{A_1\cup\dots\cup A_n}$ for all $n\in\mathbb{N}$. Then $\set{B_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint measurable sets, $B_n\subseteq A_n$ for all $n\in\mathbb{N}$, $\bigcup_{n=1}^{\infty}{A_n}=\bigcup_{n=1}^{\infty}{B_n}$ and:
       
       \begin{equation}
         \mu\pr{\bigcup_{n=1}^{\infty}{A_n}}=\mu\pr{\bigcup_{n=1}^{\infty}{B_n}}=\sum_{n=1}^{\infty}{\mu\pr{B_n}}\leq\sum_{n=1}^{\infty}{\mu\pr{A_n}}.
       \end{equation}
 
-      \item Let $B_1:=A_1$ and $B_{n+1}=A_{n+1}\setminus\pr{A_1\cup\dots\cup A_n}$ for all $n\in\mathbb{N}$. Then $\set{B_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint $\Sigma$-measurable sets, $B_n\subseteq A_n$ for all $n\in\mathbb{N}$, $\bigcup_{n=1}^{\infty}{A_n}=\bigcup_{n=1}^{\infty}{B_n}$, $A_n=\bigcup_{k=1}^{n}{B_k}$ for all $n\in\mathbb{N}$ and:
+      \item Let $B_1:=A_1$ and $B_{n+1}=A_{n+1}\setminus\pr{A_1\cup\dots\cup A_n}$ for all $n\in\mathbb{N}$. Then $\set{B_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint measurable sets, $B_n\subseteq A_n$ for all $n\in\mathbb{N}$, $\bigcup_{n=1}^{\infty}{A_n}=\bigcup_{n=1}^{\infty}{B_n}$, $A_n=\bigcup_{k=1}^{n}{B_k}$ for all $n\in\mathbb{N}$ and:
       
       \begin{equation}
         \begin{split}
@@ -226,7 +226,7 @@ Observe that $\mathcal{T}_e\pr{\mathbb{R}}\subseteq\mathcal{T}_e\pr{\overline{\m
         \end{split}
       \end{equation}
 
-      \item Let $B_n:=A_1\setminus A_n$ for all $n\in\mathbb{N}$. Since $\mu\pr{A_1}<+\infty$, we have $\mu\pr{B_n}=\mu\pr{A_1}-\mu\pr{A_n}$ for all $n\in\mathbb{N}$. Furthermore, $\set{B_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of $\Sigma$-measurable sets such that $B_n\subseteq B_{n+1}$ for all $n\in\mathbb{N}$. Additionally:
+      \item Let $B_n:=A_1\setminus A_n$ for all $n\in\mathbb{N}$. Since $\mu\pr{A_1}<+\infty$, we have $\mu\pr{B_n}=\mu\pr{A_1}-\mu\pr{A_n}$ for all $n\in\mathbb{N}$. Furthermore, $\set{B_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of measurable sets such that $B_n\subseteq B_{n+1}$ for all $n\in\mathbb{N}$. Additionally:
       
       \begin{equation}
         \mu\pr{\bigcup_{n=1}^{\infty}{\pr{A_1\setminus A_n}}}=\mu\pr{A_1\setminus\bigcap_{n=1}^{\infty}{A_n}}=\mu\pr{A_1}-\mu\pr{\bigcap_{n=1}{A_n}}.
@@ -561,7 +561,7 @@ It is enough to note that:
 \subsection{Simple Function Approximation Theorem}
 
 \begin{definition}
-  Let $X$ be a set and $A\subseteq X$. We define the \textit{characteristic function of $A$} as the map $\chi_A:X\rightarrow\set{0,1}$ given by $\chi_A\pr{x}=1$ if $x\in A$ and $\chi_A\pr{x}=0$ if $x\notin A$.
+  Let $X$ be a set and $A\subseteq X$. We define the \emph{characteristic function of $A$} as the map $\chi_A:X\rightarrow\set{0,1}$ given by $\chi_A\pr{x}=1$ if $x\in A$ and $\chi_A\pr{x}=0$ if $x\notin A$.
 \end{definition}
 
 \begin{proposition}
@@ -611,7 +611,7 @@ It is enough to note that:
 \end{proposition}
 
 \begin{definition}
-  Let $X$ be a set and $Y'\subseteq\mathbb{R}$. A function $\varphi:X\rightarrow Y'$ is said to be \textit{simple} if $\im\pr{\varphi}$ is finite.
+  Let $X$ be a set and $Y'\subseteq\mathbb{R}$. A function $\varphi:X\rightarrow Y'$ is said to be \emph{simple} if $\im\pr{\varphi}$ is finite.
 \end{definition}
 
 \begin{proposition}
@@ -654,9 +654,9 @@ It is enough to note that:
 \end{proposition}
 
 \begin{proposition}
-  Let $X$ be a set, $Y'\subseteq\mathbb{R}$, $\alpha,\beta\in\mathbb{R}$ and $\varphi,\psi:X\rightarrow Y'$ two simple functions. Then $\alpha\cdot\varphi+\beta\cdot\psi:X\rightarrow Y'$ is a simple function. Furthermore, if $\Sigma$ is a $\sigma$-algebra on $X$ and, $\varphi$ and $\psi$ are $\Sigma$-measurables, then $\alpha\cdot\varphi+\beta\cdot\psi$ is $\Sigma$-measurable.
+  Let $X$ be a set, $Y'\subseteq\mathbb{R}$, $\alpha,\beta\in\mathbb{R}$ and $\varphi,\psi:X\rightarrow Y'$ two simple functions. Then $\alpha\cdot\varphi+\beta\cdot\psi:X\rightarrow Y'$ is a simple function. Furthermore, if $\Sigma$ is a $\sigma$-algebra on $X$ and, $\varphi$ and $\psi$ are $\Sigma$-measurable, then $\alpha\cdot\varphi+\beta\cdot\psi$ is $\Sigma$-measurable.
   \begin{proof}[\rm\textbf{Proof}]
-    Let $n,m\in\mathbb{N}$ and $A_1,\dots,A_n,B_1,\dots,B_m\subseteq X$ such that $\varphi=\sum_{k=1}^{n}{a_k\cdot\chi_{A_k}}$ and $\psi=\sum_{l=1}^{m}{b_l\cdot\chi_{B_l}}$. Then $\alpha\cdot\varphi+\beta\cdot\psi=\sum_{k=1}^{n}{\pr{\alpha\cdot a_k}\cdot\chi_{A_k}}+\sum_{l=1}^{m}{\pr{\beta\cdot b_l}\cdot\chi_{B_l}}$ is a simple function. Furthermore, if $\Sigma$ is a $\sigma$-algebra on $X$ and, $\varphi$ and $\psi$ are $\Sigma$-measurables, we can suppose without loss of generality that $A_1,\dots,A_n,B_1,\dots,B_m\in\Sigma$. Therefore $\alpha\cdot\varphi+\beta\cdot\psi$ is $\Sigma$-measurable.
+    Let $n,m\in\mathbb{N}$ and $A_1,\dots,A_n,B_1,\dots,B_m\subseteq X$ such that $\varphi=\sum_{k=1}^{n}{a_k\cdot\chi_{A_k}}$ and $\psi=\sum_{l=1}^{m}{b_l\cdot\chi_{B_l}}$. Then $\alpha\cdot\varphi+\beta\cdot\psi=\sum_{k=1}^{n}{\pr{\alpha\cdot a_k}\cdot\chi_{A_k}}+\sum_{l=1}^{m}{\pr{\beta\cdot b_l}\cdot\chi_{B_l}}$ is a simple function. Furthermore, if $\Sigma$ is a $\sigma$-algebra on $X$ and, $\varphi$ and $\psi$ are $\Sigma$-measurable, we can suppose without loss of generality that $A_1,\dots,A_n,B_1,\dots,B_m\in\Sigma$. Therefore $\alpha\cdot\varphi+\beta\cdot\psi$ is $\Sigma$-measurable.
   \end{proof}
 \end{proposition}
 
@@ -738,7 +738,7 @@ It is enough to note that:
       \end{cases}
     \end{equation}
 
-    for each $k\in\set{1,\dots,n}$ and $l\in\set{1,\dots,m}$. It is clear that $\set{C_{\varepsilon}\middle|\varepsilon\in\set{0,1}^{n+m}}\subseteq\Sigma$ is a collection of pairwise disjoint $\Sigma$-measurable sets such that $X=\bigcup_{\varepsilon\in\set{0,1}^{n+m}}{C_{\varepsilon}}$. Furthermore, if $\varepsilon\in\set{0,1}^{n+m}$, then $C_{\varepsilon}\subseteq A_k$ or $C_{\varepsilon}\subseteq A_k^c$ for all $k\in\set{1,\dots,n}$, and, $C_{\varepsilon}\subseteq B_l$ or $C_{\varepsilon}\subseteq B_l^c$ for all $l\in\set{1,\dots,m}$. Thus, for each $\varepsilon\in\set{0,1}^{n+m}$, there exists $\alpha_\varepsilon,\beta_\varepsilon\in\mathbb{R}$ such that:
+    for each $k\in\set{1,\dots,n}$ and $l\in\set{1,\dots,m}$. It is clear that $\set{C_{\varepsilon}\middle|\varepsilon\in\set{0,1}^{n+m}}\subseteq\Sigma$ is a collection of pairwise disjoint measurable sets such that $X=\bigcup_{\varepsilon\in\set{0,1}^{n+m}}{C_{\varepsilon}}$. Furthermore, if $\varepsilon\in\set{0,1}^{n+m}$, then $C_{\varepsilon}\subseteq A_k$ or $C_{\varepsilon}\subseteq A_k^c$ for all $k\in\set{1,\dots,n}$, and, $C_{\varepsilon}\subseteq B_l$ or $C_{\varepsilon}\subseteq B_l^c$ for all $l\in\set{1,\dots,m}$. Thus, for each $\varepsilon\in\set{0,1}^{n+m}$, there exists $\alpha_\varepsilon,\beta_\varepsilon\in\mathbb{R}$ such that:
 
     \begin{equation}
       \begin{split}
@@ -759,7 +759,7 @@ It is enough to note that:
 \end{proposition}
 
 \begin{definition}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\mathbb{R}$ and $\varphi:X\rightarrow Y'$ a simple non-negative $\Sigma$-measurable function. We define the\textit{ (Lebesgue) integral of $\varphi$ over $X$ with respect to $\mu$} as follows:
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\mathbb{R}$ and $\varphi:X\rightarrow Y'$ a simple non-negative $\Sigma$-measurable function. We define the \emph{(Lebesgue) integral of $\varphi$ over $X$ with respect to $\mu$} as follows:
 
   \begin{equation}
     \int_{X}{\varphi\,d\mu}:=\sum_{k=1}^{n}{a_k\cdot\mu\pr{A_k}}\in\br{0,+\infty},
@@ -773,7 +773,7 @@ It is enough to note that:
 \end{remark}
 
 \begin{remark}
-  Given $\pr{X,\Sigma,\mu}$ a measure space, $A\in\Sigma$, $Y'\subseteq\mathbb{R}$ and $\varphi:X\rightarrow Y'$ a simple non-negative $\Sigma$-measurable function. We define the\textit{ (Lebesgue) integral of $\varphi$ over $A$ with respect to $\mu$} as follows:
+  Given $\pr{X,\Sigma,\mu}$ a measure space, $A\in\Sigma$, $Y'\subseteq\mathbb{R}$ and $\varphi:X\rightarrow Y'$ a simple non-negative $\Sigma$-measurable function. We define the\emph{ (Lebesgue) integral of $\varphi$ over $A$ with respect to $\mu$} as follows:
 
   \begin{equation}
     \int_{A}{\varphi\,d\mu}:=\int_{A}{\rest{\varphi}{A}\,d\rest{\mu}{\Sigma_A}}.
@@ -852,7 +852,7 @@ It is enough to note that:
         \int_{A}{\varphi\,d\mu}=\int_{A}{\rest{\varphi}{A}\,d\rest{\mu}{\Sigma_A}}=\int_{A}{0\,d\rest{\mu}{\Sigma_A}}=0\cdot\rest{\mu}{\Sigma_A}\pr{A}=0.
       \end{equation}
       
-      \item Let $a_1,\dots,a_n\in\mathbb{R}$ and $A_1,\dots,A_n\in\Sigma$ with $n\in\mathbb{N}$ such that $\varphi=\sum_{k=1}^{n}{a_k\cdot\chi_{A_k}}$. Firstly, we see that $\nu_{\varphi}$ is well defined, because $0\leq\varphi\pr{x}$ for all $x\in X$ and, consequently, $0=\int_{X}{0\,d\mu}\leq\int_{X}{\varphi\,d\mu}$, or, in other words, $\int_{X}{\varphi\,d\mu}\in\br{0,+\infty}$. Since $\mu\pr{\varnothing}=0$, by the previous property, we have that $\nu_{\varphi}\pr{\varnothing}=0$. Let $\set{A_m}_{m\in\mathbb{N}}\subseteq\Sigma$ be a countable collection of pairwise disjoint $\Sigma$-measurable sets. Then:
+      \item Let $a_1,\dots,a_n\in\mathbb{R}$ and $A_1,\dots,A_n\in\Sigma$ with $n\in\mathbb{N}$ such that $\varphi=\sum_{k=1}^{n}{a_k\cdot\chi_{A_k}}$. Firstly, we see that $\nu_{\varphi}$ is well defined, because $0\leq\varphi\pr{x}$ for all $x\in X$ and, consequently, $0=\int_{X}{0\,d\mu}\leq\int_{X}{\varphi\,d\mu}$, or, in other words, $\int_{X}{\varphi\,d\mu}\in\br{0,+\infty}$. Since $\mu\pr{\varnothing}=0$, by the previous property, we have that $\nu_{\varphi}\pr{\varnothing}=0$. Let $\set{A_m}_{m\in\mathbb{N}}\subseteq\Sigma$ be a countable collection of pairwise disjoint measurable sets. Then:
       
 
       \begin{equation}
@@ -869,10 +869,10 @@ It is enough to note that:
   \end{proof}
 \end{proposition}
 
-We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sigma$-measurable functions in $\mathbb{R}^X$}.
+We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \emph{set of all simple $\Sigma$-measurable functions in $\mathbb{R}^X$}.
 
 \begin{definition}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\overline{\mathbb{R}}$, and $f:X\rightarrow Y'$ a non-negative $\Sigma$-measurable function. We define the \textit{(Lebesgue) integral of $f$ over $X$ with respect to $\mu$} as follows:
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\overline{\mathbb{R}}$, and $f:X\rightarrow Y'$ a non-negative $\Sigma$-measurable function. We define the \emph{(Lebesgue) integral of $f$ over $X$ with respect to $\mu$} as follows:
 
   \begin{equation}
     \int_{X}{f\,d\mu}:=\sup\set{\int_{X}{\varphi\,d\mu}\middle|\varphi\in\mathcal{S}\pr{X,\Sigma},0\leq\varphi\pr{x}\leq f\pr{x},\forall x\in X}\in\br{0,+\infty}.
@@ -884,7 +884,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 \end{remark}
 
 \begin{remark}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$, $Y'\subseteq\overline{\mathbb{R}}$ and $f:X\rightarrow Y'$ a non-negative $\Sigma$-measurable function. We define the \textit{(Lebesgue) integral of $f$ over $A$ with respect to $\mu$ as follows:}
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$, $Y'\subseteq\overline{\mathbb{R}}$ and $f:X\rightarrow Y'$ a non-negative $\Sigma$-measurable function. We define the \emph{(Lebesgue) integral of $f$ over $A$ with respect to $\mu$ as follows:}
 
   \begin{equation}
     \int_{A}{f\,d\mu}:=\int_{A}{\rest{f}{A}\,d\rest{\mu}{\Sigma_A}}.
@@ -1014,7 +1014,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
         \end{split}
       \end{equation}
 
-      \item Firstly, we see that $\nu_f$ is well defined, because $0\leq f\pr{x}$ for all $x\in X$ and, consequently, $0=\int_{X}{0\,d\mu}\leq\int_{X}{f\,d\mu}$, or, in other words, $\int_{X}{f\,d\mu}\in\br{0,+\infty}$. Since $\mu\pr{\varnothing}=0$, by the previous property, we have that $\nu_f\pr{\varnothing}=0$. Let $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ be a countable collection of pairwise disjoint $\Sigma$-measurable sets. By \hyperref[Beppo Levi's Theorem]{Beppo Levi's Theorem}, we have that:
+      \item Firstly, we see that $\nu_f$ is well defined, because $0\leq f\pr{x}$ for all $x\in X$ and, consequently, $0=\int_{X}{0\,d\mu}\leq\int_{X}{f\,d\mu}$, or, in other words, $\int_{X}{f\,d\mu}\in\br{0,+\infty}$. Since $\mu\pr{\varnothing}=0$, by the previous property, we have that $\nu_f\pr{\varnothing}=0$. Let $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ be a countable collection of pairwise disjoint measurable sets. By \hyperref[Beppo Levi's Theorem]{Beppo Levi's Theorem}, we have that:
       
       \begin{equation}
         \begin{split}
@@ -1029,7 +1029,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 \end{proposition}
 
 \begin{definition}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$ and $P$ a predicate on $X$. We say that \textit{$P$ holds $\mu$-almost everywhere in $A$} if there exists a $\Sigma$-measurable set $N\in\Sigma$ such that the set $\set{x\middle|x\in A,P\pr{x}\text{ does not hold}}\subseteq N$ and $\mu\pr{N}=0$.
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$ and $P$ a predicate on $X$. We say that \emph{$P$ holds $\mu$-almost everywhere in $A$} if there exists a measurable set $N\in\Sigma$ such that the set $\set{x\middle|x\in A,P\pr{x}\text{ does not hold}}\subseteq N$ and $\mu\pr{N}=0$.
 \end{definition}
 
 \begin{definition}
@@ -1123,13 +1123,13 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 \end{proposition}
 
 \begin{definition}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\overline{\mathbb{R}}$ and $f:X\rightarrow Y'$ a $\Sigma$-measurable function. If $\int_{X}{f^+\,d\mu}$ and $\int_{X}{f^-\,d\mu}$ are not both infinite, we define the \textit{(Lebesgue) integral of $f$ over $X$ with respect to $\mu$} as follows:
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\overline{\mathbb{R}}$ and $f:X\rightarrow Y'$ a $\Sigma$-measurable function. If $\int_{X}{f^+\,d\mu}$ and $\int_{X}{f^-\,d\mu}$ are not both infinite, we define the \emph{(Lebesgue) integral of $f$ over $X$ with respect to $\mu$} as follows:
 
   \begin{equation}
     \int_{X}{f\,d\mu}:=\int_{X}{f^+\,d\mu}-\int_{X}{f^-\,d\mu}.
   \end{equation}
 
-  We say that $f$ is \textit{(Lebesgue) integrable (with respect to $\pr{X,\Sigma,\mu}$)} if $\int_{X}{f^+\,d\mu},\int_{X}{f^-\,d\mu}<+\infty$. 
+  We say that $f$ is \emph{(Lebesgue) integrable (with respect to $\pr{X,\Sigma,\mu}$)} if $\int_{X}{f^+\,d\mu},\int_{X}{f^-\,d\mu}<+\infty$. 
   
   We define the following sets:
 
@@ -1146,7 +1146,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 \end{remark}
 
 \begin{remark}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$ and $f\in\Leb{X}{\Sigma}{\mu}$. By the next proposition, we know that $\rest{f}{A}\in\Leb{A}{\Sigma_A}{\rest{\mu}{\Sigma_A}}$. We define the \textit{(Lebesgue) integral of $f$ over $A$ with respect to $\mu$ as follows:}
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$ and $f\in\Leb{X}{\Sigma}{\mu}$. By the next proposition, we know that $\rest{f}{A}\in\Leb{A}{\Sigma_A}{\rest{\mu}{\Sigma_A}}$. We define the \emph{(Lebesgue) integral of $f$ over $A$ with respect to $\mu$ as follows:}
 
   \begin{equation}
     \int_{A}{f\,d\mu}:=\int_{A}{\rest{f}{A}\,d\rest{\mu}{\Sigma_A}}.
@@ -1223,7 +1223,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 
     Particularly, if $A$ and $B$ are disjoint, then $\int_{A\cup B}{f\,d\mu}=\int_{A}{f\,d\mu}+\int_{B}{f\,d\mu}$.
 
-    \item If $f\in\Leb{X}{\Sigma}{\mu}$ and $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint $\Sigma$-measurable sets, then:
+    \item If $f\in\Leb{X}{\Sigma}{\mu}$ and $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint measurable sets, then:
 
     \begin{equation}
       \int_{\bigcup_{n=1}^{\infty}{A_n}}{f\,d\mu}=\sum_{n=1}^{\infty}{\int_{A_n}{f\,d\mu}}.
@@ -1376,7 +1376,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
           & =\sum_{n=1}^{\infty}{\pr{\int_{A_n}{f^+\,d\mu}-\int_{A_n}{f^-\,d\mu}}}=\sum_{n=1}^{\infty}{\int_{A_n}{f\,d\mu}}.
         \end{split}
       \end{equation}
-      \item Since $f,g\in\Leb{X}{\Sigma}{\mu}$, we have that $N_1:=\set{\bars{f}=+\infty},N_2:=\set{\bars{g}=+\infty}\in\Sigma$ are $\Sigma$-measurable sets such that $\mu\pr{N_1}=\mu\pr{N_2}=0$. Let $N:=N_1\cup N_2\in\Sigma$. It is easy to check that $\mu\pr{N}=0$ and $f\pr{x},g\pr{x}\in\mathbb{R}$ for all $x\in N^c$. 
+      \item Since $f,g\in\Leb{X}{\Sigma}{\mu}$, we have that $N_1:=\set{\bars{f}=+\infty},N_2:=\set{\bars{g}=+\infty}\in\Sigma$ are measurable sets such that $\mu\pr{N_1}=\mu\pr{N_2}=0$. Let $N:=N_1\cup N_2\in\Sigma$. It is easy to check that $\mu\pr{N}=0$ and $f\pr{x},g\pr{x}\in\mathbb{R}$ for all $x\in N^c$. 
       
       For all $x\in N^c$, we have:
       
@@ -1437,7 +1437,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 \end{theorem}
 
 \begin{definition}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\mathbb{C}$ and $f:X\rightarrow Y'$ a $\Sigma$-measurable function. We say that $f$ is \textit{(Lebesgue) integrable (with respect to $\pr{X,\Sigma,\mu}$)} if $\Re\pr{f},\Im\pr{f}\in\LebR{X}{\Sigma}{\mu}$. In this case, we define the {(Lebesgue) integral of $f$ over $X$ with respect to $\mu$} as follows:
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y'\subseteq\mathbb{C}$ and $f:X\rightarrow Y'$ a $\Sigma$-measurable function. We say that $f$ is \emph{(Lebesgue) integrable (with respect to $\pr{X,\Sigma,\mu}$)} if $\Re\pr{f},\Im\pr{f}\in\LebR{X}{\Sigma}{\mu}$. In this case, we define the {(Lebesgue) integral of $f$ over $X$ with respect to $\mu$} as follows:
 
   \begin{equation}
     \int_{X}{f\,d\mu}:=\int_{X}{\Re\pr{f}\,d\mu}+\int_{X}{\Im\pr{f}\,d\mu}\cdot i.
@@ -1451,7 +1451,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 \end{definition}
 
 \begin{remark}
-  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$ and $f\in\LebC{X}{\Sigma}{\mu}$. By the next proposition, we know that $\rest{f}{A}\in\LebC{A}{\Sigma_A}{\rest{\mu}{\Sigma_A}}$. We define the \textit{(Lebesgue) integral of $f$ over $A$ with respect to $\mu$ as follows:}
+  Let $\pr{X,\Sigma,\mu}$ be a measure space, $A\in\Sigma$ and $f\in\LebC{X}{\Sigma}{\mu}$. By the next proposition, we know that $\rest{f}{A}\in\LebC{A}{\Sigma_A}{\rest{\mu}{\Sigma_A}}$. We define the \emph{(Lebesgue) integral of $f$ over $A$ with respect to $\mu$ as follows:}
 
   \begin{equation}
     \int_{A}{f\,d\mu}:=\int_{A}{\rest{f}{A}\,d\rest{\mu}{\Sigma_A}}.
@@ -1482,7 +1482,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
     \item If $f\in\LebC{X}{\Sigma}{\mu}$, then $\rest{f}{A}\in\LebC{A}{\Sigma_A}{\rest{\mu}{\Sigma_A}}$.
     \item If $f\in\LebC{X}{\Sigma}{\mu}$, then $\overline{f}\in\LebC{X}{\Sigma}{\mu}$.
     \item If $f=0$ $\mu$-almost everywhere in $A$ or $\mu\pr{A}=0$, then $\rest{f}{A}\in\LebC{A}{\Sigma_A}{\rest{\mu}{\Sigma_A}}$ and $\int_{A}{f\,d\mu}=0$.
-    \item If $N\in\Sigma$ is a $\Sigma$-measurable set such that $\mu\pr{N}=0$ and $\rest{f}{N^c}\in\LebC{N^c}{\Sigma_{N^c}}{\rest{\mu}{\Sigma_{N^c}}}$, then $f\in\LebC{X}{\Sigma}{\mu}$ and $\int_{X}{f\,d\mu}=\int_{N^c}{f\,d\mu}$.
+    \item If $N\in\Sigma$ is a measurable set such that $\mu\pr{N}=0$ and $\rest{f}{N^c}\in\LebC{N^c}{\Sigma_{N^c}}{\rest{\mu}{\Sigma_{N^c}}}$, then $f\in\LebC{X}{\Sigma}{\mu}$ and $\int_{X}{f\,d\mu}=\int_{N^c}{f\,d\mu}$.
     \item If $f,g\in\LebC{X}{\Sigma}{\mu}$, then $\alpha\cdot f+\beta\cdot g\in\LebC{X}{\Sigma}{\mu}$ and:
     
     \begin{equation}
@@ -1496,7 +1496,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 
     Particularly, if $A$ and $B$ are disjoint, then $\int_{A\cup B}{f\,d\mu}=\int_{A}{f\,d\mu}+\int_{B}{f\,d\mu}$.
 
-    \item If $f\in\LebC{X}{\Sigma}{\mu}$ and $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint $\Sigma$-measurable sets, then:
+    \item If $f\in\LebC{X}{\Sigma}{\mu}$ and $\set{A_n}_{n\in\mathbb{N}}\subseteq\Sigma$ is a countable collection of pairwise disjoint measurable sets, then:
     
 
     \begin{equation}
