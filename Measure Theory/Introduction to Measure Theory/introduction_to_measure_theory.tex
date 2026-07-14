@@ -1774,7 +1774,7 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
   Let $\pr{X,\Sigma,\mu}$ be a measure space and $\set{f_n}_{n\in\mathbb{N}}\subseteq\overline{\mathbb{R}}^X$ a sequence of non-negative $\Sigma$-measurable functions. The following properties hold:
   \begin{enumerate}
     \item Beppo Levi's Theorem: $\int_{X}{\pr{\sum_{n=1}^{\infty}{f_n}}\,d\mu}=\sum_{n=1}^{\infty}{\int_{X}{f_n\,d\mu}}$.\label{Beppo Levi's Theorem}
-    \item If $\sum_{n=1}^{\infty}{\int_{X}{f_n}<+\infty}$, then $\sum_{n=1}^{\infty}{f_n}\in\Leb{X}{\Sigma}{\mu}$. Futhermore, $\sum_{n=1}^{\infty}{f_n\pr{x}}$ exists and belongs to $\mathbb{R}$ $\mu$-almost everywhere in $X$.
+    \item If $\sum_{n=1}^{\infty}{\int_{X}{f_n\,d\mu}<+\infty}$, then $\sum_{n=1}^{\infty}{f_n}\in\Leb{X}{\Sigma}{\mu}$. Futhermore, $\sum_{n=1}^{\infty}{f_n\pr{x}}$ exists and belongs to $\mathbb{R}$ $\mu$-almost everywhere in $X$.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
@@ -1785,25 +1785,36 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
   \end{proof}
 \end{corollary}
 
-\begin{corollary}
-  \rm [Sumas dobles]
-\end{corollary}
-
 \begin{theorem}[\rm\textbf{Fatou's Lemma}]
   Let $\pr{X,\Sigma,\mu}$ be a measure space and $\set{f_n}_{n\in\mathbb{N}}\subseteq\overline{\mathbb{R}}^X$ a sequence of non-negative $\Sigma$-measurable functions. Then:
 
   \begin{equation}
     \int_{X}{\liminf_{n\to\infty}{f_n}\,d\mu}\leq\liminf_{n\to\infty}{\int_{X}{f_n}\,d\mu}.
   \end{equation}
+  \begin{proof}[\rm\textbf{Proof}]
+    For each $n\in\mathbb{N}$, let $g_n:X\rightarrow\overline{\mathbb{R}}$ be defined as $g_n:=\inf_{k\in\mathbb{N},k\geq n}{f_k}$. Then $\pr{g_n}_{n\in\mathbb{N}}\subseteq\overline{\mathbb{R}}^X$ is a sequence of $\Sigma$-measurable functions such that:
+
+    \begin{itemize}
+      \item For each $n\in\mathbb{N}$, $0\leq g_n\pr{x}\leq g_{n+1}\pr{x}$ for all $x\in X$.
+      \item $\liminf_{n\to\infty}{f_n\pr{x}}=\lim_{n\to\infty}{g_n\pr{x}}$ for all $x\in X$.
+      \item For each $n\in\mathbb{N}$, $g_n\pr{x}\leq f_n\pr{x}$ for all $x\in X$.
+    \end{itemize}
+
+    By the \hyperref[Monotone Convergence Theorem]{Monotone Convergence Theorem}, we have:
+
+    \begin{equation}
+      \int_{X}{\pr{\liminf_{n\to\infty}{f_n}}\,d\mu}=\lim_{n\to\infty}{\int_{X}{g_n\,d\mu}}=\liminf_{n\to\infty}{\int_{X}{g_n\,d\mu}}\leq\liminf_{n\to\infty}{\int_{X}{f_n\,d\mu}}.
+    \end{equation}
+  \end{proof}
 \end{theorem}
 
-\begin{theorem}[\rm\textbf{Dominated Convergence Theorem}]
+\begin{theorem}[\rm\textbf{Dominated Convergence Theorem}]\label{Dominated Convergence Theorem}
   Let $\pr{X,\Sigma,\mu}$ be a measure space, $Y',Y''\subseteq\overline{\mathbb{R}}$, $\set{f_n}_{n\in\mathbb{N}}\subseteq\overline{\mathbb{R}}^X$ a sequence of $\Sigma$-measurable functions and, $f:X\rightarrow Y'$ and $g:X\rightarrow Y''$ two $\Sigma$-measurable functions verifying:
 
   \begin{itemize}
     \item $g\in\Leb{X}{\Sigma}{\mu}$.
-    \item $\bars{f_n}\leq g$ $\mu$-almost everywhere in $X$.
-    \item Exists $\lim_{n\to\infty}{f_n}$ $\mu$-almost everywhere in $X$.
+    \item For each $n\in\mathbb{N}$, $\bars{f_n}\leq g$ $\mu$-almost everywhere in $X$.
+    \item $\lim_{n\to\infty}{f_n}$ exists $\mu$-almost everywhere in $X$.
     \item $f=\lim_{n\to\infty}{f_n}$ $\mu$-almost everywhere where the limit exists.
   \end{itemize}
 
@@ -1812,6 +1823,52 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
   \begin{equation}
     \lim_{n\to\infty}{\int_{X}{f_n\,d\mu}}=\int_{X}{f\,d\mu}.
   \end{equation}
+  \begin{proof}[\rm\textbf{Proof}]
+    For each $n\in\mathbb{N}$, since $\bars{f_n}\leq g$ $\mu$-almost everywhere in $X$, we have $f_n\in\Leb{X}{\Sigma}{\mu}$. We define the following sets:
+
+    \begin{equation}
+      \begin{split}
+        N_1 & :=\bigcup_{n=1}^{\infty}{\set{\bars{f_n}>g}},\\
+        N_2 & :=\set{\liminf_{n\to\infty}{f_n}\neq\limsup_{n\to\infty}{f_n}},\\
+        N_3 & :=\set{f\neq\liminf_{n\to\infty}{f_n}},\\
+        N & :=N_1\cup N_2\cup N_3.
+      \end{split}
+    \end{equation}
+
+    It is easy to check that $\set{\bars{f_n}>g},N_2,N_3\in\Sigma$ for all $n\in\mathbb{N}$ and, consequently, $N_1,N\in\Sigma$ as well. Furthermore, we know that $\mu\pr{\set{\bars{f_n}>g}}=\mu\pr{N_2}=\mu\pr{N_3}=0$ for all $n\in\mathbb{N}$ and, consequently, by $\sigma$-subadditivity, we have $\mu\pr{N_1}=\mu\pr{N}=0$.
+
+    Given $x\in N^c$, since $\bars{f_n\pr{x}}\leq g\pr{x}$ for all $n\in\mathbb{N}$, then $\bars{f\pr{x}}=\lim_{n\to\infty}{\bars{f_n\pr{x}}}\leq g\pr{x}$. Thus $f\in\Leb{X}{\Sigma}{\mu}$. Let $N':=\set{\bars{f}=+\infty}\in\Sigma$. Then $\mu\pr{N'}=0$ and, consequently, $\mu\pr{N\cup N'}=0$ by $\sigma$-subadditivity.
+
+    Let's prove that $\lim_{n\to\infty}{\int_{X}{\bars{f_n-f}}\,d\mu}=0$. First, observe that, for each $n\in\mathbb{N}$, $\bars{f_n\pr{x}-f\pr{x}}\leq\bars{f_n\pr{x}}+\bars{f\pr{x}}\leq 2\cdot g\pr{x}$ for all $x\in\pr{N\cup N'}^c$. Then, for each $n\in\mathbb{N}$, $2\cdot g\pr{x}-\bars{f_n\pr{x}-f\pr{x}}\geq 0$ for all $x\in N^c$. Furthermore, $\bars{f_n-f}\in\Leb{X}{\Sigma}{\mu}$. By Fatou's Lemma, we have:
+
+    \begin{equation}
+      \begin{split}
+        \int_{X}{\pr{2\cdot g}\,d\mu} & =\int_{N^c}{\lim_{n\to\infty}{\pr{2\cdot g-\bars{f_n-f}}\,d\mu}}=\int_{N^c}{\liminf_{n\to\infty}{\pr{2\cdot g-\bars{f_n-f}}\,d\mu}}\\
+        & \leq\liminf_{n\to\infty}{\int_{N^c}{\pr{2\cdot g-\bars{f_n-f}}\,d\mu}}=\liminf_{n\to\infty}{\int_{X}{\pr{2\cdot g-\bars{f_n-f}}\,d\mu}}\\
+        & =\liminf_{n\to\infty}{\pr{\int_{X}{\pr{2\cdot g}\,d\mu}-\int_{X}{\bars{f_n-f}\,d\mu}}}\\
+        & =\int_{X}{\pr{2\cdot g}\,d\mu}+\liminf_{n\to\infty}{\pr{-\int_{X}{\bars{f_n-f}\,d\mu}}}\\
+        & =\int_{X}{\pr{2\cdot g}\,d\mu}-\limsup_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}.
+      \end{split}
+    \end{equation}
+
+    Simplifying, we get:
+
+    \begin{equation}
+      \limsup_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}\leq 0\leq\liminf_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}\leq\limsup_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}.
+    \end{equation}
+
+    Therefore, $\liminf_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}\leq\limsup_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}=0$ and, consequently, the limit $\lim_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}$ exists and $\lim_{n\to\infty}{\int_{X}{\bars{f_n-f}\,d\mu}}=0$. Hence:
+
+    \begin{equation}
+      \bars{\int_{X}{f_n\,d\mu}-\int_{X}{f\,d\mu}}\leq\int_{X}{\bars{f_n-f}\,d\mu}\stackrel{n\to\infty}{\rightarrow}0.
+    \end{equation}
+
+    Therefore:
+
+    \begin{equation}
+      \lim_{n\to\infty}{\int_{X}{f_n\,d\mu}}=\int_{X}{f\,d\mu}.
+    \end{equation}
+  \end{proof}
 \end{theorem}
 
 \begin{theorem}[\rm\textbf{Dominated Convergence Theorem on $\mathbb{C}$}]
@@ -1819,22 +1876,48 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
 
   \begin{itemize}
     \item $g\in\Leb{X}{\Sigma}{\mu}$.
-    \item $\bars{f_n}\leq g$ $\mu$-almost everywhere in $X$.
-    \item Exists $\lim_{n\to\infty}{f_n}$ $\mu$-almost everywhere in $X$.
+    \item For each $n\in\mathbb{N}$, $\bars{f_n}\leq g$ $\mu$-almost everywhere in $X$.
+    \item $\lim_{n\to\infty}{f_n}$ exists $\mu$-almost everywhere in $X$.
     \item $f=\lim_{n\to\infty}{f_n}$ $\mu$-almost everywhere where the limit exists.
   \end{itemize}
 
-  Then $f\in\Leb{X}{\Sigma}{\mu}$ and:
+  Then $f\in\LebC{X}{\Sigma}{\mu}$ and:
 
   \begin{equation}
     \lim_{n\to\infty}{\int_{X}{f_n\,d\mu}}=\int_{X}{f\,d\mu}.
   \end{equation}
+  \begin{proof}[\rm\textbf{Proof}]
+    By hypothesis, we can deduce the following:
+
+    \begin{itemize}
+      \item $g\in\Leb{X}{\Sigma}{\mu}$.
+      \item For each $n\in\mathbb{N}$, $\bars{\Re\pr{f_n}},\bars{\Im\pr{f_n}}\leq\bars{f_n}\leq g$ $\mu$-almost everywhere in $X$.
+      \item $\lim_{n\to\infty}{\Re\pr{f_n}}$ and $\lim_{n\to\infty}{\Im\pr{f_n}}$ exist $\mu$-almost everywhere in $X$.
+      \item $\Re\pr{f}=\lim_{n\to\infty}{\Re\pr{f_n}}$ and $\Im\pr{f}=\lim_{n\to\infty}{\Im\pr{f_n}}$ $\mu$-almost everywhere in $X$.
+    \end{itemize}
+
+    By \hyperref[Dominated Convergence Theorem]{Dominated Convergence Theorem}, we have that $\Re\pr{f},\Im\pr{f}\in\LebR{X}{\Sigma}{\mu}$ and:
+
+    \begin{equation}
+      \lim_{n\to\infty}{\int_{X}{\Re\pr{f_n}\,d\mu}}=\int_{X}{\Re\pr{f}\,d\mu},\hspace{0.5cm}\lim_{n\to\infty}{\int_{X}{\Im\pr{f_n}\,d\mu}}=\int_{X}{\Im\pr{f}\,d\mu}.
+    \end{equation}
+
+    Therefore, $f\in\LebC{X}{\Sigma}{\mu}$ and:
+
+    \begin{equation}
+      \begin{split}
+        \int_{X}{f\,d\mu} & =\int_{X}{\Re\pr{f}\,d\mu}+\int_{X}{\Im\pr{f}\,d\mu}\cdot i=\lim_{n\to\infty}{\int_{X}{\Re\pr{f_n}\,d\mu}}+\pr{\lim_{n\to\infty}{\int_{X}{\Im\pr{f_n}\,d\mu}}}\cdot i\\
+        & =\lim_{n\to\infty}{\int_{X}{\Re\pr{f_n}\,d\mu}}+\lim_{n\to\infty}{\int_{X}{\Im\pr{f_n}\,d\mu}\cdot i}\\
+        & =\lim_{n\to\infty}{\pr{\int_{X}{\Re\pr{f_n}\,d\mu}+\int_{X}{\Im\pr{f_n}\,d\mu}\cdot i}}=\lim_{n\to\infty}{\int_{X}{f_n\,d\mu}}.
+      \end{split}
+    \end{equation}
+  \end{proof}
 \end{theorem}
 
 \begin{proposition}
   Let $\pr{X,\Sigma,\mu}$ be a measure space. The following properties hold:
 
-  \begin{itemize}
+  \begin{enumerate}
     \item If $\set{f_n}_{n\in\mathbb{N}}\subseteq\overline{\mathbb{R}}^X$ is a sequence of $\Sigma$-measurable functions such that:
     
     \begin{equation}
@@ -1857,5 +1940,21 @@ We will denote by $\mathcal{S}\pr{X,\Sigma}$ the \textit{set of all simple $\Sig
     \begin{equation}
       \sum_{n=1}^{\infty}{\int_{X}{f_n}\,d\mu}=\int_{X}{S\,d\mu}.
     \end{equation}
-  \end{itemize}
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    By Beppo Levi's Theorem, $g:=\sum_{n=1}^{\infty}{\bars{f_n}}\in\Leb{X}{\Sigma}{\mu}$. Then $\sum_{n=1}^{\infty}{f_n}$ converges absolutely $\mu$-almost everywhere in $X$. Let $S:X\rightarrow\overline{\mathbb{R}}$ be a $\Sigma$-measurable function such that $S=\sum_{n=1}^{\infty}{f_n}$ $\mu$-almost everywhere where the sum exists. Since $\bars{S}\leq\sum_{n=1}^{\infty}{\bars{f_n}}$ $\mu$-almost everywhere in $X$, then $S\in\Leb{X}{\Sigma}{\mu}$. The following holds:
+
+    \begin{itemize}
+      \item $g\in\Leb{X}{\Sigma}{\mu}$.
+      \item For each $n\in\mathbb{N}$, $\sum_{k=1}^{n}{\bars{f_k\pr{x}}}\leq g\pr{x}$ for all $x\in X$.
+      \item $\sum_{n=1}^{\infty}{f_n}$ exists $\mu$-almost everywhere in $X$.
+      \item $S=\sum_{n=1}^{\infty}{f_n}$ $\mu$-almost everwhere where the limit exists.
+    \end{itemize}
+
+    By \hyperref[Dominated Convergence Theorem]{Dominated Convergence Theorem}, $S\in\Leb{X}{\Sigma}{\mu}$ (resp. $S\in\LebC{X}{\Sigma}{\mu}$ in the second case) and:
+
+    \begin{equation}
+      \sum_{n=1}^{\infty}{\int_{X}{f_n\,d\mu}}=\lim_{n\to\infty}{\sum_{k=1}^{n}{\int_{X}{f_n\,d\mu}}}=\lim_{n\to\infty}{\int_{X}{\pr{\sum_{k=1}^{n}{f_n}}\,d\mu}}=\int_{X}{S\,d\mu}.
+    \end{equation}
+  \end{proof}
 \end{proposition}
