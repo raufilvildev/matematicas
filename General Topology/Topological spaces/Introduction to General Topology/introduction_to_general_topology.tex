@@ -246,7 +246,7 @@ In general, the arbitrary union of closed sets in a topological space is not a c
         \item[(iii)] Semiopen intervals in $X$ of the form $\pbr{a,b_0}$ where $a\in X$ and $b_0$ is the maximum of $X$ if it exists.
       \end{itemize}
 
-      Since the intersection of two elements of $\mathcal{B}_{\leq}$ is an element of $\mathcal{B}_{\leq}$, then $\mathcal{B}_{\leq}$ is a basis for a topology on $X$ called the \textit{order topology} and we will denote it by $\mathcal{T}_e$. We will denote by $X_{\leq}:=\pr{X,\mathcal{T}_{\leq}}$.
+      Since the intersection of two non-disjoint sets of $\mathcal{B}_{\leq}$ is an element of $\mathcal{B}_{\leq}$, then $\mathcal{B}_{\leq}$ is a basis for a topology on $X$ called the \textit{order topology} and we will denote it by $\mathcal{T}_e$. We will denote by $X_{\leq}:=\pr{X,\mathcal{T}_{\leq}}$.
 
       This definition is based on the euclidean topology on $\mathbb{R}$. In fact, $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}=\mathbb{R}_{\leq}$.
 
@@ -256,7 +256,7 @@ In general, the arbitrary union of closed sets in a topological space is not a c
           \mathcal{B}_{\ell}:=\set{\bpr{a,b}\middle|a,b\in X, a<b}.
       \end{equation}
 
-      Since the intersection of two elements of $\mathcal{B}_{\ell}$ is an element of $\mathcal{B}_{\ell}$, then $\mathcal{B}_{\ell}$ is a basis for a topology on $X$ called the \textit{lower bound topology} and is denoted by $\mathcal{T}_{\ell}$. The topological space $\pr{X,\mathcal{T}_{\ell}}$ is denoted by $X_{\ell}$. If $X=\mathbb{R}$, the resulting space is called \textit{Sorgenfrey's line}.
+      Since the intersection of two non-disjoint sets of $\mathcal{B}_{\ell}$ is an element of $\mathcal{B}_{\ell}$, then $\mathcal{B}_{\ell}$ is a basis for a topology on $X$ called the \textit{lower bound topology} and is denoted by $\mathcal{T}_{\ell}$. The topological space $\pr{X,\mathcal{T}_{\ell}}$ is denoted by $X_{\ell}$. If $X=\mathbb{R}$, the resulting space is called \textit{Sorgenfrey's line}.
       
       \item \textbf{Upper bound topology}: Consider the following family of subsets of $X$:
 
@@ -264,38 +264,32 @@ In general, the arbitrary union of closed sets in a topological space is not a c
           \mathcal{B}_u:=\set{\pbr{a,b}\middle|a,b\in X, a<b}.
       \end{equation}
 
-      Since the intersection of two elements of $\mathcal{B}_u$ is an element of $\mathcal{B}_u$, then $\mathcal{B}_u$ is a basis called the \textit{upper bound topology} and is denoted by $\mathcal{T}_u$. The topological space $\pr{X,\mathcal{T}_u}$ is denoted by $X_u$.
+      Since the intersection of two non-disjoint sets of $\mathcal{B}_u$ is an element of $\mathcal{B}_u$, then $\mathcal{B}_u$ is a basis called the \textit{upper bound topology} and is denoted by $\mathcal{T}_u$. The topological space $\pr{X,\mathcal{T}_u}$ is denoted by $X_u$.
   \end{itemize}
 \end{example}
 
 \begin{proposition}
-Sean $X$ un conjunto y, $\mathcal{T}$ y $\mathcal{T}'$ topologías sobre $X$ con bases $\mathcal{B}$ y $\mathcal{B}'$ respectivamente. Entonces $\mathcal{T}$ es más fina que $\mathcal{T}'$ si y solamente si para todo $x\in X$ y $B'\in\mathcal{B}'$ con $x\in B'$, existe $B\in\mathcal{B}$ tal que $x\in B\subseteq B'$.
+  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ two topologies on $X$ with bases $\mathcal{B}$ and $\mathcal{B}'$ respectively. Then $\mathcal{T}$ is finer than $\mathcal{T}'$ if and only if for all $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$, there exists $B\in\mathcal{B}$ such that $x\in B\subseteq B'$.
 
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[\boxed{\Rightarrow}] Sea $x\in X$ y $B'\in\mathcal{B}'$ con $x\in B'$. Como $\mathcal{T}'\subseteq\mathcal{T}$, entonces $B'\in\mathcal{B}$. Basta tomar $B:=B'$.
-    \item[\boxed{\Leftarrow}] Sea $G\in\mathcal{T}'$. Entonces existe $\mathcal{B}''\subseteq\mathcal{B'}$ tal que $G=\bigcup_{B''\in\mathcal{B}''}{B''}$. Dado $x\in G$, existe $B''\in\mathcal{B}''$ tal que $x\in B''$. Por hipótesis, existe $B_x\in\mathcal{B}$ tal que $x\in B_x\subseteq B''$. Entonces:
-
-    \begin{equation}
-        G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq\bigcup_{B''\in\mathcal{B}''}{B''}=G,
-    \end{equation}
-
-    es decir, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$. Luego $\mathcal{T}'\subseteq\mathcal{T}$. Por tanto, $\mathcal{T}$ es más fina que $\mathcal{T}'$.
-\end{itemize}
-\end{proof}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+        \item[\boxed{\Rightarrow}] Let $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$. Since $\mathcal{T}'\subseteq\mathcal{T}$, then $B'\in\mathcal{B}$. It suffices to take $B:=B'$.
+        \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}'$. Then there exists $\mathcal{B}''\subseteq\mathcal{B'}$ such that $G=\bigcup{\mathcal{B}''}$. Given $x\in G$, there exists $B''\in\mathcal{B}''$ such that $x\in B''$. By hypothesis, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq B''$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq\bigcup_{B''\in\mathcal{B}''}{B''}=G$, that is to say, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$. Thus $\mathcal{T}'\subseteq\mathcal{T}$. Therefore, $\mathcal{T}$ is finer than $\mathcal{T}'$.
+    \end{itemize}
+  \end{proof}
 \end{proposition}
 
 \begin{corollary}
-Sean $X$ un conjunto y, $\mathcal{T}$ y $\mathcal{T}'$ topologías sobre $X$ con bases $\mathcal{B}$ y $\mathcal{B}'$ respectivamente. Entonces $\mathcal{T}=\mathcal{T}'$ si y solamente si se cumplen las siguientes propiedades:
+  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ two topologies on $X$ with bases $\mathcal{B}$ and $\mathcal{B}'$ respectively. Then $\mathcal{T}=\mathcal{T}'$ if and only if the following properties hold:
 
-\begin{itemize}
-    \item[1.] Para todo $x\in X$ y $B'\in\mathcal{B}'$ con $x\in B'$, existe $B\in\mathcal{B}$ tal que $x\in B\subseteq B'$.
-    \item[2.] Para todo $x\in X$ y $B\in\mathcal{B}$ con $x\in B$, existe $B'\in\mathcal{B}'$ tal que $x\in B'\subseteq B$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-Es una consecuencia directa de la proposición anterior.
-\end{proof}
+  \begin{itemize}
+      \item[1.] For all $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$, there exists $B\in\mathcal{B}$ such that $x\in B\subseteq B'$.
+      \item[2.] For all $x\in X$ and $B\in\mathcal{B}$ with $x\in B$, there exists $B'\in\mathcal{B}'$ such that $x\in B'\subseteq B$.
+  \end{itemize}
+  \begin{proof}[\rm\textbf{Proof}]
+    It is a direct consequence of the previous proposition.
+  \end{proof}
 \end{corollary}
 
 \begin{definition}[\textbf{Subbase para una topología}]
