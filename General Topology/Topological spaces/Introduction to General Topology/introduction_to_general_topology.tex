@@ -22,76 +22,84 @@
   Let $X$ be a set. Some examples of topologies on $X$ are the following:
   
   \begin{itemize}
-      \item \textbf{Discrete topology}: Se define como la topología formada por todos los subconjuntos de $X$, es decir:
+      \item \textbf{Discrete topology}: It is defined as the topology on $X$ which consists of all subsets of $X$, that is to say:
 
       \begin{equation}
           \mathcal{T}_{\text{dis}}:=\mathcal{P}\pr{X}.
       \end{equation}
 
-      Es trivial ver que $\mathcal{T}_{\text{dis}}$ es una topología pues la unión e intersección arbitraria de subconjuntos de $X$ es un subconjunto de $X$. 
-      \item \textbf{Topología indiscreta o trivial}: Se define como la topología formada por $\varnothing$ y $X$, es decir:
+      It is trivial to see that $\mathcal{T}_{\text{dis}}$ is a topology on $X$, because $\varnothing,X\subseteq X$ and, the union and intersection of any arbitrary collection of subsets of $X$ is a subset of $X$.
+      \item \textbf{Indiscrete or trivial topology}: It is defined as the topology which consists of $\varnothing$ and $X$, that is to say:
       
       \begin{equation}
           \mathcal{T}_{\text{ind}}:=\set{\varnothing,X}
       \end{equation}
 
-      Es trivial ver que $\mathcal{T}_{\text{ind}}$ es una topología pues $\varnothing\cup X=X,\varnothing\cap X=\varnothing\in\mathcal{T}$.
-      \item \textbf{Topología de Sierpinski}: Si $X=\set{0,1}$, se define la topología de Sierpinski como $\mathcal{T}_{S}:=\set{\varnothing,\set{0},X}$.
+      It is trivial to see that $\mathcal{T}_{\text{ind}}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_{\text{ind}}$ and $\varnothing\cup X=X,\varnothing\cap X=\varnothing\in\mathcal{T}$.
+      \item \textbf{Sierpinski's topology}: If $X=\set{0,1}$, this topology on $X$ is defined as $\mathcal{T}_{S}:=\set{\varnothing,\set{0},X}$.
       
-      Es una comprobación directa demostrar que $\mathcal{T}_{S}$ es una topología sobre $X$.
-      \item \textbf{Topología cofinita}: Se define como la topología formada por $\varnothing$ y aquellos subconjuntos de $X$ tales que su complementario respecto de $X$ es finito, es decir:
+      It is a direct proof that $\mathcal{T}_{S}$ is a topology on $X$.
+      \item \textbf{Cofinite topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complementary with respect to $X$ is finite, that is to say:
 
       \begin{equation}
-          \mathcal{T}_{\text{cof}}:=\set{G\in\mathcal{P}\pr{X}\middle|G=\varnothing\text{ o }X\setminus G\text{ es finito}}.
+          \mathcal{T}_{\text{cof}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is finite}}.
       \end{equation}
 
-      Claramente $\varnothing,X\in\mathcal{T}_{\text{cof}}$. Sean $G_1,G_2\in\mathcal{T}_{\text{cof}}$. Si $G_1\cap G_2=\varnothing$, trivialmente se tiene que $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. Supongamos que $G_1\cap G_2\neq\varnothing$. Entonces $X\setminus\pr{G_1\cap G_2}=\pr{X\setminus G_1}\cup\pr{X\setminus G_2}$. Como la unión finita de conjuntos finitos es un conjunto finito, deducimos que $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. Por último, sea $\mathcal{G}\subseteq\mathcal{T}$ y $G_0\in\mathcal{G}$ cualquiera. Entonces $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}=\bigcap_{G\in\mathcal{G}}{\pr{X\setminus G}}\subseteq X\setminus G_0$. Como $X\setminus G_0$ es finito, deducimos que $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}$ también. Luego $\bigcup_{G\in\mathcal{G}}{G}\in\mathcal{T}_{\text{cof}}$. Por tanto, $\mathcal{T}_{\text{cof}}$ es una topología sobre $X$.
-      \item \textbf{Topología conumerable}: Se define como la topología formada por $\varnothing$ y aquellos subconjuntos de $X$ tales que su complementario respecto de $X$ es numerable, es decir:
+      Clearly, $\varnothing,X\in\mathcal{T}_{\text{cof}}$. Let $G_1,G_2\in\mathcal{T}_{\text{cof}}$. If $G_1\cap G_2=\varnothing$, then $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$ trivially. Suppose that $G_1\cap G_2\neq\varnothing$. Then $X\setminus\pr{G_1\cap G_2}=\pr{X\setminus G_1}\cup\pr{X\setminus G_2}$. Since the finite union of finite sets is a finite set, we deduce that $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. Lastly, let $\mathcal{G}\subseteq\mathcal{T}$ and $G_0\in\mathcal{G}$ cualquiera. Then $X\setminus\pr{\bigcup{\mathcal{G}}}=\bigcap_{G\in\mathcal{G}}{\pr{X\setminus G}}\subseteq X\setminus G_0$. As $X\setminus G_0$ is finite, we deduce that $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}$ is finite too. Thus $\bigcup{{\mathcal{G}}}\in\mathcal{T}_{\text{cof}}$. Therefore, $\mathcal{T}_{\text{cof}}$ is a topology on $X$.
+      \item \textbf{Cocountable topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complementary with respect to $X$ is countable, that is to say:
       
       \begin{equation}
-          \mathcal{T}_{\text{con}}:=\set{G\in\mathcal{P}\pr{X}\middle|G=\varnothing\text{ o }X\setminus G\text{ es numerable}}.
+          \mathcal{T}_{\text{con}}:=\set{G\middle|G\subseteq X, G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is countable}}.
       \end{equation}
 
-      La prueba es esencialmente la misma a la realizada antes para conjuntos numerables en lugar de conjuntos finitos.
-      \item \textbf{Topología punto $p$ incluido}: Sea $p\in X$ fijo. Se define la topología punto $p$ incluido como aquella compuesta por $\varnothing$ y todos los subconjuntos de $X$ que contienen $p$. La denotaremos como $\mathcal{T}_p$.
+      The proof is analogous to the one we did above.
+      \item \textbf{Included point topology}: Suppose $X\neq\varnothing$. Given $p\in X$, this topology is defined as the topology on $X$ which consists of $\varnothing$ and all the subsets of $X$ containing $p$, that is to say: 
       
-      Es fácil ver que $\mathcal{T}_p$ porque la unión e intersección de conjuntos que contienen a $p$ es un conjunto que contiene a $p$.
-      \item \textbf{Topología punto $p$ excluido}: Sea $p\in X$ fijo. Se define la topología punto $p$ excluido como aquella compuesta por $X$ y todos los subconjuntos de $X$ que no contienen $p$. La denotaremos como $\mathcal{T}_{-p}$.
+      \begin{equation}
+        \mathcal{T}_p:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }p\in G}.
+      \end{equation}
       
-      Es fácil ver que $\mathcal{T}_{-p}$ porque la unión e intersección de conjuntos que no contienen a $p$ es un conjunto que no contiene a $p$.
+      It is trivial to see that $\mathcal{T}_p$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_p$ and, the union and intersection of any arbitrary collection of subsets of $X$ containing $p$ is a subset of $X$ containing $p$.
+      \item \textbf{Excluded point topology}: Suppose $X\neq\varnothing$. Given $p\in X$, this topology is defined as the topology on $X$ which consists of $X$ and all the subsets of $X$ not containing $p$, that is to say: 
+      
+      \begin{equation}
+        \mathcal{T}_p:=\set{G\middle|G\subseteq X, G=X\text{ or }p\notin G}.
+      \end{equation}
+      
+      It is trivial to see that $\mathcal{T}_{-p}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_p$ and, the union and intersection of any arbitrary collection of subsets of $X$ not containing $p$ is a subset of $X$ not containing $p$.
   \end{itemize}
 \end{example}
 
 In general, the intersection of open sets in a topological space is not an open set.
 
 \begin{definition}
-  Sea $X$ un espacio topológico. Diremos que un conjunto es $G_{\delta}$ si es intersección numerable de abiertos.
+  Let $\pr{X,\mathcal{T}}$ be a topological space. We say that a subset of $X$ is $G_{\delta}$ if it is the intersection of a countable collection of open sets.
 \end{definition}
 
 \begin{definition}
-  Sean $\pr{X,\mathcal{T}}$ un espacio topológico y $C\subseteq X$. Diremos que $C$ es cerrado (en $X$ respecto a la topología $\mathcal{T}$) si $X\setminus C$ es abierto. La familia de todos los conjuntos cerrados la denotaremos como $\mathcal{F}_{\pr{X,\mathcal{T}}}$. Si no hay lugar a confusión, escribiremos simplemente $\mathcal{F}$.
+  Let $\pr{X,\mathcal{T}}$ a topological space. A subset of $X$ is called \textit{closed} (with respect to $\pr{X,\mathcal{T}}$) if the complementary with respect to $X$ is an open set. The family of all closed sets is denoted by $\mathcal{F}\pr{X,\mathcal{T}}$.
 \end{definition}
 
 \begin{example}
-  Sea $X$ un conjunto. Algunos ejemplos de cerrados en distintas topologías son los siguientes:
+  Let $X$ be a set. Some examples of closed sets in different topologies are the following:
   \begin{itemize}
-      \item \textbf{Topología discreta}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_{\text{dis}}$ si y solamente si $F\subseteq X$, es decir, todos los subconjuntos de $X$ son abiertos y cerrados.
-      \item \textbf{Topología indiscreta o trivial}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_{\text{ind}}$ si y solamente si $F=\varnothing$ o $F=X$.
-      \item \textbf{Topología de Sierpinski}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_{S}$ si y solamente si $F=\varnothing$, $F=\set{1}$ o $F=X$.
-      \item \textbf{Topología cofinita}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_{\text{cof}}$ si y solamente si $F=X$ o $F$ es finito.
-      \item \textbf{Topología conumerable}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_{\text{con}}$ si y solamente si $F=X$ o $F$ es numerable.
-      \item \textbf{Topología punto $p$ incluido}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_p$ si y solamente si $p\notin F$, o, en otras palabras, $F\in\mathcal{T}_{-p}$.
-      \item \textbf{Topología punto $p$ excluido}: Es fácil ver que $F$ es cerrado en $\mathcal{T}_{-p}$ si y solamente si $p\in F$, o, en otras palabras, $F\in\mathcal{T}_p$.
+      \item \textbf{Discrete topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{dis}}}=\mathcal{T}_{\text{dis}}=\mathcal{P}\pr{X}$.
+      \item \textbf{Indiscrete or trivial topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{dis}}}=\mathcal{T}_{\text{ind}}=\set{\varnothing,X}$.
+      \item \textbf{Sierpinski's topology}: If $X=\set{0,1}$, $\mathcal{F}\pr{X,\mathcal{T}_S}=\set{\varnothing,\set{1},X}$.
+      \item \textbf{Cofinite topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{cof}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is finite}}$.
+      \item \textbf{Cocountable topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{con}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is countable}}$.
+      \item \textbf{Included point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_p}=\mathcal{T}_{-p}$.
+      \item \textbf{Excluded point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_{-p}}=\mathcal{T}_{p}$.
   \end{itemize}
 \end{example}
 
 \begin{proposition}
-  Sea $X$ un espacio topológico. La familia de todos los conjuntos cerrados $\mathcal{F}$ verifica las siguientes propiedades:
+  Let $\pr{X,\mathcal{T}}$ be a topological space. The following properties hold:
 
   \begin{itemize}
-      \item[1.] $\varnothing,X\in\mathcal{F}$.
-      \item[2.] Si $C_1,C_2\in\mathcal{F}$, entonces $C_1\cap C_2\in\mathcal{T}$.
-      \item[3.] Si $\mathcal{C}\subseteq\mathcal{F}$, entonces $\bigcap_{C\in\mathcal{C}}{C}\in\mathcal{F}$.
+      \item[1.] $\varnothing,X\in\mathcal{F}\pr{X,\mathcal{T}}$.
+      \item[2.] Si $F_1,F_2\in\mathcal{F}\pr{X,\mathcal{T}}$, then $C_1\cap C_2\in\mathcal{F}\pr{X,\mathcal{T}}$.
+      \item[3.] If $\mathcal{C}\subseteq\mathcal{F}\pr{X,\mathcal{T}}$, then $\bigcap{\mathcal{C}}\in\mathcal{F}\pr{X,\mathcal{T}}$.
   \end{itemize}
   \begin{proof}[\rm\textbf{Proof}]
   Trivial por las definiciones de conjunto cerrado y topología, y las leyes de De Morgan.
