@@ -28,56 +28,56 @@
           \mathcal{T}_{\text{dis}}:=\mathcal{P}\pr{X}.
       \end{equation}
 
-      It is trivial to see that $\mathcal{T}_{\text{dis}}$ is a topology on $X$, because $\varnothing,X\subseteq X$ and, the union and intersection of any arbitrary collection of subsets of $X$ is a subset of $X$.
+      It is straightforward to verify that $\mathcal{T}_{\text{dis}}$ is a topology on $X$, because $\varnothing,X\subseteq X$ and, the union and intersection of any arbitrary collection of subsets of $X$ is a subset of $X$.
       \item \textbf{Indiscrete or trivial topology}: It is defined as the topology which consists of $\varnothing$ and $X$, that is to say:
       
       \begin{equation}
           \mathcal{T}_{\text{ind}}:=\set{\varnothing,X}
       \end{equation}
 
-      It is trivial to see that $\mathcal{T}_{\text{ind}}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_{\text{ind}}$ and $\varnothing\cup X=X,\varnothing\cap X=\varnothing\in\mathcal{T}$.
+      One readily checks that $\mathcal{T}_{\text{ind}}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_{\text{ind}}$ and $\varnothing\cup X=X,\varnothing\cap X=\varnothing\in\mathcal{T}$.
       \item \textbf{Sierpinski's topology}: If $X=\set{0,1}$, this topology on $X$ is defined as $\mathcal{T}_{S}:=\set{\varnothing,\set{0},X}$.
       
-      It is a direct proof that $\mathcal{T}_{S}$ is a topology on $X$.
-      \item \textbf{Cofinite topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complementary with respect to $X$ is finite, that is to say:
+      It is straightforward to verify that $\mathcal{T}_{S}$ is a topology on $X$.
+      \item \textbf{Cofinite topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complement in $X$ is finite, that is to say:
 
       \begin{equation}
           \mathcal{T}_{\text{cof}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is finite}}.
       \end{equation}
 
-      Clearly, $\varnothing,X\in\mathcal{T}_{\text{cof}}$. Let $G_1,G_2\in\mathcal{T}_{\text{cof}}$. If $G_1\cap G_2=\varnothing$, then $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$ trivially. Suppose that $G_1\cap G_2\neq\varnothing$. Then $X\setminus\pr{G_1\cap G_2}=\pr{X\setminus G_1}\cup\pr{X\setminus G_2}$. Since the finite union of finite sets is a finite set, we deduce that $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. Lastly, let $\mathcal{G}\subseteq\mathcal{T}$ and $G_0\in\mathcal{G}$ cualquiera. Then $X\setminus\pr{\bigcup{\mathcal{G}}}=\bigcap_{G\in\mathcal{G}}{\pr{X\setminus G}}\subseteq X\setminus G_0$. As $X\setminus G_0$ is finite, we deduce that $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}$ is finite too. Thus $\bigcup{{\mathcal{G}}}\in\mathcal{T}_{\text{cof}}$. Therefore, $\mathcal{T}_{\text{cof}}$ is a topology on $X$.
-      \item \textbf{Cocountable topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complementary with respect to $X$ is countable, that is to say:
+      Clearly, $\varnothing,X\in\mathcal{T}_{\text{cof}}$. Let $G_1,G_2\in\mathcal{T}_{\text{cof}}$. If $G_1\cap G_2=\varnothing$, then $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$ trivially. Suppose that $G_1\cap G_2\neq\varnothing$. Then $X\setminus\pr{G_1\cap G_2}=\pr{X\setminus G_1}\cup\pr{X\setminus G_2}$. Since the finite union of finite sets is a finite set, we deduce that $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. Lastly, let $\mathcal{G}\subseteq\mathcal{T}$ and $G_0\in\mathcal{G}$. Then $X\setminus\pr{\bigcup{\mathcal{G}}}=\bigcap_{G\in\mathcal{G}}{\pr{X\setminus G}}\subseteq X\setminus G_0$. As $X\setminus G_0$ is finite, we deduce that $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}$ is finite too. Thus $\bigcup{{\mathcal{G}}}\in\mathcal{T}_{\text{cof}}$. Therefore, $\mathcal{T}_{\text{cof}}$ is a topology on $X$.
+      \item \textbf{Cocountable topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complement in $X$ is countable, that is to say:
       
       \begin{equation}
-          \mathcal{T}_{\text{con}}:=\set{G\middle|G\subseteq X, G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is countable}}.
+          \mathcal{T}_{\text{con}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is countable}}.
       \end{equation}
 
       The proof is analogous to the one we did above.
       \item \textbf{Included point topology}: Suppose $X\neq\varnothing$. Given $p\in X$, this topology is defined as the topology on $X$ which consists of $\varnothing$ and all the subsets of $X$ containing $p$, that is to say: 
       
       \begin{equation}
-        \mathcal{T}_p:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }p\in G}.
+        \mathcal{T}_p^{\text{inc}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }p\in G}.
       \end{equation}
       
-      It is trivial to see that $\mathcal{T}_p$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_p$ and, the union and intersection of any arbitrary collection of subsets of $X$ containing $p$ is a subset of $X$ containing $p$.
+      It is immediate that $\mathcal{T}_p^{\text{inc}}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_p^{\text{inc}}$ and, the union and intersection of any arbitrary collection of subsets of $X$ containing $p$ is a subset of $X$ containing $p$.
       \item \textbf{Excluded point topology}: Suppose $X\neq\varnothing$. Given $p\in X$, this topology is defined as the topology on $X$ which consists of $X$ and all the subsets of $X$ not containing $p$, that is to say: 
       
       \begin{equation}
-        \mathcal{T}_p:=\set{G\middle|G\subseteq X, G=X\text{ or }p\notin G}.
+        \mathcal{T}_p^{\text{exc}}:=\set{G\middle|G\subseteq X, G=X\text{ or }p\notin G}.
       \end{equation}
       
-      It is trivial to see that $\mathcal{T}_{-p}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_p$ and, the union and intersection of any arbitrary collection of subsets of $X$ not containing $p$ is a subset of $X$ not containing $p$.
+      It is immediate that $\mathcal{T}_p^{\text{exc}}$ is a topology on $X$, because $\varnothing,X\in\mathcal{T}_p^{\text{exc}}$ and, the union and intersection of any arbitrary collection of subsets of $X$ not containing $p$ is a subset of $X$ not containing $p$.
   \end{itemize}
 \end{example}
 
-In general, the intersection of open sets in a topological space is not an open set.
+In general, the arbitrary intersection of open sets in a topological space is not an open set.
 
 \begin{definition}
   Let $\pr{X,\mathcal{T}}$ be a topological space. We say that a subset of $X$ is $G_{\delta}$ if it is the intersection of a countable collection of open sets.
 \end{definition}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}}$ a topological space. A subset of $X$ is called \textit{closed} (with respect to $\pr{X,\mathcal{T}}$) if the complementary with respect to $X$ is an open set. The family of all closed sets is denoted by $\mathcal{F}\pr{X,\mathcal{T}}$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A subset of $X$ is called \textit{closed} (with respect to $\pr{X,\mathcal{T}}$) if the complement in $X$ is an open set. The family of all closed sets is denoted by $\mathcal{F}\pr{X,\mathcal{T}}$.
 \end{definition}
 
 \begin{example}
@@ -88,8 +88,8 @@ In general, the intersection of open sets in a topological space is not an open 
       \item \textbf{Sierpinski's topology}: If $X=\set{0,1}$, $\mathcal{F}\pr{X,\mathcal{T}_S}=\set{\varnothing,\set{1},X}$.
       \item \textbf{Cofinite topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{cof}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is finite}}$.
       \item \textbf{Cocountable topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{con}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is countable}}$.
-      \item \textbf{Included point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_p}=\mathcal{T}_{-p}$.
-      \item \textbf{Excluded point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_{-p}}=\mathcal{T}_{p}$.
+      \item \textbf{Included point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_p^{\text{inc}}}=\mathcal{T}_p^{\text{exc}}$.
+      \item \textbf{Excluded point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_p^{\text{exc}}}=\mathcal{T}_p^{\text{inc}}$.
   \end{itemize}
 \end{example}
 
@@ -98,197 +98,173 @@ In general, the intersection of open sets in a topological space is not an open 
 
   \begin{itemize}
       \item[1.] $\varnothing,X\in\mathcal{F}\pr{X,\mathcal{T}}$.
-      \item[2.] Si $F_1,F_2\in\mathcal{F}\pr{X,\mathcal{T}}$, then $C_1\cap C_2\in\mathcal{F}\pr{X,\mathcal{T}}$.
+      \item[2.] If $F_1,F_2\in\mathcal{F}\pr{X,\mathcal{T}}$, then $F_1\cup F_2\in\mathcal{F}\pr{X,\mathcal{T}}$.
       \item[3.] If $\mathcal{C}\subseteq\mathcal{F}\pr{X,\mathcal{T}}$, then $\bigcap{\mathcal{C}}\in\mathcal{F}\pr{X,\mathcal{T}}$.
   \end{itemize}
   \begin{proof}[\rm\textbf{Proof}]
-  Trivial por las definiciones de conjunto cerrado y topología, y las leyes de De Morgan.
+    Trivial by the definitions of topology and closed set, and De Morgan's laws.
   \end{proof}
 \end{proposition}
 
-En general, en un espacio topológico, la unión arbitraria de cerrados no es un cerrado.
+\begin{remark}
+  Observe that if $\pr{X,\mathcal{T}}$ is a topological space, then the finite union of closed sets is a closed set. This can be easily proved by induction.
+\end{remark}
+
+In general, the arbitrary union of closed sets in a topological space is not a closed set.
 
 \begin{definition}
-  Sea $X$ un espacio topológico. Diremos que un conjunto es $F_{\sigma}$ si es unión numerable de cerrados.
+  Let $\pr{X,\mathcal{T}}$ be a topological space. We say that a subset of $X$ is $F_{\sigma}$ if it is the union of a countable collection of closed sets.
 \end{definition}
 
 
 \begin{definition}
-  Sean $X$ un conjunto y $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ dos topologías sobre $X$. Diremos que:
+  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ two topologies on $X$. We say:
 
   \begin{itemize}
-      \item $\mathcal{T}$ es más fina que $\mathcal{T}'$ si $\mathcal{T}'\subseteq\mathcal{T}$. Si la contención es estricta, se dice que $\mathcal{T}$ es estrictamente más fina que $\mathcal{T}'$.
-      \item $\mathcal{T}$ es más gruesa que $\mathcal{T}'$ si $\mathcal{T}'\subseteq\mathcal{T}$. Si la contención es estricta, se dice que $\mathcal{T}$ es estrictamente más gruesa que $\mathcal{T}'$.
-      \item $\mathcal{T}$ y $\mathcal{T}'$ son comparables si $\mathcal{T}\subseteq\mathcal{T}'$ o $\mathcal{T'}\subseteq\mathcal{T}$. En caso contrario, diremos que $\mathcal{T}$ y $\mathcal{T}'$ son incomparables.
+    \item \textit{$\mathcal{T}$ is finer than $\mathcal{T}'$} if $\mathcal{T}'\subseteq\mathcal{T}$. If the containment is strict, we say that \textit{$\mathcal{T}$ is strictly finer than $\mathcal{T}'$}.
+    \item \textit{$\mathcal{T}$ is coarser than $\mathcal{T}'$} if $\mathcal{T}\subseteq\mathcal{T}'$. If the containment is strict, we say that \textit{$\mathcal{T}$ is strictly coarser than $\mathcal{T}'$}.
+    \item \textit{$\mathcal{T}$ and $\mathcal{T}'$ are comparable} if $\mathcal{T}\subseteq\mathcal{T}'$ or $\mathcal{T'}\subseteq\mathcal{T}$. Otherwise, we say \textit{$\mathcal{T}$ and $\mathcal{T}'$ are incomparable}.
   \end{itemize}
 \end{definition}
 
 \begin{proposition}
-  La intersección arbitraria de topologías es una topología. 
+  The arbitrary intersection of topologies on a set $X$ is a topology on that set. 
   \begin{proof}[\rm\textbf{Proof}]
-  Sean $\mathscr{T}\subseteq\mathcal{P}\pr{\mathcal{P}\pr{X}}$ una familia de topologías sobre un conjunto y $\mathcal{T}:=\bigcap_{\mathcal{T}'\in\mathscr{T}}{\mathcal{T}'}\subseteq\mathcal{P}\pr{X}$. Como $\varnothing,X\in\mathcal{T}'$ para todo $\mathcal{T}'\in\mathscr{T}$, entonces $\varnothing,X\in\mathcal{T}$. Sean $G_1,G_2\in\mathcal{T}$ y $\mathcal{G}\subseteq\mathcal{T}$. Entonces $G_1,G_2\in\mathcal{T}'$ y $\mathcal{G}\subseteq\mathcal{T}'$ para todo $\mathcal{T}'\in\mathscr{T}$. Luego $G_1\cap G_2,\bigcup_{G\in\mathcal{G}}{G}\in\mathcal{T}'$ para todo $\mathcal{T}'\in\mathscr{T}$. En consecuencia, $G_1\cap G_2,\bigcup_{G\in\mathcal{G}}{G}\in\mathcal{T}$. Por tanto, $\mathcal{T}$ es una topología sobre $X$.
+    Let $\mathscr{T}\subseteq\mathcal{P}\pr{\mathcal{P}\pr{X}}$ be a family of topologies on $X$ and $\mathcal{T}:=\bigcap{\mathscr{T}}\subseteq\mathcal{P}\pr{X}$. Since $\varnothing,X\in\mathcal{T}'$ for all $\mathcal{T}'\in\mathscr{T}$, then $\varnothing,X\in\mathcal{T}$. Let $G_1,G_2\in\mathcal{T}$ and $\mathcal{G}\subseteq\mathcal{T}$. Then $G_1,G_2\in\mathcal{T}'$ and $\mathcal{G}\subseteq\mathcal{T}'$ for all $\mathcal{T}'\in\mathscr{T}$. Thus $G_1\cap G_2,\bigcup{\mathcal{G}}\in\mathcal{T}'$ for all $\mathcal{T}'\in\mathscr{T}$. Consequently, $G_1\cap G_2,\bigcup{\mathcal{G}}\in\mathcal{T}$. Therefore, $\mathcal{T}$ is a topology on $X$.
   \end{proof}
 \end{proposition}
 
 \begin{definition}
-  Sean $X$ un conjunto y $\mathcal{A}$ una familia de subconjuntos de $X$. Sea $\mathscr{T}_A:=\set{\mathcal{T}\middle|\mathcal{T}\text{ es una topología sobre $X$},\mathcal{A}\subseteq\mathcal{T}}$. Se define la topología generada por $\mathcal{A}$ como sigue:
+  Let $X$ be a set and $\mathcal{A}$ a family of subsets of $X$. The \textit{topology generated by $\mathcal{A}$} is defined as the smallest topology containing $\mathcal{A}$:
 
   \begin{equation}
-      \mathcal{T}\pr{\mathcal{A}}=\bigcap_{\mathcal{T}\in\mathscr{T}_A}{\mathcal{T}}.
+    \mathcal{T}\pr{\mathcal{A}}=\bigcap{\set{\mathcal{T}\middle|\mathcal{T}\subseteq\mathcal{P}\pr{X},\mathcal{T}\text{ is a topology on $X$},\mathcal{A}\subseteq\mathcal{T}}}.
   \end{equation}
 \end{definition}
 
-\section{Base de una topología}
+\begin{remark}
+  It is easy to check that if $X$ is a set and $\mathcal{A}$ a family of subsets of $X$, then $\mathcal{A}\subseteq\mathcal{T}\pr{\mathcal{A}}$.
+\end{remark}
 
-\begin{definition}[\textbf{Base para una topología}]
-Sea $X$ un conjunto. Una base para una topología sobre $X$ es una colección $\mathcal{B}$ de subconjuntos de $X$ con las siguientes propiedades:
+\section{Basis for a topology}
 
-\begin{itemize}
-    \item[1.] Para todo $x\in X$, existe $B\in\mathcal{B}$ tal que $x\in B$.
-    \item[2.] Para todo $B_1,B_2\in\mathcal{B}$, si $x\in B_1\cap B_2$, existe $B_3\in\mathcal{B}$ tal que $x\in B_3\subseteq B_1\cap B_2$. 
-\end{itemize}
-
-Si $\mathcal{T}$ es una topología sobre $X$ y $\mathcal{T}\pr{\mathcal{B}}=\mathcal{T}$, diremos que $\mathcal{B}$ es una base de $\mathcal{T}$. En esta situación, diremos que los elementos de $\mathcal{B}$ son abiertos básicos.
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A \textit{basis for $\mathcal{T}$} is a collection $\mathcal{B}\subseteq\mathcal{T}$ of open sets in $\mathcal{T}$ such that for any $G\in\mathcal{T}$, there exists $\mathcal{B}'=\mathcal{B}'\pr{G}\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$.
 \end{definition}
 
 \begin{proposition}
-Sean $X$ un conjunto y $\mathcal{B}$ una base para una topología. Entonces:
-
-\begin{equation}
-    \mathcal{T}\pr{\mathcal{B}}=\set{\bigcup_{B\in\mathcal{B}'}{B}\middle|\mathcal{B'}\subseteq\mathcal{B}}.
-\end{equation}
-\begin{proof}[\rm\textbf{Proof}]
-Veamos que el siguiente conjunto es una topología sobre $X$:
-
-\begin{equation}
-    \mathcal{T}:=\set{\bigcup_{B\in\mathcal{B}'}{B}\middle|\mathcal{B'}\subseteq\mathcal{B}}.
-\end{equation}
-
-Tomando $\mathcal{B}'=\varnothing\subseteq\mathcal{B}$, tenemos que $\varnothing\in\mathcal{T}$. 
-
-Dado $x\in X$, existe $B_x\in\mathcal{B}$ tal que $x\in B_x\subseteq X$. Entonces:
-
-\begin{equation}
-    X=\bigcup_{x\in X}{\set{x}}\subseteq\bigcup_{x\in X}{B_x}\subseteq X.
-\end{equation}
-
-Por tanto, $X=\bigcup_{x\in X}{B_x}\in\mathcal{T}$. Sean $G_1,G_2\in\mathcal{T}$. Entonces existen $\mathcal{B}_1,\mathcal{B}_2\subseteq\mathcal{B}$ tales que $G_1=\bigcup_{B\in\mathcal{B}_1}{B}$ y $G_2=\bigcup_{B'\in\mathcal{B}_2}{B'}$. Entonces:
-
-\begin{equation}
-    G_1\cap G_2=\bigcup_{B\in\mathcal{B}_1,B'\in\mathcal{B}_2}{B\cap B'}.
-\end{equation}
-
-Sea $x\in G_1\cap G_2$. Entonces existen $B\in\mathcal{B}_1$ y $B'\in\mathcal{B}_2$ tales que $x\in B\cap B'$. Luego, existe $B_x\in\mathcal{B}$ tal que $x\in B_x\subseteq B\cap B'$. Luego:
-
-\begin{equation}
-    G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{\set{x}}\subseteq\bigcup_{x\in G_1\cap G_2}{B_x}\subseteq G_1\cap G_2.
-\end{equation}
-
-En consecuencia, $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{B_x}\in\mathcal{T}$.
-
-Sea $\mathcal{G}\subseteq\mathcal{T}$. Para todo $G\in\mathcal{G}$, existe $\mathcal{B}_G\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in B_G}{B}$. Entonces $\bigcup_{G\in\mathcal{G}}=\bigcup_{G\in\mathcal{G},B\in B_G}{B}\in\mathcal{T}$. Por tanto, $\mathcal{T}$ es una topología sobre $X$.
-
-Claramente, como $\mathcal{B}\subseteq\mathcal{T}$, entonces $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}$. Además, por la propia definición de $\mathcal{T}\pr{\mathcal{B}}$ y $\mathcal{T}$, se deduce que $\mathcal{T}\subseteq\mathcal{T}\pr{\mathcal{B}}$. Por tanto, $\mathcal{T}\pr{\mathcal{B}}=\mathcal{T}$.
-\end{proof}
+  Let $\pr{X,\mathcal{T}}$ and $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$. Then $\mathcal{T}=\mathcal{T}\pr{\mathcal{B}}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Since $\mathcal{B}\subseteq\mathcal{T}$, then $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}$ by the definition of $\mathcal{T}\pr{\mathcal{B}}$. Given $G\in\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. As $\mathcal{B}\subseteq\mathcal{T}\pr{\mathcal{B}}$, then $G\in\mathcal{T}\pr{\mathcal{B}}$. Thus $\mathcal{T}\subseteq\mathcal{T}\pr{\mathcal{B}}$. Therefore, $\mathcal{T}=\mathcal{T}\pr{\mathcal{B}}$.
+  \end{proof}
 \end{proposition}
 
 \begin{proposition}
-Sean $\pr{X,\mathcal{T}}$ un espacio topológico y $\mathcal{B}\subseteq\mathcal{T}$. Son equivalentes:
+  Let $X$ be a set and $\mathcal{B}\subseteq\mathcal{P}\pr{X}$ a collection of subsets of $X$. The following are equivalent:
 
-\begin{itemize}
-    \item[1.] $\mathcal{B}$ es una base de $\mathcal{T}$.
-    \item[2.] Para todo abierto $G$, existe $\mathcal{B}'\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in\mathcal{B}'}{B}$.
-    \item[3.] Para todo abierto $G$ y $x\in G$, existe $B=B\pr{x}\in\mathcal{B}$ tal que $x\in B\subseteq G$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[\boxed{1\Rightarrow2}] Trivial por la proposición anterior.
-    \item[\boxed{2\Rightarrow3}] Sea $G$ abierto. Entonces existe $\mathcal{B}'\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in\mathcal{B}'}{B}$. Si $x\in G$, existe $B=B\pr{x}\in\mathcal{B}'\subseteq\mathcal{B}$ tal que $x\in B\subseteq G$.
-    \item[\boxed{3\Rightarrow1}] Sea $x\in X$. Como $X$ es abierto, existe $B=B\pr{x}\in\mathcal{B}$ tal que $x\in B\subseteq X$. Sean $B_1,B_2\in\mathcal{B}$ y $x\in B_3:=B_1\cap B_2$. Como $B_3$ es abierto y $x\in B_3$, existe $B=B\pr{x}\in\mathcal{B}$ tal que $x\in B\subseteq B_3=B_1\cap B_2$. Por tanto, $\mathcal{B}$ es base para una topología.
+  \begin{enumerate}
+    \item $\mathcal{B}$ is a basis for some topology on $X$.
+    \item The following properties hold:
+    \begin{itemize}
+      \item[(i)] $X=\bigcup{\mathcal{B}}$.
+      \item[(ii)] For any pair of sets $B_1,B_2\in\mathcal{B}$, if $x\in B_1\cap B_2$, there exists $B_3=B_3\pr{x}\in\mathcal{B}$ such that $x\in B_3\subseteq B_1\cap B_2$.
+    \end{itemize}
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Let $\mathcal{T}$ be the topology on $X$ for which $\mathcal{B}$ is a basis. Since $X\in\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $X=\bigcup{\mathcal{B}'}\subseteq\bigcup{\mathcal{B}}\subseteq X$ and, consequently, $X=\bigcup{\mathcal{B}}$. Let $B_1,B_2\in\mathcal{B}$ with $B_1\cap B_2\neq\varnothing$ and $x\in B_1\cap B_2$. Since $\mathcal{B}\subseteq\mathcal{T}$, then $B_1\cap B_2\in\mathcal{T}$. Thus there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B_1\cap B_2=\bigcup{\mathcal{B}'}$. Hence, there exists $B_3=B_3\pr{x}\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B_3\subseteq B_1\cap B_2$.
+      \item[\boxed{2\Rightarrow1}] Let $\mathcal{T}:=\set{\bigcup{\mathcal{B}'}\middle|\mathcal{B}'\subseteq\mathcal{B}}$. Firstly, $\varnothing=\bigcup{\varnothing},X=\bigcup{\mathcal{B}}\in\mathcal{T}$. 
+      
+      Let $G_1,G_2\in\mathcal{T}$. If $G_1\cap G_2=\varnothing$, there is nothing to prove. Suppose $G_1\cap G_2\neq\varnothing$. Let $\mathcal{B}',\mathcal{B}''\subseteq\mathcal{B}$ such that $G_1=\bigcup{\mathcal{B}'}$ and $G_2=\bigcup{\mathcal{B}''}$. Then $G_1\cap G_2=\bigcup_{B'\in\mathcal{B}',B''\in\mathcal{B}''}{\pr{B'\cap B''}}$. Given $x\in G_1\cap G_2$, there exists $B'_x\in\mathcal{B}'$ and $B''_x\in\mathcal{B}''$ such that $x\in B'_x\cap B''_x$. By hypothesis, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq B'_x\cap B''_x$. Then $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{\set{x}}\subseteq\bigcup_{x\in G_1\cap G_2}{B_x}\subseteq G_1\cap G_2$ and, consequently, $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{B_x}$. Let $\widetilde{B}:=\set{B_x\middle|x\in G_1\cap G_2}\subseteq\mathcal{B}$. Then $G_1\cap G_2=\bigcup{\widetilde{B}}\in\mathcal{T}$. 
 
-    Trivialmente, se tiene que $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}$. Sea $G\in\mathcal{T}$ abierto. Si $x\in G$, existe $B_x\in\mathcal{B}$ tal que $x\in B_x\subseteq G$. Entonces:
+      Let $\mathcal{G}\subseteq\mathcal{T}$. For each $G\in\mathcal{G}$, there exists $\mathcal{B}_G\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}_G}$. Let $\mathcal{B}':=\bigcup\set{\mathcal{B}_G\middle|G\in\mathcal{G}}\subseteq\mathcal{B}$. Then $\bigcup{\mathcal{G}}=\bigcup{\mathcal{B}'}\in\mathcal{T}$.
 
-    \begin{equation}
-        G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G.
-    \end{equation}
-
-    Luego $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}\pr{\mathcal{B}}$. En consecuencia, $\mathcal{T}\subseteq\mathcal{T}\pr{\mathcal{B}}$ y, por consiguiente, $\mathcal{T}\pr{\mathcal{B}}=\mathcal{T}$. Por tanto, $\mathcal{B}$ es una base de $\mathcal{T}$.
-\end{itemize}
-\end{proof}
+      In conclusion, $\mathcal{B}$ is a basis for some topology on $X$.
+    \end{itemize}
+  \end{proof}
 \end{proposition}
 
 \begin{proposition}
-Sean $X$ un espacio topológico, $\mathcal{B}$ una base de la topología y $G\subseteq X$. Entonces $G$ es abierto si y solamente si para todo $x\in G$, existe $B=B\pr{x}\in\mathcal{B}$ tal que $x\in B\subseteq G$.
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[\boxed{\Rightarrow}] Sea $\mathcal{B}'\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in\mathcal{B}'}{B}$. Si $x\in G$, existe $B=B\pr{x}\in\mathcal{B}$ tal que $x\in B\subseteq G$.
-    \item[\boxed{\Leftarrow}] Trivial por la proposición anterior.
-\end{itemize}
-\end{proof}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ a collection of open sets in $\mathcal{T}$. 
+  \begin{enumerate}
+    \item $\mathcal{B}$ is a basis for $\mathcal{T}$.
+    \item For any open set $G\in\mathcal{T}$, if $x\in G$, there exists $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq G$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}$ and $x\in G$. Since $\mathcal{B}$ is a basis for $\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. As $x\in G=\bigcup{\mathcal{B}'}$, there exists $B=B\pr{x}\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G$.
+      \item[\boxed{2\Rightarrow1}] Let $G\in\mathcal{T}$. Given $x\in G$, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq G$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G$ and, consequently, $G=\bigcup_{x\in G}{B_x}$. Thus $\mathcal{B}':=\set{B_x\middle|x\in G}\subseteq\mathcal{B}$ and $G=\bigcup{\mathcal{B}'}$. Therefore, $\mathcal{B}$ is a basis for $\mathcal{T}$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$ and $G\subseteq X$. Then $G\in\mathcal{T}$ if and only if, for each $x\in G$, there exists $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq G$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Trivial by the previous proposition.
+      \item[\boxed{\Leftarrow}] If $x\in G$, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq G$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G$ and, therefore, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$.
+    \end{itemize}
+  \end{proof}
 \end{proposition}
 
 \begin{example}
-Algunos ejemplos de bases para una topología sobre un conjunto son los siguientes:
+  Some examples of basis for a topology on a set are the following:
 
-\begin{itemize}
-  \item Si $X$ es un conjunto cualquiera entonces $\mathcal{B}:=\set{\set{x}\middle|x\in X}$ es una base para la topología discreta.
+  \begin{itemize}
+    \item If $X$ is any set, then $\mathcal{B}:=\set{\set{x}\middle|x\in X}$ is a basis for the discrete topology. It is enough to notice that, for all $A\subseteq X$, we have $A=\bigcup_{x\in A}{\set{x}}$ and $\set{x}\in\mathcal{T}_{\text{dis}}$ for all $x\in X$.
+    \item \textbf{Euclidean topology on $\mathbb{R}$}: We define the following family of subsets of $\mathbb{R}$:
 
-  Basta observar que, para todo $A\subseteq X$, se tiene que $A=\bigcup_{x\in A}{\set{x}}$.
-  \item \textbf{Topología euclídea sobre $\mathbb{R}$}: Sobre $\mathbb{R}$, consideremos la siguiente familia de subconjuntos:
+    \begin{equation}
+        \mathcal{B}:=\set{\pr{a,b}\middle|a,b\in\mathbb{R},a<b}.
+    \end{equation}
 
-  \begin{equation}
-      \mathcal{B}:=\set{\pr{a,b}\middle|\forall a,b\subseteq\mathbb{R},a<b}.
-  \end{equation}
-
-  Sea $x\in\mathbb{R}$ cualquiera. Definimos $B:=\pr{x-1,x+1}\in\mathcal{B}$. Claramente $x\in B$. Sean $B_1,B_2\in\mathcal{B}$ tales que $x\in B_1\cap B_2$. Sean $a,b,a',b'\in\mathbb{R}$ con $a<b$ y $a'<b'$ tales que $B_1=\pr{a,b}$ y $B_2=\pr{a',b'}$. Entonces $B_1\cap B_2=\pr{\max\set{a,a'},\min\set{b,b'}}\in\mathcal{B}$. Por tanto, $\mathcal{B}$ es una base para una topología que llamaremos topología euclídea sobre $\mathbb{R}^d$ y la denotaremos como $\mathcal{T}_{\text{euc}}\pr{\mathbb{R}}$.
-\end{itemize}
+    Let $x\in\mathbb{R}$. We define $B_x:=\pr{x-1,x+1}\in\mathcal{B}$. Clearly $x\in B_x$, $\mathbb{R}=\bigcup_{x\in\mathbb{R}}{\set{x}}\subseteq\bigcup_{x\in\mathbb{R}}{B_x}\subseteq\bigcup{\mathcal{B}}\subseteq\mathbb{R}$ and, consequently, $\mathbb{R}=\bigcup{\mathcal{B}}$. Let $B_1,B_2\in\mathcal{B}$ and, $a,b,a',b'\in\mathbb{R}$ with $a<b$ and $a'<b'$ such that $B_1=\pr{a,b}$ and $B_2=\pr{a',b'}$. If $B_1\cap B_2=\varnothing$, there is nothing to prove. Suppose $B_1\cap B_2\neq\varnothing$. Then $B_1\cap B_2=\pr{\max\set{a,a'},\min\set{b,b'}}\in\mathcal{B}$. Therefore, $\mathcal{B}$ is a basis for the topology on $\mathbb{R}$ called \textit{Euclidean topology on $\mathbb{R}$}. We will denote this topology by $\mathcal{T}_{e}\pr{\mathbb{R}}$.
+  \end{itemize}
 \end{example}
 
 \begin{example}
-  Sea $\pr{X,\leq}$ un conjunto totalmente ordenado. Dados $a,b\in X$ con $a<b$, definimos los siguientes subconjuntos de $X$:
+  Let $\pr{X,\leq}$ be a totally ordered set. Given $a,b\in X$ with $a<b$, we define the following subsets of $X$:
 
   \begin{itemize}
-    \item[1.] \textbf{Intervalo abierto}: $\pr{a,b}:=\set{x\in X\middle|a<x<b}$.
-    \item[2.] \textbf{Intervalos semiabiertos}: $\bpr{a,b}:=\set{x\in X\middle|a\leq x<b}, \pbr{a,b}:=\set{x\in X\middle|a<x\leq b}$.
-    \item[3.] \textbf{Intervalo cerrado}: $\br{a,b}=\set{x\in X\middle|a\leq x\leq b}$.
+    \item[1.] \textbf{Open interval}: $\pr{a,b}:=\set{x\in X\middle|a<x<b}$.
+    \item[2.] \textbf{Semiopen interval}: $\bpr{a,b}:=\set{x\in X\middle|a\leq x<b}, \pbr{a,b}:=\set{x\in X\middle|a<x\leq b}$.
+    \item[3.] \textbf{Closed interval}: $\br{a,b}=\set{x\in X\middle|a\leq x\leq b}$.
   \end{itemize}
 
-  Mediante estos conjuntos, podemos definir las siguientes topologías:
+  Using these sets, we can define the following topologies on $X$:
 
   \begin{itemize}
-      \item \textbf{Topología del orden}: Sea $\mathcal{B}_{\leq}$ la familia de subconjuntos de $X$ que son de alguno de los siguientes tipos:
+      \item \textbf{Order topology}: Let $\mathcal{B}_{\leq}$ be a family of subsets of $X$ such that they are one of the following types:
 
       \begin{itemize}
-        \item[(i)] Intervalos abiertos en $X$.
-        \item[(ii)] Intervalos semiabiertos en $X$ de la forma $\bpr{a_0,b}$ con $b\in X$ y $a_0$ el mínimo de $X$ si este existe.
-        \item[(iii)] Intervalos semiabiertos en $X$ de la forma $\pbr{a,b_0}$ con $a\in X$ y $b_0$ el máximo de $X$ si este existe.
+        \item[(i)] Open intervals in $X$.
+        \item[(ii)] Semiopen intervals in $X$ of the form $\bpr{a_0,b}$ where $b\in X$ and $a_0$ is the minimum of $X$ if it exists.
+        \item[(iii)] Semiopen intervals in $X$ of the form $\pbr{a,b_0}$ where $a\in X$ and $b_0$ is the maximum of $X$ if it exists.
       \end{itemize}
 
-      Entonces $\mathcal{B}_{\leq}$ es una base para una topología que llamaremos topología del orden y la denotaremos como $\mathcal{T}_{\leq}$. Al espacio topológico $\pr{X,\mathcal{T}_{\leq}}$, lo denotaremos como $X_{\leq}$. 
+      Since the intersection of two elements of $\mathcal{B}_{\leq}$ is an element of $\mathcal{B}_{\leq}$, then $\mathcal{B}_{\leq}$ is a basis for a topology on $X$ called the \textit{order topology} and we will denote it by $\mathcal{T}_e$. We will denote by $X_{\leq}:=\pr{X,\mathcal{T}_{\leq}}$.
 
-      Esta definición se basa en la topología euclídea sobre $\mathbb{R}$. De hecho, $\pr{\mathbb{R},\mathcal{T}_{\text{euc}}}=\mathbb{R}_{\leq}$.
+      This definition is based on the euclidean topology on $\mathbb{R}$. In fact, $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}=\mathbb{R}_{\leq}$.
 
-      % TO-DO: PROBAR QUE ES BASE
-      \item \textbf{Topología del límite inferior y Recta de Sorgenfrey}: Consideremos la siguiente familia de subconjuntos de $X$:
+      \item \textbf{Lower bound topology and Sorgenfrey's line}: Consider the following family of subsets of $X$:
 
       \begin{equation}
           \mathcal{B}_{\ell}:=\set{\bpr{a,b}\middle|a,b\in X, a<b}.
       \end{equation}
 
-      Entonces $\mathcal{B}_{\ell}$ es una base para una topología que llamaremos topología del límite inferior y la denotaremos como $\mathcal{T}_{\ell}$. Al espacio topológico $\pr{X,\mathcal{T}_{\ell}}$, lo denotaremos como $X_{\ell}$ y lo llamaremos Recta de Sorgenfrey.
+      Since the intersection of two elements of $\mathcal{B}_{\ell}$ is an element of $\mathcal{B}_{\ell}$, then $\mathcal{B}_{\ell}$ is a basis for a topology on $X$ called the \textit{lower bound topology} and is denoted by $\mathcal{T}_{\ell}$. The topological space $\pr{X,\mathcal{T}_{\ell}}$ is denoted by $X_{\ell}$. If $X=\mathbb{R}$, the resulting space is called \textit{Sorgenfrey's line}.
       
-      % TO-DO: PROBAR QUE ES BASE
-      \item \textbf{Topología del límite superior}: Consideremos la siguiente familia de subconjuntos de $X$:
+      \item \textbf{Upper bound topology}: Consider the following family of subsets of $X$:
 
       \begin{equation}
           \mathcal{B}_u:=\set{\pbr{a,b}\middle|a,b\in X, a<b}.
       \end{equation}
 
-      Entonces $\mathcal{B}_u$ es una base para una topología que llamaremos topología del límite superior y la denotaremos como $\mathcal{T}_u$. Al espacio topológico $\pr{X,\mathcal{T}_u}$, lo denotaremos como $X_u$.
-      
-      % TO-DO: PROBAR QUE ES BASE
+      Since the intersection of two elements of $\mathcal{B}_u$ is an element of $\mathcal{B}_u$, then $\mathcal{B}_u$ is a basis called the \textit{upper bound topology} and is denoted by $\mathcal{T}_u$. The topological space $\pr{X,\mathcal{T}_u}$ is denoted by $X_u$.
   \end{itemize}
 \end{example}
 
@@ -448,7 +424,7 @@ De aquí, deducimos que $\mathcal{B}$ es base para la topología producto.
 \end{proposition}
 
 \begin{example}[\textbf{Topología euclídea sobre $\mathbb{R}^d$}]
-Consideremos $\mathbb{R}$ con la topología euclídea. Dado $d\in\mathbb{N}$, definimos la topología euclídea sobre $\mathbb{R}^d$, y la denotaremos como $\mathcal{T}_{\text{euc}}\pr{\mathbb{R}^d}$, como la topología producto sobre $\mathbb{R}^d$. Observemos que $\mathcal{T}_{\text{euc}}\pr{\mathbb{R}^d}$ tiene como base:
+Consideremos $\mathbb{R}$ con la topología euclídea. Dado $d\in\mathbb{N}$, definimos la topología euclídea sobre $\mathbb{R}^d$, y la denotaremos como $\mathcal{T}_e\pr{\mathbb{R}^d}$, como la topología producto sobre $\mathbb{R}^d$. Observemos que $\mathcal{T}_e\pr{\mathbb{R}^d}$ tiene como base:
 
 \begin{equation}
     \mathcal{B}=\set{\prod_{k=1}^{d}{\pr{a_k,b_k}}\middle|\forall k\in\set{1,\dots,d},a_k,b_k\in\mathbb{R},a_k<b_k}.
