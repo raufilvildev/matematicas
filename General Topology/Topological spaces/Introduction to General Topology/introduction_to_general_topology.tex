@@ -3,7 +3,7 @@
 \section{Topological spaces}
 
 \begin{definition}
-  A \textit{topology on a set $X$ }is a collection $\mathcal{T}\subseteq\mathcal{P}\pr{X}$ of subsets of $X$ satisfying the following properties:
+  A \emph{topology on a set $X$ }is a collection $\mathcal{T}\subseteq\mathcal{P}\pr{X}$ of subsets of $X$ satisfying the following properties:
 
   \begin{enumerate}
       \item $\varnothing,X\in\mathcal{T}$.
@@ -11,7 +11,7 @@
       \item If $\mathcal{G}\subseteq\mathcal{T}$, then $\bigcup{\mathcal{G}}\in\mathcal{T}$.
   \end{enumerate}
 
-  The ordered pair $\pr{X,\mathcal{T}}$ is called a \textit{topological space}. The elements of $\mathcal{T}$ are called \textit{open sets}.
+  The ordered pair $\pr{X,\mathcal{T}}$ is called a \emph{topological space}. The elements of $\mathcal{T}$ are called \emph{open sets}.
 \end{definition}
 
 \begin{remark}
@@ -45,7 +45,13 @@
           \mathcal{T}_{\text{cof}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is finite}}.
       \end{equation}
 
-      Clearly, $\varnothing,X\in\mathcal{T}_{\text{cof}}$. Let $G_1,G_2\in\mathcal{T}_{\text{cof}}$. If $G_1\cap G_2=\varnothing$, then $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$ trivially. Suppose that $G_1\cap G_2\neq\varnothing$. Then $X\setminus\pr{G_1\cap G_2}=\pr{X\setminus G_1}\cup\pr{X\setminus G_2}$. Since the finite union of finite sets is a finite set, we deduce that $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. Lastly, let $\mathcal{G}\subseteq\mathcal{T}$ and $G_0\in\mathcal{G}$. Then $X\setminus\pr{\bigcup{\mathcal{G}}}=\bigcap_{G\in\mathcal{G}}{\pr{X\setminus G}}\subseteq X\setminus G_0$. As $X\setminus G_0$ is finite, we deduce that $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}$ is finite too. Thus $\bigcup{{\mathcal{G}}}\in\mathcal{T}_{\text{cof}}$. Therefore, $\mathcal{T}_{\text{cof}}$ is a topology on $X$.
+      Clearly, $\varnothing,X\in\mathcal{T}_{\text{cof}}$. 
+      
+      Let $G_1,G_2\in\mathcal{T}_{\text{cof}}$. If $G_1\cap G_2=\varnothing$, then there is nothing to prove. Suppose that $G_1\cap G_2\neq\varnothing$. Then $X\setminus\pr{G_1\cap G_2}=\pr{X\setminus G_1}\cup\pr{X\setminus G_2}$. Since the finite union of finite sets is a finite set, we deduce that $G_1\cap G_2\in\mathcal{T}_{\text{cof}}$. 
+      
+      Lastly, let $\mathcal{G}\subseteq\mathcal{T}_{\text{cof}}$. If $\bigcup{\mathcal{G}}=\varnothing$, then there is nothing to prove. Suppose there exists a non-empty set $G_0\in\mathcal{G}$. Then $X\setminus\pr{\bigcup{\mathcal{G}}}=\bigcap_{G\in\mathcal{G}}{\pr{X\setminus G}}\subseteq X\setminus G_0$. As $X\setminus G_0$ is finite, we deduce that $X\setminus\pr{\bigcup_{G\in\mathcal{G}}{G}}$ is finite too. Thus $\bigcup{{\mathcal{G}}}\in\mathcal{T}_{\text{cof}}$. 
+      
+      Therefore, $\mathcal{T}_{\text{cof}}$ is a topology on $X$.
       \item \textbf{Cocountable topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complement in $X$ is countable, that is to say:
       
       \begin{equation}
@@ -77,14 +83,14 @@ In general, the arbitrary intersection of open sets in a topological space is no
 \end{definition}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space. A subset of $X$ is called \textit{closed} (with respect to $\pr{X,\mathcal{T}}$) if the complement in $X$ is an open set. The collection of all closed sets is denoted by $\mathcal{F}\pr{X,\mathcal{T}}$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A subset of $X$ is called \emph{closed} (with respect to $\pr{X,\mathcal{T}}$) if the complement in $X$ is an open set. The collection of all closed sets is denoted by $\mathcal{F}\pr{X,\mathcal{T}}$.
 \end{definition}
 
 \begin{example}
   Let $X$ be a set. Some examples of closed sets in different topologies are the following:
   \begin{itemize}
       \item \textbf{Discrete topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{dis}}}=\mathcal{T}_{\text{dis}}=\mathcal{P}\pr{X}$.
-      \item \textbf{Indiscrete or trivial topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{dis}}}=\mathcal{T}_{\text{ind}}=\set{\varnothing,X}$.
+      \item \textbf{Indiscrete or trivial topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{ind}}}=\mathcal{T}_{\text{ind}}=\set{\varnothing,X}$.
       \item \textbf{Sierpinski's topology}: If $X=\set{0,1}$, $\mathcal{F}\pr{X,\mathcal{T}_S}=\set{\varnothing,\set{1},X}$.
       \item \textbf{Cofinite topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{cof}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is finite}}$.
       \item \textbf{Cocountable topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{con}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is countable}}$.
@@ -96,11 +102,11 @@ In general, the arbitrary intersection of open sets in a topological space is no
 \begin{proposition}
   Let $\pr{X,\mathcal{T}}$ be a topological space. The following properties hold:
 
-  \begin{itemize}
-      \item[1.] $\varnothing,X\in\mathcal{F}\pr{X,\mathcal{T}}$.
-      \item[2.] If $F_1,F_2\in\mathcal{F}\pr{X,\mathcal{T}}$, then $F_1\cup F_2\in\mathcal{F}\pr{X,\mathcal{T}}$.
-      \item[3.] If $\mathcal{C}\subseteq\mathcal{F}\pr{X,\mathcal{T}}$, then $\bigcap{\mathcal{C}}\in\mathcal{F}\pr{X,\mathcal{T}}$.
-  \end{itemize}
+  \begin{enumerate}
+      \item $\varnothing,X\in\mathcal{F}\pr{X,\mathcal{T}}$.
+      \item If $F_1,F_2\in\mathcal{F}\pr{X,\mathcal{T}}$, then $F_1\cup F_2\in\mathcal{F}\pr{X,\mathcal{T}}$.
+      \item If $\mathcal{C}\subseteq\mathcal{F}\pr{X,\mathcal{T}}$, then $\bigcap{\mathcal{C}}\in\mathcal{F}\pr{X,\mathcal{T}}$.
+  \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     Trivial by the definitions of topology and closed set, and De Morgan's laws.
   \end{proof}
@@ -118,12 +124,12 @@ In general, the arbitrary union of closed sets in a topological space is not a c
 
 
 \begin{definition}
-  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ two topologies on $X$. We say:
+  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ be two topologies on $X$. We say:
 
   \begin{itemize}
-    \item \textit{$\mathcal{T}$ is finer than $\mathcal{T}'$} if $\mathcal{T}'\subseteq\mathcal{T}$. If the containment is strict, we say that \textit{$\mathcal{T}$ is strictly finer than $\mathcal{T}'$}.
-    \item \textit{$\mathcal{T}$ is coarser than $\mathcal{T}'$} if $\mathcal{T}\subseteq\mathcal{T}'$. If the containment is strict, we say that \textit{$\mathcal{T}$ is strictly coarser than $\mathcal{T}'$}.
-    \item \textit{$\mathcal{T}$ and $\mathcal{T}'$ are comparable} if $\mathcal{T}\subseteq\mathcal{T}'$ or $\mathcal{T'}\subseteq\mathcal{T}$. Otherwise, we say \textit{$\mathcal{T}$ and $\mathcal{T}'$ are incomparable}.
+    \item \emph{$\mathcal{T}$ is finer than $\mathcal{T}'$} if $\mathcal{T}'\subseteq\mathcal{T}$. If the containment is strict, we say that \emph{$\mathcal{T}$ is strictly finer than $\mathcal{T}'$}.
+    \item \emph{$\mathcal{T}$ is coarser than $\mathcal{T}'$} if $\mathcal{T}\subseteq\mathcal{T}'$. If the containment is strict, we say that \emph{$\mathcal{T}$ is strictly coarser than $\mathcal{T}'$}.
+    \item \emph{$\mathcal{T}$ and $\mathcal{T}'$ are comparable} if $\mathcal{T}\subseteq\mathcal{T}'$ or $\mathcal{T'}\subseteq\mathcal{T}$. Otherwise, we say \emph{$\mathcal{T}$ and $\mathcal{T}'$ are incomparable}.
   \end{itemize}
 \end{definition}
 
@@ -135,7 +141,7 @@ In general, the arbitrary union of closed sets in a topological space is not a c
 \end{proposition}
 
 \begin{definition}
-  Let $X$ be a set and $\mathcal{A}$ a collection of subsets of $X$. The \textit{topology generated by $\mathcal{A}$} is defined as the smallest topology containing $\mathcal{A}$:
+  Let $X$ be a set and $\mathcal{A}$ a collection of subsets of $X$. The \emph{topology generated by $\mathcal{A}$} is defined as the smallest topology containing $\mathcal{A}$:
 
   \begin{equation}
     \mathcal{T}\pr{\mathcal{A}}=\bigcap{\set{\mathcal{T}\middle|\mathcal{T}\subseteq\mathcal{P}\pr{X},\mathcal{T}\text{ is a topology on $X$},\mathcal{A}\subseteq\mathcal{T}}}.
@@ -146,37 +152,37 @@ In general, the arbitrary union of closed sets in a topological space is not a c
   It is easy to check that if $X$ is a set and $\mathcal{A}$ a collection of subsets of $X$, then $\mathcal{A}\subseteq\mathcal{T}\pr{\mathcal{A}}$.
 \end{remark}
 
-\section{Basis for a topology}
+\section{Bases}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space. A \textit{basis for $\mathcal{T}$} is a collection $\mathcal{B}\subseteq\mathcal{T}$ of open sets in $\mathcal{T}$ such that for any $G\in\mathcal{T}$, there exists $\mathcal{B}'=\mathcal{B}'\pr{G}\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A \emph{basis for $\mathcal{T}$} is a collection $\mathcal{B}\subseteq\mathcal{T}$ of open sets in $\mathcal{T}$ such that for any $G\in\mathcal{T}$, there exists a basis set $\mathcal{B}'=\mathcal{B}'\pr{G}\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$.
 \end{definition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ and $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$. Then $\mathcal{T}=\mathcal{T}\pr{\mathcal{B}}$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ be a basis for $\mathcal{T}$. Then $\mathcal{T}=\mathcal{T}\pr{\mathcal{B}}$.
   \begin{proof}[\rm\textbf{Proof}]
     Since $\mathcal{B}\subseteq\mathcal{T}$, then $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}$ by the definition of $\mathcal{T}\pr{\mathcal{B}}$. Given $G\in\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. As $\mathcal{B}\subseteq\mathcal{T}\pr{\mathcal{B}}$, then $G\in\mathcal{T}\pr{\mathcal{B}}$. Thus $\mathcal{T}\subseteq\mathcal{T}\pr{\mathcal{B}}$. Therefore, $\mathcal{T}=\mathcal{T}\pr{\mathcal{B}}$.
   \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  Let $X$ be a set and $\mathcal{B}\subseteq\mathcal{P}\pr{X}$ a collection of subsets of $X$. The following are equivalent:
+  Let $X$ be a set and $\mathcal{B}\subseteq\mathcal{P}\pr{X}$ be a collection of subsets of $X$. The following are equivalent:
 
   \begin{enumerate}
     \item $\mathcal{B}$ is a basis for some topology on $X$.
     \item The following properties hold:
     \begin{itemize}
       \item[(i)] $X=\bigcup{\mathcal{B}}$.
-      \item[(ii)] For any pair of sets $B_1,B_2\in\mathcal{B}$, if $x\in B_1\cap B_2$, there exists $B_3=B_3\pr{x}\in\mathcal{B}$ such that $x\in B_3\subseteq B_1\cap B_2$.
+      \item[(ii)] For any pair of non-disjoint basis sets $B_1,B_2\in\mathcal{B}$, if $x\in B_1\cap B_2$, there exists a basis set $B_3=B_3\pr{x}\in\mathcal{B}$ such that $x\in B_3\subseteq B_1\cap B_2$.
     \end{itemize}
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{1\Rightarrow2}] Let $\mathcal{T}$ be the topology on $X$ for which $\mathcal{B}$ is a basis. Since $X\in\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $X=\bigcup{\mathcal{B}'}\subseteq\bigcup{\mathcal{B}}\subseteq X$ and, consequently, $X=\bigcup{\mathcal{B}}$. Let $B_1,B_2\in\mathcal{B}$ with $B_1\cap B_2\neq\varnothing$ and $x\in B_1\cap B_2$. Since $\mathcal{B}\subseteq\mathcal{T}$, then $B_1\cap B_2\in\mathcal{T}$. Thus there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B_1\cap B_2=\bigcup{\mathcal{B}'}$. Hence, there exists $B_3=B_3\pr{x}\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B_3\subseteq B_1\cap B_2$.
-      \item[\boxed{2\Rightarrow1}] Let $\mathcal{T}:=\set{\bigcup{\mathcal{B}'}\middle|\mathcal{B}'\subseteq\mathcal{B}}$. Firstly, $\varnothing=\bigcup{\varnothing},X=\bigcup{\mathcal{B}}\in\mathcal{T}$. 
+      \item[\boxed{1\Rightarrow2}] Let $\mathcal{T}$ be the topology on $X$ for which $\mathcal{B}$ is a basis. Since $X\in\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $X=\bigcup{\mathcal{B}'}\subseteq\bigcup{\mathcal{B}}\subseteq X$ and, consequently, $X=\bigcup{\mathcal{B}}$. Let $B_1,B_2\in\mathcal{B}$ be a pair of non-disjoint basis sets and $x\in B_1\cap B_2$. Since $\mathcal{B}\subseteq\mathcal{T}$, then $B_1\cap B_2\in\mathcal{T}$. Thus there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B_1\cap B_2=\bigcup{\mathcal{B}'}$. Hence, there exists a basis set $B_3\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B_3\subseteq B_1\cap B_2$.
+      \item[\boxed{2\Rightarrow1}] Let $\mathcal{T}:=\set{\bigcup{\mathcal{B}'}\middle|\mathcal{B}'\subseteq\mathcal{B}}\subseteq\mathcal{P}\pr{X}$. Let's prove that $\mathcal{T}$ is a topology on $X$. Firstly, $\varnothing=\bigcup{\varnothing},X=\bigcup{\mathcal{B}}\in\mathcal{T}$. 
       
-      Let $G_1,G_2\in\mathcal{T}$. If $G_1\cap G_2=\varnothing$, there is nothing to prove. Suppose $G_1\cap G_2\neq\varnothing$. Let $\mathcal{B}',\mathcal{B}''\subseteq\mathcal{B}$ such that $G_1=\bigcup{\mathcal{B}'}$ and $G_2=\bigcup{\mathcal{B}''}$. Then $G_1\cap G_2=\bigcup_{B'\in\mathcal{B}',B''\in\mathcal{B}''}{\pr{B'\cap B''}}$. Given $x\in G_1\cap G_2$, there exists $B'_x\in\mathcal{B}'$ and $B''_x\in\mathcal{B}''$ such that $x\in B'_x\cap B''_x$. By hypothesis, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq B'_x\cap B''_x$. Then $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{\set{x}}\subseteq\bigcup_{x\in G_1\cap G_2}{B_x}\subseteq G_1\cap G_2$ and, consequently, $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{B_x}$. Let $\widetilde{B}:=\set{B_x\middle|x\in G_1\cap G_2}\subseteq\mathcal{B}$. Then $G_1\cap G_2=\bigcup{\widetilde{B}}\in\mathcal{T}$. 
+      Let $G_1,G_2\in\mathcal{T}$. If $G_1$ and $G_2$ are a pair of disjoint open sets, then there is nothing to prove. Suppose $G_1\cap G_2\neq\varnothing$. Let $\mathcal{B}',\mathcal{B}''\subseteq\mathcal{B}$ such that $G_1=\bigcup{\mathcal{B}'}$ and $G_2=\bigcup{\mathcal{B}''}$. Then $G_1\cap G_2=\bigcup_{B'\in\mathcal{B}',B''\in\mathcal{B}''}{\pr{B'\cap B''}}$. Given $x\in G_1\cap G_2$, there exists a basis set $B'_x\in\mathcal{B}'$ and $B''_x\in\mathcal{B}''$ such that $x\in B'_x\cap B''_x$. By hypothesis, there exists a basis set $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq B'_x\cap B''_x$. Then $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{\set{x}}\subseteq\bigcup_{x\in G_1\cap G_2}{B_x}\subseteq G_1\cap G_2$ and, consequently, $G_1\cap G_2=\bigcup_{x\in G_1\cap G_2}{B_x}$. Let $\widetilde{B}:=\set{B_x\middle|x\in G_1\cap G_2}\subseteq\mathcal{B}$. Then $G_1\cap G_2=\bigcup{\widetilde{B}}\in\mathcal{T}$. 
 
       Let $\mathcal{G}\subseteq\mathcal{T}$. For each $G\in\mathcal{G}$, there exists $\mathcal{B}_G\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}_G}$. Let $\mathcal{B}':=\bigcup\set{\mathcal{B}_G\middle|G\in\mathcal{G}}\subseteq\mathcal{B}$. Then $\bigcup{\mathcal{G}}=\bigcup{\mathcal{B}'}\in\mathcal{T}$.
 
@@ -186,27 +192,28 @@ In general, the arbitrary union of closed sets in a topological space is not a c
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ a collection of open sets in $\mathcal{T}$. 
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ be a collection of open sets in $\mathcal{T}$. The following are equivalent:
+
   \begin{enumerate}
     \item $\mathcal{B}$ is a basis for $\mathcal{T}$.
-    \item For any open set $G\in\mathcal{T}$, if $x\in G$, there exists $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq G$.
+    \item For any open set $G\in\mathcal{T}$, if $x\in G$, there exists a basis set $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq G$.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}$ and $x\in G$. Since $\mathcal{B}$ is a basis for $\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. As $x\in G=\bigcup{\mathcal{B}'}$, there exists $B=B\pr{x}\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G$.
-      \item[\boxed{2\Rightarrow1}] Let $G\in\mathcal{T}$. Given $x\in G$, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq G$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G$ and, consequently, $G=\bigcup_{x\in G}{B_x}$. Thus $\mathcal{B}':=\set{B_x\middle|x\in G}\subseteq\mathcal{B}$ and $G=\bigcup{\mathcal{B}'}$. Therefore, $\mathcal{B}$ is a basis for $\mathcal{T}$.
+      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}$ and $x\in G$. Since $\mathcal{B}$ is a basis for $\mathcal{T}$, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. As $x\in G=\bigcup{\mathcal{B}'}$, there exists $B\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G$.
+      \item[\boxed{2\Rightarrow1}] Let $G\in\mathcal{T}$. Given $x\in G$, there exists a basis set $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq G$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G$ and, consequently, $G=\bigcup_{x\in G}{B_x}$. Thus $\mathcal{B}':=\set{B_x\middle|x\in G}\subseteq\mathcal{B}$ and $G=\bigcup{\mathcal{B}'}$. Therefore, $\mathcal{B}$ is a basis for $\mathcal{T}$.
     \end{itemize}
   \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space, $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$ and $G\subseteq X$. Then $G\in\mathcal{T}$ if and only if, for each $x\in G$, there exists $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq G$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $\mathcal{B}\subseteq\mathcal{T}$ be a basis for $\mathcal{T}$ and $G\subseteq X$. Then $G\in\mathcal{T}$ if and only if, for each $x\in G$, there exists a basis set $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq G$.
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
       \item[\boxed{\Rightarrow}] Trivial by the previous proposition.
-      \item[\boxed{\Leftarrow}] If $x\in G$, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq G$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G$ and, therefore, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$.
+      \item[\boxed{\Leftarrow}] If $x\in G$, there exists a basis set $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq G$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq G$ and, therefore, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -215,30 +222,36 @@ In general, the arbitrary union of closed sets in a topological space is not a c
   Some examples of basis for a topology on a set are the following:
 
   \begin{itemize}
-    \item If $X$ is any set, then $\mathcal{B}:=\set{\set{x}\middle|x\in X}$ is a basis for the discrete topology. It is enough to notice that, for all $A\subseteq X$, we have $A=\bigcup_{x\in A}{\set{x}}$ and $\set{x}\in\mathcal{T}_{\text{dis}}$ for all $x\in X$.
+    \item \textbf{Discrete topology}: If $X$ is any set, then $\mathcal{B}:=\set{\set{x}\middle|x\in X}$ is a basis for the discrete topology. It is enough to notice that, for all $A\subseteq X$, we have $A=\bigcup_{x\in A}{\set{x}}$ and $\set{x}\in\mathcal{T}_{\text{dis}}$ for all $x\in X$.
     \item \textbf{Euclidean topology on $\mathbb{R}$}: We define the following collection of subsets of $\mathbb{R}$:
 
     \begin{equation}
-        \mathcal{B}:=\set{\pr{a,b}\middle|a,b\in\mathbb{R},a<b}.
+        \mathcal{B}:=\set{\pr{a,b}\middle|a,b\in\mathbb{R},a<b}\subseteq\mathcal{P}\pr{\mathbb{R}}.
     \end{equation}
 
-    Let $x\in\mathbb{R}$. We define $B_x:=\pr{x-1,x+1}\in\mathcal{B}$. Clearly $x\in B_x$, $\mathbb{R}=\bigcup_{x\in\mathbb{R}}{\set{x}}\subseteq\bigcup_{x\in\mathbb{R}}{B_x}\subseteq\bigcup{\mathcal{B}}\subseteq\mathbb{R}$ and, consequently, $\mathbb{R}=\bigcup{\mathcal{B}}$. Let $B_1,B_2\in\mathcal{B}$ and, $a,b,a',b'\in\mathbb{R}$ with $a<b$ and $a'<b'$ such that $B_1=\pr{a,b}$ and $B_2=\pr{a',b'}$. If $B_1\cap B_2=\varnothing$, there is nothing to prove. Suppose $B_1\cap B_2\neq\varnothing$. Then $B_1\cap B_2=\pr{\max\set{a,a'},\min\set{b,b'}}\in\mathcal{B}$. Therefore, $\mathcal{B}$ is a basis for the topology on $\mathbb{R}$ called \textit{Euclidean topology on $\mathbb{R}$}. We will denote this topology by $\mathcal{T}_{e}\pr{\mathbb{R}}$.
+    Let $x\in\mathbb{R}$. We define $B_x:=\pr{x-1,x+1}\in\mathcal{B}$. Clearly $x\in B_x$, $\mathbb{R}=\bigcup_{x\in\mathbb{R}}{\set{x}}\subseteq\bigcup_{x\in\mathbb{R}}{B_x}\subseteq\bigcup{\mathcal{B}}\subseteq\mathbb{R}$ and, consequently, $\mathbb{R}=\bigcup{\mathcal{B}}$. Let $B_1,B_2\in\mathcal{B}$ be a pair of non-disjoint sets and, $a,b,a',b'\in\mathbb{R}$ with $a<b$ and $a'<b'$ such that $B_1=\pr{a,b}$ and $B_2=\pr{a',b'}$. Then $B_1\cap B_2=\pr{\max\set{a,a'},\min\set{b,b'}}\in\mathcal{B}$. Therefore, $\mathcal{B}$ is a basis for the topology on $\mathbb{R}$.
+    
+    We define the \emph{Euclidean topology on $\mathbb{R}$} as the following topology on $\mathbb{R}$:
+    
+    \begin{equation}
+      \mathcal{T}_{e}\pr{\mathbb{R}}:=\mathcal{T}\pr{\set{\pr{a,b}\middle|a,b\in\mathbb{R},a<b}}.
+    \end{equation}
   \end{itemize}
 \end{example}
 
 \begin{example}
   Let $\pr{X,\leq}$ be a totally ordered set. Given $a,b\in X$ with $a<b$, we define the following subsets of $X$:
 
-  \begin{itemize}
-    \item[1.] \textbf{Open interval}: $\pr{a,b}:=\set{x\in X\middle|a<x<b}$.
-    \item[2.] \textbf{Semiopen interval}: $\bpr{a,b}:=\set{x\in X\middle|a\leq x<b}, \pbr{a,b}:=\set{x\in X\middle|a<x\leq b}$.
-    \item[3.] \textbf{Closed interval}: $\br{a,b}=\set{x\in X\middle|a\leq x\leq b}$.
-  \end{itemize}
+  \begin{enumerate}
+    \item \textbf{Open interval}: $\pr{a,b}:=\set{x\in X\middle|a<x<b}$.
+    \item \textbf{Semiopen interval}: $\bpr{a,b}:=\set{x\in X\middle|a\leq x<b}, \pbr{a,b}:=\set{x\in X\middle|a<x\leq b}$.
+    \item \textbf{Closed interval}: $\br{a,b}=\set{x\in X\middle|a\leq x\leq b}$.
+  \end{enumerate}
 
   Using these sets, we can define the following topologies on $X$:
 
   \begin{itemize}
-      \item \textbf{Order topology}: Let $\mathcal{B}_{\leq}$ be a collection of subsets of $X$ such that they are one of the following types:
+      \item \textbf{Order topology}: Let $\mathcal{B}_{\leq}\subseteq\mathcal{P}\pr{X}$ be a collection of subsets of $X$ such that they are one of the following types:
 
       \begin{itemize}
         \item[(i)] Open intervals in $X$.
@@ -246,509 +259,570 @@ In general, the arbitrary union of closed sets in a topological space is not a c
         \item[(iii)] Semiopen intervals in $X$ of the form $\pbr{a,b_0}$ where $a\in X$ and $b_0$ is the maximum of $X$ if it exists.
       \end{itemize}
 
-      Since the intersection of two non-disjoint sets of $\mathcal{B}_{\leq}$ is an element of $\mathcal{B}_{\leq}$, then $\mathcal{B}_{\leq}$ is a basis for a topology on $X$ called the \textit{order topology} and we will denote it by $\mathcal{T}_e$. We will denote by $X_{\leq}:=\pr{X,\mathcal{T}_{\leq}}$.
+      Since the intersection of non-disjoint pair of sets of $\mathcal{B}_{\leq}$ is an element of $\mathcal{B}_{\leq}$, then $\mathcal{B}_{\leq}$ is a basis for a topology on $X$ called the \emph{order topology} and we will denote it by $\mathcal{T}_{\leq}$. We further denote $X_{\leq}$ the topological space $\pr{X,\mathcal{T}_{\leq}}$.
 
-      This definition is based on the euclidean topology on $\mathbb{R}$. In fact, $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}=\mathbb{R}_{\leq}$.
+      This definition is based on the Euclidean topology on $\mathbb{R}$. In fact, $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}=\mathbb{R}_{\leq}$.
 
-      \item \textbf{Lower bound topology and Sorgenfrey's line}: Consider the following collection of subsets of $X$:
+      \item \textbf{Lower bound topology and Sorgenfrey's line}: Let $\mathcal{B}_{\ell}\subseteq\mathcal{P}\pr{X}$ be a collection of subsets of $X$ such that they are one of the following types:
 
-      \begin{equation}
-          \mathcal{B}_{\ell}:=\set{\bpr{a,b}\middle|a,b\in X, a<b}.
-      \end{equation}
+      \begin{itemize}
+        \item[(i)] Semiopen intervals in $X$ of the form $\bpr{a,b}$ where $a,b\in X$ and $a<b$.
+        \item[(ii)] The closed interval in $X$ of the form $\br{a,b_0}$ where $b_0$ is the maximum of $X$ if it exists.
+      \end{itemize}
 
-      Since the intersection of two non-disjoint sets of $\mathcal{B}_{\ell}$ is an element of $\mathcal{B}_{\ell}$, then $\mathcal{B}_{\ell}$ is a basis for a topology on $X$ called the \textit{lower bound topology} and is denoted by $\mathcal{T}_{\ell}$. The topological space $\pr{X,\mathcal{T}_{\ell}}$ is denoted by $X_{\ell}$. If $X=\mathbb{R}$, the resulting space is called \textit{Sorgenfrey's line}.
+      Since the intersection of non-disjoint pair of sets of $\mathcal{B}_{\ell}$ is an element of $\mathcal{B}_{\ell}$, then $\mathcal{B}_{\ell}$ is a basis for a topology on $X$ called the \emph{lower bound topology} and is denoted by $\mathcal{T}_{\ell}$. The topological space $\pr{X,\mathcal{T}_{\ell}}$ is denoted by $X_{\ell}$. If $X=\mathbb{R}$, the resulting space is called \emph{Sorgenfrey's line}.
       
-      \item \textbf{Upper bound topology}: Consider the following collection of subsets of $X$:
+      \item \textbf{Upper bound topology}: Let $\mathcal{B}_{u}\subseteq\mathcal{P}\pr{X}$ be a collection of subsets of $X$ such that they are one of the following types:
 
-      \begin{equation}
-          \mathcal{B}_u:=\set{\pbr{a,b}\middle|a,b\in X, a<b}.
-      \end{equation}
+      \begin{itemize}
+        \item[(i)] Semiopen intervals in $X$ of the form $\pbr{a,b}$ where $a,b\in X$ and $a<b$.
+        \item[(ii)] The closed interval in $X$ of the form $\br{a_0,b}$ where $a_0$ is the minimum of $X$ if it exists.
+      \end{itemize}
 
-      Since the intersection of two non-disjoint sets of $\mathcal{B}_u$ is an element of $\mathcal{B}_u$, then $\mathcal{B}_u$ is a basis called the \textit{upper bound topology} and is denoted by $\mathcal{T}_u$. The topological space $\pr{X,\mathcal{T}_u}$ is denoted by $X_u$.
+      Since the intersection of non-disjoint pair of sets of $\mathcal{B}_u$ is an element of $\mathcal{B}_u$, then $\mathcal{B}_u$ is a basis for a topology on $X$ called the \emph{upper bound topology} and is denoted by $\mathcal{T}_u$. The topological space $\pr{X,\mathcal{T}_u}$ is denoted by $X_u$.
   \end{itemize}
 \end{example}
 
 \begin{proposition}
-  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ two topologies on $X$ with bases $\mathcal{B}$ and $\mathcal{B}'$ respectively. Then $\mathcal{T}$ is finer than $\mathcal{T}'$ if and only if for all $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$, there exists $B\in\mathcal{B}$ such that $x\in B\subseteq B'$.
+  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ be two topologies on $X$ with bases $\mathcal{B}$ and $\mathcal{B}'$ respectively. Then $\mathcal{T}$ is finer than $\mathcal{T}'$ if and only if for all $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$, there exists a basis set $B\in\mathcal{B}$ such that $x\in B\subseteq B'$.
 
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
         \item[\boxed{\Rightarrow}] Let $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$. Since $\mathcal{T}'\subseteq\mathcal{T}$, then $B'\in\mathcal{B}$. It suffices to take $B:=B'$.
-        \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}'$. Then there exists $\mathcal{B}''\subseteq\mathcal{B'}$ such that $G=\bigcup{\mathcal{B}''}$. Given $x\in G$, there exists $B''\in\mathcal{B}''$ such that $x\in B''$. By hypothesis, there exists $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq B''$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq\bigcup_{B''\in\mathcal{B}''}{B''}=G$, that is to say, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$. Thus $\mathcal{T}'\subseteq\mathcal{T}$. Therefore, $\mathcal{T}$ is finer than $\mathcal{T}'$.
+        \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}'$. Then there exists $\mathcal{B}''\subseteq\mathcal{B'}$ such that $G=\bigcup{\mathcal{B}''}$. Given $x\in G$, there exists a basis set $B''\in\mathcal{B}''$ such that $x\in B''$. By hypothesis, there exists a basis set $B_x\in\mathcal{B}$ such that $x\in B_x\subseteq B''$. Then $G=\bigcup_{x\in G}{\set{x}}\subseteq\bigcup_{x\in G}{B_x}\subseteq\bigcup_{B''\in\mathcal{B}''}{B''}=G$, that is to say, $G=\bigcup_{x\in G}{B_x}\in\mathcal{T}$. Thus $\mathcal{T}'\subseteq\mathcal{T}$. Therefore, $\mathcal{T}$ is finer than $\mathcal{T}'$.
     \end{itemize}
   \end{proof}
 \end{proposition}
 
 \begin{corollary}
-  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ two topologies on $X$ with bases $\mathcal{B}$ and $\mathcal{B}'$ respectively. Then $\mathcal{T}=\mathcal{T}'$ if and only if the following properties hold:
+  Let $X$ be a set and $\mathcal{T},\mathcal{T}'\subseteq\mathcal{P}\pr{X}$ be two topologies on $X$ with bases $\mathcal{B}$ and $\mathcal{B}'$ respectively. Then $\mathcal{T}=\mathcal{T}'$ if and only if the following properties hold:
 
-  \begin{itemize}
-      \item[1.] For all $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$, there exists $B\in\mathcal{B}$ such that $x\in B\subseteq B'$.
-      \item[2.] For all $x\in X$ and $B\in\mathcal{B}$ with $x\in B$, there exists $B'\in\mathcal{B}'$ such that $x\in B'\subseteq B$.
-  \end{itemize}
+  \begin{enumerate}
+      \item For all $x\in X$ and $B'\in\mathcal{B}'$ with $x\in B'$, there exists a basis set $B\in\mathcal{B}$ such that $x\in B\subseteq B'$.
+      \item For all $x\in X$ and $B\in\mathcal{B}$ with $x\in B$, there exists a basis set $B'\in\mathcal{B}'$ such that $x\in B'\subseteq B$.
+  \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     It is a direct consequence of the previous proposition.
   \end{proof}
 \end{corollary}
 
 \begin{definition}
-  Let $X$ be a set. A \textit{subbasis for a topology on $X$} is a collection $\mathcal{S}\subseteq\mathcal{P}\pr{X}$ that covers $X$. If $\mathcal{T}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ and $\mathcal{S}\subseteq\mathcal{P}\pr{X}$ is a subbasis for a topology on $X$ such that $\mathcal{T}=\mathcal{T}\pr{{\mathcal{S}}}$, we say that $\mathcal{S}$ is a \textit{subbasis for $\mathcal{T}$}.
+  Let $X$ be a set. A \emph{subbasis for a topology on $X$} is a collection $\mathcal{S}\subseteq\mathcal{P}\pr{X}$ that covers $X$. If $\mathcal{T}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ and $\mathcal{S}\subseteq\mathcal{P}\pr{X}$ is a subbasis for a topology on $X$ such that $\mathcal{T}=\mathcal{T}\pr{{\mathcal{S}}}$, we say that $\mathcal{S}$ is a \emph{subbasis for $\mathcal{T}$}.
 \end{definition}
 
 \begin{proposition}
-  Let $X$ be a set and $\mathcal{S}$ a subbasis for a topology on $X$. We define $\mathcal{B}\subseteq\mathcal{P}\pr{X}$ as the following collection of subsets of $X$:
+  Let $X$ be a set and $\mathcal{S}$ be a subbasis for a topology on $X$. We define $\mathcal{B}_{\mathcal{S}}\subseteq\mathcal{P}\pr{X}$ as the following collection of subsets of $X$:
 
   \begin{equation}
-    \mathcal{B}:=\set{\bigcap_{k=1}^{n}{S_k}\middle|n\in\mathbb{N},S_1,\dots,S_n\in\mathcal{S}}.
+    \mathcal{B}_{\mathcal{S}}:=\set{\bigcap_{k=1}^{n}{S_k}\middle|n\in\mathbb{N},S_1,\dots,S_n\in\mathcal{S}}.
   \end{equation}
 
-  Then $\mathcal{B}$ is a basis for the topology $\mathcal{T}\pr{\mathcal{S}}$, that is to say, any open set in $\mathcal{T}\pr{\mathcal{S}}$ is arbitrary union of finite intersections of sets in $\mathcal{S}$.
+  Then $\mathcal{B}_{\mathcal{S}}$ is a basis for the topology $\mathcal{T}\pr{\mathcal{S}}$, that is to say, any open set in $\mathcal{T}\pr{\mathcal{S}}$ is arbitrary union of finite intersections of sets in $\mathcal{S}$.
   \begin{proof}[\rm\textbf{Proof}]
-    It is immediate to check that $\mathcal{S}\subseteq\mathcal{B}$ and, consequently, $\mathcal{T}\pr{\mathcal{S}}\subseteq\mathcal{T}\pr{\mathcal{B}}$. Since $\mathcal{S}\subseteq\mathcal{T}\pr{\mathcal{S}}$, we have that $\mathcal{B}\subseteq\mathcal{T}\pr{\mathcal{S}}$ and, consequently, $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}\pr{\mathcal{S}}$. Thus $\mathcal{T}\pr{\mathcal{S}}=\mathcal{T}\pr{\mathcal{B}}$.
+    It is immediate to check that $\mathcal{S}\subseteq\mathcal{B}_{\mathcal{S}}$ and, consequently, $\mathcal{T}\pr{\mathcal{S}}\subseteq\mathcal{T}\pr{\mathcal{B}_{\mathcal{S}}}$. Since $\mathcal{S}\subseteq\mathcal{T}\pr{\mathcal{S}}$, we have that $\mathcal{B}_{\mathcal{S}}\subseteq\mathcal{T}\pr{\mathcal{S}}$ and, consequently, $\mathcal{T}\pr{\mathcal{B}_{\mathcal{S}}}\subseteq\mathcal{T}\pr{\mathcal{S}}$. Thus $\mathcal{T}\pr{\mathcal{S}}=\mathcal{T}\pr{\mathcal{B}_{\mathcal{S}}}$.
 
-    Let's prove that $\mathcal{B}$ is a basis for a topology. Observe that $X=\bigcup{\mathcal{S}}$. Let $B_1,B_2\in\mathcal{B}$ and suppose $B_1\cap B_2\neq\varnothing$. Let $S_1,\dots,S_n,S'_1,\dots,S'_m\in\mathcal{S}$ with $n,m\in\mathbb{N}$ such that $B_1=\bigcup_{k=1}^{n}{S_k}$ and $B_2=\bigcup_{l=1}^{m}{S'_l}$. Then $B_1\cap B_2=\bigcup_{k=1}^{n}{\bigcup_{l=1}^{m}{\pr{S_k\cap S'_l}}}\in\mathcal{S}$. Thus, given $x\in B_1\cap B_2$, there exists $B_3:=B_1\cap B_2$ such that $x\in B_3\subseteq B_1\cap B_2$. Therefore, $\mathcal{B}$ is a basis for a topology.
+    Let's prove that $\mathcal{B}_{\mathcal{S}}$ is a basis for a topology. Observe that $X=\bigcup{\mathcal{S}}$. Let $B_1,B_2\in\mathcal{B}_{\mathcal{S}}$ be a pair of non-disjoint basis sets. Let $S_1,\dots,S_n,S'_1,\dots,S'_m\in\mathcal{S}$ with $n,m\in\mathbb{N}$ such that $B_1=\bigcap_{k=1}^{n}{S_k}$ and $B_2=\bigcap_{l=1}^{m}{S'_l}$. Then $B_1\cap B_2=\bigcap_{k=1}^{n}{\bigcap_{l=1}^{m}{\pr{S_k\cap S'_l}}}\in\mathcal{B}_{\mathcal{S}}$. Thus, given $x\in B_1\cap B_2$, there exists a basis set $B_3:=B_1\cap B_2\in\mathcal{B}_{\mathcal{S}}$ such that $x\in B_3\subseteq B_1\cap B_2$. Therefore, $\mathcal{B}_{\mathcal{S}}$ is a basis for a topology.
 
-    Using that $\mathcal{T}\pr{\mathcal{S}}=\mathcal{T}\pr{\mathcal{B}}$, we deduce that $\mathcal{B}$ is a basis for $\mathcal{T}\pr{\mathcal{S}}$.
+    Using that $\mathcal{T}\pr{\mathcal{S}}=\mathcal{T}\pr{\mathcal{B}_{\mathcal{S}}}$, we deduce that $\mathcal{B}_{\mathcal{S}}$ is a basis for $\mathcal{T}\pr{\mathcal{S}}$.
   \end{proof}
 \end{proposition}
 
 \begin{example}
-  Let $\pr{X,\leq}$ a totally ordered set. Given $a,b\in X$, we define the following sets:
+  Let $\pr{X,\leq}$ be a totally ordered set. Given $a,b\in X$, we define the following sets:
 
   \begin{itemize}
     \item \textbf{Open rays}: $\pr{a,+\infty}:=\set{x\middle|x>a}$ and $\pr{-\infty,b}:=\set{x\middle|x<b}$.
     \item \textbf{Closed rays}: $\bpr{a,+\infty}:=\set{x\middle|x\geq a}$ and $\pbr{-\infty,b}:=\set{x\middle|x\leq b}$.
   \end{itemize}
 
-  Here, the symbols $-\infty$ and $+\infty$ does not denote any element of $X$. For example, in $\pr{\br{0,1},\leq}$, $\pr{-\infty,1}=\bpr{0,1}$. Observe the following:
+  Here, the symbols $-\infty$ and $+\infty$ do not denote any element of $X$. For example, in $\pr{\br{0,1},\leq}$, $\pr{-\infty,1}=\bpr{0,1}$. Observe the following:
 
   \begin{itemize}
     \item If there exists $\min\pr{X}:=a_0$, then $\pr{-\infty,b}=\bpr{a_0,b}$ and $\pbr{-\infty,b}=\br{a_0,b}$.
     \item If there exists $\max\pr{X}:=b_0$, then $\pr{a,+\infty}=\pbr{a,b_0}$ and $\bpr{a,+\infty}=\br{a,b_0}$.
   \end{itemize}
   
-  Let $\mathcal{S}\subseteq\mathcal{P}\pr{X}$ be the set of open rays in $X$. Then $\mathcal{S}$ is a subbasis for the order topology.
-
-  % TO-DO: PROBAR QUE ES SUBBASE DE LA TOPOLOGÍA DEL ORDEN
+  Consider the following collection of sets in $\mathcal{P}\pr{X}$:
+  
+  \begin{equation}
+    \begin{split}
+      \mathcal{S}_{\leq} & := \set{\pr{a,+\infty}\middle|a\in X}\cup\set{\pr{-\infty,b}\middle|b\in X}\subseteq\mathcal{P}\pr{X},\\
+      \mathcal{S}_{\ell} & := \set{\bpr{a,+\infty}\middle|a\in X}\cup\set{\pr{-\infty,b}\middle|b\in X}\subseteq\mathcal{P}\pr{X},\\
+      \mathcal{S}_{u} & := \set{\pr{a,+\infty}\middle|a\in X}\cup\set{\pbr{-\infty,b}\middle|b\in X}\subseteq\mathcal{P}\pr{X}.
+    \end{split}
+  \end{equation}
+  
+  Then:
+  
+  \begin{itemize}
+    \item $\mathcal{S}_{\leq}$ is a subbasis for the order topology.
+    \item $\mathcal{S}_{\ell}$ is a subbasis for the lower bound topology.
+    \item $\mathcal{S}_{u}$ is a subbasis for the upper bound topology.
+  \end{itemize}
 \end{example}
 
-\section{Subespacios topológicos}
+\section{Topological subspaces}
 
 \begin{proposition}
   Let $\pr{X,\mathcal{T}}$ be a topological space and $Y\subseteq X$. Then the collection $\mathcal{T}_Y:=\set{G\cap Y\middle|G\in\mathcal{T}}\subseteq\mathcal{P}\pr{Y}$ of subsets in $Y$ is a topology on $Y$.
   \begin{proof}[\rm\textbf{Proof}]
-    Claramente $\varnothing=\varnothing\cap Y,Y=X\cap Y\in\mathcal{T}$. Sean $G_1',G'_2\in\mathcal{T}$. Entonces existen abiertos $G_1$ y $G_2$ en $X$ tales que $G'_1=G_1\cap Y$ y $G'_2=G_2\cap Y$. Sea $\mathcal{G}'\subseteq\mathcal{T}$. Dado $G'\in\mathcal{G}'$, existe un abierto $G$ en $X$ tal que $G'=G\cap Y$. Sea $\mathcal{G}=\set{G\middle|\exists G'\in\mathcal{G}'\text{ tal que }G'=G\cap Y}$. Entonces $\bigcup_{G\in\mathcal{G}}{G}$ es abierto en $X$ y:
-
-    \begin{equation}
-        \bigcup_{G'\in\mathcal{G}'}{G'}=
-        \bigcup_{G\in\mathcal{G}}{G\cap Y}=\pr{\bigcup_{G\in\mathcal{G}}{G}}\cap Y\in\mathcal{T}.
-    \end{equation}
-
-    Por tanto, $\mathcal{T}$ es una topología sobre $Y$.
+    It is immediate that $\varnothing=\varnothing\cap Y,Y=X\cap Y\in\mathcal{T}_Y$. 
+    
+    Let $G_1',G'_2\in\mathcal{T}_Y$. Then there exists two open sets $G_1,G_2\in\mathcal{T}$ such that $G'_1=G_1\cap Y$ and $G'_2=G_2\cap Y$. Thus $G_1\cap G_2\in\mathcal{T}$ and $G'_1\cap G'_2=\pr{G_1\cap G_2}\cap Y\in\mathcal{T}_Y$. 
+    
+    Let $\mathcal{G}'\subseteq\mathcal{T}_Y$. Given $G'\in\mathcal{G}'$, there exists an open set $G\in\mathcal{T}$ such that $G'=G\cap Y$. Let $\mathcal{G}=\set{G\middle|G\cap Y\in\mathcal{G}'}$. Then $\bigcup{\mathcal{G}}\in\mathcal{T}$ and $\bigcup{\mathcal{G}'}=\bigcup_{G\in\mathcal{G}}{\pr{G\cap Y}}=\pr{\bigcup{\mathcal{G}}}\cap Y\in\mathcal{T}_Y$. Therefore, $\mathcal{T}_Y$ is a topology on $Y$.
   \end{proof}
 \end{proposition}
 
-\begin{definition}[\textbf{Subespacio topológico}]
-  Sean $X$ e $Y$ espacios topológicos con $X\subseteq Y$. Diremos que $Y$ es un subespacio topológico de $X$ si para todo abierto $G'$ en $Y$, existe un abierto $G:=G\pr{G'}$ en $X$ tal que $G'=G\cap Y$.
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $Y\subseteq X$. We define the \emph{topological space induced by $Y$} as the topological space $\pr{Y,\mathcal{T}_Y}$ with $\mathcal{T}_Y:=\set{G\cap Y\middle|G\in\mathcal{T}}\subseteq\mathcal{P}\pr{Y}$.
 \end{definition}
 
 \begin{proposition}
-Sean $X$ un espacio topológico e $Y\subseteq X$ un subespacio topológico. Si $\mathcal{B}$ es una base para la topología en $X$, entonces $\mathcal{B}_Y=\set{B\cap Y\middle|B\in\mathcal{B}}$ es base para la topología en $Y$.
-\begin{proof}[\rm\textbf{Proof}]
-Sea $G'$ abierto en $Y$. Entonces existe un abierto $G$ en $X$ tal que $G'=G\cap Y$. Luego existe $\mathcal{B}'\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in\mathcal{B}}{B}$. En consecuencia:
-
-\begin{equation}
-    G'=\pr{\bigcup_{B\in\mathcal{B}}{B}}\cap Y=\bigcup_{B\in\mathcal{B}}{\pr{B\cap Y}}.
-\end{equation}
-
-Por tanto, $\mathcal{B}_Y$ es base para la topología en $Y$.
-\end{proof}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $Y\subseteq X$. If $\mathcal{B}$ is a basis for $\mathcal{T}$, then $\mathcal{B}_Y:=\set{B\cap Y\middle|B\in\mathcal{B}}$ is a basis for $\mathcal{T}_Y$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $G'\in\mathcal{T}_Y$. Then there exists an open set $G\in\mathcal{T}$ such that $G'=G\cap Y$. Thus, there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Let $\mathcal{B}'_Y:=\set{B\cap Y\middle|B\in\mathcal{B}'}\subseteq\mathcal{B}_Y$. Then $G'=G\cap Y=\pr{\bigcup{\mathcal{B}'}}\cap Y=\bigcup{\mathcal{B}'_Y}$. Therefore, $\mathcal{B}_Y$ is a basis for $\mathcal{T}_Y$.
+  \end{proof}
 \end{proposition}
 
 \begin{proposition}
-Sean $X$ un espacio topológico e $Y\subseteq X$ un subespacio topológico. Si $Y$ es abierto en $X$ y $G$ es abierto en $Y$, entonces $G$ es abierto en $X$.
-\begin{proof}[\rm\textbf{Proof}]
-Trivial porque la intersección finita de abiertos en $X$ es un abierto en el mismo.
-\end{proof}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $Y\subseteq X$. If $Y\in\mathcal{T}$, then $\mathcal{T}_Y\subseteq\mathcal{T}$.
+  \begin{proof}[\rm\textbf{Proof}]
+  It is trivial, because the finite intersection of open sets in $\mathcal{T}$ is an open set in $\mathcal{T}$.
+  \end{proof}
 \end{proposition}
 
 \begin{proposition}
-Sean $X$ un espacio topológico, $Y\subseteq X$ un subespacio topológico y $C'\subseteq Y$. Entonces $C'$ es cerrado en $Y$ si y solamente si existe un cerrado $C$ en $X$ tal que $C'=C\cap Y$.
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[\boxed{\Rightarrow}] Si $C'$ es cerrado en $Y$, entonces $Y\setminus C'$ es abierto en $Y$. Sea $G$ abierto en $X$ tal que $Y\setminus C'=G\cap Y$. Entonces $C'=Y\setminus\pr{G\cap Y}=Y\setminus G=\pr{X\setminus G}\cap Y$. Como $X\setminus G$ es cerrado en $X$, basta tomar $C=X\setminus G$.
-    \item[\boxed{\Leftarrow}] Observemos que $Y\setminus C'=Y\setminus C=\pr{X\setminus C}\cap Y$. Como $C$ es cerrado en $X$, entonces $X\setminus C$ es abierto en $X$. Luego $Y\setminus C'$ es abierto en $Y$. Por tanto, $C'$ es cerrado en $Y$.
-\end{itemize}
-\end{proof}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $Y\subseteq X$ and $F'\subseteq Y$. Then $F'\in\mathcal{F}\pr{Y,\mathcal{T}_Y}$ is a closed set if and only if there exists a closed set $F\in\mathcal{F}\pr{X,\mathcal{T}}$ such that $F'=F\cap Y$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+        \item[\boxed{\Rightarrow}] Since $F'\in\mathcal{F}\pr{Y,\mathcal{T}_Y}$, then $Y\setminus F'\in\mathcal{T}_Y$. Let $G\in\mathcal{T}$ be the open set such that $Y\setminus F'=G\cap Y$. Then $F'=Y\setminus\pr{G\cap Y}=Y\setminus G=\pr{X\setminus G}\cap Y$. It suffices to notice that $F:=X\setminus G\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set.
+        \item[\boxed{\Leftarrow}] Observe that $Y\setminus F'=Y\setminus F=\pr{X\setminus F}\cap Y$. Since $F\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set, we have $X\setminus F\in\mathcal{T}$. Then $Y\setminus F'\in\mathcal{T}_Y$ is an open set. Therefore, $F'\in\mathcal{F}\pr{Y,\mathcal{T}_Y}$ is a closed set.
+    \end{itemize}
+  \end{proof}
 \end{proposition}
 
 \begin{proposition}
-Sean $X$ un espacio topológico e $Y\subseteq X$ un subespacio topológico. Si $Y$ es cerrado en $X$ y $C$ es cerrado en $Y$, entonces $C$ es cerrado en $X$.
-\begin{proof}[\rm\textbf{Proof}]
-Trivial porque la intersección de cerrados en $X$ es un cerrado en el mismo.
-\end{proof}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $Y\subseteq X$ and $F'\subseteq Y$. If $Y\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set and $F'\in\mathcal{F}\pr{Y,\mathcal{T}_Y}$ is a closed set, then $F'\in\mathcal{F}\pr{X,\mathcal{T}}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Trivial because the arbitrary intersection of closed sets with respect to $\pr{X,\mathcal{T}}$ is a closed set with respect to that topological space.
+  \end{proof}
 \end{proposition}
 
-\section{Topología producto}
-
-\begin{definition}[\textbf{Espacio producto}]
-Sean $d\in\mathbb{N}$ y $X_1,\dots,X_d$ espacios topológicos. Se define la topología producto sobre $X_1\times\cdots\times X_d$ como aquella que tiene como base:
-
-\begin{equation}
-    \mathcal{B}=\set{G_1\times\cdots\times G_d\middle|\forall k\in\set{1,\dots,d},G_k\text{ es abierto en }X_k}.
-\end{equation}
-\end{definition}
+\section{Product topology}
 
 \begin{proposition}
-Sean $d\in\mathbb{N}$ y $X_1,\dots,X_d$ espacios topológicos con bases $\mathcal{B}_1,\dots,\mathcal{B}_d$ respectivamente. Entonces la topología producto sobre $X_1\times\cdots\times X_d$ tiene como base $\mathcal{B}=\mathcal{B}_1\times\cdots\times\mathcal{B}_d$.
-\begin{proof}[\rm\textbf{Proof}]
-Sea $G$ abierto en $X_1\times\cdots\times X_d$ y denotemos por $\tilde{\mathcal{B}}$ a la base de la topología producto de la definición. Entonces existe $\mathcal{B}'\subseteq\tilde{\mathcal{B}}$ tal que $G=\bigcup_{B\in\mathcal{B}'}{B}$. Para cada $B\in\mathcal{B}'$, sean $G_1^B,\dots,G_d^B$ abiertos en $X_1,\dots,X_d$ respectivamente tales que $B=G_1^B\times\cdots\times G_d^B$. Dado $k\in\set{1,\dots,d}$ y $B\in\mathcal{B}'$, existe $\mathcal{B}'_{k,B}\subseteq\mathcal{B}_k$ tal que $G_k^B=\bigcup_{B_{k,B}\in\mathcal{B}'_{k,B}}{B_{k,B}}$. Entonces:
-
-\begin{align*}
-    G & =\bigcup_{B\in\mathcal{B}'}{B}=\bigcup_{B\in\mathcal{B}'}{G_1^B\times\cdots\times G_d^B}=\bigcup_{B\in\mathcal{B}'}{\pr{\pr{\bigcup_{B_{1,B}\in\mathcal{B}'_{1,B}}{B_{1,B}}}\times\cdots\times\pr{\bigcup_{B_{d,B}\in\mathcal{B}'_{d,B}}{B_{d,B}}}}}\\
-    & = \bigcup_{B\in\mathcal{B}'}{\bigcup_{B_{1,B}\in\mathcal{B}'_{1,B}}{\dots\bigcup_{B_{d,B}\in\mathcal{B}'_{d,B}}{\pr{B_{1,B}\times\cdots\times B_{d,B}}}}}.
-\end{align*}
-
-De aquí, deducimos que $\mathcal{B}$ es base para la topología producto.
-\end{proof}
-\end{proposition}
-
-\begin{example}[\textbf{Topología euclídea sobre $\mathbb{R}^d$}]
-Consideremos $\mathbb{R}$ con la topología euclídea. Dado $d\in\mathbb{N}$, definimos la topología euclídea sobre $\mathbb{R}^d$, y la denotaremos como $\mathcal{T}_e\pr{\mathbb{R}^d}$, como la topología producto sobre $\mathbb{R}^d$. Observemos que $\mathcal{T}_e\pr{\mathbb{R}^d}$ tiene como base:
-
-\begin{equation}
-    \mathcal{B}=\set{\prod_{k=1}^{d}{\pr{a_k,b_k}}\middle|\forall k\in\set{1,\dots,d},a_k,b_k\in\mathbb{R},a_k<b_k}.
-\end{equation}
-\end{example}
-
-\begin{definition}[\textbf{Proyección}]
-Sean $d\in\mathbb{N}$ y $X_1,\dots,X_d$ espacios topológicos. Si $k\in\set{1,\dots,d}$, se define la proyección de $X_1\times\cdots\times X_{k-1}\times X_k\times X_{k+1}\times\cdots\times X_d$ sobre la $k$-ésima coordenada como la aplicación $\pi_k:X_1\times\cdots\times X_{k-1}\times X_k\times X_{k+1}\times\cdots\times X_d\rightarrow X_k$ definida como $\pi_k\pr{x_1,\dots,x_{k-1},x_k,x_{k+1},\dots,x_d}=x_k$.
-\end{definition}
-\begin{remark}
-Sean $d\in\mathbb{N}$, $X_1,\dots,X_d$ espacios topológicos, $k\in\set{1,\dots,d}$ y $G$ abierto en $X_k$. Entonces $\pi_k^{-1}\pr{G}=X_1\times\cdots\times X_{k-1}\times G\times X_{k+1}\times\cdots\times X_d$.
-\end{remark}
-
-\begin{proposition}
-Sean $d\in\mathbb{N}$ y $X_1,\dots,X_d$ espacios topológicos. La siguiente familia de subconjuntos de $X_1\times\cdots\times X_d$ es una subbase para la topología producto:
-
-\begin{equation}
-    \mathcal{S}=\bigcup_{k=1}^{d}{\set{\pi^{-1}_k\pr{G}\middle|G\text{ es abierto en }X_k}}.
-\end{equation}
-\begin{proof}[\rm\textbf{Proof}]
-Claramente $\mathcal{S}$ es subbase para una topología pues $X_1\times\cdots\times X_d\in\mathcal{S}$. Como $\mathcal{S}\subseteq\mathcal{B}\subseteq\mathcal{T}\pr{\mathcal{B}}$, entonces $\mathcal{T}\pr{\mathcal{S}}\subseteq\mathcal{T}\pr{\mathcal{B}}$. Para cada $k\in\set{1,\dots,d}$, sea $G_k$ abierto en $X_k$. Entonces $\pi_1^{-1}\pr{G_1}\cap\dots\cap\pi_d^{-1}\pr{G_d}=G_1\times\cdots\times G_d$. Luego $\mathcal{B}$ está contenida en el conjunto de intersecciones finitas de elementos de $\mathcal{S}$. De aquí, deducimos que $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}\pr{\mathcal{S}}$. En consecuencia, $\mathcal{T}\pr{\mathcal{B}}=\mathcal{T}\pr{\mathcal{S}}$. Por tanto, $\mathcal{S}$ es subbase para la topología producto. 
-\end{proof}
-\end{proposition}
-\section{Conjuntos notables}
-
-\begin{definition}[\textbf{Entorno de un punto}]
-Sean $\pr{X,\mathcal{T}}$ un espacio topológico y $x\in X$. Un entorno de $x$ (en $X$ respecto a la topología $\mathcal{T}$) es un conjunto $N\subseteq X$ para el que existe un abierto $G$ tal que $x\in G\subseteq N$. Si $N$ es abierto y $x\in X$, entonces $N$ es un entorno de $x$. En ese caso, diremos que $N$ es un entorno abierto de $x$. El conjunto de entornos de $x$ (en $X$ respecto a la topología $\mathcal{T}$) lo denotaremos como $\mathcal{N}_x^{\pr{X,\mathcal{T}}}$. Si no hay lugar a confusión, escribiremos $\mathcal{N}_x$.
-\end{definition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico con base $\mathcal{B}$, $x\in X$ y $N\subseteq X$ con $x\in N$. Entonces $N$ es un entorno de $x$ si y solamente si existe $B\in\mathcal{B}$ tal que $x\in B\subseteq N$.
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[\boxed{\Rightarrow}] Sea $G$ un abierto en $X$ tal que $x\in G\subseteq N$. Entonces existe $\mathcal{B}'\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in\mathcal{B}'}{B}$. Luego existe $B\in\mathcal{B}'\subseteq\mathcal{B}$ tal que $x\in B\subseteq G\subseteq N$.
-    \item[\boxed{\Leftarrow}] Trivial.
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico, $x\in X$ y $N,M\subseteq X$. Se cumple:
-
-\begin{itemize}
-    \item[1.] Si $N,M\in\mathcal{N}_x$, entonces $N\cap M\in\mathcal{N}_x$.
-    \item[2.] Si $N\in\mathcal{N}_x$ y $N\subseteq M$, entonces $M\in\mathcal{N}_x$.
-    \item[3.] Si $N,M\in\mathcal{N}_x$, entonces $N\cup M\in\mathcal{N}_x$.
-\end{itemize}
-
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] Sean $G_1$ y $G_2$ abiertos tales que $x\in G_1\subseteq N$ y $x\in G_2\subseteq M$. Entonces $x\in G_1\cap G_2\subseteq N\cap M$. Como $G_1\cap G_2$ es abierto, deducimos que $N\cap M\in\mathcal{N}_x$.
-    \item[2.] Sea $G$ abierto con $x\in G\subseteq N$. Como $N\subseteq M$, entonces $G\subseteq M$. Luego $M\in\mathcal{N}_x$.
-    \item[3.] Trivial por la propiedad anterior.
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{definition}[\textbf{Interior de un conjunto}]
-Sean $X$ un espacio topológico y $A\subseteq X$. Se define el interior de $A$ como el siguiente conjunto:
-
-\begin{equation}
-    \text{int}\pr{A}:=\set{x\in A\middle|A\text{ es entorno de }x}.
-\end{equation}
-
-Otra notación empleada es $A^\circ$.
-\end{definition}
-
-\begin{remark}
-Sean $X$ un espacio topológico y $A\subseteq X$. Obsérvese que $\text{int}\pr{A}\subseteq A$.
-\end{remark}
-
-\begin{proposition}
-Sean $X$ un espacio topológico con base $\mathcal{B}$, $A\subseteq X$ y $x\in A$. Son equivalentes:
-
-\begin{itemize}
-    \item[1.] $x\in\text{int}\pr{A}$.
-    \item[2.] Existe un abierto $G$ tal que $x\in G\subseteq A$.
-    \item[3.] Existe $B\in\mathcal{B}$ tal que $x\in B\subseteq A$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] Trivial por definición de entorno.
-    \item[2.] Sea $\mathcal{B}'\subseteq\mathcal{B}$ tal que $G=\bigcup_{B\in\mathcal{B}'}{B}$. Como $x\in G$, existe $B\in\mathcal{B}'\subseteq\mathcal{B}$ tal que $x\in B\subseteq G\subseteq A$.
-    \item[3.] Trivial.
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico, $A\subseteq X$ y $\mathcal{G}_A:=\set{G\middle|G\text{ es abierto},G\subseteq A}$. Entonces:
-
-\begin{equation}
-    \text{int}\pr{A}=\bigcup_{G\in\mathcal{G}_A}{G}.
-\end{equation}
-
-En consecuencia, $\text{int}\pr{A}$ es abierto.
-\begin{proof}[\rm\textbf{Proof}]
-Sea $x\in\text{int}\pr{A}$. Entonces existe un abierto $G_x$ tal que $x\in G\subseteq A$. Entonces $x\in\bigcup_{G\in\mathcal{G}_A}{G}$. Luego $\text{int}\pr{A}\subseteq\bigcup_{G\in\mathcal{G}_A}{G}$. Si $x\in\bigcup_{G\in\mathcal{G}_A}{G}$, existe $G\in\mathcal{G}_A$ abierto tal que $x\in G$. Como $G\in\mathcal{G}_A$, entonces $x\in G\subseteq A$. Luego $x\in\text{int}\pr{A}$. En consecuencia, $\bigcup_{G\in\mathcal{G}_A}{G}\subseteq\text{int}\pr{A}$. Por tanto, $\text{int}\pr{A}=\bigcup_{G\in\mathcal{G}_A}{G}$.
-\end{proof}
-\end{proposition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico, $A,B\subseteq X$ e $Y$ un subespacio topológico. Se cumple:
-\begin{itemize}
-    \item[1.] $A$ es abierto si y solamente si $\text{int}\pr{A}=A$.
-    \item[2.] $\text{int}\pr{\text{int}\pr{A}}=\text{int}\pr{A}$.
-    \item[3.] Si $A\subseteq B$, entonces $\text{int}\pr{A}\subseteq\text{int}\pr{B}$.
-    \item[4.] $\text{int}\pr{A}\cap\text{int}\pr{B}=\text{int}\pr{A\cap B}$.
-    \item[5.] $\text{int}\pr{A}\cup\text{int}\pr{B}\subseteq\text{int}\pr{A\cup B}$.
-    \item[6.] Si $A\subseteq Y$, se tiene que $\text{int}\pr{A}\cap Y\subseteq\text{int}_Y\pr{A}$, donde $\text{int}_Y\pr{A}$ denota el interior de $A$ respecto a la topología en $Y$. La igualdad se obtiene si $Y$ es abierto.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] Trivial por la proposición anterior.
-    \item[2.] Trivial por el apartado anterior.
-    \item[3.] Sea $G$ un abierto tal que $G\subseteq A$. Como $A\subseteq B$, entonces $G\subseteq B$. Por la proposición anterior, se tiene claramente que $\text{int}\pr{A}\subseteq\text{int}\pr{B}$.
-    \item[4.] Sea $x\in\text{int}\pr{A}\cap\text{int}\pr{B}$. Entonces existen dos abiertos $G_1$ y $G_2$ tales que $G_1\subseteq A$, $G_2\subseteq B$ y $x\in G_1\cap G_2\subseteq A\cap B$. Luego $x\in\text{int}\pr{A\cap B}$. En consecuencia, $\text{int}\pr{A}\cap\text{int}\pr{B}\subseteq\text{int}\pr{A\cap B}$. Sea $x\in\text{int}\pr{A\cap B}$. Entonces existe un abierto $G$ tal que $x\in G\subseteq A\cap B\subseteq A,B$. Luego $x\in\text{int}\pr{A}$ y $x\in\text{int}\pr{B}$, o, equivalentemente, $x\in\text{int}\pr{A}\cap\text{int}\pr{B}$. Por consiguiente, $\text{int}\pr{A\cap B}\subseteq\text{int}\pr{A}\cap\text{int}\pr{B}$. Por tanto, $\text{int}\pr{A}\cap\text{int}\pr{B}=\text{int}\pr{A\cap B}$.
-    \item[5.] Sea $x\in \text{int}\pr{A}\cup\text{int}\pr{B}$. Entonces existe $G$ abierto tal que $G\subseteq A$ o $G\subseteq B$. En particular, $G\subseteq A\cup B$. Luego $x\in\text{int}\pr{A\cup B}$. Por tanto, $\text{int}\pr{A}\cup\text{int}\pr{B}\subseteq\text{int}\pr{A\cup B}$.
-    \item[6.] $\text{int}\pr{A}\cap Y$ es abierto en $Y$ y está contenido en $A$. Luego $\text{int}\pr{A}\cap Y\subseteq\text{int}_Y\pr{A}$. Supongamos que $Y$ es abierto. Sea $x\in\text{int}_Y\pr{A}$. Entonces existe un abierto $G'$ en $Y$ tal que $x\in G'\subseteq A$. Sea $G$ abierto en $X$ tal que $G'=G\cap Y$. Como $Y$ es abierto, $G\cap Y$ es un abierto en $X$ contenido en $A$. Luego $x\in\text{int}\pr{A}=\text{int}\pr{A\cap Y}=\text{int}\pr{A}\cap\text{int}\pr{Y}=\text{int}\pr{A}\cap Y$. En consecuencia, $\text{int}_Y\pr{A}\subseteq\text{int}\pr{A}\cap Y$. Por tanto,  $\text{int}_Y\pr{A}=\text{int}\pr{A}\cap Y$.
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{definition}[\textbf{Clausura o adherencia de un conjunto}]
-Sean $X$ un espacio topológico y $A\subseteq X$. Se define la clausura o adherencia de $A$ como el siguiente conjunto:
-
-\begin{equation}
-    \overline{A}:=\set{x\in X\middle|\forall N\in\mathcal{N}_x,N\cap A\neq\varnothing}.
-\end{equation}
-
-Otra notación empleada es $\text{cl}\pr{A}$.
-\end{definition}
-
-\begin{definition}[\textbf{Exterior de un conjunto}]
-Sean $X$ un espacio topológico y $A\subseteq X$. Se define el exterior de $A$ como el conjunto $\text{ext}\pr{A}:=X\setminus\overline{A}$.
-\end{definition}
-
-\begin{remark}
-Sean $X$ un espacio topológico y $A\subseteq X$. Obsérvese que $A\subseteq\overline{A}$.
-\end{remark}
-
-\begin{proposition}\label{Equivalent definitions for the clausure of a set}
-Sean $X$ un espacio topológico con base $\mathcal{B}$, $A\subseteq X$ y $x\in A$. Son equivalentes:
-
-\begin{itemize}
-    \item[1.] $x\in\overline{A}$.
-    \item[2.] Para todo entorno abierto $G$ de $x$, se tiene que $G\cap A\neq\varnothing$.
-    \item[3.] Para todo entorno abierto $B\in\mathcal{B}$ de $x$, se tiene que $B\cap A\neq\varnothing$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[\boxed{1\Rightarrow2}] Si $G$ es un abierto tal que $x\in G$, entonces $G\in\mathcal{N}_x$. Luego $G\cap A\neq\varnothing$. 
-    \item[\boxed{2\Rightarrow3}] Trivial.
-    \item[\boxed{3\Rightarrow1}] Sea $N\in\mathcal{N}_x$. Entonces existe $B\in\mathcal{B}$ tal que $x\in B\subseteq N$. Como $B\cap A\neq\varnothing$ y $B\cap A\subseteq N\cap A$, se tiene que $x\in\overline{A}$.
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico, $A\subseteq X$ y $\mathcal{C}_A:=\set{C\middle|C\text{ es cerrado},A\subseteq C}$. Entonces:
-
-\begin{equation}
-    \overline{A}=\bigcap_{C\in\mathcal{C}_A}{C}.
-\end{equation}
-
-En consecuencia, $\overline{A}$ es cerrado y $\text{ext}\pr{A}$ es abierto.
-\begin{proof}[\rm\textbf{Proof}]
-Sea $x\in\overline{A}$. Por reducción al absurdo, supongamos que existe $C$ cerrado con $A\subseteq C$ tal que $x\notin C$. Entonces $x\in X\setminus C$. Como $X\setminus C$ es abierto, entonces $\pr{X\setminus C}\cap A\neq\varnothing$. Hemos llegado a una contradicción pues $A\subseteq C$ y, en consecuencia, $\pr{X\setminus C}\cap A=\varnothing$. Luego $x\in\bigcap_{C\in\mathcal{C}_A}{C}$. En consecuencia, $\overline{A}\subseteq\bigcap_{C\in\mathcal{C}_A}{C}$.
-
-Sea $x\in\bigcap_{C\in\mathcal{C}_A}{C}$. Por reducción al absurdo, supongamos que $x\notin\overline{A}$. Entonces existe un entorno abierto $G$ de $x$ tal que $G\cap A=\varnothing$. Luego $X\setminus G$ es cerrado y $A\subseteq C\setminus G$. En consecuencia $x\in X\setminus G$ lo cual es absurdo pues $x\in G$. Por consiguiente, $x\in\overline{A}$. De aquí, deducimos que $\bigcap_{C\in\mathcal{C}_A}{C}\subseteq\overline{A}$. Por tanto, $\overline{A}=\bigcap_{C\in\mathcal{C}_A}{C}$.
-\end{proof}
-\end{proposition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico, $A,B\subseteq X$ e $Y$ un subespacio topológico. Se cumple:
-\begin{itemize}
-    \item[1.] $A$ es cerrado si y solamente si $A=\overline{A}$.
-    \item[2.] $\overline{\overline{A}}=\overline{A}$.
-    \item[3.] Si $A\subseteq B$, entonces $\overline{A}\subseteq\overline{B}$.
-    \item[4.] $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
-    \item[5.] $\overline{A\cap B}\subseteq\overline{A}\cap\overline{B}$.
-    \item[6.] $\text{int}\pr{A}=X\setminus\overline{X\setminus A}$, $\overline{A}=X\setminus\text{int}\pr{X\setminus A}$ y $\text{ext}\pr{A}=\text{int}\pr{X\setminus A}$.
-    \item[7.] Si $A\subseteq Y$, se tiene que $\overline{A}^Y=\overline{A}\cap Y$, donde $\overline{A}^Y$ denota la clausura de $A$ respecto a la topología en $Y$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] Trivial por la proposición anterior.
-    \item[2.] Trivial por el apartado anterior.
-    \item[3.] Sea $x\in\overline{A}$. Entonces, para todo $C$ cerrado conteniendo a $A$, $x\in C$. En particular, $x\in C$ para todo $C$ cerrado conteniendo a $B$ pues $A\subseteq B$. Luego $x\in\overline{B}$. Por tanto, $\overline{A}\subseteq\overline{B}$.
-    \item[4.] Sea $x\in\overline{A\cup B}$. Si $G$ es un entorno abierto de $x$, entonces $G\cap\pr{A\cup B}\neq\varnothing$. Necesariamente, $G\cap A\neq\varnothing$ o $G\cap B\neq\varnothing$. Luego $x\in\overline{A}$ o $x\in\overline{A}$, es decir, $x\in\overline{A}\cup\overline{B}$. En consecuencia, $\overline{A\cup B}\subseteq\overline{A}\cup\overline{B}$. Sea $x\in\overline{A}\cup\overline{B}$. Entonces $x\in\overline{A}$ o $x\in\overline{B}$. Como $A,B\subseteq A\cup B$, entonces $\overline{A},\overline{B}\subseteq\overline{A\cup B}$. Luego $x\in\overline{A\cup B}$. En consecuencia, $\overline{A}\cup\overline{B}\subseteq\overline{A\cup B}$. Por tanto, $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
-    \item[5.] Sea $x\in\overline{A\cap B}$. Si $G$ es un entorno abierto de $x$, entonces $G\cap\pr{A\cap B}\neq\varnothing$. Necesariamente, $G\cap A,G\cap B\neq\varnothing$. Luego $x\in\overline{A}$ y $x\in\overline{B}$, es decir, $x\in\overline{A}\cap\overline{B}$. Por tanto, $\overline{A\cap B}\subseteq\overline{A}\cap\overline{B}$.
-    \item[6.] Basta probar que $\text{int}\pr{A}=X\setminus\overline{X\setminus A}$.
-    \item[7.] Sea $x\in\overline{A}^Y$. Entonces $x\in C'$ para todo $C'$ cerrado en $Y$ con $A\subseteq C'$. Sea $C$ un cerrado en $X$ con $A\subseteq C$. Como $C\cap Y$ es un cerrado en $Y$ y $A=A\cap Y\subseteq C\cap Y$, tenemos que $x\in C\cap Y$. Luego $x\in C$. En consecuencia, $x\in\overline{A}\cap Y$. Por consiguiente, $\overline{A}^Y\subseteq\overline{A}\cap Y$. Sea $x\in\overline{A}\cap Y$. Entonces $x\in C$ para todo $C$ cerrado en $X$ tal que $A\subseteq C$. Sea $C'$ un cerrado en $X$ con $A\subseteq C'$. Entonces existe $C$ cerrado en $X$ tal que $C'=C\cap Y$. Como $C'\subseteq C$, $C$ es un cerrado en $X$ que contiene a $A$. Luego $x\in C$. En consecuencia, $x\in C'$. Por consiguiente, $\overline{A}\cap Y\subseteq\overline{A}^Y$. Por tanto, $\overline{A}^Y=\overline{A}\cap Y$.
-\end{itemize}
-\end{proof}
-\end{proposition}
-
-\begin{definition}[\textbf{Borde o frontera de un conjunto}]
-Sean $X$ un espacio topológico y $A\subseteq X$. Se define la frontera de $A$ como el conjunto $\text{fr}\pr{A}=\overline{A}\setminus\text{int}\pr{A}$. Otra notación empleada es $\partial A$.
-\end{definition}
-
-\begin{remark}
-Sean $X$ un espacio topológico y $A\subseteq X$. Entonces $\text{fr}\pr{A}$ es cerrado.
-\end{remark}
-
-\begin{proposition}
-Sean $X$ un espacio topológico y $A\subseteq X$. Se cumple:
-
-\begin{itemize}
-    \item[1.] $\text{fr}\pr{A}=\overline{A}\cap\overline{X\setminus A}$.
-    \item[2.] $\text{fr}\pr{A}=\text{fr}\pr{X\setminus A}$.
-    \item[3.] $\text{fr}\pr{A}\cap\text{int}\pr{A}=\varnothing$, $\text{fr}\pr{A}\cap\text{ext}\pr{A}=\varnothing$ y $\text{int}\pr{A}\cap\text{ext}\pr{A}=\varnothing$.
-    \item[4.] $X=\text{int}\pr{A}\cup\text{fr}\pr{A}\cup\text{ext}\pr{A}$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] En efecto, se tiene lo siguiente:
-
-    \begin{equation}
-        \text{fr}\pr{A}=\overline{A}\setminus\text{int}\pr{A}=\overline{A}\cap\pr{X\setminus\text{int}\pr{A}}=\overline{A}\cap\overline{X\setminus A},
-    \end{equation}
-    \item[2.] Trivial por el apartado anterior.
-    \item[3.] Por definición de frontera, se tiene que:
-
-    \begin{equation}
-        \text{fr}\pr{A}\cap\text{int}\pr{A}=\pr{\overline{A}\setminus\text{int}\pr{A}}\cap\text{int}\pr{A}=\varnothing.
-    \end{equation}
+  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. Then $\mathcal{B}=\set{G_1\times\cdots\times G_d\middle|G_1\in\mathcal{T}_1,\dots,G_d\in\mathcal{T}_d}$ is a basis for a topology on $X_1\times\cdots\times X_d$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Firstly, since $X_1\times\cdots\times X_d\in\mathcal{B}$, then $X_1\times\cdots\times X_d=\bigcup{\mathcal{B}}\subseteq X_1\times\cdots\times X_d$ and, consequently, $X_1\times\cdots\times X_d=\bigcup{\mathcal{B}}$. 
     
-    Como $\text{int}\pr{A}\subseteq A$ e $\text{int}\pr{X\setminus A}\subseteq X\setminus A$, se tiene fácilmente que $\text{int}\pr{A}\cap\text{ext}\pr{A}=\varnothing$. Además, $\text{fr}\pr{A}\cap\text{ext}\pr{A}=\text{fr}\pr{X\setminus A}\cap\text{int}\pr{X\setminus A}=\varnothing$.
-    \item[4.] Obsérvese lo siguiente:
-
-    \begin{align*}
-        \text{int}\pr{A}\cup\text{fr}\pr{A}\cup\text{ext}\pr{A} & =\pr{X\setminus\overline{X\setminus A}}\cup\text{fr}\pr{X\setminus A}\cup\text{int}\pr{X\setminus A}\\
-        & =\pr{X\setminus\overline{X\setminus A}}\cup\overline{X\setminus A}=X.
-    \end{align*}
-\end{itemize}
-\end{proof}
+    Let $B_1,B_2\in\mathcal{B}$ be a pair of non-disjoint basis sets and $x:=\pr{x_1,\dots,x_d}\in B_1\cap B_2$. Let $G_{1,1},G_{1,2}\in\mathcal{T}_1,\dots,G_{d,1},G_{d,2}\in\mathcal{T}_d$ be open sets such that $B_1=G_{1,1}\times\cdots\times G_{d,1}$ and $B_2=G_{1,2}\times\cdots\times G_{d,2}$. Then $B_1\cap B_2=\pr{G_{1,1}\cap G_{1,2}}\times\cdots\times\pr{G_{d,1}\cap G_{d,2}}$. Since $G_{1,1}\cap G_{1,2}\in\mathcal{T}_1,\dots,G_{d,1}\cap G_{d,2}\in\mathcal{T}_d$, then $B_3:=B_1\cap B_2\in\mathcal{B}$ and, consequently, $x\in B_3\subseteq B_1\times B_2$. 
+    
+    Therefore, $\mathcal{B}$ is a basis for a topology on $X_1\times\cdots\times X_d$.
+  \end{proof}
 \end{proposition}
 
-\begin{definition}[\textbf{Conjunto derivado}]
-Sean $X$ un espacio topológico y $A\subseteq X$. Se define el conjunto derivado de $A$ como el siguiente conjunto:
+\begin{definition}
+  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. The \emph{product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$} is defined as the topology $\mathcal{T}_{X_1\times\cdots\times X_d}\subseteq\mathcal{P}\pr{X_1\times\cdots\times X_d}$ on $X_1\times\cdots\times X_d$ with basis:
 
-\begin{equation}
-    A'=\set{x\in X\middle|x\in\overline{A\setminus\set{x}}}.
-\end{equation}
-
-Otra notación empleada es $\text{der}\pr{A}$. A los elementos de $A'$ se llaman puntos de acumulación o puntos límites de $A$. Si $x\in A\setminus A'$, diremos que $x$ es un punto aislado.
+  \begin{equation}
+    \mathcal{B}=\set{G_1\times\cdots\times G_d\middle|G_1\in\mathcal{T}_1,\dots,G_d\in\mathcal{T}_d}.
+  \end{equation}
 \end{definition}
 
 \begin{proposition}
-Sean $X$ un espacio topológico y $A,B\subseteq X$. Se cumple:
-\begin{itemize}
-    \item[1.] $\overline{A}=A\cup A'$.
-    \item[2.] $A$ es cerrado si y solamente si $A'\subseteq A$.
-    \item[3.] Si $A\subseteq B$, entonces $A'\subseteq B'$.
-    \item[4.] $\pr{A\cup B}'=A'\cup B'$.
-    \item[5.] $\pr{A\cap B}\subseteq A'\cap B'$. 
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] Claramente $A\cup A'\subseteq\overline{A}$. Sea $x\in\overline{A}$. Si $x\in A$, tenemos trivialmente que $x\in A\cup A'$. Supongamos que $x\notin A$. Entonces $A=A\setminus\set{x}$. Luego $x\in\overline{A}=\overline{A\setminus\set{x}}$. En consecuencia, $x\in A'$. Por consiguiente, $x\in A\cup A'$. De aquí, deducimos que $\overline{A}\subseteq A\cup A'$. Por tanto, $\overline{A}=A\cup A'$.
-    \item[2.] $A$ es cerrado si y solamente si $\overline{A}=A$. Por la propiedad anterior, $\overline{A}=A=A\cup A'$. Por tanto, $A$ es cerrado si y solamente si $A'\subseteq A$.
-    \item[3.] Sea $x\in A'$. Entonces $x\in\overline{A\setminus\set{x}}$. Como $A\subseteq B$, entonces $\overline{A\setminus\set{x}}\subseteq\overline{B\setminus\set{x}}$. Luego $x\in\overline{B\setminus\set{x}}$. En consecuencia, $x\in B'$. Por tanto, $A'\subseteq B'$.
-    \item[4.] Obsérvese lo siguiente:
+  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces with bases $\mathcal{B}_1,\dots,\mathcal{B}_d$ respectively. Then $\mathcal{B}:=\mathcal{B}_1\times\cdots\times\mathcal{B}_d$ is a basis for the product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $\widetilde{\mathcal{B}}:=\set{G_1\times\cdots\times G_d\middle|G_1\in\mathcal{T}_1,\dots,G_d\in\mathcal{T}_d}$ the standard basis for the product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$. Given $G\in\mathcal{T}_{X_1\times\cdots\times X_d}$, there exists $\mathcal{G}\subseteq\widetilde{\mathcal{B}}$ such that $G=\bigcup{\mathcal{G}}$. Given $G'\in\mathcal{G}$, there exists $d$ open sets $G'_1\in\mathcal{T}_1,\dots,G'_d\in\mathcal{T}_d$ such that $G'=G'_1\times\cdots\times G'_d$ and, consequently, there exists $\mathcal{B}_{G',1}\subseteq\mathcal{B}_1,\dots,\mathcal{B}_{G',d}\subseteq\mathcal{B}_d$ such that $G'_1=\bigcup{\mathcal{B}_{G',1}},\dots,G'_d=\bigcup{\mathcal{B}_{G',d}}$. Thus:
 
     \begin{equation}
-        \overline{\pr{A\cup B}\setminus\set{x}}=\overline{\pr{A\setminus\set{x}}\cup\pr{B\setminus\set{x}}}=\overline{A\setminus\set{x}}\cup\overline{B\setminus\set{x}}.
+      G=\bigcup_{G'\in\mathcal{G}}{\pr{\pr{\bigcup{\mathcal{B}_{G',1}}}\times\cdots\times\pr{\bigcup{\mathcal{B}_{G',d}}}}}=\bigcup_{G'\in\mathcal{G}}{\bigcup_{B'_1\in\mathcal{B}_{G',1}}{\cdots\bigcup_{B'_d\in\mathcal{B}_{G',d}}{B'_1\times\cdots\times B'_d}}}.
     \end{equation}
-    
-    Luego $x\in \pr{A\cup B}'$ si y solamente si $x\in A'\cup B'$. Por tanto, $\pr{A\cup B}'=A'\cup B'$.
-    \item[5.] Como $A\cap B\subseteq A,B$, entonces $\pr{A\cap B}'\subseteq A',B'$. Luego $\pr{A\cap B}'\subseteq A'\cap B'$.
-\end{itemize}
-\end{proof}
-\end{proposition}
 
-\section{Densidad}
-
-\begin{definition}[\textbf{Conjunto denso}]
-Sean $X$ un espacio topológico y $A\subseteq X$. Se dice que $A$ es denso (en $X$ respecto a la topología) si $\overline{A}=X$.
-\end{definition}
-
-\begin{proposition}
-Sean $X$ un espacio topológico con base $\mathcal{B}$ y $A\subseteq X$. Son equivalentes:
-
-\begin{itemize}
-    \item[1.] $A$ es denso.
-    \item[3.] Para todo abierto $G$, se tiene que $G\cap A\neq\varnothing$.
-    \item[4.] Para todo $B\in\mathcal{B}$, se tiene que $B\cap A\neq\varnothing$.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-Es una consecuencia directa de la \hyperref[Equivalent definitions for the clausure of a set]{Proposición \ref*{Equivalent definitions for the clausure of a set}}. % chktex 2
-\end{proof}
+    Let $\mathcal{B}':=\set{B'_1\times\cdots\times B'_d\middle|G'\in\mathcal{G},B'_1\in\mathcal{B}'_{G',1},\dots,B'_d\in\mathcal{B}'_{G',d}}\subseteq\mathcal{B}$. Then $G=\bigcup{\mathcal{B}'}$. Therefore, $\mathcal{B}$ is a basis for the product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$.
+  \end{proof}
 \end{proposition}
 
 \begin{example}
-Sea $X$ un espacio topológico. Algunos ejemplos de conjuntos densos son los siguientes:
+  Given $d\in\mathbb{N}$, we define the \emph{Euclidean topology on $\mathbb{R}^d$} as the following topology on $\mathbb{R}^d$:
 
-\begin{itemize}
-    \item \textbf{Topología euclídea}: En $\mathbb{R}$ con la topología euclídea, $\mathbb{Q}$ y $\mathbb{R}\setminus\mathbb{Q}$ son densos.
+  \begin{equation}
+      \mathcal{T}_e\pr{\mathbb{R}^d}:=\mathcal{T}\pr{\set{\prod_{k=1}^{d}{\pr{a_k,b_k}}\middle|\forall k\in\set{1,\dots,d},a_k,b_k\in\mathbb{R},a_k<b_k}}.
+  \end{equation}
+
+  Observe that $\mathcal{T}_e\pr{\mathbb{R}^d}$ is the product topology with respect to $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}$ $d$ times.
+\end{example}
+
+
+Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we define the map $\pi_k:X_1\times\cdots\times X_d\rightarrow X_k$ called \emph{projection on the $k$-th component} as $\pi_k\pr{x_1,\dots,x_{k-1},x_k,x_{k+1},\dots,x_d}=x_k$.
+
+\begin{remark}
+  Given $d\in\mathbb{N}$, $d$ topological spaces $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$, $k\in\set{1,\dots,d}$ and $G\in\mathcal{T}_k$, observe that $\pi_k^{-1}\pr{G}=X_1\times\cdots\times X_{k-1}\times G\times X_{k+1}\times\cdots\times X_d$.
+\end{remark}
+
+\begin{proposition}
+  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. The following collection of subsets of $X_1\times\cdots\times X_d$ is a subbasis for the product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$:
+
+  \begin{equation}
+      \mathcal{S}=\set{\pi^{-1}_k\pr{G}\middle|k\in\set{1,\dots,d},G\in\mathcal{T}_k}\subseteq\mathcal{P}\pr{X_1\times\cdots\times X_d}.
+  \end{equation}
+  \begin{proof}[\rm\textbf{Proof}]
+    Clearly, $\mathcal{S}$ is a subbasis for a topology, because $X_1\times\cdots\times X_d\in\mathcal{S}$. Consider the collection $\mathcal{B}:=\set{G_1\times\cdots\times G_d\middle|G_1\in\mathcal{T}_1,\dots,G_d\in\mathcal{T}_d}$ to be the standard basis for the product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$. Since $\mathcal{S}\subseteq\mathcal{B}\subseteq\mathcal{T}\pr{\mathcal{B}}$, then $\mathcal{T}\pr{\mathcal{S}}\subseteq\mathcal{T}\pr{\mathcal{B}}$. For each $k\in\set{1,\dots,d}$, let $G_k\in\mathcal{T}_k$. Then $\pi_1^{-1}\pr{G_1}\cap\dots\cap\pi_d^{-1}\pr{G_d}=G_1\times\cdots\times G_d$. Thus $\mathcal{B}\subseteq\mathcal{B}_{\mathcal{S}}:=\set{\bigcap_{l=1}^{n}{S_l}\middle|n\in\mathbb{N},S_1,\dots,S_n\in\mathcal{S}}$. Hence, $\mathcal{T}\pr{\mathcal{B}}\subseteq\mathcal{T}\pr{\mathcal{B}_\mathcal{S}}=\mathcal{T}\pr{\mathcal{S}}$. Consequently, $\mathcal{T}\pr{\mathcal{B}}=\mathcal{T}\pr{\mathcal{S}}$. Therefore, $\mathcal{S}$ is a subbasis for the product topology with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$.
+  \end{proof}
+\end{proposition}
+
+\section{Neighborhoods}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $x\in X$. A neighborhood of $x$ with respect to $\pr{X,\mathcal{T}}$ is a set $N\subseteq X$ for which there exists an open set $G=G\pr{x,N}\in\mathcal{T}$ such that $x\in G\subseteq N$. The set of all neighborhoods of $x$ with respect to $\pr{X,\mathcal{T}}$ is denoted by $\mathcal{N}_x\pr{X,\mathcal{T}}$.
+\end{definition}
+
+\begin{remark}
+  Given a topological space $\pr{X,\mathcal{T}}$ and an open set $G\in\mathcal{T}$, we have that $G\in\mathcal{N}_x\pr{X,\mathcal{T}}$ for all $x\in G$.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $x\in X$ and $N\subseteq X$ with $x\in N$. Then $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ if and only if there exists a basis set $B=B\pr{x,N}\in\mathcal{B}$ such that $x\in B\subseteq N$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Let $G\in\mathcal{T}$ such that $x\in G\subseteq N$. Then there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Thus there exists a basis set $B\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G\subseteq N$.
+      \item[\boxed{\Leftarrow}] Trivial.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $x\in X$. The following properties hold:
+
+  \begin{enumerate}
+    \item If $N,M\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $N\cap M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
+    \item If $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $N\subseteq M$, then $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
+    \item If $N,M\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $N\cup M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Let $G_1,G_2\in\mathcal{T}$ be two open sets such that $x\in G_1\subseteq N$ and $x\in G_2\subseteq M$. Since $G_1\cap G_2\in\mathcal{T}$, we have that $x\in G_1\cap G_2\subseteq N\cap M$. Therefore, $N\cap M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
+      \item Let $G\in\mathcal{T}$ be an open set such that $x\in G\subseteq N$. Since $N\subseteq M$, then $x\in G\subseteq M$. Therefore $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
+      \item Trivial by the previous property.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\section{Position of a point with respect to a set}
+
+\subsection{Interior and exterior of a set}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. A point $x\in A$ is said to be an \emph{interior point of $A$ (with respect to $\pr{X,\mathcal{T}}$)} if $A\in\mathcal{N}_x\pr{X,\mathcal{T}}$. We define the \emph{interior of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
+
+  \begin{equation}
+    \interior\pr{A}:=\set{x\middle|x\in A,x\text{ is an interior point of $A$}}.
+  \end{equation}
+
+  Another commonly used notation is $A^\circ$.
+\end{definition}
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. An interior point of $X\setminus A$ is called an \emph{exterior point of $A$ (with respect to $\pr{X,\mathcal{T}}$)}. We define the \emph{exterior of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
+
+  \begin{equation}
+    \ext\pr{A}:=\set{x\middle|x\in X\setminus A,x\text{ is an exterior point of $A$}}=\interior\pr{X\setminus A}.
+  \end{equation}
+\end{definition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. Observe that $\interior\pr{A}\subseteq A$ and $\ext\pr{A}\subseteq X\setminus A$. Furthermore, $\interior\pr{A}\cap\ext\pr{A}=\varnothing$.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $A\subseteq X$ and $x\in A$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $x\in\interior\pr{A}$.
+    \item There exists an open set $G=G\pr{x}\in\mathcal{T}$ such that $x\in G\subseteq A$.
+    \item There exists a basis set $B=B\pr{x}\in\mathcal{B}$ such that $x\in B\subseteq A$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[$\boxed{1\Rightarrow2}$] Trivial by definition of neighborhood.
+      \item[$\boxed{2\Rightarrow3}$] Let $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Since $x\in G$, there exists a basis set $B\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G\subseteq A$.
+      \item[$\boxed{3\Rightarrow1}$] Trivial.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. Then:
+  
+  \begin{equation}
+    \interior\pr{A}=\bigcup{\set{G\middle|G\in\mathcal{T},G\subseteq A}}. 
+  \end{equation}
+  
+  Consequently, $\interior\pr{A}\in\mathcal{T}$ is an open set.
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $x\in\interior\pr{A}$. Then there exists an open set $G\in\mathcal{T}$ such that $x\in G\subseteq A$. Thus $x\in\bigcup{\set{G\middle|G\in\mathcal{T},G\subseteq A}}$. Hence $\interior\pr{A}\subseteq\bigcup{\set{G\middle|G\in\mathcal{T},G\subseteq A}}$. 
     
-    [TO-DO: AÑADIR MÁS EJEMPLOS] % chktex 13
-\end{itemize}
+    If $x\in\bigcup{\set{G\middle|G\in\mathcal{T},G\subseteq A}}$, there exists an open set $G\in\mathcal{T}$ such that $x\in G\subseteq A$. Then $x\in\interior\pr{A}$. Consequently, $\bigcup{\set{G\middle|G\in\mathcal{T},G\subseteq A}}\subseteq\interior\pr{A}$. 
+    
+    Therefore, $\interior\pr{A}=\bigcup{\set{G\middle|G\in\mathcal{T},G\subseteq A}}$.
+  \end{proof}
+\end{proposition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. By the previous proposition, $\interior\pr{A}$ is the largest open set in $\mathcal{T}$ contained in $A$.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $A,B,Y\subseteq X$. The following properties hold:
+
+  \begin{enumerate}
+    \item $A\in\mathcal{T}$ if and only if $\interior\pr{A}=A$.
+    \item $\interior\pr{\interior\pr{A}}=\interior\pr{A}$.
+    \item If $A\subseteq B$, then $\interior\pr{A}\subseteq\interior\pr{B}$.
+    \item $\interior\pr{A}\cap\interior\pr{B}=\interior\pr{A\cap B}$.
+    \item $\interior\pr{A}\cup\interior\pr{B}\subseteq\interior\pr{A\cup B}$.
+    \item If $A\subseteq Y$, then $\interior\pr{A}\cap Y\subseteq\interior_Y\pr{A}$, where $\interior_Y\pr{A}$ denotes the interior of $A$ with respect to the topological subspace $\pr{Y,\mathcal{T}_Y}$. If $Y\in\mathcal{T}$, the equality holds.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Trivial by the previous proposition and the fact that an open set is neighborhood of all of its points.
+      \item Trivial, because $\interior{A}\in\mathcal{T}$.
+      \item Let $x\in\interior\pr{A}$. Then there exists an open set $G\in\mathcal{T}$ such that $x\in G\subseteq A$. Since $A\subseteq B$, we have that $x\in G\subseteq B$. Thus $x\in\interior\pr{B}$. Therefore, $\interior\pr{A}\subseteq\interior\pr{B}$.
+      \item Let $x\in\interior\pr{A}\cap\interior\pr{B}$. Then there exists two open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1\subseteq A$ and $x\in G_2\subseteq B$. Thus $x\in G_1\cap G_2\subseteq A\cap B$. Hence $x\in\interior\pr{A\cap B}$. Consequently, $\interior\pr{A}\cap\interior\pr{B}\subseteq\interior\pr{A\cap B}$. 
+      
+      Let $x\in\interior\pr{A\cap B}$. Then there exists an open set $G\in\mathcal{T}$ such that $x\in G\subseteq A\cap B\subseteq A,B$. Thus $x\in\interior\pr{A}$ and $x\in\interior\pr{B}$, or, in other words, $x\in\interior\pr{A}\cap\interior\pr{B}$. Hence, $\interior\pr{A\cap B}\subseteq\interior\pr{A}\cap\interior\pr{B}$. 
+      
+      Therefore, $\interior\pr{A}\cap\interior\pr{B}=\interior\pr{A\cap B}$.
+      \item Let $x\in \interior\pr{A}\cup\interior\pr{B}$. Then there exists an open set $G\in\mathcal{T}$ such that $x\in G\subseteq A$ or $x\in G\subseteq B$. Particularly, $x\in G\subseteq A\cup B$. Then $x\in\interior\pr{A\cup B}$. Therefore, $\interior\pr{A}\cup\interior\pr{B}\subseteq\interior\pr{A\cup B}$.
+      \item Let $x\in\interior\pr{A}\cap Y$. Then there exists an open set $G\in\mathcal{T}$ such that $x\in G\subseteq A$ and $x\in Y$. Then $x\in G\cap Y\subseteq A\cap Y=A$. Since $G\cap Y\in\mathcal{T}_Y$, we have $x\in\interior_Y\pr{A}$. Therefore, $\interior\pr{A}\cap Y\subseteq\interior_Y\pr{A}$.
+      
+      Suppose $Y\in\mathcal{T}$. Then $\mathcal{T}_Y\subseteq\mathcal{T}$ and, consequently, $\interior_Y\pr{A}\cap Y\in\mathcal{T}$ and $\interior_Y\pr{A}\cap Y\subseteq A$. Since $\interior\pr{A}=\bigcup\set{G\middle|G\in\mathcal{T},G\subseteq A}$, we have $\interior_Y\pr{A}\cap Y\subseteq\interior\pr{A}$. 
+      
+      Therefore, if $Y\in\mathcal{T}$, then $\interior\pr{A}\cap Y=\interior_Y\pr{A}$.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\subsection{Closure and boundary of a set}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. A point $x\in X$ is said to be an \emph{adherence point of $A$  (with respect to $\pr{X,\mathcal{T}}$)} if, for all $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, $N\cap A\neq\varnothing$. We define the \emph{adherence or closure of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
+  
+  \begin{equation}
+      \overline{A}:=\set{x\middle|x\in X,\text{$x$ is an adherence point of $A$}}.
+  \end{equation}
+
+  Another commonly used notation is $\cl\pr{A}$.
+\end{definition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. A point $x\in X$ is said to be a \emph{boundary or frontier point of $A$  (with respect to $\pr{X,\mathcal{T}}$)} if, for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, $N\cap A\neq\varnothing$ and $N\cap\pr{X\setminus A}\neq\varnothing$. We define the \emph{boundary or frontier of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
+  
+  \begin{equation}
+    \bd\pr{A}:=\set{x\middle|x\in X,\text{$x$ is a boundary point of $A$}}.
+  \end{equation}
+
+  Another commonly used notations are $\fr\pr{A}$ and $\partial A$.
+\end{definition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. Then $\interior\pr{A}\subseteq A\subseteq\overline{A}$ and $\bd\pr{A}=\overline{A}\cap\overline{X\setminus A}$. Therefore, $\bd\pr{A}=\bd\pr{X\setminus A}$.
+\end{remark}
+
+\begin{proposition}\label{Equivalent definitions for the closure of a set}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $A\subseteq X$ and $x\in X$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $x\in\overline{A}$.
+    \item For every open set $G\in\mathcal{T}$ containing $x$, $G\cap A\neq\varnothing$.
+    \item For every basis set $B\in\mathcal{B}$ containing $x$, $B\cap A\neq\varnothing$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Since $G\in\mathcal{T}$ is an open set containing $x$, we have $G\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Therefore, $G\cap A\neq\varnothing$.
+      \item[\boxed{2\Rightarrow3}] Trivial.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Then there exists a basis set $B\in\mathcal{B}$ such that $x\in B\subseteq N$. Since $B\cap A\neq\varnothing$ and $B\cap A\subseteq N\cap A$, we have $N\cap A\neq\varnothing$. Therefore, $x\in\overline{A}$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{corollary}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $A\subseteq X$ and $x\in X$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $x\in\bd\pr{A}$.
+    \item For every open set $G\in\mathcal{T}$ containing $x$, $G\cap A\neq\varnothing$ and $G\cap\pr{X\setminus A}\neq\varnothing$.
+    \item For every basis set $B\in\mathcal{B}$ containing $x$, $B\cap A\neq\varnothing$ and $B\cap\pr{X\setminus A}\neq\varnothing$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \rm Trivial, because of the previous proposition and the fact that $\bd\pr{A}=\overline{A}\cap\overline{X\setminus A}$.
+  \end{proof}
+\end{corollary}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. Then:
+  
+  \begin{equation}
+    \overline{A}=\bigcap{\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}. 
+  \end{equation}
+  
+  Consequently, $\overline{A},\bd\pr{A}\in\mathcal{F}\pr{X,\mathcal{T}}$ are closed sets.
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $x\in\overline{A}$. By contradiction, suppose there exists a closed set $F\in\mathcal{F}\pr{X,\mathcal{T}}$ with $A\subseteq F$ such that $x\notin F$. Then $x\in X\setminus F$. Since $G:=X\setminus F\in\mathcal{T}$ is an open set, then $G\cap A\neq\varnothing$. We have reached a contradiction, because $A\subseteq F$ and, consequently, $G\cap A=\varnothing$. Thus $x\in\bigcap{\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}$. Hence, $\overline{A}\subseteq\bigcap{\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}$.
+
+    Let $x\in\bigcap{\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}$. By contradiction, suppose $x\notin\overline{A}$. Then there exists an open set $G\in\mathcal{T}$ containing $x$ such that $G\cap A=\varnothing$. Thus $F:=X\setminus G\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed and $A\subseteq F$. Hence $x\in F$. We have reached a contradiction, because $x\in G$. Consequently, $x\in\overline{A}$. As a result, $\bigcap{\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}\subseteq\overline{A}$.
+
+    Therefore, $\overline{A}=\bigcap{\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}$.
+  \end{proof}
+\end{proposition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. By the previous proposition, $\overline{A}$ is the smallest closed set in $\mathcal{F}\pr{X,\mathcal{T}}$ containing $A$.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A,B,Y\subseteq X$. The following properties hold:
+  \begin{enumerate}
+    \item $A\in\mathcal{F}\pr{X,\mathcal{T}}$ if and only if $A=\overline{A}$.
+    \item $\overline{\overline{A}}=\overline{A}$.
+    \item If $A\subseteq B$, then $\overline{A}\subseteq\overline{B}$.
+    \item $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
+    \item $\overline{A\cap B}\subseteq\overline{A}\cap\overline{B}$.
+    \item $\interior\pr{A}=X\setminus\overline{X\setminus A}$, $\overline{A}=X\setminus\interior\pr{X\setminus A}$ and $\ext\pr{A}=X\setminus\overline{A}$.
+    \item If $A\subseteq Y$, then $\overline{A}^Y=\overline{A}\cap Y$, where $\overline{A}^Y$ is the closure of $A$ with respect to the topological subspace $\pr{Y,\mathcal{T}_Y}$.
+    \item $\bd\pr{A}=\overline{A}\setminus\interior\pr{A}$ and, consequently, $\bd\pr{A}\cap\interior\pr{A}=\bd\pr{A}\cap\ext\pr{A}=\varnothing$.
+    \item $X=\interior\pr{A}\cup\bd\pr{A}\cup\ext\pr{A}$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Trivial by the previous proposition.
+      \item Trivial by the previous property.
+      \item Let $x\in\overline{A}$. Given $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, we know that $N\cap A\neq\varnothing$. Since $A\subseteq B$, we have $N\cap A\subseteq N\cap B$. Thus $N\cap B\neq\varnothing$ and, consequently, $x\in\overline{B}$. Therefore, $\overline{A}\subseteq\overline{B}$.
+      \item Let $x\in\overline{A\cup B}$. Given $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, we know that $N\cap\pr{A\cup B}\neq\varnothing$. Necessarily, $N\cap A\neq\varnothing$ or $N\cap B\neq\varnothing$ or, in other words, $x\in\overline{A}$ or $x\in\overline{B}$. Thus $\overline{A\cup B}\subseteq\overline{A}\cup\overline{B}$.
+      
+      Since $A,B\subseteq A\cup B$, we have $\overline{A},\overline{B}\subseteq\overline{A\cup B}$. Then $\overline{A}\cup\overline{B}\subseteq\overline{A\cup B}$.
+      
+      Therefore, $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
+      \item Let $x\in\overline{A\cap B}$. Given $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, we know that $N\cap\pr{A\cap B}\neq\varnothing$. Since $N\cap\pr{A\cap B}\subseteq N\cap A,N\cap B$, we have $N\cap A\neq\varnothing$ and $N\cap B\neq\varnothing$. Then $x\in\overline{A}$ and $x\in\overline{B}$, and, consequently, $x\in\overline{A}\cap\overline{B}$. Therefore, $\overline{A\cap B}\subseteq\overline{A}\cap\overline{B}$.
+      \item It suffices to prove that $\interior\pr{A}=X\setminus\overline{X\setminus A}$. Let $x\in\interior\pr{A}$. Then there exists a neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $N\subseteq A$. Then $N\cap\pr{X\setminus A}\neq\varnothing$. Consequently, $x\notin\overline{X\setminus A}$ or, in other words, $x\in X\setminus\overline{X\setminus A}$. Thus $\interior\pr{A}\subseteq X\setminus\overline{X\setminus A}$.
+      
+      Let $x\in X\setminus\overline{X\setminus A}$. Then $x\notin\overline{X\setminus A}$. Thus, there exists a neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $N\cap\pr{X\setminus A}=\varnothing$. Hence $x\in N\subseteq A$ and, consequently, $x\in\interior\pr{A}$. As a result, $X\setminus\overline{X\setminus A}\subseteq\interior\pr{A}$.
+
+      Therefore, $\interior\pr{A}=X\setminus\overline{X\setminus A}$.
+      \item Indeed, we have:
+      
+      \begin{equation}
+        \begin{split}
+          \overline{A}^Y & =\bigcap\set{F'\middle|F'\in\mathcal{F}\pr{Y,\mathcal{T}_Y},A\subseteq F'}=\bigcap\set{F\cap Y\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F\cap Y}\\
+          & =\bigcap\set{F\cap Y\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}=\pr{\bigcap\set{F\middle|F\in\mathcal{F}\pr{X,\mathcal{T}},A\subseteq F}}\cap Y\\
+          & =\overline{A}\cap Y.
+        \end{split}
+      \end{equation}
+      \item Observe that $\bd\pr{A}=\overline{A}\cap\overline{X\setminus A}=\overline{A}\cap\pr{X\setminus\text{int}\pr{A}}=\overline{A}\setminus\interior\pr{A}$.
+      \item Indeed, we have:
+      
+      \begin{equation}
+        \interior\pr{A}\cup\bd\pr{A}\cup\ext\pr{A}=\interior\pr{A}\cup\pr{\overline{A}\setminus\interior\pr{A}}\cup\pr{X\setminus\overline{A}}=\overline{A}\cup\pr{X\setminus\overline{A}}=X.
+      \end{equation}
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\subsection{Derived set}
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. A point $x\in X$ is said to be an \emph{accumulation point of $A$ (with respect to $\pr{X,\mathcal{T}}$)} if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, $N\cap\pr{A\setminus\set{x}}\neq\varnothing$ or, in other words, $x\in\overline{A\setminus\set{x}}$. We define the \emph{derived set of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
+
+  \begin{equation}
+    A'=\set{x\middle|x\in X, x\text{ is an accumulation point of $A$}}.
+  \end{equation}
+
+  Another commonly used notation is $\text{der}\pr{A}$. If $x\in A\setminus A'$, we say that $x$ is an \emph{isolated point of $A$}.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A,B\subseteq X$. The following properties hold:
+  \begin{enumerate}
+    \item $\overline{A}=A\cup A'$.
+    \item $A\in\mathcal{F}\pr{X,\mathcal{T}}$ if and only if $A'\subseteq A$.
+    \item If $A\subseteq B$, then $A'\subseteq B'$.
+    \item $\pr{A\cup B}'=A'\cup B'$.
+    \item $\pr{A\cap B}'\subseteq A'\cap B'$. 
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item It is straightforward to check that $A\cup A'\subseteq\overline{A}$. 
+      
+      Let $x\in\overline{A}$. If $x\in A$, then $x\in A\cup A'$ trivially. Suppose that $x\notin A$. Then $A=A\setminus\set{x}$ and $x\in\overline{A}=\overline{A\setminus\set{x}}$. Thus $x\in A'$. Hence, $x\in A\cup A'$. As a result, $\overline{A}\subseteq A\cup A'$. 
+      
+      Therefore, $\overline{A}=A\cup A'$.
+      \item $A\in\mathcal{F}\pr{X,\mathcal{T}}$ if and only if $A=\overline{A}=A\cup A'$ which is equivalent to $A'\subseteq A$.
+      \item Let $x\in A'$. Then $x\in\overline{A\setminus\set{x}}$. Since $A\subseteq B$, then $\overline{A\setminus\set{x}}\subseteq\overline{B\setminus\set{x}}$. Thus $x\in\overline{B\setminus\set{x}}$. Consequently, $x\in B'$. Therefore, $A'\subseteq B'$.
+      \item Observe the following:
+
+      \begin{equation}
+        \overline{\pr{A\cup B}\setminus\set{x}}=\overline{\pr{A\setminus\set{x}}\cup\pr{B\setminus\set{x}}}=\overline{A\setminus\set{x}}\cup\overline{B\setminus\set{x}}.
+      \end{equation}
+      
+      Then $x\in \pr{A\cup B}'$ if and only if $x\in A'\cup B'$. Therefore, $\pr{A\cup B}'=A'\cup B'$.
+      \item Since $A\cap B\subseteq A,B$, we have $\pr{A\cap B}'\subseteq A',B'$. Therefore, $\pr{A\cap B}'\subseteq A'\cap B'$.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\section{Density}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. We say that \emph{$A$ is dense (with respect to $\pr{X,\mathcal{T}}$)} if $\overline{A}=X$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$ and $A\subseteq X$. The following are equivalent:
+
+  \begin{enumerate}
+      \item $A$ is dense.
+      \item For every non-empty open set $G\in\mathcal{T}$, $G\cap A\neq\varnothing$.
+      \item For every non-empty basis set $B\in\mathcal{B}$, $B\cap A\neq\varnothing$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    It is direct consequence of \hyperref[Equivalent definitions for the closure of a set]{Proposition~\ref*{Equivalent definitions for the closure of a set}}.
+  \end{proof}
+\end{proposition}
+
+\begin{example}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. Some examples of dense sets with respect to $\pr{X,\mathcal{T}}$ are the following:
+
+  \begin{itemize}
+    \item \textbf{Discrete topology}: If $X\neq\varnothing$, the only dense set with respect to $\pr{X,\mathcal{T}_{\text{dis}}}$ is $X$.
+    \item \textbf{Indiscrete topology}: If $X\neq\varnothing$, any non-empty subset of $X$ is a dense set with respect to $\pr{X,\mathcal{T}_{\text{ind}}}$.
+    \item \textbf{Cofinite topology}: Any infinite set is dense with respect to $\pr{X,\mathcal{T}_{\text{cof}}}$.
+    \item \textbf{Cocountable topology}: Any uncountable set is dense with respect to $\pr{X,\mathcal{T}_{\text{con}}}$.
+    \item \textbf{Euclidean topology, Sorgenfrey's line and upper bound topology}: $\mathbb{Q}$ and $\mathbb{R}\setminus\mathbb{Q}$ are dense with respect to $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}$, $\mathbb{R}_{\ell}$ and $\mathbb{R}_u$.
+  \end{itemize}
 \end{example}
 
 \begin{proposition}
-Sean $d\in\mathbb{N}$ $X,X_1,\dots,X_d$ espacios topológicos, $A,B\subseteq X$ con $A$ denso en $X$, $A_1,\dots,A_d$ densos en $X_1,\dots,X_d$ respectivamente e $Y$ un subespacio topológico de $X$ con $Y$ abierto. Se tienen las siguientes propiedades:
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $A,B\subseteq X$ with $A$ dense with respect to $\pr{X,\mathcal{T}}$, $Y\in\mathcal{T}$, $d\in\mathbb{N}$, $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces and $A_1,\dots,A_d$ be $d$ dense sets with respect to $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ respectively. The following properties hold:
 
-\begin{itemize}
-    \item[1.] Si $A\subseteq B$, entonces $B$ es denso en $X$.
-    \item[2.] $A\cap Y$ es denso en $Y$.
-    \item[3.] $A_1\times\cdots\times A_d$ es denso en $X_1\times\cdots\times X_d$ respecto a la topología producto.
-\end{itemize}
-\begin{proof}[\rm\textbf{Proof}]
-\hfill
-\begin{itemize}
-    \item[1.] Sea $G$ abierto en $X$. Entonces $G\cap A\neq\varnothing$. Como $A\subseteq B$, entonces $G\cap B\neq\varnothing$. Por tanto, $B$ es denso en $X$.
-    \item[2.] Sea $G'$ abierto en $Y$. Entonces existe un abierto $G$ en $X$ tal que $G'=G\cap Y$. Como $Y$ es abierto en $X$, $G\cap Y$ es abierto en $X$. Luego $\pr{G\cap Y}\cap\pr{A\cap Y}=\pr{G\cap Y}\cap A\neq\varnothing$. Por tanto, $A\cap Y$ es denso en $Y$.
-    \item[3.] Sean $G_1,\dots,G_d$ abiertos en $X_1,\dots,X_d$ respectivamente. Entonces $A_k\cap G_k\neq\varnothing$ para todo $k\in\set{1,\dots,d}$. Luego:
-
-    \begin{equation}
-        \pr{A_1\times\cdots\times A_d}\cap\pr{G_1\times\cdots\times G_d}=\pr{A_1\cap G_1}\times\cdots\times\pr{A_d\times G_d}\neq\varnothing.
-    \end{equation}
-
-    Por tanto, $A_1\times\cdots\times A_d$ es denso en $X_1\times\cdots\times X_d$.
-\end{itemize}
-\end{proof}
+  \begin{enumerate}
+      \item If $A\subseteq B$, then $B$ is dense with respect to $\pr{X,\mathcal{T}}$.
+      \item $A\cap Y$ is dense with respect to $\pr{Y,\mathcal{T}_Y}$.
+      \item $A_1\times\cdots\times A_d$ is dense with respect to $\pr{X_1\times\cdots\times X_d,\mathcal{T}_{X_1\times\cdots\times X_d}}$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Let $G\in\mathcal{T}$ be a non-empty open set. Then $G\cap A\neq\varnothing$. Since $A\subseteq B$, we have $G\cap B\neq\varnothing$. Therefore, $B$ is dense with respect to $\pr{X,\mathcal{T}}$.
+      \item Let $G'\in\mathcal{T}_Y$ be a non-empty open set. Then there exists an open set $G\in\mathcal{T}$ such that $G'=G\cap Y$. Since $Y\in\mathcal{T}$, then $G'=G\cap Y\in\mathcal{T}$. Thus $G'\cap\pr{A\cap Y}=\pr{G\cap Y}\cap A\neq\varnothing$. Therefore, $A\cap Y$ is dense with respect to $\pr{Y,\mathcal{T}_Y}$.
+      \item Let $G_1\in\mathcal{T}_1,\dots,G_d\in\mathcal{T}_d$ be $d$ open sets. Then $A_k\cap G_k\neq\varnothing$ for all $k\in\set{1,\dots,d}$. Thus $\pr{A_1\times\cdots\times A_d}\cap\pr{G_1\times\cdots\times G_d}=\pr{A_1\cap G_1}\times\cdots\times\pr{A_d\cap G_d}\neq\varnothing$. Therefore, $A_1\times\cdots\times A_d$ is dense with respect to $\pr{X_1\times\cdots\times X_d,\mathcal{T}_{X_1\times\cdots\times X_d}}$.
+    \end{enumerate}
+  \end{proof}
 \end{proposition}

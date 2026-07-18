@@ -1,1 +1,84 @@
 \chapter{Limits}
+
+\section{Sequences}
+
+\begin{definition}
+  Let $X$ be a set. A \textit{sequence in $X$} is a map $\varphi:\mathbb{N}\rightarrow X$. The map $\varphi$ will be denoted by $\set{x_n}_{n\in\mathbb{N}}$ where $x_n:=\varphi\pr{x_n}$ for all $n\in\mathbb{N}$. In order to emphasize that $\set{x_n}_{n\in\mathbb{N}}$ is a sequence in $X$, we will write $\set{x_n}_{n\in\mathbb{N}}\subseteq X$.
+\end{definition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A sequence \emph{$\set{x_n}_{n\in\mathbb{N}}\subseteq X$ converges to a point $x\in X$ (with respect to $\pr{X,\mathcal{T}}$)} if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists $n_0=n_0\pr{N,x}\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. 
+\end{definition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. If \emph{$\set{x_n}_{n\in\mathbb{N}}\subseteq X$} is a sequence converging to $x\in X$, we say that \textit{$x$ is a limit of $\set{x_n}_{n\in\mathbb{N}}$}. Equivalently, we say that \emph{the limit of $\set{x_n}_{n\in\mathbb{N}}$ as $n\to\infty$ is $x$}. This is denoted it by $\lim_{n\to\infty}{x_n}=x$ or $x_n\stackrel{n\to\infty}{\rightarrow}x$. 
+  
+  In general, a sequence in a topological space may have more than one limit.
+\end{remark}
+
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence and $x\in X$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$.
+    \item For every open set $G\in\mathcal{T}$, there exists $n_0=n_0\pr{G,x}\in\mathbb{N}$ such that $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
+    \item For every basis set $B\in\mathcal{T}$, there exists $n_0=n_0\pr{B,x}\in\mathbb{N}$ such that $x_n\in B$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Trivial.
+      \item[\boxed{2\Rightarrow3}] Trivial.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Then there exists $B=B\pr{x,N}\in\mathcal{B}$ such that $x\in B\subseteq N$. Thus there exists $n_0=n_0\pr{B,x}\in\mathbb{N}$ such that $x_n\in B\subseteq N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  Let $X$ be a set and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$. A subsequence of $\set{x_n}_{n\in\mathbb{N}}$ is a sequence $\set{y_n}_{n\in\mathbb{N}}$ for which there exists a strictly increasing function $\psi:\mathbb{N}\rightarrow\mathbb{N}$ such that $y_n=x_{\varphi\pr{n}}$ for all $n\in\mathbb{N}$. We will denote $\set{y_n}_{n\in\mathbb{N}}:=\set{x_{n_k}}_{k\in\mathbb{N}}$ where $n_k:=\psi\pr{k}$ for all $k\in\mathbb{N}$. 
+\end{definition}
+
+\begin{remark}
+  Let $X$ be a set and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$. If $\set{y_{n_k}}_{k\in\mathbb{N}}$ is a subsequence of $\set{x_n}_{n\in\mathbb{N}}$, then $n_k<n_{k+1}$ for all $k\in\mathbb{N}$.
+\end{remark}
+
+\begin{proposition}
+  Let $X$ be a set, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ and $x\in X$. Then $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$ if and only if, for every subsequence $\set{x_{n_k}}_{k\in\mathbb{N}}$ of $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $x$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[$\boxed{\Rightarrow}$] Let $\set{x_{n_k}}_{k\in\mathbb{N}}$ be a subsequence of $\set{x_n}_{n\in\mathbb{N}}$ and $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_0:=n_0\pr{N,x}\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Take $k_0=k_0\pr{N,x}\in\mathbb{N}$ such that $n_{k_0}\geq n_0$. Then $n_k>n_0$ for all $k\in\mathbb{N}$ with $k\geq k_0$ and, consequently, $x_{n_k}\in N$ for all $k\in\mathbb{N}$ with $k\geq k_0$. Therefore, $\set{x_{n_k}}_{k\in\mathbb{N}}$ converges to $x$.
+      \item[$\boxed{\Leftarrow}$] Trivial, because $\set{x_n}_{n\in\mathbb{N}}$ is a subsequence of itself.
+    \end{itemize}
+  \end{proof} 
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $A\subseteq X$, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ convergent to $x\in X$. The following properties hold:
+
+  \begin{enumerate}
+    \item Let $\set{y_n}_{n\in\mathbb{N}}\subseteq X$ a sequence in $X$. Suppose there exists $n_1\in\mathbb{N}$ such that $y_n=x_n$ for all $n\in\mathbb{N}$ with $n\geq n_1$. Then $\set{y_n}_{n\in\mathbb{N}}$ converges to $x$.
+    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A$, then $x\in\overline{A}$. Particulary, if $A$ is closed, then $x\in A$.
+    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{x}$, then $x\in A'$.
+    \item Suppose that for every $x'\in X$, there exists a sequence $\set{x'_n}_{n\in\mathbb{N}}\subseteq A$ convergent to $x'$. Then $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
+    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ is a sequence in $A$ and $\set{y_n}_{n\in\mathbb{N}}\subseteq X\setminus A$ is a sequence in $X\setminus A$ converging to $x$ as well, then $x\in\bd\pr{A}$.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_2\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_2$. Take $n_0:=\max\set{n_1,n_2}\in\mathbb{N}$. Then $y_n=x_n\in N$ for all $n\geq n_0$. Therefore, $\set{y_n}_{n\in\mathbb{N}}$ converges to $x$.
+      \item Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_0\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Since $\set{x_n}_{n\in\mathbb{N}}$ is a sequence in $A$, then $x_n\in A\cap N$ for all $n\in\mathbb{N}$ with $n\geq n_0$ and, consequently, $A\cap N\neq\varnothing$. Therefore, $x\in\overline{A}$.
+      \item Since $\set{x_n}_{n\in\mathbb{N}}$ is sequence in $A\setminus\set{x}$ converging to $x$, by the previous property, we have $x\in\overline{A\setminus\set{x}}$. Therefore, $x\in A'$.
+      \item By the first property, for all $x'\in X$, $x'\in\overline{A}$. Then $\overline{A}=X$. Therefore, $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
+      \item By the first property, since $\set{x_n}_{n\in\mathbb{N}}$ is a sequence in $A$ and $\set{y_n}_{n\in\mathbb{N}}$ is a sequence in $X\setminus A$ both converging to $x$, we have that $x\in\overline{A}$ and $x\in\overline{X\setminus A}$. Thus $x\in\overline{A}\cap\overline{X\setminus A}=\bd\pr{A}$.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\section{Nets}
+
+\begin{definition}
+  
+\end{definition}
