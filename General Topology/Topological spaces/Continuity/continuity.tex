@@ -3,39 +3,82 @@
 \section{Continuous maps}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $B\subseteq Y$. A map $f:X\rightarrow B$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous} if $f^{-1}\pr{G}\in\mathcal{T}_1$ for any open set $G\in\mathcal{T}_2$. 
-\end{definition}
-
-\begin{definition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $B\subseteq Y$. A map $f:X\rightarrow B$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x\in X$} if for any neighborhood $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq N$.
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $Z\subseteq Y$. A map $f:X\rightarrow Z$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous} if $f^{-1}\pr{G}\in\mathcal{T}_1$ for any open set $G\in\mathcal{T}_2$. 
 \end{definition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces with bases $\mathcal{B}_1\subseteq\mathcal{T}_1$ for $\mathcal{T}_1$ and $\mathcal{B}_2\subseteq\mathcal{T}_2$ for $\mathcal{T}_2$, $x\in X$, $B\subseteq Y$ and $f:X\rightarrow B$ be a map. The following are equivalent:
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces with basis $\mathcal{B}\subseteq\mathcal{T}_2$ for $\mathcal{T}_2$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous if and only if $f^{-1}\pr{B}\in\mathcal{T}_1$ for every basis set $B\in\mathcal{B}$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Trivial.
+      \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}_2$. Then there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Since $f^{-1}\pr{B}\in\mathcal{T}_1$ for all $B\in\mathcal{B}'$, we have $f^{-1}\pr{G}=\bigcup_{B\in\mathcal{B}}{f^{-1}\pr{B}}\in\mathcal{T}_1$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $Z\subseteq Y$. A map $f:X\rightarrow Z$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x\in X$} if for any neighborhood $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq N$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces with bases $\mathcal{B}_1\subseteq\mathcal{T}_1$ for $\mathcal{T}_1$ and $\mathcal{B}_2\subseteq\mathcal{T}_2$ for $\mathcal{T}_2$, $x\in X$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. The following are equivalent:
   
   \begin{enumerate}
     \item $f$ is  $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
     \item For any open set $G\in\mathcal{T}_2$ containing $f\pr{x}$, there exists an open set $H=H\pr{x,G}\in\mathcal{T}_1$ containing $x$ such that $f\pr{G}\subseteq H$.
-    \item For any basis set $B\in\mathcal{T}_2$ containing $f\pr{x}$, there exists a basis set $\widetilde{B}=\widetilde{B}\pr{x,G}\in\mathcal{T}_1$ containing $x$ such that $f\pr{\widetilde{B}}\subseteq B$.
+    \item For any basis set $B\in\mathcal{T}_2$ containing $f\pr{x}$, there exists a basis set $\widetilde{B}=\widetilde{B}\pr{x,G}\in\mathcal{B}_1$ containing $x$ such that $f\pr{\widetilde{B}}\subseteq B$.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
-    
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_2$ be an open set containing $f\pr{x}$. Since $G\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ is a neighborhood of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq G$. Let $H\in\mathcal{T}_1$ containing $x$ such that $H\subseteq M$. Then $f\pr{H}\subseteq f\pr{M}\subseteq G$.
+      \item[\boxed{2\Rightarrow3}] Let $B\in\mathcal{B}_2$ be a basis set containing $f\pr{x}$. Since $B\in\mathcal{T}_2$ is an open set containing $f\pr{x}$, there exists an open set $H\in\mathcal{T}_1$ containing $x$ such that $f\pr{H}\subseteq B$. Let $\widetilde{B}\in\mathcal{B}_1$ containing $x$ such that $\widetilde{B}\subseteq H$. Then $f\pr{\widetilde{B}}\subseteq f\pr{H}\subseteq B$.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{x}$. Then there exists a basis set $B\in\mathcal{B}_2$ containing $x$ such that $B\subseteq N$. By hypothesis, there exists a basis set $M\in\mathcal{B}_1$ containing $x$ such that $f\pr{M}\subseteq B\subseteq N$. It suffices to notice that $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+  
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if $\lim_{x\to a}{f\pr{x}}=f\pr{a}$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Let $N\in\mathcal{N}_{f\pr{a}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{a}$. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $x$ such that $f\pr{M}\subseteq N$. Since $M\setminus\set{a}\subseteq M$, then $f\pr{M\setminus\set{a}}\subseteq N$. Therefore, $\lim_{x\to a}{f\pr{x}}=f\pr{a}$.
+      \item[\boxed{\Leftarrow}] Let $N\in\mathcal{N}_{f\pr{a}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{a}$. Since $\lim_{x\to a}{f\pr{x}}=f\pr{a}$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $f\pr{M\setminus\set{a}}\subseteq N$. Since $f\pr{a}\in N$, we have $f\pr{M}\subseteq N$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$.
+    \end{itemize}
   \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $B\subseteq Y$ and $f:X\rightarrow B$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if $\lim_{x\to a}{f\pr{x}}=f\pr{a}$.
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. If $a\in X\setminus X'$, then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $N\in\mathcal{N}_{f\pr{a}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{a}$. Since $a\in X\setminus X'$, we know that there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $\pr{M\cap X}\setminus\set{a}=\varnothing$, that is to say, $M=\set{a}$. Then $f\pr{M\setminus\set{a}}=f\pr{\varnothing}=\varnothing\subseteq N$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$.
+  \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $B\subseteq Y$ and $f:X\rightarrow B$ be a map. The following are equivalent:
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. The following are equivalent:
 
   \begin{enumerate}
     \item $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
     \item For every $x\in X$, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
-    \item If $F\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is closed, then $f^{-1}\pr{F}\in\mathcal{F}\pr{X,\mathcal{T}_1}$ is closed.
+    \item If $F\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set, then $f^{-1}\pr{F}\in\mathcal{F}\pr{X,\mathcal{T}_1}$ is a closed set.
     \item If $A\subseteq X$, then $f\pr{\overline{A}}\subseteq\overline{f\pr{A}}$.
   \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_2$ be an open set containing $f\pr{x}$. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $H:=f^{-1}\pr{G}\in\mathcal{T}_1$ is an open set. Furthermore, $x\in H$. It suffices to notice that $f\pr{H}\subseteq G$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$. 
+      \item[\boxed{2\Rightarrow3}] Let $F\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ be a closed set. By contradiction, suppose $f^{-1}\pr{F}\notin\mathcal{F}\pr{X,\mathcal{T}_1}$ is not a closed set. Then there exists $x\in\overline{f^{-1}\pr{F}}\setminus f^{-1}\pr{F}$. Since $x\notin f^{-1}\pr{F}$, then $f\pr{x}\notin F$, or, in other words, $f\pr{x}\in G:=Y\setminus F$. As $G\in\mathcal{T}_2$ is an open set containing $f\pr{x}$ and $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$, there exists an open set $H\in\mathcal{T}_1$ containing $x$ such that $f\pr{H}\subseteq G$. Thus $H\subseteq f^{-1}\pr{f\pr{H}}\subseteq f^{-1}\pr{G}\subseteq X\setminus f^{-1}\pr{F}$ or, equivalently, $H\cap f^{-1}\pr{F}=\varnothing$. We have reached a contradiction, because $x\in\overline{f^{-1}\pr{F}}$. Therefore, $f^{-1}\pr{F}\in\mathcal{F}\pr{X,\mathcal{T}_1}$ is a closed set.
+      \item[\boxed{3\Rightarrow4}] Let $A\subseteq X$. Since $\overline{f\pr{A}}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set, then $f^{-1}\pr{\overline{f\pr{A}}}\in\mathcal{F}\pr{X,\mathcal{T}_1}$ is a closed set. Since $f\pr{A}\subseteq\overline{f\pr{A}}$, then $A\subseteq f^{-1}\pr{f\pr{A}}\subseteq f^{-1}\pr{\overline{f\pr{A}}}$. Thus $f^{-1}\pr{\overline{f\pr{A}}}$ is a closed set containing $A$. Hence $\overline{A}\subseteq f^{-1}\pr{\overline{f\pr{A}}}$. Therefore, $f\pr{\overline{A}}\subseteq f\pr{f^{-1}\pr{\overline{f\pr{A}}}}\subseteq\overline{f\pr{A}}$. 
+      \item[\boxed{4\Rightarrow1}] Let $G\in\mathcal{T}_2$ be an open set and set $A:=f^{-1}\pr{Y\setminus G}$. Since $F:=Y\setminus G\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set, we have that $f\pr{A}\subseteq F$ and, consequently, $\overline{f\pr{A}}\subseteq F$. By hypothesis, $f\pr{\overline{A}}\subseteq\overline{f\pr{A}}\subseteq F$ and, consequently, $\overline{A}\subseteq f^{-1}\pr{F}=A$, that is to say, $A$ is closed. Thus $f^{-1}\pr{G}=X\setminus A\in\mathcal{T}_1$ is an open set. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+    \end{itemize}
+  \end{proof}
 \end{proposition}
 
 \subsection{Weak topology. Product topology}
@@ -56,7 +99,7 @@
 \end{definition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a bijective map. The following are equivalent:
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a bijective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous map. The following are equivalent:
 
   \begin{enumerate}
     \item $f$ is a homeomorphism.
@@ -65,6 +108,11 @@
   \end{enumerate}
 
   \begin{proof}[\rm\textbf{Proof}]
-    
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_1$ be an open set. Since $f^{-1}$ is bijective and $\pr{\mathcal{T}_2,\mathcal{T}_1}$-continuous, $f\pr{G}=\pr{f^{-1}}^{-1}\pr{G}\in\mathcal{T}_2$. Therefore, $f$ is open.
+      \item[\boxed{2\Rightarrow3}] Let $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$ be a closed set. Since $f$ is bijective and open, $Y\setminus f\pr{F}=f\pr{X\setminus F}\in\mathcal{T}_2$ and, consequently, $f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set. Therefore, $f$ is closed.
+      \item[\boxed{3\Rightarrow1}] Since, $f$ is bijective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, we have to prove that $f^{-1}$ is $\pr{\mathcal{T}_2,\mathcal{T}_1}$-continuous. Let $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$ a closed set. Since $f$ is closed and bijective, $\pr{f^{-1}}^{-1}\pr{F}=f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set. Therefore, $f^{-1}$ is $\pr{\mathcal{T}_2,\mathcal{T}_1}$-continuous.
+    \end{itemize}
   \end{proof}
 \end{proposition}
