@@ -2,4 +2,69 @@
 
 \section{Continuous maps}
 
+\begin{definition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $B\subseteq Y$. A map $f:X\rightarrow B$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous} if $f^{-1}\pr{G}\in\mathcal{T}_1$ for any open set $G\in\mathcal{T}_2$. 
+\end{definition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $B\subseteq Y$. A map $f:X\rightarrow B$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x\in X$} if for any neighborhood $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq N$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces with bases $\mathcal{B}_1\subseteq\mathcal{T}_1$ for $\mathcal{T}_1$ and $\mathcal{B}_2\subseteq\mathcal{T}_2$ for $\mathcal{T}_2$, $x\in X$, $B\subseteq Y$ and $f:X\rightarrow B$ be a map. The following are equivalent:
+  
+  \begin{enumerate}
+    \item $f$ is  $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
+    \item For any open set $G\in\mathcal{T}_2$ containing $f\pr{x}$, there exists an open set $H=H\pr{x,G}\in\mathcal{T}_1$ containing $x$ such that $f\pr{G}\subseteq H$.
+    \item For any basis set $B\in\mathcal{T}_2$ containing $f\pr{x}$, there exists a basis set $\widetilde{B}=\widetilde{B}\pr{x,G}\in\mathcal{T}_1$ containing $x$ such that $f\pr{\widetilde{B}}\subseteq B$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $B\subseteq Y$ and $f:X\rightarrow B$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if $\lim_{x\to a}{f\pr{x}}=f\pr{a}$.
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $B\subseteq Y$ and $f:X\rightarrow B$ be a map. The following are equivalent:
+
+  \begin{enumerate}
+    \item $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+    \item For every $x\in X$, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
+    \item If $F\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is closed, then $f^{-1}\pr{F}\in\mathcal{F}\pr{X,\mathcal{T}_1}$ is closed.
+    \item If $A\subseteq X$, then $f\pr{\overline{A}}\subseteq\overline{f\pr{A}}$.
+  \end{enumerate}
+\end{proposition}
+
+\subsection{Weak topology. Product topology}
+
 \section{Open and closed maps. Homeomorphisms}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that:
+
+  \begin{itemize}
+    \item $f$ is an \textit{open map} if $f\pr{G}\in\mathcal{T}_2$ is open for all $G\in\mathcal{T}_1$.
+    \item $f$ is a \textit{closed map} if $f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is closed for all $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that $f$ is a \textit{homeomorphism} if $f$ is bijective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, and if its inverse is $\pr{\mathcal{T}_2,\mathcal{T}_1}$-continuous.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a bijective map. The following are equivalent:
+
+  \begin{enumerate}
+    \item $f$ is a homeomorphism.
+    \item $f$ is open.
+    \item $f$ is closed.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}

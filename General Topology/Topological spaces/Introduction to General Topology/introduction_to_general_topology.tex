@@ -55,7 +55,7 @@
       \item \textbf{Cocountable topology}: It is defined as the topology on $X$ which consists of $\varnothing$ and those subsets of $X$ whose complement in $X$ is countable, that is to say:
       
       \begin{equation}
-          \mathcal{T}_{\text{con}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is countable}}.
+          \mathcal{T}_{\text{cc}}:=\set{G\middle|G\subseteq X, G=\varnothing\text{ or }X\setminus G\text{ is countable}}.
       \end{equation}
 
       The proof is analogous to the one we did above.
@@ -93,7 +93,7 @@ In general, the arbitrary intersection of open sets in a topological space is no
       \item \textbf{Indiscrete or trivial topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{ind}}}=\mathcal{T}_{\text{ind}}=\set{\varnothing,X}$.
       \item \textbf{Sierpinski's topology}: If $X=\set{0,1}$, $\mathcal{F}\pr{X,\mathcal{T}_S}=\set{\varnothing,\set{1},X}$.
       \item \textbf{Cofinite topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{cof}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is finite}}$.
-      \item \textbf{Cocountable topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{con}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is countable}}$.
+      \item \textbf{Cocountable topology}: $\mathcal{F}\pr{X,\mathcal{T}_{\text{cc}}}=\set{F\middle|F\subseteq X,F=X\text{ or }F\text{ is countable}}$.
       \item \textbf{Included point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_p^{\text{inc}}}=\mathcal{T}_p^{\text{exc}}$.
       \item \textbf{Excluded point topology}: If $X\neq\varnothing$, given $p\in X$, $\mathcal{F}\pr{X,\mathcal{T}_p^{\text{exc}}}=\mathcal{T}_p^{\text{inc}}$.
   \end{itemize}
@@ -411,7 +411,7 @@ In general, the arbitrary union of closed sets in a topological space is not a c
   \end{proof}
 \end{proposition}
 
-\section{Product topology}
+\section{Finite product topology}
 
 \begin{proposition}
   Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. Then $\mathcal{B}=\set{G_1\times\cdots\times G_d\middle|G_1\in\mathcal{T}_1,\dots,G_d\in\mathcal{T}_d}$ is a basis for a topology on $X_1\times\cdots\times X_d$.
@@ -495,12 +495,13 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space and $x\in X$. The following properties hold:
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $x\in X$ and $Y\subseteq X$. The following properties hold:
 
   \begin{enumerate}
     \item If $N,M\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $N\cap M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
     \item If $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $N\subseteq M$, then $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
     \item If $N,M\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $N\cup M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
+    \item For every $N'\subseteq X$ and $x\in Y$, $N'\in\mathcal{N}_x\pr{Y,\mathcal{T}_Y}$ is a neighborhood of $x$ with respect to the topological subspace $\pr{Y,\mathcal{T}_Y}$ if and only if there exists a neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ with respect to $\pr{X,\mathcal{T}}$ such that $N'=N\cap Y$.
   \end{enumerate}
 
   \begin{proof}[\rm\textbf{Proof}]
@@ -509,6 +510,10 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
       \item Let $G_1,G_2\in\mathcal{T}$ be two open sets such that $x\in G_1\subseteq N$ and $x\in G_2\subseteq M$. Since $G_1\cap G_2\in\mathcal{T}$, we have that $x\in G_1\cap G_2\subseteq N\cap M$. Therefore, $N\cap M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
       \item Let $G\in\mathcal{T}$ be an open set such that $x\in G\subseteq N$. Since $N\subseteq M$, then $x\in G\subseteq M$. Therefore $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
       \item Trivial by the previous property.
+      \item \begin{itemize}
+        \item[\boxed{\Rightarrow}] Since $N'\in\mathcal{N}_x\pr{Y,\mathcal{T}_Y}$ is a neighborhood of $x$ with respect to the topological subspace $\pr{Y,\mathcal{T}_Y}$, there exists an open set $G'\in\mathcal{T}_Y$ such that $G'\subseteq N'$. Let $G\in\mathcal{T}$ be an open set such that $G'=G\cap Y$. Let $N:=N'\cup G$. Since $G\in\mathcal{T}$ is an open set containing $x$ such that $G\subseteq N$, then $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ is a neighborhood of $x$ with respect to $\pr{X,\mathcal{T}}$. Furthermore, $N\cap Y=\pr{N'\cup G}\cap Y=N'\cup\pr{G\cap Y}=N'$.
+        \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}$ be an open set containing $x$ such that $G\subseteq N$. Then $G\cap Y\subseteq N\cap Y=N'$ and $x\in G':=G\cap Y\in\mathcal{T}_Y$. Therefore, $N'\in\mathcal{N}_x\pr{Y,\mathcal{T}_Y}$ is a neighborhood of $x$ with respect to $\pr{Y,\mathcal{T}_Y}$.
+      \end{itemize}
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -526,6 +531,7 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
 
   Another commonly used notation is $A^\circ$.
 \end{definition}
+
 \begin{definition}
   Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. An interior point of $X\setminus A$ is called an \emph{exterior point of $A$ (with respect to $\pr{X,\mathcal{T}}$)}. We define the \emph{exterior of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
 
@@ -549,9 +555,9 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[$\boxed{1\Rightarrow2}$] Trivial by definition of neighborhood.
-      \item[$\boxed{2\Rightarrow3}$] Let $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Since $x\in G$, there exists a basis set $B\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G\subseteq A$.
-      \item[$\boxed{3\Rightarrow1}$] Trivial.
+      \item[\boxed{1\Rightarrow2}] Trivial by definition of neighborhood.
+      \item[\boxed{2\Rightarrow3}] Let $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Since $x\in G$, there exists a basis set $B\in\mathcal{B}'\subseteq\mathcal{B}$ such that $x\in B\subseteq G\subseteq A$.
+      \item[\boxed{3\Rightarrow1}] Trivial.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -608,6 +614,16 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
     \end{enumerate}
   \end{proof}
 \end{proposition}
+
+\begin{example}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. Some examples of the interior of sets are the following:
+
+  \begin{itemize}
+    \item \textbf{Discrete topology}: For every $A\subseteq X$, $\interior\pr{A}=A$ with respect to $\pr{X,\mathcal{T}_{\text{dis}}}$ because $A\in\mathcal{T}_{\text{dis}}$.
+    \item \textbf{Cofinite topology}: Let $a,b\in\mathbb{R}$ with $a<b$. Then $\interior\pr{\pr{a,b}}=\varnothing$ with respect to $\pr{\mathbb{R},\mathcal{T}_{\text{cof}}}$, because if $G\in\mathcal{T}_{\text{cof}}$ is such that $G\subseteq\pr{a,b}$ then $\mathbb{R}\setminus\pr{a,b}\subseteq\mathbb{R}\setminus G$ which is absurd, since $\mathbb{R}\setminus G$ should be a finite set and $\mathbb{R}\setminus\pr{a,b}$ is an uncountable set.
+    \item \textbf{Euclidean topology}: Let $a,b\in\mathbb{R}$ with $a<b$ and $I\subseteq\mathbb{R}$ be a bounded interval with extremes $a$ and $b$. Then $\interior\pr{I}=\pr{a,b}$ with respect to $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}$, because any open interval containing $a$ or $b$ is not contained in $I$ and, consequently, $a,b\notin\interior\pr{I}$. Furthermore, since $I\cap\pr{\mathbb{R}\setminus\mathbb{Q}}\neq\varnothing$ for any interval $I\subseteq\mathbb{R}$, we have $\interior\pr{\mathbb{Q}}=\varnothing$ with respect to $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}$.
+  \end{itemize}
+\end{example}
 
 \subsection{Closure and boundary of a set}
 
@@ -736,6 +752,16 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
   \end{proof}
 \end{proposition}
 
+\begin{example}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. Some examples of the closure of sets are the following:
+
+  \begin{itemize}
+    \item \textbf{Discrete topology}: For every $A\subseteq X$, $\overline{A}=A$ with respect to $\pr{X,\mathcal{T}_{\text{dis}}}$ because $A\in\mathcal{F}\pr{X,\mathcal{T}_{\text{dis}}}$.
+    \item \textbf{Cofinite topology}: Let $a,b\in\mathbb{R}$ with $a<b$. Then $\overline{\pr{a,b}}=\varnothing$ with respect to $\pr{\mathbb{R},\mathcal{T}_{\text{cof}}}$, because if every closed set containing $\pr{a,b}$ must be finite with respect to $\pr{\mathbb{R},\mathcal{T}_{\text{cof}}}$ which is impossible.
+    \item \textbf{Euclidean topology}: Let $a,b\in\mathbb{R}$ with $a<b$ and $I\subseteq\mathbb{R}$ be a bounded interval with extremes $a$ and $b$. Then $\overline{I}=\br{a,b}$ with respect to $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}$, because for any $x\notin\br{a,b}$, there exists an open interval which does not intersects with $\br{a,b}$ and, consequently, with $I$ as well. Furthermore, $\overline{\mathbb{Q}}=\mathbb{R}$, because for any $x\in\mathbb{R}\setminus\mathbb{Q}$ and any open interval $I\subseteq\mathbb{R}$ containing $x$, $I\cap\mathbb{Q}\neq\varnothing$.
+  \end{itemize}
+\end{example}
+
 \subsection{Derived set}
 \begin{definition}
   Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. A point $x\in X$ is said to be an \emph{accumulation point of $A$ (with respect to $\pr{X,\mathcal{T}}$)} if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, $N\cap\pr{A\setminus\set{x}}\neq\varnothing$ or, in other words, $x\in\overline{A\setminus\set{x}}$. We define the \emph{derived set of $A$ (with respect to $\pr{X,\mathcal{T}}$)} as the following set:
@@ -778,6 +804,16 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
   \end{proof}
 \end{proposition}
 
+\begin{example}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. Some examples of accumulation points of sets are the following:
+
+  \begin{itemize}
+    \item \textbf{Discrete topology}: Let $A\subseteq X$ and $x\in A$. Then $x\notin A'$ with respect to $\pr{X,\mathcal{T}_{\text{dis}}}$, because $\set{x}\in\mathcal{T}_{\text{disc}}$, $x\in\set{x}$ and $\pr{A\setminus\set{x}}\cap\set{x}=\varnothing$.
+    \item \textbf{Cofinite topology}: Assume $X=\mathbb{R}$. Given $x\in\mathbb{R}$, let $G\in\mathcal{T}_{\text{cof}}$ be an open set such containing $x$. Since $X\setminus G$ is a finite set, necessarily, $\pr{\mathbb{N}\setminus\set{x}}\cap G\neq\varnothing$. Therefore, $x\in\mathbb{N}'$ is an accumulation point of $\mathbb{N}$ with respect to $\pr{\mathbb{R},\mathcal{T}_{\text{cof}}}$ for all $x\in\mathbb{R}$ and, therefore, $\mathbb{N}'=\mathbb{R}$ with respect to $\pr{\mathbb{R},\mathcal{T}_{\text{cof}}}$.
+    \item \textbf{Cocountable topology}: Assume $X=\mathbb{R}$. Let $A:=\set{\frac{1}{n}\middle|n\in\mathbb{N}}\subseteq\mathbb{R}$. Observe that $X\setminus A\in\mathcal{T}_{\text{cc}}$, because $A$ is a countable set. Furthermore, $0\in X\setminus A$. Since $A\cap\pr{X\setminus A}=\varnothing$, $0$ is not an accumulation point of $A$ with respect to $\pr{\mathbb{R},\mathcal{T}_{\text{cc}}}$.
+  \end{itemize}
+\end{example}
+
 \section{Density}
 
 \begin{definition}
@@ -804,7 +840,7 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
     \item \textbf{Discrete topology}: If $X\neq\varnothing$, the only dense set with respect to $\pr{X,\mathcal{T}_{\text{dis}}}$ is $X$.
     \item \textbf{Indiscrete topology}: If $X\neq\varnothing$, any non-empty subset of $X$ is a dense set with respect to $\pr{X,\mathcal{T}_{\text{ind}}}$.
     \item \textbf{Cofinite topology}: Any infinite set is dense with respect to $\pr{X,\mathcal{T}_{\text{cof}}}$.
-    \item \textbf{Cocountable topology}: Any uncountable set is dense with respect to $\pr{X,\mathcal{T}_{\text{con}}}$.
+    \item \textbf{Cocountable topology}: Any uncountable set is dense with respect to $\pr{X,\mathcal{T}_{\text{cc}}}$.
     \item \textbf{Euclidean topology, Sorgenfrey's line and upper bound topology}: $\mathbb{Q}$ and $\mathbb{R}\setminus\mathbb{Q}$ are dense with respect to $\pr{\mathbb{R},\mathcal{T}_e\pr{\mathbb{R}}}$, $\mathbb{R}_{\ell}$ and $\mathbb{R}_u$.
   \end{itemize}
 \end{example}

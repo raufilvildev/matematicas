@@ -7,78 +7,501 @@
 \end{definition}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space. A sequence \emph{$\set{x_n}_{n\in\mathbb{N}}\subseteq X$ converges to a point $x\in X$ (with respect to $\pr{X,\mathcal{T}}$)} if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists $n_0=n_0\pr{N,x}\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. 
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A sequence \emph{$\set{x_n}_{n\in\mathbb{N}}\subseteq X$ converges to a point $x\in X$ (with respect to $\pr{X,\mathcal{T}}$)} if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists $n_0=n_0\pr{N}\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. 
 \end{definition}
 
 \begin{remark}
-  Let $\pr{X,\mathcal{T}}$ be a topological space. If \emph{$\set{x_n}_{n\in\mathbb{N}}\subseteq X$} is a sequence converging to $x\in X$, we say that \textit{$x$ is a limit of $\set{x_n}_{n\in\mathbb{N}}$}. Equivalently, we say that \emph{the limit of $\set{x_n}_{n\in\mathbb{N}}$ as $n\to\infty$ is $x$}. This is denoted it by $\lim_{n\to\infty}{x_n}=x$ or $x_n\stackrel{n\to\infty}{\rightarrow}x$. 
+  Let $\pr{X,\mathcal{T}}$ be a topological space. If \emph{$\set{x_n}_{n\in\mathbb{N}}\subseteq X$} is a sequence converging to $x\in X$, we say that \textit{$x$ is a limit of $\set{x_n}_{n\in\mathbb{N}}$}. Equivalently, we say that \emph{the limit of $\set{x_n}_{n\in\mathbb{N}}$ as $n\to\infty$ is $x$}. This is denoted by $\lim_{n\to\infty}{x_n}=x$ or $x_n\stackrel{n\to\infty}{\rightarrow}x$. 
   
   In general, a sequence in a topological space may have more than one limit.
 \end{remark}
 
+\begin{example}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. Some examples of convergence of sequences are the following:
+  \begin{enumerate}
+    \item \textbf{Eventually constant sequences}: If $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is an eventually constant sequence in $X$, that is to say, there exists $n_0\in\mathbb{N}$ such that $x_n=x_{n_0}$ for all $n\in\mathbb{N}$ with $n\geq n_0$, then $\lim_{n\to\infty}{x_n}=x_{n_0}$ with respect to $\pr{X,\mathcal{T}}$.
+    \item \textbf{Discrete topology}: A sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ in $X$ is convergent with respect to $\pr{X,\mathcal{T}_{\text{dis}}}$ if and only if $\set{x_n}_{n\in\mathbb{N}}$ is eventually constant, because for any $x\in X$, $\set{x}\in\mathcal{N}_x\pr{X,\mathcal{T}_{\text{dis}}}$. 
+    \item \textbf{Indiscrete or trivial topology}: Any sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is convergent with respect to $\pr{X,\mathcal{T}_{\text{ind}}}$ to any point $x\in X$, since the only neighborhood of any point in $X$ is $X$.
+    \item \textbf{Sierpinski's topology}: The sequence $\set{x_n}_{n\in\mathbb{N}}$ defined as $x_n=0$ for all $n\in\mathbb{N}$ converges to $0$ with respect to $\pr{X,\mathcal{T}_S}$ and, the sequence $\set{x_n}_{n\in\mathbb{N}}$ defined as $x_n=1$ for all $n\in\mathbb{N}$ converges to $0$ and $1$ with respect to $\pr{X,\mathcal{T}_S}$, because $\mathcal{N}_0\pr{X,\mathcal{T}_S}=\set{\set{0,1}}$ and $\mathcal{N}_1\pr{X,\mathcal{T}_S}=\set{\set{1},\set{0,1}}$.
+    \item \textbf{Cofinite topology}: A sequence $\set{x_n}_{n\in\mathbb{N}}$ is convergent to a point $x\in X$ with respect to $\pr{X,\mathcal{T}_{\text{cof}}}$ if and only if for all $y\in X\setminus\set{x}$, the set $\set{n\middle|n\in\mathbb{N},x_n=y}$ is finite. 
+    
+    Let $\set{x_n}_{n\in\mathbb{N}}$ be a sequence converging to a point $x\in X$. Let $G:=X\setminus\set{y}$. Then $G\in\mathcal{T}_{\text{cof}}$ is an open set containing $x$. Thus there exists $n_0\in\mathbb{N}$ such that $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{n\middle|x_n=y}$ is a finite set.
+
+    Let $\set{x_n}_{n\in\mathbb{N}}$ be a sequence and $x\in X$ such that for all $y\in X\setminus\set{x}$, $\set{n\middle|x_n=y}$ is finite. Let $G\in\mathcal{T}_{\text{cof}}$ be an open set containing $x$. For any $y\in F:=G\setminus X$, let $n_y\in\mathbb{N}$ be a natural number such that $x_n\neq y$ for all $n\in\mathbb{N}$ with $n\geq n_y$. Since $F$ is a finite set, we can take $n_0\in\mathbb{N}$ such that $n_0\geq n_y$ for all $y\in F$. Then $x_n\notin F$ for all $n\in\mathbb{N}$ with $n\geq n_0$, or, equivalently, $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $x$ with respect to $\pr{X,\mathcal{T}_{\text{cof}}}$.
+    
+    We have also proved that if a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ in $X$ does not contain any point in $X$ infinite times, then it is convergent to any point in $X$ with respect to $\pr{X,\mathcal{T}_{\text{cof}}}$.
+    \item \textbf{Cocountable topology}: A sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ in $X$ is convergent with respect to $\pr{X,\mathcal{T}_{\text{cc}}}$ if and only if $\set{x_n}_{n\in\mathbb{N}}$ is eventually constant and, in that case, $\set{x_n}_{n\in\mathbb{N}}$ converges to that constant. Suppose $\set{x_n}_{n\in\mathbb{N}}$ is a sequence convergent to a point $x\in X$ with respect to $\pr{X,\mathcal{T}_{\text{cc}}}$. Then the set $G=X\setminus\set{x_n\middle|n\in\mathbb{N},x_n\neq x}\in\mathcal{T}_{\text{cc}}$ is an open set, because $\set{x_n\middle|n\in\mathbb{N},x_n\neq x}$ is countable and it contains $x$. Then there exists $n_0\in\mathbb{N}$ such that $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$, or, equivalently, $x_n=x$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ is eventually constant.
+    \item \textbf{Included point topology}: Let $X\neq\varnothing$ and $p\in X$. A $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ in $X$ is convergent to a point $x\in X$ with respect to $\pr{X,\mathcal{T}_p^{\text{inc}}}$ if and only if there exists $n_0\in\mathbb{N}$ such that $x_n\in\set{x,p}$ for all $n\geq n_0$. If $x=p$, then $\set{x_n}_{n\in\mathbb{N}}$ is eventually constant and equal to $p$.
+    
+    Let $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a convergent sequence in $X$ to a point $x\in X$ with respect to $\pr{X,\mathcal{T}_p^{\text{inc}}}$. Since $G:=\set{x,p}\in\mathcal{T}_p^{\text{inc}}$ is an open set containing $x$, there exists $n_0\in\mathbb{N}$ such that $x_n\in\set{x,p}$ for all $n\in\mathbb{N}$ with $n\geq n_0$. If $x=p$, we deduce directly that $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is eventually contant and equal to $p$.
+
+    Let $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence for which there exists $n_0\in\mathbb{N}$ such that $x_n\in\set{x,p}$ for all $n\geq n_0$. If Given $G\in\mathcal{T}_p^{\text{inc}}$ is an open set containing $x$, we know that $\set{x,p}\subseteq G$. Then there exists $n_0\in\mathbb{N}$ such that $x_n\in\set{x,p}\subseteq G$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $x$ with respect to $\pr{X,\mathcal{T}_p^{\text{inc}}}$. 
+
+    \item \textbf{Excluded point topology}: Let $X\neq\varnothing$ and $p\in X$. Any sequence $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $p$. If the sequence $\set{x_n}_{n\in\mathbb{N}}$ is convergent to a point $x\in X\setminus\set{p}$, then it must be eventually constant and equal to $x$. 
+    
+    If $G\in\mathcal{T}_p^{\text{exc}}$ is an open set containing $p$, then $G=X$ necessarily and, consequently, $x_n\in G$ for all $n\in\mathbb{N}$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $p$ with respect to $\pr{X,\mathcal{T}_p^{\text{exc}}}$.
+
+    Suppose $\set{x_n}_{n\in\mathbb{N}}$ is convergent to a point $x\in X\setminus\set{p}$. Since $\set{x}\in\mathcal{T}_p^{\text{exc}}$, there exists $n_0\in\mathbb{N}$ such that $x_n\in\set{x}$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ is eventually constant and equal to $x$.
+  \end{enumerate}
+\end{example}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence and $x\in X$. The following are equivalent:
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ and $x\in X$. The following are equivalent:
 
   \begin{enumerate}
     \item $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$.
-    \item For every open set $G\in\mathcal{T}$, there exists $n_0=n_0\pr{G,x}\in\mathbb{N}$ such that $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
-    \item For every basis set $B\in\mathcal{T}$, there exists $n_0=n_0\pr{B,x}\in\mathbb{N}$ such that $x_n\in B$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
+    \item For every open set $G\in\mathcal{T}$, there exists $n_0=n_0\pr{G}\in\mathbb{N}$ such that $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
+    \item For every basis set $B\in\mathcal{T}$, there exists $n_0=n_0\pr{B}\in\mathbb{N}$ such that $x_n\in B$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
       \item[\boxed{1\Rightarrow2}] Trivial.
       \item[\boxed{2\Rightarrow3}] Trivial.
-      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Then there exists $B=B\pr{x,N}\in\mathcal{B}$ such that $x\in B\subseteq N$. Thus there exists $n_0=n_0\pr{B,x}\in\mathbb{N}$ such that $x_n\in B\subseteq N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Then there exists a basis set $B\in\mathcal{B}$ such that $x\in B\subseteq N$. Thus there exists $n_0\in\mathbb{N}$ such that $x_n\in B\subseteq N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$.
     \end{itemize}
   \end{proof}
 \end{proposition}
 
 \begin{definition}
-  Let $X$ be a set and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$. A subsequence of $\set{x_n}_{n\in\mathbb{N}}$ is a sequence $\set{y_n}_{n\in\mathbb{N}}$ for which there exists a strictly increasing function $\psi:\mathbb{N}\rightarrow\mathbb{N}$ such that $y_n=x_{\varphi\pr{n}}$ for all $n\in\mathbb{N}$. We will denote $\set{y_n}_{n\in\mathbb{N}}:=\set{x_{n_k}}_{k\in\mathbb{N}}$ where $n_k:=\psi\pr{k}$ for all $k\in\mathbb{N}$. 
+  Let $X$ be a set and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$. A subsequence of $\set{x_n}_{n\in\mathbb{N}}$ is a sequence $\set{y_n}_{n\in\mathbb{N}}$ for which there exists a strictly increasing function $f:\mathbb{N}\rightarrow\mathbb{N}$ such that $y_n=x_{f\pr{n}}$ for all $n\in\mathbb{N}$. We will denote $\set{y_n}_{n\in\mathbb{N}}:=\set{x_{n_k}}_{k\in\mathbb{N}}$ where $n_k:=f\pr{k}$ for all $k\in\mathbb{N}$. 
 \end{definition}
 
 \begin{remark}
-  Let $X$ be a set and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$. If $\set{y_{n_k}}_{k\in\mathbb{N}}$ is a subsequence of $\set{x_n}_{n\in\mathbb{N}}$, then $n_k<n_{k+1}$ for all $k\in\mathbb{N}$.
+  Let $X$ be a set and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$. If $\set{x_{n_k}}_{k\in\mathbb{N}}\subseteq X$ is a subsequence in $X$ of $\set{x_n}_{n\in\mathbb{N}}$, then $n_k<n_{k+1}$ for all $k\in\mathbb{N}$.
 \end{remark}
 
 \begin{proposition}
-  Let $X$ be a set, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ and $x\in X$. Then $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$ if and only if, for every subsequence $\set{x_{n_k}}_{k\in\mathbb{N}}$ of $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $x$.
+  Let $X$ be a set, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ and $x\in X$. Then $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$ if and only if every subsequence $\set{x_{n_k}}_{k\in\mathbb{N}}\subseteq X$ in $X$ of $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $x$.
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[$\boxed{\Rightarrow}$] Let $\set{x_{n_k}}_{k\in\mathbb{N}}$ be a subsequence of $\set{x_n}_{n\in\mathbb{N}}$ and $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_0:=n_0\pr{N,x}\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Take $k_0=k_0\pr{N,x}\in\mathbb{N}$ such that $n_{k_0}\geq n_0$. Then $n_k>n_0$ for all $k\in\mathbb{N}$ with $k\geq k_0$ and, consequently, $x_{n_k}\in N$ for all $k\in\mathbb{N}$ with $k\geq k_0$. Therefore, $\set{x_{n_k}}_{k\in\mathbb{N}}$ converges to $x$.
-      \item[$\boxed{\Leftarrow}$] Trivial, because $\set{x_n}_{n\in\mathbb{N}}$ is a subsequence of itself.
+      \item[$\boxed{\Rightarrow}$] Let $\set{x_{n_k}}_{k\in\mathbb{N}}\subseteq X$ be a subsequence in $X$ of $\set{x_n}_{n\in\mathbb{N}}$ and $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_0\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Take $k_0\in\mathbb{N}$ such that $n_{k_0}\geq n_0$. Then $n_k\geq n_0$ for all $k\in\mathbb{N}$ with $k\geq k_0$ and, consequently, $x_{n_k}\in N$ for all $k\in\mathbb{N}$ with $k\geq k_0$. Therefore, $\set{x_{n_k}}_{k\in\mathbb{N}}$ converges to $x$.
+      \item[$\boxed{\Leftarrow}$] Trivial, because $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is a subsequence in $X$ of itself.
     \end{itemize}
   \end{proof} 
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space, $A\subseteq X$, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ convergent to $x\in X$. The following properties hold:
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. The following properties hold:
 
   \begin{enumerate}
-    \item Let $\set{y_n}_{n\in\mathbb{N}}\subseteq X$ a sequence in $X$. Suppose there exists $n_1\in\mathbb{N}$ such that $y_n=x_n$ for all $n\in\mathbb{N}$ with $n\geq n_1$. Then $\set{y_n}_{n\in\mathbb{N}}$ converges to $x$.
-    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A$, then $x\in\overline{A}$. Particulary, if $A$ is closed, then $x\in A$.
-    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{x}$, then $x\in A'$.
-    \item Suppose that for every $x'\in X$, there exists a sequence $\set{x'_n}_{n\in\mathbb{N}}\subseteq A$ convergent to $x'$. Then $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
-    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ is a sequence in $A$ and $\set{y_n}_{n\in\mathbb{N}}\subseteq X\setminus A$ is a sequence in $X\setminus A$ converging to $x$ as well, then $x\in\bd\pr{A}$.
+    \item Let $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ converging to a point $x\in X$. If $\set{y_n}_{n\in\mathbb{N}}\subseteq X$ is a sequence in $X$ for which there exists $n_1\in\mathbb{N}$ such that $y_n=x_n$ for all $n\in\mathbb{N}$ with $n\geq n_1$, then $\set{y_n}_{n\in\mathbb{N}}$ converges to $x$.
+    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ is a sequence in $A$ converging to a point $x\in X$, then $x\in\overline{A}$. Particularly, if $A$ is closed, then $x\in A$.
+    \item If $x\in X$ and $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{x}$ is a sequence in $A\setminus\set{x}$ converging to $x$, then $x\in A'$.
+    \item If for every $x\in X$, there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ converging to $x$, then $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
+    \item If $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ is a sequence in $A$ converging to a point $x\in X$ and $\set{y_n}_{n\in\mathbb{N}}\subseteq X\setminus A$ is a sequence in $X\setminus A$ converging to $x$ as well, then $x\in\bd\pr{A}$.
   \end{enumerate}
 
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
-      \item Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_2\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_2$. Take $n_0:=\max\set{n_1,n_2}\in\mathbb{N}$. Then $y_n=x_n\in N$ for all $n\geq n_0$. Therefore, $\set{y_n}_{n\in\mathbb{N}}$ converges to $x$.
+      \item Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_2\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$. Take $n_0:=\max\set{n_1,n_2}\in\mathbb{N}$. Then $y_n=x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, $\set{y_n}_{n\in\mathbb{N}}$ converges to $x$.
       \item Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $n_0\in\mathbb{N}$ such that $x_n\in N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Since $\set{x_n}_{n\in\mathbb{N}}$ is a sequence in $A$, then $x_n\in A\cap N$ for all $n\in\mathbb{N}$ with $n\geq n_0$ and, consequently, $A\cap N\neq\varnothing$. Therefore, $x\in\overline{A}$.
       \item Since $\set{x_n}_{n\in\mathbb{N}}$ is sequence in $A\setminus\set{x}$ converging to $x$, by the previous property, we have $x\in\overline{A\setminus\set{x}}$. Therefore, $x\in A'$.
-      \item By the first property, for all $x'\in X$, $x'\in\overline{A}$. Then $\overline{A}=X$. Therefore, $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
-      \item By the first property, since $\set{x_n}_{n\in\mathbb{N}}$ is a sequence in $A$ and $\set{y_n}_{n\in\mathbb{N}}$ is a sequence in $X\setminus A$ both converging to $x$, we have that $x\in\overline{A}$ and $x\in\overline{X\setminus A}$. Thus $x\in\overline{A}\cap\overline{X\setminus A}=\bd\pr{A}$.
+      \item By the second property, for all $x\in X$, $x\in\overline{A}$. Then $\overline{A}=X$. Therefore, $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
+      \item By the second property, since $\set{x_n}_{n\in\mathbb{N}}$ is a sequence in $A$ and $\set{y_n}_{n\in\mathbb{N}}$ is a sequence in $X\setminus A$ both converging to $x$, we have that $x\in\overline{A}$ and $x\in\overline{X\setminus A}$. Thus $x\in\overline{A}\cap\overline{X\setminus A}=\bd\pr{A}$.
     \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ a sequence in $X$. A point $x\in X$ is said to be an \textit{accumulation point of $\set{x_n}_{n\in\mathbb{N}}$ (with respect to $\pr{X,\mathcal{T}}$)} if for any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ and for any $n\in\mathbb{N}$, there exists $m=m\pr{n}\in\mathbb{N}$ with $m\geq n$ such that $x_m\in N$. We denote by $\text{Acc}\pr{\set{x_n}_{n\in\mathbb{N}}}$ the \textit{set of all accumulation points of $\set{x_n}_{n\in\mathbb{N}}$}.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ and $x\in X$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $x$ is an accumulation point of $\set{x_n}_{n\in\mathbb{N}}$.
+    \item For any open set $G\in\mathcal{T}$ containing $x$ and for any $n\in\mathbb{N}$, there exists $m=m\pr{n}\in\mathbb{N}$ with $m\geq n$ such that $x_m\in G$.
+    \item For any basis set $B\in\mathcal{B}$ containing $x$ and for any $n\in\mathbb{N}$, there exists $m=m\pr{n}\in\mathbb{N}$ with $m\geq n$ such that $x_m\in B$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Trivial.
+      \item[\boxed{2\Rightarrow3}] Trivial.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $n\in\mathbb{N}$. Then there exists a basis set $B\in\mathcal{B}$ containing $x$ such that $B\subseteq N$. By hypothesis, there exists $m\in\mathbb{N}$ with $m\geq n$ such that $x_m\in B\subseteq N$. Therefore, $x$ is an accumulation point of $\set{x_n}_{n\in\mathbb{N}}$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ a sequence in $X$. If there exists a subsequence $\set{x_{n_k}}_{k\in\mathbb{N}}\subseteq X$ in $X$ of $\set{x_n}_{n\in\mathbb{N}}$ converging to a point $x\in X$, then $x$ is an accumulation point of $\set{x_n}_{n\in\mathbb{N}}$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $n\in\mathbb{N}$. Then there exists $k_0\in\mathbb{N}$ such that $x_{n_k}\in N$ for all $k\in\mathbb{N}$ with $k\geq k_0$. Let $k\in\mathbb{N}$ with $k\geq k_0$ such that $n_k\geq n$. Let $m=n_k\in\mathbb{N}$. Then $m\geq n$ and $x_m\in N$. Therefore, $x$ is an accumulation point of $\set{x_n}_{n\in\mathbb{N}}$.
   \end{proof}
 \end{proposition}
 
 \section{Nets}
 
+Although convergent sequences provide useful information about the topology of a space, they do not characterize topological notions such as closure, closedness or density in arbitrary topological spaces. This motivates the introduction of nets, which extend the notion of sequence by allowing more general index sets. As we shall see, nets completely characterize these topological notions in every topological space.
+
+
+In the definition of convergence of a sequence, the only property of the index set $\mathbb{N}$ that is actually used is the notion of ``eventually'', namely, being beyond a certain index. Directed sets provide the weakest order-theoretic structure that preserves this notion and therefore allow one to generalize sequences.
+
 \begin{definition}
-  
+  A directed set is an ordered pair $\pr{\Lambda,\leq}$, where $\Lambda$ is a set and $\leq$ is a relation on $\Lambda$ satisfying the following properties:
+
+  \begin{enumerate}
+    \item Reflexivity: For all $\lambda\in\Lambda$, $\lambda\leq\lambda$.
+    \item Transitivity: For all $\lambda_1,\lambda_2,\lambda_3\in\Lambda$, if $\lambda_1\leq\lambda_2$ and $\lambda_2\leq\lambda_3$, then $\lambda_1\leq\lambda_3$.
+    \item For any $\lambda_1,\lambda_2\in\Lambda$, there exists $\lambda\in\Lambda$ such that $\lambda\geq\lambda_1,\lambda_2$.
+  \end{enumerate}
 \end{definition}
+
+\begin{remark}
+  Any directed set is a preordered set.
+\end{remark}
+
+\begin{example}
+  Some examples of directed sets are the following:
+
+  \begin{itemize}
+    \item Any totally ordered set $\pr{X,\leq}$ is a directed set. For instance, $\pr{\mathbb{N},\leq}$, $\pr{\mathbb{Z},\leq}$, $\pr{\mathbb{Q},\leq}$ and $\pr{\mathbb{R},\leq}$.
+    \item Let $\mathcal{N}$ be a collection of sets which is closed under finite intersections of elements of the family. We define the preorder relation $\leq$ as $N\leq M$ if and only if $M\subseteq N$ for any pair of sets $M,N\in\mathcal{N}$. Then $\pr{\mathcal{N},\leq}$ is a directed set. For instance,  $\pr{\mathcal{N}_x\pr{X,\mathcal{T}},\leq}$ where $x\in X$ and $\mathcal{T}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$.
+  \end{itemize}
+\end{example}
+
+\begin{definition}
+  Let $\pr{\Lambda,\leq}$ be a directed set and $X$ be a set. A net in $X$ is a map $\varphi:\Lambda\rightarrow X$. The map $\varphi$ will be denoted by $\set{x_{\lambda}}_{\lambda\in\Lambda}$ where $x_{\lambda}:=\varphi\pr{\lambda}$ for all $\lambda\in\Lambda$. In order to emphasize that $\set{x_{\lambda}}_{\lambda\in\Lambda}$ is a net in $X$, we will write $\set{x_{\lambda}}_{\lambda\in\Lambda}\subseteq X$.
+\end{definition}
+
+\begin{remark}
+  Every sequence on a set is a net on that set.
+\end{remark}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A net \emph{$\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ converges to a point $x\in X$ (with respect to $\pr{X,\mathcal{T}}$)} if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists $\lambda_0=\lambda_0\pr{N}\in\Lambda$ such that $x_\lambda\in N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. 
+\end{definition}
+
+\begin{remark}
+  If $\pr{X,\mathcal{T}}$ is a topological space, $x\in X$ and $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ is a net in $X$ such that $x_\lambda=x$ for all $\lambda\in\Lambda$, then $\lim_{\lambda\in\Lambda}{x_\lambda}=x$.
+\end{remark}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. If \emph{$\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$} is a net converging to a point $x\in X$, we say that \textit{$x$ is a limit of $\set{x_\lambda}_{\lambda\in\Lambda}$}. This is denoted by $\lim_{\lambda\in\Lambda}{x_\lambda}=x$ or $x_\lambda\stackrel{\lambda\in\Lambda}{\rightarrow}x$. 
+  
+  In general, a net in a topological space may have more than one limit.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ be a net in $X$ and $x\in X$. The following are equivalent:
+
+  \begin{enumerate}
+    \item  $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ converges to $x$.
+    \item For every open set $G\in\mathcal{T}$, there exists $\lambda_0=\lambda_0\pr{G}\in\mathbb{N}$ such that $x_\lambda\in G$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$.
+    \item For every basis set $B\in\mathcal{T}$, there exists $\lambda_0=\lambda_0\pr{B}\in\Lambda$ such that $x_\lambda\in B$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Trivial.
+      \item[\boxed{2\Rightarrow3}] Trivial.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Then there exists a basis set $B\in\mathcal{B}$ such that $x\in B\subseteq N$. Thus there exists $\lambda_0=\lambda_0\pr{B}\in\Lambda$ such that $x_\lambda\in B\subseteq N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. Therefore, $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ converges to $x$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  Let $X$ be a set and $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ be a net in $X$. A subnet of $\set{x_\lambda}_{\lambda\in\Lambda}$ is a net $\set{y_\mu}_{\mu\in M}$ for which there exists a function $f:M\rightarrow\Lambda$ satifying the following properties:
+
+  \begin{itemize}
+    \item Monotonicity: For all $\mu_1,\mu_2\in M$, if $\mu_1\leq\mu_2$, then $f\pr{\mu_1}\leq f\pr{\mu_2}$.
+    \item Cofinality: For every $\lambda_0\in\Lambda$, there exists $\mu_0\in M$ such that, for all $\mu\in M$, if $\mu\geq \mu_0$, then $f\pr{\mu}\geq\lambda_0$.
+    \item For all $\mu\in M$, $y_\mu=x_{f\pr{\mu}}$.
+  \end{itemize}
+
+  We will denote $\set{y_\mu}_{\mu\in M}:=\set{x_{\lambda_\mu}}_{\mu\in M}$, where $\lambda_\mu:=f\pr{\mu}$ for all $\mu\in M$.
+\end{definition}
+
+\begin{proposition}
+  Let $X$ be a set, $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ be a sequence in $X$ and $x\in X$. Then $\set{x_\lambda}_{\lambda\in\Lambda}$ converges to $x$ if and only if every subnet $\set{x_{\lambda_\mu}}_{\mu\in M}$ of $\set{x_\lambda}_{\lambda\in\Lambda}$ is convergent to $x$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[$\boxed{\Rightarrow}$] Let $\set{x_{\lambda_\mu}}_{\mu\in M}$ be a subnet of $\set{x_\lambda}_{\lambda\in\Lambda}$ and $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $\lambda_0\in\Lambda$ such that $x_\lambda\in N$ for all $\lambda\in\Lambda$ with $\lambda\geq \lambda_0$. Take $\mu_0\in M$ such that $\lambda_\mu\geq\lambda_0$ for all $\mu\in M$ with $\mu\geq\mu_0$. Then  $x_{\lambda_\mu}\in N$ for all $\mu\in M$ with $\mu\geq\mu_0$. Therefore, $\set{x_{\lambda_\mu}}_{\mu\in M}$ converges to $x$.
+      \item[$\boxed{\Leftarrow}$] Trivial, because $\set{x_\lambda}_{\lambda\in\Lambda}$ is a subnet of itself.
+    \end{itemize}
+  \end{proof} 
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. The following properties hold:
+
+  \begin{enumerate}
+    \item Let $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ be a net in $X$ converging to a point $x\in X$. If $\set{y_\lambda}_{\lambda\in\Lambda}\subseteq X$ is a net in $X$ for which there exists $\lambda_1\in\Lambda$ such that $y_\lambda=x_\lambda$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_1$, then $\set{y_\lambda}_{\lambda\in\Lambda}$ converges to $x$.
+    \item For any point $x\in X$, $x\in\overline{A}$ if and only if there exists a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ converging to $x$. Particularly, $A$ is closed if and only if, for evey net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$, if $\set{x_\lambda}_{\lambda\in\Lambda}$ converges to a point $x\in X$, then $x\in A$.
+    \item  For any point $x\in X$, $x\in A'$ if and only if there exists a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A\setminus\set{x}$ in $A\setminus\set{x}$ converging to $x$.
+    \item $A$ is dense with respect to $\pr{X,\mathcal{T}}$ if and only if, for every $x\in X$, there exists a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ converging to $x$.
+    \item For any point $x\in X$, $x\in\bd\pr{A}$ if and only if there exists a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ and a net $\set{y_\mu}_{\mu\in M}\subseteq X\setminus A$ in $X\setminus A$ both converging to $x$.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $\lambda_2\in\Lambda$ such that $x_\lambda\in N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_2$. Take $\lambda_0\in\Lambda$ such that $\lambda\geq\lambda_1,\lambda_2\in$. Then $y_\lambda=x_\lambda\in N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. Therefore, $\set{y_\lambda}_{\lambda\in\Lambda}$ converges to $x$.
+      \item \begin{itemize}
+        \item[\boxed{\Rightarrow}] Since $x\in\overline{A}$, for all $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, $N\cap A\neq\varnothing$. For each $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, choose $x_N\in N\cap A$. We claim that the net $\set{x_N}_{N\in\mathcal{N}_x\pr{X,\mathcal{T}}}$ converges to $x$. Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and take $N_0=N$. For all $N'\in\mathcal{N}_x\pr{X,\mathcal{T}}$ with $N'\geq N_0$, that is to say, $N'\subseteq N_0$, $x_{N'}\in N'\subseteq N_0=N$. Therefore, $\set{x_N}_{N\in\mathcal{N}_x\pr{X,\mathcal{T}}}$ converges to $x$.
+        \item[\boxed{\Leftarrow}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Then there exists $\lambda_0\in\Lambda$ such that $x_\lambda\in N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. Since $\set{x_\lambda}_{\lambda\in\Lambda}$ is a net in $A$, then $x_\lambda\in A\cap N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$ and, consequently, $A\cap N\neq\varnothing$. Therefore, $x\in\overline{A}$.
+      \end{itemize}
+      \item Given $x\in X$, $x\in A'$ if and only if $x\in\overline{A\setminus\set{x}}$ which, by the previous property, is equivalent to the existence of a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ converging to $x$.
+      \item \begin{itemize}
+        \item[\boxed{\Rightarrow}] If $A$ is dense with respect to $\pr{X,\mathcal{T}}$, then $\overline{A}=X$. Given $x\in X=\overline{A}$, by the second property, there exists a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ converging to $x$.
+        \item[\boxed{\Leftarrow}] Given $x\in X$ and a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ converging to $x$, by the second property, $x\in\overline{A}$. Thus $X\subseteq\overline{A}\subseteq X$ and, consequently, $\overline{A}=X$. Therefore, $A$ is dense with respect to $\pr{X,\mathcal{T}}$.
+      \end{itemize}
+      \item Given $x\in X$, $x\in\bd\pr{A}=\overline{A}\cap\overline{X\setminus A}$ if and only if $x\in\overline{A}$ and $x\in\overline{X\setminus A}$ which is equivalent to the existence of a net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A$ in $A$ and a net $\set{y_\mu}_{\mu\in M}\subseteq X\setminus A$ in $X\setminus A$ both converging to $x$ by the second property.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+The previous proposition shows that nets completely characterize the notions of closure, closedness, derived set, density and boundary, unlike sequences in arbitrary topological spaces. Let's see that nets characterize open sets and topological spaces in general too.
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $G\subseteq X$. Then $G\in\mathcal{T}$ is open if and only if for every net $\pr{x_{\lambda}}_{\lambda\in\Lambda}$ convergent to a point $x\in G$, there exists $\lambda_0\in\Lambda$ such that $x_\lambda\in G$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Trivial.
+      \item[\boxed{\Leftarrow}] By contradiction, suppose $G\notin\mathcal{T}$ is not an open set. Then there exists $x\in G$ such that $x\notin\interior\pr{G}$. Thus, for any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, $N\nsubseteq A$ or, in other words, $N\cap\pr{X\setminus G}\neq\varnothing$. For any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, take $x_N\in N\cap\pr{X\setminus G}$. Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Given $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ with $M\geq N$, then $M\subseteq N$ and, consequently, $x_M\in N$ for all $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ with $M\geq N$. Hence $\set{x_N}_{N\in\mathcal{N}_x\pr{X,\mathcal{T}}}\subseteq X\setminus G$ is a net in $X\setminus G$ convergent to $x$. We have reached a contradiction, because $x_N\in X\setminus G$ for every $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and, consequently, there is no $N_0\in\mathcal{N}_x\pr{X,\mathcal{T}}$ such that $x_N\in G$ for all $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ with $N\geq N_0$, contradicting the hypothesis. Therefore, $G\in\mathcal{T}$ is an open set.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $X$ be a set and $\mathcal{T}_1,\mathcal{T}_2\subseteq\mathcal{P}\pr{X}$ be two topological spaces on $X$. The following are equivalent:
+  
+  \begin{enumerate}
+    \item $\mathcal{T}_1=\mathcal{T}_2$.
+    \item For any net $\set{x_\lambda}_{\lambda\in\Lambda}$ and $x\in X$, $\set{x_{\lambda}}_{\lambda\in\Lambda}$ converges to $x$ with respect $\pr{X,\mathcal{T}_1}$ if and only if $\set{x_{\lambda}}_{\lambda\in\Lambda}$ converges to $x$ with respect $\pr{X,\mathcal{T}_2}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Trivial.
+      \item[\boxed{2\Rightarrow1}] Let $G\in\mathcal{T}_1$ be an open set and $x\in G$. If $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ is convergent to a point $x\in G$ with respect to $\pr{X,\mathcal{T}_1}$, then $\set{x_\lambda}_{\lambda\in\Lambda}$ is convergent to $x$ with respect to $\pr{X,\mathcal{T}_2}$. Thus there exists $\lambda_0\in\Lambda$ such that $x_\lambda\in G$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. By the previous proposition, $G\in\mathcal{T}_2$ is open. Hence, $\mathcal{T}_1\subseteq\mathcal{T}_2$. The roles of $\mathcal{T}_1$ and $\mathcal{T}_2$ are interchangeable. Thus $\mathcal{T}_2\subseteq\mathcal{T}_1$. Therefore, $\mathcal{T}_1=\mathcal{T}_2$.
+    \end{itemize}
+  \end{proof}
+  \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ be a net in $X$. A point $x\in X$ is said to be an \textit{accumulation point of $\set{x_\lambda}_{\lambda\in\Lambda}$ (with respect to $\pr{X,\mathcal{T}}$)} if for any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ and for any $\lambda\in\Lambda$, there exists $\mu=\mu\pr{\lambda}\in\Lambda$ with $\mu\geq\lambda$ such that $x_{\mu}\in N$. We denote by $\text{Acc}\pr{\set{x_{\lambda}}_{\lambda\in\Lambda}}$ the \textit{set of all accumulation points of $\set{x_{\lambda}}_{\lambda\in\Lambda}$}.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$, $\set{x_{\lambda}}_{\lambda\in\Lambda}\subseteq X$ be a net in $X$ and $x\in X$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $x$ is an accumulation point of $\set{x_{\lambda}}_{\lambda\in\Lambda}$.
+    \item For any open set $G\in\mathcal{T}$ containing $x$ and for any $\lambda\in\Lambda$, there exists $\mu=\mu\pr{\lambda}\in\Lambda$ with $\mu\geq\lambda$ such that $x_{\mu}\in G$.
+    \item For any basis set $B\in\mathcal{B}$ containing $x$ and for any $\lambda\in\Lambda$, there exists $\mu=\mu\pr{\lambda}\in\Lambda$ with $\mu\geq\lambda$ such that $x_{\mu}\in B$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Trivial.
+      \item[\boxed{2\Rightarrow3}] Trivial.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $\lambda\in\Lambda$. Then there exists a basis set $B\in\mathcal{B}$ containing $x$ such that $B\subseteq N$. By hypothesis, there exists $\mu\in\Lambda$ with $\mu\geq\lambda$ such that $x_{\mu}\in B\subseteq N$. Therefore, $x$ is an accumulation point of $\set{x_{\lambda}}_{\lambda\in\Lambda}$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq X$ a net in $X$. A point $x\in X$ is an accumulation point of $\set{x_\lambda}_{\lambda\in\Lambda}$ if and only if there exists a subnet $\set{x_{\lambda_{\mu}}}_{\mu\in M}\subseteq X$ in $X$ of $\set{x_\lambda}_{\lambda\in\Lambda}$ converging to $x$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] For every $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $\lambda\in\Lambda$, there exists $\mu_{\pr{N,\lambda}}\in\Lambda$ such that $\mu_{\pr{N,\lambda}}\geq\lambda$ and $\mu_{\pr{N,\lambda}}\in N$. Let $M:=\mathcal{N}_{x}\pr{X,\mathcal{T}}\times\Lambda$ and define the relation $\leq$ on $M$ as follows: given $\pr{N_1,\lambda_1},\pr{N_2,\lambda_2}\in M$, $\pr{N_1,\lambda_1}\leq\pr{N_2,\lambda_2}$ if and only if $N_2\subseteq N_1$ and $\lambda_1\leq\lambda_2$. Let's prove that $\pr{M,\leq}$ is a directed set.
+      
+      Given $\pr{N,\lambda}\in M$, it is clear that $\pr{N,\lambda}\leq\pr{N,\lambda}$, because $N\subseteq N$ and $\lambda\leq\lambda$. 
+
+      Let $\pr{N_1,\lambda_1},\pr{N_2,\lambda_2},\pr{N_3,\lambda_3}\in M$ such that $\pr{N_1,\lambda_1}\leq\pr{N_2,\lambda_2}$ and $\pr{N_2,\lambda_2}\leq\pr{N_3,\lambda_3}$. Then $N_2\leq N_1$, $\lambda_1\leq\lambda_2$, $N_3\subseteq N_2$ and $\lambda_2\leq\lambda_3$. Thus $N_3\subseteq N_1$ and $\lambda_1\leq\lambda_3$. Hence $\pr{N_1,\lambda_1}\leq\pr{N_3,\lambda_3}$.
+
+      Let $\pr{N_1,\lambda_1},\pr{N_2,\lambda_2}\in M$. Since $\lambda$ is a directed set, we can take $\lambda\in\Lambda$ such that $\lambda\geq\lambda_1,\lambda_2$. Since $N_1\cap N_2\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $N_1\cap N_2\subseteq N_1,N_2$, we have $\pr{N_1,\lambda_1},\pr{N_2,\lambda_2}\leq\pr{N_1\cap N_2,\lambda}$.
+
+      Therefore, $\pr{M,\leq}$ is a directed set.
+
+      Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and take $\mu_0:=\pr{N,\lambda}\in\mathcal{N}_x\pr{X,\mathcal{T}}$ with $\lambda\in\Lambda$ fixed. If $\mu:=\pr{N',\lambda'}\in M$ with $\mu\geq\mu_0$, then $x_{\mu}\in N'\subseteq N$. Therefore, $\set{x_{\mu}}_{\mu\in M}$ converges to $x$.
+
+      It remains to be proven that $\set{x_{\mu}}_{\mu\in M}\subseteq X$ is a subnet in $X$ of $\set{x_{\lambda}}_{\lambda\in\Lambda}$. Let $f:\pr{N,\lambda}\in M\mapsto\lambda\in\Lambda$. 
+      
+      It is easy to notice that, if $\mu_1:=\pr{N_1,\lambda_1},\mu_2:=\pr{N_2,\lambda_2}\in M$ with $\mu_1\leq\mu_2$, then $f\pr{\mu_1}=\lambda_1\leq\lambda_2=f\pr{\mu_2}$.
+
+      Let $\lambda_0\in\Lambda$ and take $\mu_0=\pr{N,\lambda}\in M$ with $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$. If $\mu:=\pr{N',\lambda'}\in M$ is such that $\mu\geq\mu_0$, then $f\pr{\mu}=\lambda'\geq\lambda_0$.
+      
+      Additionally, $x_{\mu}=x_{f\pr{\mu}}$ for all $\mu\in M$.
+      
+      Therefore, $\set{x_{\mu}}_{\mu\in M}\subseteq X$ is a subnet in $X$ of $\set{x_{\lambda}}_{\lambda\in\Lambda}$.
+
+      \item[\boxed{\Leftarrow}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $\lambda\in\Lambda$. Then there exists $\mu_0\in\mathbb{N}$ such that $x_{\lambda_\mu}\in N$ for all $\mu\in M$ with $\mu\geq\mu_0$. Let $\mu\in\mathbb{N}$ with $\mu\geq\mu_0$ such that $\lambda_\mu\geq\lambda$. Let $\lambda'=\lambda_{\mu}\in\Lambda$. Then $\lambda'\geq\lambda$ and $x_{\lambda'}\in N$. Therefore, $x$ is an accumulation point of $\set{x_{\lambda}}_{\lambda\in\Lambda}$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\subsection{Sequential spaces and Fréchet-Urysohn spaces}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A \textit{sequentially closed set (with respect to $\pr{X,\mathcal{T}}$)} is a subset $A\subseteq X$ which satisfies that for any sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$, if $\set{x_n}_{n\in\mathbb{N}}$ converges to a point $x\in X$, then $x\in A$. 
+
+  We say that $\pr{X,\mathcal{T}}$ is a \textit{sequential space} if every sequentially closed set is a closed set.
+\end{definition}
+
+\begin{remark}
+  We know that every closed set of a topological space is a sequentially closed set. Sequentially spaces define closed sets as those sets whose converge sequences have their limit in $A$. However, we cannot caracterize the closure of a set as the set of limit points of convergent sequences in that set.
+\end{remark}
+
+Let's see that in sequential spaces, open sets and sequential spaces are characterized by sequences.
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A \textit{sequentially open set (with respect to $\pr{X,\mathcal{T}}$)} is a subset $A\subseteq X$ which satisfies that for any sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ in $X$ convergent to a point $x\in A$, there exists $n_0\in\mathbb{N}$ such that $x_n\in A$ for all $n\in\mathbb{N}$ with $n\geq n_0$.
+\end{definition}
+
+\begin{remark}
+  In any topological space, an open set is always a sequentially open set.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $A\subseteq X$. Then $A$ is a sequentially open set if and only if $X\setminus A$ is a sequentially closed set.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Let $\set{x_n}_{n\in\mathbb{N}}\subseteq X\setminus A$ be a sequence in $X\setminus A$ converging to a point $x\in X$. By contradiction, suppose $x\notin X\setminus A$. Then $x\in A$ and, since $A$ is a sequentially open set, there exists $n_0\in\mathbb{N}$ such that $x_n\in A$ for all $n\in\mathbb{N}$ with $n\geq n_0$. We have reached a contradiction, because $x_n\in X\setminus A$ for all $n\in\mathbb{N}$. Consequently, $x\in X\setminus A$ and, therefore, $X\setminus A$ is sequentially closed.
+      \item[\boxed{\Leftarrow}] Let $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ be a sequence in $X$ converging to a point $x\in A$. By contradiction, assume that $A$ is not a sequentially open set, that is to say, for any $k\in\mathbb{N}$, there exists $n_k\in\mathbb{N}$ with $n_k\geq k$ such that $x_{n_k}\notin A$. Then $\set{x_{n_k}}_{k\in\mathbb{N}}\subseteq X\setminus A$ is a subsequence in $X\setminus A$ of $\set{x_n}_{n\in\mathbb{N}}$. Since $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$, then $\set{x_{n_k}}_{k\in\mathbb{N}}$ converges to $x$ as well. Using that $X\setminus A$ is sequentially closed, we deduce that $x\in X\setminus A$. We have reached a contradiction, because $x\in A$. Therefore, $A$ is a sequentially open set.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  A topological space $\pr{X,\mathcal{T}}$ is sequential if and only if for every sequentially open set $A\subseteq X$, $A\in\mathcal{T}$ is an open set.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Let $A\subseteq X$ be a sequentially open set. Then $X\setminus A$ is a sequentially closed set. Since $\pr{X,\mathcal{T}}$ is a sequential space, $X\setminus A$ is a closed set. Therefore, $A\in\mathcal{T}$ is an open set.
+      \item[\boxed{\Leftarrow}] Let $F\subseteq X$ be a sequentially closed set. Then $X\setminus F$ is a sequentially open set. By hypothesis, $X\setminus F\in\mathcal{T}$ is an open set. Hence $F\in\mathcal{F}\pr{X,\mathcal{T}}$ is closed. Therefore, $\pr{X,\mathcal{T}}$ is a sequential space.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  \rm Let $X$ be a set. Two topologies $\mathcal{T}_1,\mathcal{T}_2\subseteq\mathcal{P}\pr{X}$ are said to be \textit{sequentially equivalent} if it holds that for any sequence $\set{x_n}_{n\in\mathbb{N}}$ and $x\in X$, $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$ with respect $\pr{X,\mathcal{T}_1}$ if and only if $\set{x_n}_{n\in\mathbb{N}}$ converges to $x$ with respect $\pr{X,\mathcal{T}_2}$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{X,\mathcal{T}_2}$ be two sequential spaces. The following are equivalent:
+  
+  \begin{enumerate}
+    \item $\mathcal{T}_1=\mathcal{T}_2$.
+    \item $\mathcal{T}_1$ and $\mathcal{T}_2$ are sequentially equivalent.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Trivial.
+      \item[\boxed{2\Rightarrow1}] Let $G\in\mathcal{T}_1$ be an open set and $x\in G$. If $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is convergent to a point $x\in G$ with respect to $\pr{X,\mathcal{T}_1}$, then $\set{x_n}_{n\in\mathbb{N}}$ is convergent to $x$ with respect to $\pr{X,\mathcal{T}_2}$. Thus there exists $n_0\in\mathbb{N}$ such that $x_n\in G$ for all $n\in\mathbb{N}$ with $n\geq n_0$. By the previous proposition, $G\in\mathcal{T}_2$ is open. Hence, $\mathcal{T}_1\subseteq\mathcal{T}_2$. The roles of $\mathcal{T}_1$ and $\mathcal{T}_2$ are interchangeable. Thus $\mathcal{T}_2\subseteq\mathcal{T}_1$. Therefore, $\mathcal{T}_1=\mathcal{T}_2$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A \textit{Fréchet-Urysohn space} is a topological space $\pr{X,\mathcal{T}}$ which verifies that, for any $A\subseteq X$ and any point $x\in\overline{A}$, there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ converging to $x$.
+\end{definition}
+
+\begin{proposition}
+  \rm If $\pr{X,\mathcal{T}}$ is a Fréchet-Urysohn space, then it is a sequential space.
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $A\subseteq X$ be a sequentially closed set and $x\in\overline{A}$. Since $\pr{X,\mathcal{T}}$ is a Fréchet-Urysohn space, there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ converging to $x$. As $A$ is sequentially closed, $x\in A$. Thus $\overline{A}\subseteq A\subseteq\overline{A}$. Hence $A=\overline{A}$. Consequntly, $A$ is closed. Therefore, $\pr{X,\mathcal{T}}$ is a sequential space.
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a Fréchet-Urysohn space and $A\subseteq X$. The following properties hold:
+
+  \begin{enumerate}
+    \item For any point $x\in X$, $x\in\overline{A}$ if and only if there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ converging to $x$. Particularly, $A$ is closed if and only if, for every sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$, if $\set{x_n}_{n\in\mathbb{N}}$ converges to a point $x\in X$, then $x\in A$.
+    \item For any point $x\in X$, $x\in A'$ if and only if there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{x}$ in $A\setminus\set{x}$ converging to $x$.
+    \item $A$ is dense with respect to $\pr{X,\mathcal{T}}$ if and only if, for every $x\in X$, there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ converging to $x$.
+    \item For any point $x\in X$, $x\in\bd\pr{A}$ if and only if there exists a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ and a sequence $\set{y_n}_{n\in\mathbb{N}}\subseteq X\setminus A$ in $X\setminus A$ both converging to $x$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item It is a direct consequence of $\pr{X,\mathcal{T}}$ being a Fréchet-Urysohn space.
+      \item Given $x\in X$, $x\in A'$ if and only if $x\in\overline{A\setminus\set{x}}$ which, by the previous property, is equivalent to the existence of a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{x}$ in $A\setminus\set{x}$ converging to $x$.
+      \item $A$ is dense if and only if for all $x\in X$, $x\in\overline{A}$, which, by the first property, is equivalent to the existence of a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ converging to $x$.
+      \item Given $x\in X$, $x\in\bd\pr{A}=\overline{A}\cap\overline{X\setminus A}$ if and only if $x\in\overline{A}$ and $x\in\overline{A}$ which, by the first property, is equivalent to the existence of a sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A$ in $A$ and a sequence $\set{y_n}_{n\in\mathbb{N}}\subseteq X\setminus A$ in $X\setminus A$ both converging to $x$.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\section{Limits of functions}
+
+\begin{definition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be topological spaces, $A\subseteq X$, $B\subseteq Y$ and $f:A\rightarrow B$ be a map. If $a\in A'$, we say that \textit{$f\pr{x}$ converges to a point $b\in Y$ when $x$ approaches $a$ (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$)} if for every neighborhood $N\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$ of $b$ there exists a neighborhood $M=M\pr{x,N}\in\mathcal{N}_a\pr{X,\mathcal{T}}$ of $a$ such that $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$.
+\end{definition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be topological spaces, $A\subseteq X$, $B\subseteq Y$ and $f:A\rightarrow B$ be a map. The hypothesis $a\in A'$ is essential for the definition above to have any real content, rather than being vacuous.
+
+  Indeed, suppose $a\notin A'$. This means there exists a neighborhood $M_0\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $\pr{M_0\cap A}\setminus\set{a}=\varnothing$. Then, for any point $b\in Y$ and any neighborhood $N\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$, it suffices to take $M=M_0$ in the definition to obtain $f\pr{\pr{M\cap A}\setminus\set{a}}=f\pr{\emptyset}=\emptyset\subseteq N$.
+
+  That is, the required condition holds trivially, regardless of who $b$ is. Consequently, if $a$ were not an accumulation point of $A$, every $b\in Y$ would satisfy the definition of the limit of $f\pr{x}$ as $x\to a$, which renders the concept useless: it fails to distinguish any behavior of $f$ near $a$.
+
+  Requiring $a\in A'$, on the other hand, guarantees that every neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}}$ of $a$ satisfies $\pr{M\cap A}\setminus\set{a}\neq\varnothing$ so that the inclusion $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$ becomes a genuine restriction on the values taken by $f$ at points of $A$ arbitrarily close to $a$ (but distinct from it). This is what gives meaning to the idea of ``approaching $a$'' and is analogous to why, in ordinary calculus on $\mathbb{R}$, one does not define $\lim_{x\to a}f\pr{x}$ when $a$ is an isolated point of the domain of $f$.
+\end{remark}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map and $a\in A'$. If $f\pr{x}$ converges to a point $b\in  Y$ when $x$ approaches $a$ (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$), we say the $b$ is the limit of $f\pr{x}$ when $x\to a$. This is denoted by $\lim_{x\to a}{f\pr{x}}=b$ or $f\pr{x}\stackrel{x\to a}{\to}b$.
+
+  In general, the limit of a function at a point may not be unique.
+\end{remark}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces with bases $\mathcal{B}_1\subseteq\mathcal{T}_1$ for $\mathcal{T}_1$ and $\mathcal{B}_2\subseteq\mathcal{T}_2$ for $\mathcal{T}_2$ respectively, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. The following are equivalent:
+  
+  \begin{enumerate}
+    \item $\lim_{x\to a}{f\pr{x}}=b$.
+    \item For every open set $G\in\mathcal{T}_2$ containing $b$, there exists an open set $H=H\pr{a,G}\in\mathcal{T}_1$ containing $a$ such that $f\pr{\pr{H\cap A}\setminus\set{a}}\subseteq G$.
+    \item For every basis set $B\in\mathcal{B}_2$ containing $b$, there exists a basis set $\widetilde{B}=\widetilde{B}\pr{a,B}\in\mathcal{B}_1$ containing $a$ such that $f\pr{\pr{\widetilde{B}\cap A}\setminus\set{a}}\subseteq B'$.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+    \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_2$ be an open set containing $b$. Since $G\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}}$ of $a$ such that $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq G$. Taking an open set $H\in\mathcal{T}_1$ such that $x\in H\subseteq M$, we have that $\pr{H\cap A}\setminus\set{a}\subseteq\pr{M\cap A}\setminus\set{a}$ and, therefore, $f\pr{\pr{H\cap A}\setminus\set{a}}\subseteq f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq G$.
+    \item[\boxed{2\Rightarrow3}] Let $B\in\mathcal{B}_2$ be a basis set containing $b$. Since $B\in\mathcal{T}_2$, there exists an open set $H\in\mathcal{T}$ containing $a$ such that $f\pr{\pr{H\cap A}\setminus\set{a}}\subseteq B$. Taking a basis set $\widetilde{B}\in\mathcal{B}_1$ such that $x\in\widetilde{B}\subseteq G$, we have that $\pr{\widetilde{B}\cap A}\setminus\set{a}\subseteq\pr{H\cap A}\setminus\set{a}$ and, therefore, $f\pr{\pr{\widetilde{B}\cap A}\setminus\set{a}}\subseteq f\pr{\pr{H\cap A}\setminus\set{a}}\subseteq B$.
+    \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$ be a neighborhood of $b$. Then there exists a basis set $B\in\mathcal{B}_2$ such that $x\in B\subseteq N$. By hypothesis, there exists a basis set $M\in\mathcal{B}_1$ containing $x$ such that $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq B\subseteq N$. Observe that $M\in\mathcal{N}_a\pr{X,\mathcal{T}}$. Therefore, $\lim_{x\to a}{f\pr{x}}=b$.
+  \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. If $\lim_{x\to a}{f\pr{x}}=b$ and $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ is a sequence in $A\setminus\set{a}$ converging to $a$, then the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $b$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $N\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$ be a neighborhood of $b$. Since $\lim_{x\to a}{f\pr{x}}=b$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$. Since $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ is a sequence in $A\setminus\set{a}$ converging to $a$, there exists $n_0\in\mathbb{N}$ such that $x_n\in\pr{M\cap A}\setminus\set{a}$ for all $n\in\mathbb{N}$ with $n\geq n_0$. As $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$, we have that $f\pr{x_n}\in f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $b$.
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. Then, $\lim_{x\to a}{f\pr{x}}=b$ if and only if for every net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the net $\set{f\pr{x_\lambda}}_{\lambda\in\Lambda}\subseteq B$ in $B$ converges to $b$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Let $N\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$ be a neighborhood of $b$. Since $\lim_{x\to a}{f\pr{x}}=b$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$. Since $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A\setminus\set{a}$ is a net in $A\setminus\set{a}$ converging to $a$, there exists $\lambda_0\in\Lambda$ such that $x_\lambda\in\pr{M\cap A}\setminus\set{a}$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. As $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$, we have that $f\pr{x_\lambda}\in f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. Therefore, the net $\set{f\pr{x_\lambda}}_{\lambda\in\Lambda}\subseteq B$ in $B$ converges to $b$.
+      \item[\boxed{\Leftarrow}] By contradiction, suppose $\lim_{x\to a}{f\pr{x}}=b$. Then there exists a neighborhood $N\in\mathcal{N}_b\pr{X,\mathcal{T}}$ of $b$ such that for all $M\in\mathcal{N}_a\pr{X,\mathcal{T}}$, there exists $x_M\in\pr{M\cap A}\setminus\set{a}$ such that $f\pr{x_M}\notin N$. Since $\set{x_M}_{M\in\mathcal{N}_x\pr{X,\mathcal{T}}}\subseteq A\setminus\set{a}$ is a net in $A\setminus\set{a}$ converging to $a$, by hypothesis, $\set{f\pr{x_M}}_{M\in\mathcal{N}_x\pr{X,\mathcal{T}}}\subseteq B$ is a net in $B$ converging to $b$. Then there exists $M_0\in\mathcal{N}_x\pr{X,\mathcal{T}}$ such that $f\pr{x_{M_0}}\in N$ which is absurd. Therefore, $\lim_{x\to a}{f\pr{x}}=b$.
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ be a Fréchet-Urysohn space and $\pr{Y,\mathcal{T}_2}$ be a topological space, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. Then, $\lim_{x\to a}{f\pr{x}}=b$ if and only if for every sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $b$.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] This was proved previously.
+      \item[\boxed{\Leftarrow}] By contradiction, suppose $\lim_{x\to a}{f\pr{x}}=b$. TERMINAR LA DEMOSTRACIÓN
+    \end{itemize}
+  \end{proof}
+\end{proposition}
