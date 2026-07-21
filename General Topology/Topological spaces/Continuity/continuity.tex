@@ -18,6 +18,32 @@
   \end{proof}
 \end{proposition}
 
+\begin{proposition}
+  \rm Let $\pr{X,\mathcal{T}_1}$, $\pr{Y,\mathcal{T}_2}$ and $\pr{Z,\mathcal{T}_3}$ be three topological spaces, $A\subseteq X$, $B\subseteq Y$, $C\subseteq Z$ and, $f:X\rightarrow B$ and $g:Y\rightarrow C$ two maps. The following properties hold:
+
+  \begin{enumerate}
+    \item If $y\in Y$, the constant map $c_y:x\in X\mapsto y\in Y$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+    \item If $\mathcal{T}'_1\subseteq\mathcal{P}\pr{X}$ is a topology on $X$, the identity map $\text{id}_X:X\rightarrow X$ is $\pr{\mathcal{T}_1,\mathcal{T}_1'}$-continuous if and only if $\mathcal{T}_1'\subseteq\mathcal{T}_1$.
+    \item If $\mathcal{T}'_1\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ and $\mathcal{T}'_1\subseteq\mathcal{T}_1$, the inclusion $i_A:x\in A\mapsto x\in X$ in $A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_1'}$-continuous.
+    \item If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous and $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous, then $g\circ f$ is $\pr{\mathcal{T}_3,\mathcal{T}_1}$-continuous.
+    \item If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous and $A\subseteq X$, then $\rest{f}{A}$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_2}$-continuous.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Given an open set $G\in\mathcal{T}$, $c_y^{-1}\pr{G}=\varnothing$ if $y\notin G$ and $c_y^{-1}\pr{G}=X$ if $y\in G$. In any case, $c_y^{-1}\pr{G}\in\mathcal{T}_1$ for any open set $G\in\mathcal{T}_2$. Therefore, $c_y$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+      \item the identity function $\text{id}_X:X\rightarrow X$ is $\pr{\mathcal{T}_1,\mathcal{T}_1'}$-continuous if and only if $\text{id}_X^{-1}\pr{G}=G\in\mathcal{T}_1$ for all $G\in\mathcal{T}_1'$ which is equivalent to $\mathcal{T}_1'\subseteq\mathcal{T}_1$.
+      \item Let $G\in\mathcal{T}_1'$. Since $\mathcal{T}'_1\subseteq\mathcal{T}_1$, then $G\in\mathcal{T}_1$ and $i_A^{-1}\pr{G}=G\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $i_A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}'_1}$-continuous.
+      \item Let $G\in\mathcal{T}_3$. Since $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous, we have $g^{-1}\pr{G}\in\mathcal{T}_2$. As $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $\pr{g\circ f}^{-1}\pr{G}=f^{-1}\pr{g^{-1}\pr{G}}\in\mathcal{T}_1$. Therefore, $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous.
+      \item Let $G\in\mathcal{T}_2$ be an open set. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $f^{-1}\pr{G}\in\mathcal{T}_1$. Then $\pr{\rest{f}{A}}^{-1}\pr{G}=f^{-1}\pr{G}\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $\rest{f}{A}$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_2}$-continuous.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{example}
+  Let $X$ be a set, $\pr{Y,\mathcal{T}}$ be a topological space, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is trivially $\pr{\mathcal{T}_{\text{dis}},\mathcal{T}}$-continuous and $\pr{\mathcal{T}_{\text{ind}},\mathcal{T}_{\text{ind}}}$-continuous.
+\end{example}
+
 \begin{definition}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $Z\subseteq Y$. A map $f:X\rightarrow Z$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x\in X$} if for any neighborhood $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq N$.
 \end{definition}
@@ -60,6 +86,27 @@
   \end{proof}
 \end{proposition}
 
+\begin{corollary}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ and $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ is a sequence in $A\setminus\set{a}$ converging to $a$, then the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $f\pr{a}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Trivial by \hyperref[Consequence of limits of function with respect to sequences convergence]{Proposition~\ref*{Consequence of limits of function with respect to sequences convergence}}.
+  \end{proof}
+\end{corollary}
+
+\begin{corollary}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if for every net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the net $\set{f\pr{x_\lambda}}_{\lambda\in\Lambda}\subseteq Z$ in $Z$ converges to $f\pr{a}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Trivial by \hyperref[Characterization of limits of functions by nets convergence]{Proposition~\ref*{Characterization of limits of functions by nets convergence}}.
+  \end{proof}
+\end{corollary}
+
+\begin{corollary}
+  Let $\pr{X,\mathcal{T}_1}$ be a Fréchet-Urysohn space, $\pr{Y,\mathcal{T}_2}$ be a topological space, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if for every sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq Z$ in $Z$ converges to $f\pr{a}$.
+  \begin{proof}[\rm\textbf{Proof}]
+    Trivial by the \hyperref[Characterization of limits of functions by sequences convergence]{Proposition~\ref*{Characterization of limits of functions by sequences convergence}}.
+  \end{proof}
+\end{corollary}
+
 \begin{proposition}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. The following are equivalent:
 
@@ -81,7 +128,6 @@
   \end{proof}
 \end{proposition}
 
-\subsection{Weak topology. Product topology}
 
 \section{Open and closed maps. Homeomorphisms}
 
@@ -89,14 +135,32 @@
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that:
 
   \begin{itemize}
-    \item $f$ is an \textit{open map} if $f\pr{G}\in\mathcal{T}_2$ is open for all $G\in\mathcal{T}_1$.
-    \item $f$ is a \textit{closed map} if $f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is closed for all $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$.
+    \item $f$ is an \textit{open map (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$)} if $f\pr{G}\in\mathcal{T}_2$ is open for all $G\in\mathcal{T}_1$.
+    \item $f$ is a \textit{closed map (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$)} if $f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is closed for all $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$.
   \end{itemize}
 \end{definition}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that $f$ is a \textit{homeomorphism} if $f$ is bijective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, and if its inverse is $\pr{\mathcal{T}_2,\mathcal{T}_1}$-continuous.
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that $f$ is a \textit{homeomorphism (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$)} if $f$ is bijective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, and if its inverse is $\pr{\mathcal{T}_2,\mathcal{T}_1}$-continuous.
 \end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$, $\pr{Y,\mathcal{T}_2}$ and $\pr{Z,\mathcal{T}_3}$ be three topological spaces and, $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ be two maps. The following properties hold:
+
+  \begin{enumerate}
+    \item If $f$ and $g$ are open, then $g\circ f$ is open.
+    \item If $f$ and $g$ are closed, then $g\circ f$ is closed.
+    \item If $f$ and $g$ are homeomorphisms, then $g\circ f$ is a homeomorphism.
+  \end{enumerate}
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item Let $G\in\mathcal{T}_1$ be an open set. Since $f$ is open, we have $f\pr{G}\in\mathcal{T}_2$ is an open set. As $g$ is also open, we have $\pr{g\circ f}\pr{G}=g\pr{f\pr{G}}\in\mathcal{T}_3$ is an open set. Therefore, $g\circ f$ is open.
+      \item Let $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$ be closed set. Since $f$ is closed, we have $f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set. As $g$ is also closed, we have $\pr{g\circ f}\pr{F}=g\pr{f\pr{F}}\in\mathcal{F}\pr{Z,\mathcal{T}_3}$ is a closed set. Therefore, $g\circ f$ is closed.
+      \item The composition of bijective and continuous functions is a bijective and continuous function. Applying this for $g\circ f$ and $\pr{g\circ f}^{-1}=f^{-1}\circ g^{-1}$, we deduce that $g\circ f$ is a homeomorphism.
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
 
 \begin{proposition}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a bijective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous map. The following are equivalent:
@@ -116,3 +180,47 @@
     \end{itemize}
   \end{proof}
 \end{proposition}
+
+\subsection{Weak topology. Product topology}
+
+\begin{definition}
+  Let $X$ be a set. Consider a collection:
+  
+  \begin{equation}
+    \mathscr{F}\subseteq\set{\pr{f,Y,\mathcal{T}}\middle|\pr{Y,\mathcal{T}}\text{ is a topological space}, f\in Y^X}
+  \end{equation}
+
+  We define \textit{the weak topology on $X$ induced by $\mathscr{F}$} as the following topology on $X$:
+  
+  \begin{equation}
+    \sigma\pr{X,\mathscr{F}}:=\mathcal{T}\pr{\set{f^{-1}\pr{G}\middle|\pr{f,Y,\mathcal{T}}\in\mathscr{F},G\in\mathcal{T}}},
+  \end{equation}
+
+  that is to say, the coarsest topology on $X$ for which each map $f:X\rightarrow Y$ is $\pr{\sigma\pr{X,\mathscr{F}},\mathcal{T}}$-continuous with $\pr{f,Y,\mathcal{T}}\in\mathscr{F}$. 
+\end{definition}
+
+\begin{definition}
+  Let $I$ be a set of indices and $\set{X_i}_{i\in I}$ be a collection of sets indexed by $I$. We define the \textit{cartesian product of $\mathcal{X}$} as the following set:
+
+  \begin{equation}
+    \prod_{i\in I}{X_i}=\set{f\middle|f\in\pr{\bigcup{\mathcal{X}}}^{I}\text{ and }\forall i\in I,f\pr{i}\in X_i}.
+  \end{equation}
+\end{definition}
+
+From now on, we will say that $\set{X_i}_{i\in I}$ is an indexed collection of sets without specifying that $I$ is the set of indices.
+
+Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define the map $\pi_i:\prod_{i\in I}{X_i}\rightarrow X_i$ called the \textit{projection on the $i$-th component} as $\pi_i\pr{f}=f\pr{i}$.
+
+\begin{definition}
+  Let $\set{X_i}_{i\in I}$ be an indexed collection of sets. For each $i\in I$, let $\mathcal{T}_i\subseteq\mathcal{P}\pr{X}$ be a topological space on $X_i$. Consider the collection $\mathscr{F}:=\set{\pr{\pi_i,X_i,\mathcal{T}_i}\middle|i\in I}$. We define the \textit{product topology or Tychonoff topology} as the following topology on $X$:
+
+  \begin{equation}
+    \mathcal{T}_{\prod_{i\in I}{X_i}}:=\sigma\pr{\prod_{i\in I}{X_i},\mathcal{F}},
+  \end{equation}
+
+  that is to say, the coarsest topology on $\prod_{i\in I}{X_i}$ for which each projection $\pi_X$ is $\pr{\mathcal{T}_{\prod_{i\in I}{X_i}},\mathcal{T}_X}$-continuous with $X\in\mathcal{X}$.
+\end{definition}
+
+\begin{remark}
+  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. By \hyperref[Finite product topology subbasis]{Proposition~\ref*{Finite product topology subbasis}}, $\mathcal{T}_{X_1\times\cdots\times X_d}$ is the coarsest topology on $X_1\times\cdots\times X_d$ for which each projection $\pi_k$ is $\pr{\mathcal{T}_{X_1\times\cdots\times X_d},X_k}$-continuous with $k\in\set{1,\dots,d}$.
+\end{remark}

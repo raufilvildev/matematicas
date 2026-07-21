@@ -476,14 +476,14 @@ Let's see that in sequential spaces, open sets and sequential spaces are charact
   \end{proof}
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}\label{Consequence of limits of function with respect to sequences convergence}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. If $\lim_{x\to a}{f\pr{x}}=b$ and $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ is a sequence in $A\setminus\set{a}$ converging to $a$, then the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $b$.
   \begin{proof}[\rm\textbf{Proof}]
     Let $N\in\mathcal{N}_b\pr{Y,\mathcal{T}_2}$ be a neighborhood of $b$. Since $\lim_{x\to a}{f\pr{x}}=b$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$. Since $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ is a sequence in $A\setminus\set{a}$ converging to $a$, there exists $n_0\in\mathbb{N}$ such that $x_n\in\pr{M\cap A}\setminus\set{a}$ for all $n\in\mathbb{N}$ with $n\geq n_0$. As $f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$, we have that $f\pr{x_n}\in f\pr{\pr{M\cap A}\setminus\set{a}}\subseteq N$ for all $n\in\mathbb{N}$ with $n\geq n_0$. Therefore, the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $b$.
   \end{proof}
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}\label{Characterization of limits of functions by nets convergence}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. Then, $\lim_{x\to a}{f\pr{x}}=b$ if and only if for every net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the net $\set{f\pr{x_\lambda}}_{\lambda\in\Lambda}\subseteq B$ in $B$ converges to $b$.
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
@@ -494,7 +494,7 @@ Let's see that in sequential spaces, open sets and sequential spaces are charact
   \end{proof}
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}\label{Characterization of limits of functions by sequences convergence}
   Let $\pr{X,\mathcal{T}_1}$ be a Fréchet-Urysohn space and $\pr{Y,\mathcal{T}_2}$ be a topological space, $A\subseteq X$, $B\subseteq Y$, $f:A\rightarrow B$ be a map, $a\in A'$ and $b\in Y$. Then, $\lim_{x\to a}{f\pr{x}}=b$ if and only if for every sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $b$.
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
