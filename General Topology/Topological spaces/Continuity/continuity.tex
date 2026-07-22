@@ -19,6 +19,14 @@
 \end{proposition}
 
 \begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous if and only if $f$ is $\pr{\mathcal{T}_1,\pr{\mathcal{T}_2}_Z}$-continuous.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    Let $G'\in\pr{\mathcal{T}_2}_Z$. Then there exists $G\in\mathcal{T}_2$ such that $G'=G\cap Z$. Thus $f^{-1}\pr{G'}=f^{-1}\pr{G\cap Z}=f^{-1}\pr{G}\cap f^{-1}\pr{Z}=f^{-1}\pr{G}\cap X=f^{-1}\pr{G}$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous if and only if $f$ is $\pr{\mathcal{T}_1,\pr{\mathcal{T}_2}_Z}$-continuous.
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
   Let $\pr{X,\mathcal{T}_1}$, $\pr{Y,\mathcal{T}_2}$ and $\pr{Z,\mathcal{T}_3}$ be three topological spaces, $A\subseteq X$, $B\subseteq Y$, $C\subseteq Z$ and, $f:X\rightarrow B$ and $g:Y\rightarrow C$ two maps. The following properties hold:
 
   \begin{enumerate}
@@ -32,7 +40,7 @@
     \hfill
     \begin{enumerate}
       \item Given an open set $G\in\mathcal{T}$, $c_y^{-1}\pr{G}=\varnothing$ if $y\notin G$ and $c_y^{-1}\pr{G}=X$ if $y\in G$. In any case, $c_y^{-1}\pr{G}\in\mathcal{T}_1$ for any open set $G\in\mathcal{T}_2$. Therefore, $c_y$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
-      \item the identity function $\text{id}_X:X\rightarrow X$ is $\pr{\mathcal{T}_1,\mathcal{T}_1'}$-continuous if and only if $\text{id}_X^{-1}\pr{G}=G\in\mathcal{T}_1$ for all $G\in\mathcal{T}_1'$ which is equivalent to $\mathcal{T}_1'\subseteq\mathcal{T}_1$.
+      \item the identity map $\text{id}_X:X\rightarrow X$ is $\pr{\mathcal{T}_1,\mathcal{T}_1'}$-continuous if and only if $\text{id}_X^{-1}\pr{G}=G\in\mathcal{T}_1$ for all $G\in\mathcal{T}_1'$ which is equivalent to $\mathcal{T}_1'\subseteq\mathcal{T}_1$.
       \item Let $G\in\mathcal{T}_1'$. Since $\mathcal{T}'_1\subseteq\mathcal{T}_1$, then $G\in\mathcal{T}_1$ and $i_A^{-1}\pr{G}=G\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $i_A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}'_1}$-continuous.
       \item Let $G\in\mathcal{T}_3$. Since $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous, we have $g^{-1}\pr{G}\in\mathcal{T}_2$. As $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $\pr{g\circ f}^{-1}\pr{G}=f^{-1}\pr{g^{-1}\pr{G}}\in\mathcal{T}_1$. Therefore, $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous.
       \item Let $G\in\mathcal{T}_2$ be an open set. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $f^{-1}\pr{G}\in\mathcal{T}_1$. Then $\pr{\rest{f}{A}}^{-1}\pr{G}=f^{-1}\pr{G}\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $\rest{f}{A}$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_2}$-continuous.
@@ -45,7 +53,7 @@
 \end{example}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $Z\subseteq Y$. A map $f:X\rightarrow Z$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x\in X$} if for any neighborhood $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq N$.
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $Z\subseteq Y$. A map $f:X\rightarrow Z$ is said to be \textit{$\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x\in X$} if for any neighborhood $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}_1}$ of $x$ such that $f\pr{M}\subseteq N$.
 \end{definition}
 
 \begin{proposition}
@@ -53,15 +61,15 @@
   
   \begin{enumerate}
     \item $f$ is  $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
-    \item For any open set $G\in\mathcal{T}_2$ containing $f\pr{x}$, there exists an open set $H=H\pr{x,G}\in\mathcal{T}_1$ containing $x$ such that $f\pr{G}\subseteq H$.
-    \item For any basis set $B\in\mathcal{T}_2$ containing $f\pr{x}$, there exists a basis set $\widetilde{B}=\widetilde{B}\pr{x,G}\in\mathcal{B}_1$ containing $x$ such that $f\pr{\widetilde{B}}\subseteq B$.
+    \item For any open set $G\in\mathcal{T}_2$ containing $f\pr{x}$, there exists an open set $H=H\pr{x,G}\in\mathcal{T}_1$ containing $x$ such that $f\pr{H}\subseteq G$.
+    \item For any basis set $B\in\mathcal{B}_2$ containing $f\pr{x}$, there exists a basis set $\widetilde{B}=\widetilde{B}\pr{x,B}\in\mathcal{B}_1$ containing $x$ such that $f\pr{\widetilde{B}}\subseteq B$.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_2$ be an open set containing $f\pr{x}$. Since $G\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ is a neighborhood of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $f\pr{M}\subseteq G$. Let $H\in\mathcal{T}_1$ containing $x$ such that $H\subseteq M$. Then $f\pr{H}\subseteq f\pr{M}\subseteq G$.
+      \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_2$ be an open set containing $f\pr{x}$. Since $G\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ is a neighborhood of $f\pr{x}$, there exists a neighborhood $M\in\mathcal{N}_x\pr{X,\mathcal{T}_1}$ of $x$ such that $f\pr{M}\subseteq G$. Let $H\in\mathcal{T}_1$ containing $x$ such that $H\subseteq M$. Then $f\pr{H}\subseteq f\pr{M}\subseteq G$.
       \item[\boxed{2\Rightarrow3}] Let $B\in\mathcal{B}_2$ be a basis set containing $f\pr{x}$. Since $B\in\mathcal{T}_2$ is an open set containing $f\pr{x}$, there exists an open set $H\in\mathcal{T}_1$ containing $x$ such that $f\pr{H}\subseteq B$. Let $\widetilde{B}\in\mathcal{B}_1$ containing $x$ such that $\widetilde{B}\subseteq H$. Then $f\pr{\widetilde{B}}\subseteq f\pr{H}\subseteq B$.
-      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{x}$. Then there exists a basis set $B\in\mathcal{B}_2$ containing $x$ such that $B\subseteq N$. By hypothesis, there exists a basis set $M\in\mathcal{B}_1$ containing $x$ such that $f\pr{M}\subseteq B\subseteq N$. It suffices to notice that $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
+      \item[\boxed{3\Rightarrow1}] Let $N\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{x}$. Then there exists a basis set $B\in\mathcal{B}_2$ containing $x$ such that $B\subseteq N$. By hypothesis, there exists a basis set $M\in\mathcal{B}_1$ containing $x$ such that $f\pr{M}\subseteq B\subseteq N$. It suffices to notice that $M\in\mathcal{N}_x\pr{X,\mathcal{T}_1}$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -72,7 +80,7 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{\Rightarrow}] Let $N\in\mathcal{N}_{f\pr{a}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{a}$. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $x$ such that $f\pr{M}\subseteq N$. Since $M\setminus\set{a}\subseteq M$, then $f\pr{M\setminus\set{a}}\subseteq N$. Therefore, $\lim_{x\to a}{f\pr{x}}=f\pr{a}$.
+      \item[\boxed{\Rightarrow}] Let $N\in\mathcal{N}_{f\pr{a}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{a}$. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $f\pr{M}\subseteq N$. Since $M\setminus\set{a}\subseteq M$, then $f\pr{M\setminus\set{a}}\subseteq N$. Therefore, $\lim_{x\to a}{f\pr{x}}=f\pr{a}$.
       \item[\boxed{\Leftarrow}] Let $N\in\mathcal{N}_{f\pr{a}}\pr{Y,\mathcal{T}_2}$ be a neighborhood of $f\pr{a}$. Since $\lim_{x\to a}{f\pr{x}}=f\pr{a}$, there exists a neighborhood $M\in\mathcal{N}_a\pr{X,\mathcal{T}_1}$ of $a$ such that $f\pr{M\setminus\set{a}}\subseteq N$. Since $f\pr{a}\in N$, we have $f\pr{M}\subseteq N$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$.
     \end{itemize}
   \end{proof}
@@ -89,21 +97,21 @@
 \begin{corollary}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ and $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ is a sequence in $A\setminus\set{a}$ converging to $a$, then the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq B$ in $B$ converges to $f\pr{a}$.
   \begin{proof}[\rm\textbf{Proof}]
-    Trivial by \hyperref[Consequence of limits of function with respect to sequences convergence]{Proposition~\ref*{Consequence of limits of function with respect to sequences convergence}}.
+    Trivial by \hyperref[Consequence of limits of maps with respect to sequences convergence]{Proposition~\ref*{Consequence of limits of map with respect to sequences convergence}}.
   \end{proof}
 \end{corollary}
 
 \begin{corollary}
   Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if for every net $\set{x_\lambda}_{\lambda\in\Lambda}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the net $\set{f\pr{x_\lambda}}_{\lambda\in\Lambda}\subseteq Z$ in $Z$ converges to $f\pr{a}$.
   \begin{proof}[\rm\textbf{Proof}]
-    Trivial by \hyperref[Characterization of limits of functions by nets convergence]{Proposition~\ref*{Characterization of limits of functions by nets convergence}}.
+    Trivial by \hyperref[Characterization of limits of maps by nets convergence]{Proposition~\ref*{Characterization of limits of maps by nets convergence}}.
   \end{proof}
 \end{corollary}
 
 \begin{corollary}
   Let $\pr{X,\mathcal{T}_1}$ be a Fréchet-Urysohn space, $\pr{Y,\mathcal{T}_2}$ be a topological space, $a\in X'$, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $a$ if and only if for every sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq A\setminus\set{a}$ in $A\setminus\set{a}$ converging to $a$, the sequence $\set{f\pr{x_n}}_{n\in\mathbb{N}}\subseteq Z$ in $Z$ converges to $f\pr{a}$.
   \begin{proof}[\rm\textbf{Proof}]
-    Trivial by the \hyperref[Characterization of limits of functions by sequences convergence]{Proposition~\ref*{Characterization of limits of functions by sequences convergence}}.
+    Trivial by the \hyperref[Characterization of limits of maps by sequences convergence]{Proposition~\ref*{Characterization of limits of maps by sequences convergence}}.
   \end{proof}
 \end{corollary}
 
@@ -141,12 +149,12 @@
   Let $\pr{X,\mathcal{T}_1}$, $\pr{Y,\mathcal{T}_2}$ and $\pr{Z,\mathcal{T}_3}$ be three topological spaces, $B\subseteq Y$, $C\subseteq Z$ and, $f:X\rightarrow B$ and $g:Y\rightarrow C$ be two maps. Given $x\in X$, if $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$ and $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous at $f\pr{x}$, then $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous at $x$.
   
   \begin{proof}[\rm\textbf{Proof}]
-    Let $N\in\mathcal{N}_{\pr{g\pr{f\pr{x}}}}\pr{Z,\mathcal{T}_3}$ be a neighborhood of $g\pr{f\pr{x}}$. Since $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous at $f\pr{x}$, there exists a neighborhood $\widetilde{N}\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$ such that $g\pr{\widetilde{N}}\subseteq N$. As $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$, there exists a neighborhood $M\in\mathcal{N}_{x}\pr{X,\mathcal{T}_3}$ of $x$ such that $f\pr{M}\subseteq\widetilde{N}$. Thus $\pr{g\circ f}\pr{M}=g\pr{f\pr{M}}\subseteq g\pr{\widetilde{N}}\subseteq N$. Therefore, $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous at $x$.
+    Let $N\in\mathcal{N}_{\pr{g\pr{f\pr{x}}}}\pr{Z,\mathcal{T}_3}$ be a neighborhood of $g\pr{f\pr{x}}$. Since $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous at $f\pr{x}$, there exists a neighborhood $\widetilde{N}\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ of $f\pr{x}$ such that $g\pr{\widetilde{N}}\subseteq N$. As $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous at $x$, there exists a neighborhood $M\in\mathcal{N}_{x}\pr{X,\mathcal{T}_1}$ of $x$ such that $f\pr{M}\subseteq\widetilde{N}$. Thus $\pr{g\circ f}\pr{M}=g\pr{f\pr{M}}\subseteq g\pr{\widetilde{N}}\subseteq N$. Therefore, $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous at $x$.
   \end{proof}
 \end{proposition}
 
 \begin{theorem}[\textbf{Pasting or Gluing Lemma}]
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A_1,\dots,A_n\subseteq\mathcal{F}\pr{X,\mathcal{T}_1}$ with $n\in\mathbb{N}$ be $n$ closed sets such that $X=A_1\cup\dots\cup A_n$ and $\mathcal{G}\subseteq\mathcal{T}$ be a collection of open sets with $X=\bigcup{\mathcal{G}}$. The following properties hold:
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $A_1,\dots,A_n\in\mathcal{F}\pr{X,\mathcal{T}_1}$ with $n\in\mathbb{N}$ be $n$ closed sets such that $X=A_1\cup\dots\cup A_n$, $\mathcal{G}\subseteq\mathcal{T}_1$ be a collection of open sets with $X=\bigcup{\mathcal{G}}$ and $f:X\rightarrow Y$ be a map. The following properties hold:
 
   \begin{enumerate}
     \item If $\rest{f}{A_k}$ is $\pr{\pr{\mathcal{T}_1}_{A_k},\mathcal{T}_2}$-continuous for all $k\in\set{1,\dots,n}$, then $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
@@ -172,7 +180,7 @@
         f^{-1}\pr{G}=f^{-1}\pr{G}\cap X=f^{-1}\pr{G}\cap\pr{\bigcup{\mathcal{G}}}=\bigcup_{H\in\mathcal{G}}{\pr{f^{-1}\pr{G}\cap H}}=\bigcup_{H\in\mathcal{G}}{\pr{\rest{f}{H}}^{-1}\pr{G}}.
       \end{equation}
 
-      Since $\rest{f}{H}$ is $\pr{\pr{\mathcal{T}_1}_H,\mathcal{T}_2}$-continuous for all $H\in\mathcal{G}$, we have $\pr{\rest{f}{H}}^{-1}\pr{G}\in\pr{\mathcal{T}_1}_H$ is an open set for all $H\in\mathcal{G}$. As $H\in\mathcal{T}$ is an open set for all $H\in\mathcal{G}$ for all $H\in\mathcal{G}$, we know that $\pr{\rest{f}{H}}^{-1}\pr{G}\in\mathcal{T}_1$ for all $H\in\mathcal{G}$. Hence $f^{-1}\pr{G}\in\mathcal{T}_1$ is an open set. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+      Since $\rest{f}{H}$ is $\pr{\pr{\mathcal{T}_1}_H,\mathcal{T}_2}$-continuous for all $H\in\mathcal{G}$, we have $\pr{\rest{f}{H}}^{-1}\pr{G}\in\pr{\mathcal{T}_1}_H$ is an open set for all $H\in\mathcal{G}$. As $H\in\mathcal{T}_1$ is an open set for all $H\in\mathcal{G}$, we know that $\pr{\rest{f}{H}}^{-1}\pr{G}\in\mathcal{T}_1$ for all $H\in\mathcal{G}$. Hence $f^{-1}\pr{G}\in\mathcal{T}_1$ is an open set. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
     \end{enumerate}
   \end{proof}
 \end{theorem}
@@ -200,7 +208,7 @@
     \hfill
     \begin{enumerate}
       \item[\boxed{1\Rightarrow2}] Let $G\in\mathcal{T}_1$ be an open set containing $x$ such that $G\subseteq N$. Then $f\pr{G}\in\mathcal{T}_2$ is an open set containing $f\pr{x}$ such that $f\pr{G}\subseteq f\pr{N}$. Since $f\pr{G}\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$, we have $f\pr{N}\in\mathcal{N}_{f\pr{x}}\pr{Y,\mathcal{T}_2}$ is a neighborhood of $f\pr{x}$. 
-      \item[\boxed{2\Rightarrow3}] Trivial, because eveery basis set is neighborhood of all of its points.
+      \item[\boxed{2\Rightarrow3}] Trivial, because every basis set is neighborhood of all of its points.
       \item[\boxed{3\Rightarrow1}] Let $G\in\mathcal{T}_1$ be an open set. Then there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Then $f\pr{G}=\bigcup_{B'\in\mathcal{B}'}{f\pr{B'}}$. By hypothesis, $f\pr{B'}\in\mathcal{T}_2$ is an open set for all $B'\in\mathcal{B}'$. Thus $f\pr{G}\in\mathcal{T}_2$ is an open set. Therefore, $f$ is open.
     \end{enumerate}
   \end{proof}
@@ -227,7 +235,7 @@
     \begin{enumerate}
       \item Let $G\in\mathcal{T}_1$ be an open set. Since $f$ is open, we have $f\pr{G}\in\mathcal{T}_2$ is an open set. As $g$ is also open, we have $\pr{g\circ f}\pr{G}=g\pr{f\pr{G}}\in\mathcal{T}_3$ is an open set. Therefore, $g\circ f$ is open.
       \item Let $F\in\mathcal{F}\pr{X,\mathcal{T}_1}$ be closed set. Since $f$ is closed, we have $f\pr{F}\in\mathcal{F}\pr{Y,\mathcal{T}_2}$ is a closed set. As $g$ is also closed, we have $\pr{g\circ f}\pr{F}=g\pr{f\pr{F}}\in\mathcal{F}\pr{Z,\mathcal{T}_3}$ is a closed set. Therefore, $g\circ f$ is closed.
-      \item The composition of bijective and continuous functions is a bijective and continuous function. Applying this for $g\circ f$ and $\pr{g\circ f}^{-1}=f^{-1}\circ g^{-1}$, we deduce that $g\circ f$ is a homeomorphism.
+      \item The composition of bijective and continuous maps is a bijective and continuous map. Applying this for $g\circ f$ and $\pr{g\circ f}^{-1}=f^{-1}\circ g^{-1}$, we deduce that $g\circ f$ is a homeomorphism.
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -252,7 +260,7 @@
 \end{proposition}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that $f$ is an \textit{embedding (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$)} if $f$ is injective and the map $\widetilde{f}:x\in X\mapsto f\pr{x}\in f\pr{X}$ is an homeomorphism with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\pr{\mathcal{T}_2}_{f\pr{X}}}$.
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. We say that $f$ is an \textit{embedding (with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$)} if $f$ is injective and the map $\widetilde{f}:x\in X\mapsto f\pr{x}\in f\pr{X}$ is a homeomorphism with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{f\pr{X},\pr{\mathcal{T}_2}_{f\pr{X}}}$.
 \end{definition}
 
 \begin{remark}
@@ -264,8 +272,8 @@
 
   \begin{enumerate}
     \item $f$ is an embedding.
-    \item $\widetilde{f}:x\in X\mapsto f\pr{x}\in f\pr{X}$ is open with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\pr{\mathcal{T}_2}_{f\pr{X}}}$.
-    \item $\widetilde{f}:x\in X\mapsto f\pr{x}\in f\pr{X}$ is closed with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\pr{\mathcal{T}_2}_{f\pr{X}}}$.
+    \item $\widetilde{f}:x\in X\mapsto f\pr{x}\in f\pr{X}$ is open with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{f\pr{X},\pr{\mathcal{T}_2}_{f\pr{X}}}$.
+    \item $\widetilde{f}:x\in X\mapsto f\pr{x}\in f\pr{X}$ is closed with respect to $\pr{X,\mathcal{T}_1}$ and $\pr{f\pr{X},\pr{\mathcal{T}_2}_{f\pr{X}}}$.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
     It is a direct consequence of \hyperref[Characterization of homeomorphisms]{Proposition~\ref*{Characterization of homeomorphisms}}.
@@ -304,7 +312,7 @@
   Observe that $\mathcal{S}:=\set{f^{-1}\pr{G}\middle|\pr{f,Y,\mathcal{T}}\in\mathscr{F},G\in\mathcal{T}}$ is a subbasis for $\sigma\pr{X,\mathscr{F}}$. Then a basis for $\sigma\pr{X,\mathscr{F}}$ is the following set:
 
   \begin{equation}
-    \mathcal{B}:=\set{\bigcap_{k=1}^{n}{g_k^{-1}\pr{G_k}}\middle|n\in\mathbb{N}\text{ and, }\forall k\in\set{1,\dots,n},\pr{f,Y_k,\mathcal{T}_k}\in\mathscr{F}\text{ and }G_k\in\mathcal{T}_k}.
+    \mathcal{B}:=\set{\bigcap_{k=1}^{n}{g_k^{-1}\pr{G_k}}\middle|n\in\mathbb{N}\text{ and, }\forall k\in\set{1,\dots,n},\pr{g_k,Y_k,\mathcal{T}_k}\in\mathscr{F}\text{ and }G_k\in\mathcal{T}_k}.
   \end{equation}
 \end{remark}
 
@@ -323,8 +331,8 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{\Rightarrow}] Trivial, because the composition of continuous functions is continuous.
-      \item[\boxed{\Leftarrow}] Let $n\in\mathbb{N}$, $\pr{g_1,Z_1,\mathcal{T}},\dots,\pr{g_1,Z_1,\mathcal{T}}\in\mathscr{F}$ and $G_1\in\mathcal{T}'_1,\dots, G_n\in\mathcal{T}'_n$ be open sets. Then:
+      \item[\boxed{\Rightarrow}] Trivial, because the composition of continuous maps is continuous.
+      \item[\boxed{\Leftarrow}] Let $n\in\mathbb{N}$, $\pr{g_1,Z_1,\mathcal{T}_1'},\dots,\pr{g_n,Z_n,\mathcal{T}_n'}\in\mathscr{F}$ and $G_1\in\mathcal{T}'_1,\dots, G_n\in\mathcal{T}'_n$ be open sets. Then:
       
       \begin{equation}
         \begin{split}
@@ -344,6 +352,8 @@
   \begin{equation}
     \prod_{i\in I}{X_i}=\set{f\middle|f\in\pr{\bigcup{\mathcal{X}}}^{I}\text{ and }\forall i\in I,f\pr{i}\in X_i}.
   \end{equation}
+  
+  The elements of $\prod_{i\in I}{X_i}$ will be denoted as $\pr{x_i}_{i\in I}$.
 \end{definition}
 
 From now on, we will say that $\set{X_i}_{i\in I}$ is an indexed collection of sets without specifying that $I$ is the set of indices.
@@ -351,21 +361,21 @@ From now on, we will say that $\set{X_i}_{i\in I}$ is an indexed collection of s
 Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define the map $\pi_i:\prod_{i\in I}{X_i}\rightarrow X_i$ called the \textit{projection on the $i$-th component} as $\pi_i\pr{f}=f\pr{i}$.
 
 \begin{definition}
-  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. We define the \textit{product topology or Tychonoff topology} as the following topology on $X$:
+  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. We define the \textit{product topology or Tychonoff topology} as the following topology on $\prod_{i\in I}{X_i}$:
 
   \begin{equation}
     \mathcal{T}_{\prod_{i\in I}{X_i}}:=\sigma\pr{\prod_{i\in I}{X_i},\set{\pr{\pi_i,X_i,\mathcal{T}_i}\middle|i\in I}},
   \end{equation}
 
-  that is to say, the coarsest topology on $\prod_{i\in I}{X_i}$ for which each projection $\pi_X$ is $\pr{\mathcal{T}_{\prod_{i\in I}{X_i}},\mathcal{T}_X}$-continuous with $X\in\mathcal{X}$.
+  that is to say, the coarsest topology on $\prod_{i\in I}{X_i}$ for which each projection $\pi_i$ with $i\in I$ is $\pr{\mathcal{T}_{\prod_{i\in I}{X_i}},\mathcal{T}_i}$-continuous.
 \end{definition}
 
 \begin{remark}
-  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. By \hyperref[Finite product topology subbasis]{Proposition~\ref*{Finite product topology subbasis}}, $\mathcal{T}_{X_1\times\cdots\times X_d}$ is the coarsest topology on $X_1\times\cdots\times X_d$ for which each projection $\pi_k$ is $\pr{\mathcal{T}_{X_1\times\cdots\times X_d},X_k}$-continuous with $k\in\set{1,\dots,d}$.
+  Let $d\in\mathbb{N}$ and $\pr{X_1,\mathcal{T}_1},\dots,\pr{X_d,\mathcal{T}_d}$ be $d$ topological spaces. By \hyperref[Finite product topology subbasis]{Proposition~\ref*{Finite product topology subbasis}}, $\mathcal{T}_{X_1\times\cdots\times X_d}$ is the coarsest topology on $X_1\times\cdots\times X_d$ for which each projection $\pi_k$ is $\pr{\mathcal{T}_{X_1\times\cdots\times X_d},\mathcal{T}_k}$-continuous with $k\in\set{1,\dots,d}$.
 \end{remark}
 
 \begin{remark}
-  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces, $i\in I$ and $G\in\mathcal{T}_i$. Then $\pi_i^{-1}\pr{G}=\prod_{j\in I}{G_j}$ where $G_j=X_j$ if $i\neq j$ and $G_j=X_i$ if $i=j$ for all $j\in I$. Therefore, a basis for $\mathcal{T}_{\prod_{i\in I}{X_i}}$ is the following set:
+  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces, $i\in I$ and $G\in\mathcal{T}_i$. Then $\pi_i^{-1}\pr{G}=\prod_{j\in I}{G_j}$ where $G_j=X_j$ if $i\neq j$ and $G_j=G$ if $i=j$ for all $j\in I$. Therefore, a basis for $\mathcal{T}_{\prod_{i\in I}{X_i}}$ is the following set:
 
   \begin{equation}
     \mathcal{B}:=\set{\prod_{i\in I}{G_i}\middle|\forall i\in I,G_i\in\mathcal{T}_i\text{ and }G_i=X_i,\text{ for all but finitely many }i\in I}.
@@ -383,7 +393,14 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
 \begin{proposition}
   Let $\pr{X,\mathcal{T}}$ be a topological space, $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces and $i\in I$. Then the projection on the $i$-th component $\pi_i$ is open with respect to $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ and $\pr{X_i,\mathcal{T}_i}$.
   \begin{proof}[\rm\textbf{Proof}]
-    Let $G:=\prod_{j\in I}{G_j}$ where $G_j\in\mathcal{T}_i$ for all $j\in I$ and $G_j=X_j$ for all but finitely many $j\in I$. Then $\pi_i\pr{G}=G_i\in\mathcal{T}_i$ for all $i\in I$. Therefore, $\pi_i$ is open with respect to $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ and $\pr{X_i,\mathcal{T}_i}$ for all $i\in I$.
+    Let $G:=\prod_{j\in I}{G_j}$ where $G_j\in\mathcal{T}_j$ for all $j\in I$ and $G_j=X_j$ for all but finitely many $j\in I$. Then $\pi_i\pr{G}=G_i\in\mathcal{T}_i$ for all $i\in I$. Therefore, $\pi_i$ is open with respect to $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ and $\pr{X_i,\mathcal{T}_i}$ for all $i\in I$.
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $\set{\pr{Y_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. For each $i\in I$, consider a $\pr{\mathcal{T},\mathcal{T}_i}$-continuous map $f_i:X\rightarrow Y_i$. Then $f:x\in X\rightarrow\pr{f_i\pr{x}}_{i\in I}\in\prod_{i\in I}{X_i}$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{X_i}}}$-continuous.
+  \begin{proof}[\rm\textbf{Proof}]
+    
   \end{proof}
 \end{proposition}
 
@@ -396,10 +413,20 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
     \mathscr{F}\subseteq\set{\pr{f,Y,\mathcal{T}'}\middle|\pr{Y,\mathcal{T}'}\text{ is a topological space}, f\in X^Y}
   \end{equation}
 
-  Then $\mathcal{T}:=\set{G\middle|G\subseteq X\text{ and }\forall\pr{f,Y,\mathcal{T}'}\in\mathscr{F},f^{-1}\pr{G}\in\mathcal{T}'}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$. Furthermore, for all $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\mathcal{T},\mathcal{T}'}$-continuous. Additionally, if $\widetilde{\mathcal{T}}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ such that, for every $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\widetilde{\mathcal{T}},\mathcal{T}'}$-continuous, then $\widetilde{\mathcal{T}}\subseteq\mathcal{T}$.
+  Then $\mathcal{T}:=\set{G\middle|G\subseteq X\text{ and }\forall\pr{f,Y,\mathcal{T}'}\in\mathscr{F},f^{-1}\pr{G}\in\mathcal{T}'}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$. Furthermore, for all $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\mathcal{T}',\mathcal{T}}$-continuous. Additionally, if $\widetilde{\mathcal{T}}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ such that, for every $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\mathcal{T}',\widetilde{\mathcal{T}}}$-continuous, then $\widetilde{\mathcal{T}}\subseteq\mathcal{T}$.
 
   \begin{proof}[\rm\textbf{Proof}]
-    
+    For every $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f^{-1}\pr{\varnothing}=\varnothing,f^{-1}\pr{X}=Y\in\mathcal{T}'$. Then $X,\varnothing\in\mathcal{T}$.
+
+    Let $G_1,G_2\in\mathcal{T}$ be two open sets. Given $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, we know that $f^{-1}\pr{G_1},f^{-1}\pr{G_2}\in\mathcal{T}'$. Then $f^{-1}\pr{G_1\cap G_2}=f^{-1}\pr{G_1}\cap f^{-1}\pr{G_2}\in\mathcal{T}'$. Thus $G_1\cap G_2\in\mathcal{T}$.
+
+    Let $\mathcal{G}\subseteq\mathcal{T}$ be a collection of sets. Given $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, if $G\in\mathcal{G}$, then $f^{-1}\pr{G}\in\mathcal{T}'$. Thus $f^{-1}\pr{\bigcup{\mathcal{G}}}=\bigcup_{G\in\mathcal{G}}{f^{-1}\pr{G}}\in\mathcal{T}'$. Hence $\bigcup{\mathcal{G}}\in\mathcal{T}$.
+
+    Therefore, $\mathcal{T}$ is a topology on $X$.
+
+    By the proper definition of $\mathcal{T}$, if $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, then $f$ is $\pr{\mathcal{T}',\mathcal{T}}$-continuous.
+
+    Let $\widetilde{\mathcal{T}}\subseteq\mathcal{P}\pr{X}$ be a topology on $X$ such that, for every $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\mathcal{T}',\widetilde{\mathcal{T}}}$-continuous. Let $G\in\widetilde{\mathcal{T}}$ be an open set. Then, for every $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f^{-1}\pr{G}\in\mathcal{T}'$. Thus $G\in\mathcal{T}$. Therefore, $\widetilde{\mathcal{T}}\subseteq\mathcal{T}$.
   \end{proof}
 \end{proposition}
 
@@ -410,7 +437,7 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
     \mathscr{F}\subseteq\set{\pr{f,Y,\mathcal{T}'}\middle|\pr{Y,\mathcal{T}'}\text{ is a topological space}, f\in X^Y}
   \end{equation}
   
-  We define the \textit{final topology on $X$ induced by $\mathscr{F}$} as the finest topology on $X$ as the following topology on $X$:
+  We define the \textit{strong topology or final topology on $X$ induced by $\mathscr{F}$} as the finest topology on $X$ as the following topology on $X$:
 
   \begin{equation}
     \mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}:=\set{G\middle|G\subseteq X\text{ and }\forall\pr{f,Y,\mathcal{T}'}\in\mathscr{F},f^{-1}\pr{G}\in\mathcal{T}'},
@@ -419,10 +446,94 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
   that is to say, the finest topology on $X$ for which each map $f:Y\rightarrow X$ is $\pr{\mathcal{T},\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}}$-continuous with $\pr{f,Y,\mathcal{T}}\in\mathscr{F}$.
 \end{definition}
 
-\begin{definition}
-  \rm Let $X$ be a set and $\thicksim$ an equivalence relation $X$. Let $\pi:x\in X\mapsto\br{x}\in X/\thicksim$ be the canonical projection. We define the \textit{quotient topology} with respect to $\pr{X,\mathcal{T}}$ and $\thicksim$ as the following topology on $X/\thicksim$:
+\begin{proposition}\label{Continuity with respect to the strong topology}
+  Let $X$ be a set, $\pr{Y,\mathcal{T}}$ be a topological space and $f:X\rightarrow Y$ be a map. Consider a collection:
   
   \begin{equation}
-    \mathcal{T}_{\thicksim}\pr{X,\mathcal{T}}:=\mathcal{T}_{\text{final}}\pr{X,\set{\pr{\pi,X,\mathcal{T}}}}.
+    \mathscr{F}\subseteq\set{\pr{g,Z,\mathcal{T}'}\middle|\pr{Z,\mathcal{T}'}\text{ is a topological space}, g\in X^Z}
+  \end{equation}
+
+  Then $f$ is $\pr{\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}},\mathcal{T}}$-continuous if and only if for every $\pr{g,Z,\mathcal{T}'}\in\mathscr{F}$, $f\circ g$ is $\pr{\mathcal{T}',\mathcal{T}}$-continuous.
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] Trivial, because the composiition of continuous maps is continuous.
+      \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}$ be an open set. We have to prove that $f^{-1}\pr{G}\in\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}$ is an open set, that is to say, for every $\pr{g,Z,\mathcal{T}'}\in\mathscr{F}$, $g^{-1}\pr{f^{-1}\pr{G}}\in\mathcal{T}'$ which is true, because $f\circ g$ is $\pr{\mathcal{T}',\mathcal{T}}$-continuous for every $\pr{g,Z,\mathcal{T}'}\in\mathscr{F}$. Therefore, $f$ is $\pr{\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}},\mathcal{T}}$-continuous. 
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map $\pi:X\rightarrow X/\thicksim$ called the \textit{canonical projection} as $\pi\pr{x}=\br{x}$.
+
+\begin{definition}
+  \rm Let $X$ be a set and $\thicksim$ an equivalence relation on $X$. We define the \textit{quotient topology} with respect to $\pr{X,\mathcal{T}}$ and $\thicksim$ as the following topology on $X/\thicksim$:
+  
+  \begin{equation}
+    \mathcal{T}_{\thicksim}\pr{X,\mathcal{T}}:=\mathcal{T}_{\text{final}}\pr{X/\thicksim,\set{\pr{\pi,X,\mathcal{T}}}},
+  \end{equation}
+
+  that is to say, the finest topology on $X/\thicksim$ for which the canonical projection $\pi:X\rightarrow X/\thicksim$ is $\pr{\mathcal{T},\mathcal{T}_{\thicksim}\pr{X,\mathcal{T}}}$-continuous.
+\end{definition}
+
+\begin{corollary}
+  Let $\pr{X,\mathcal{T}}$ and $\pr{Y,\mathcal{T}'}$ be two topological spaces, $\thicksim$ an equivalence relation on $X$ and $f:X/\thicksim\rightarrow Y$ be a map. Then $f$ is $\pr{\mathcal{T}_{\thicksim}\pr{X,\mathcal{T}},\mathcal{T}'}$-continuous if and only if $f\circ\pi$ is $\pr{\mathcal{T},\mathcal{T}'}$-continuous.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    It is a direct consequence of \hyperref[Continuity with respect to the strong topology]{Proposition~\ref*{Continuity with respect to the strong topology}}.
+  \end{proof}
+\end{corollary}
+
+\begin{definition}
+  Let $\set{X_i}_{i\in I}$ be an indexed collection of sets. We define the \textit{disjoint union of $\set{X_i}_{i\in I}$} as the following set:
+
+  \begin{equation}
+    \bigsqcup_{i\in I}{X_i}:=\bigcup_{i\in I}{\pr{\set{i}\times X_i}}.
   \end{equation}
 \end{definition}
+
+\begin{definition}
+  Let $\set{X_i}_{i\in I}$ be an indexed collection of sets. Given $j\in I$, we define the \textit{inclusion of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$} as the map $\iota_j:x\in X_j\mapsto\pr{j,x}\in\bigsqcup_{i\in I}{X_i}$.
+\end{definition}
+
+\begin{definition}
+  \rm Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. We define the \textit{sum topology} as the following topology on $\bigsqcup_{i\in I}{X_i}$:
+
+  \begin{equation}
+    \mathcal{T}_{\bigsqcup_{i\in I}{X_i}}:=\mathcal{T}_{\text{final}}\pr{\bigsqcup_{i\in I}{X_i},\set{\pr{\iota_j,X_j,\mathcal{T}_j}\middle|j\in I}},
+  \end{equation}
+  
+
+  that is to say, the finest topology on $\bigsqcup_{i\in I}{X_i}$ for which the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is $\pr{\mathcal{T}_j,\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$-continuous for all $j\in I$.
+\end{definition}
+
+\begin{remark}
+  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces and $G\subseteq\bigsqcup_{i\in I}{X_i}$. Then for each $i\in I$, there exists $G_i\subseteq X_i$, such that $G=\bigsqcup_{i\in I}{G_i}$. Thus $G\in\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}$ is an open set if and only if $\iota_j^{-1}\pr{G}=G_j\in\mathcal{T}_j$ for all $j\in I$. Therefore:
+
+  \begin{equation}
+    \mathcal{T}_{\bigsqcup_{i\in I}{X_i}}:=\set{\bigsqcup_{i\in I}{G_i}\middle|\forall i\in I,G_i\in\mathcal{T}_i}.
+  \end{equation}
+\end{remark}
+
+\begin{corollary}
+  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces, $\pr{Y,\mathcal{T}'}$ be a topological space and $f:\bigsqcup_{i\in i}{X_i}\rightarrow Y$ be a map. Then $f$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in i}{X_i}},\mathcal{T}'}$-continuous if and only if $f\circ\iota_j$ is $\pr{\mathcal{T}_j,\mathcal{T}'}$-continuous for all $j\in I$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    It is a direct consequence of \hyperref[Continuity with respect to the strong topology]{Proposition~\ref*{Continuity with respect to the strong topology}}.
+  \end{proof}
+\end{corollary}
+
+\begin{proposition}
+  \rm Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces. Then for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces and $\pr{Y,\mathcal{T}}$ be a topological space. For each $i\in I$, consider a $\pr{\mathcal{T}_i,\mathcal{T}}$-continuous map $f_i:X_i\rightarrow Y$. Then the map $f:\pr{j,x}\in\bigsqcup_{i\in I}{X}\mapsto f_j\pr{x}\in Y$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}}$-continuous.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
