@@ -382,7 +382,7 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
   \end{equation}
 \end{remark}
 
-\begin{corollary}
+\begin{corollary}\label{Continuity with respect to the product topology}
   Let $\pr{X,\mathcal{T}}$ be a topological space, $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces and $f:X\rightarrow\prod_{i\in I}{X_i}$ be a map. Then $f$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{X_i}}}$-continuous if and only if $\pi_i\circ f$ is $\pr{\mathcal{T},\mathcal{T}_i}$-continuous for all $i\in I$.
 
   \begin{proof}[\rm\textbf{Proof}]
@@ -397,12 +397,12 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
   \end{proof}
 \end{proposition}
 
-\begin{proposition}
+\begin{corollary}
   Let $\pr{X,\mathcal{T}}$ be a topological space, $\set{\pr{Y_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. For each $i\in I$, consider a $\pr{\mathcal{T},\mathcal{T}_i}$-continuous map $f_i:X\rightarrow Y_i$. Then $f:x\in X\rightarrow\pr{f_i\pr{x}}_{i\in I}\in\prod_{i\in I}{X_i}$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{X_i}}}$-continuous.
   \begin{proof}[\rm\textbf{Proof}]
-    
+    Given $i\in I$, since $\pi_i\circ f=f_i$ is $\pr{\mathcal{T},\mathcal{T}_i}$-continuous, by \hyperref[Continuity with respect to the product topology]{Corollary~\ref*{Continuity with respect to the product topology}}, $f$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{X_i}}}$-continuous.
   \end{proof}
-\end{proposition}
+\end{corollary}
 
 \section{Strong topology. Quotient topology and sum topology}
 
@@ -514,7 +514,7 @@ Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map
   \end{equation}
 \end{remark}
 
-\begin{corollary}
+\begin{corollary}\label{Continuity with respect to the sum topology}
   Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces, $\pr{Y,\mathcal{T}'}$ be a topological space and $f:\bigsqcup_{i\in i}{X_i}\rightarrow Y$ be a map. Then $f$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in i}{X_i}},\mathcal{T}'}$-continuous if and only if $f\circ\iota_j$ is $\pr{\mathcal{T}_j,\mathcal{T}'}$-continuous for all $j\in I$.
 
   \begin{proof}[\rm\textbf{Proof}]
@@ -526,7 +526,7 @@ Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map
   \rm Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces. Then for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
   
   \begin{proof}[\rm\textbf{Proof}]
-    
+    Let $j\in I$. We know that $\iota_j$ is $\pr{\mathcal{T}_i,\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$-continuous and injective. Given an open set $G\in\mathcal{T}_j$, $\iota_j\pr{G}=\set{j}\times G\in\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}$. Thus $\iota_j$ is open with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$. Therefore, for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
   \end{proof}
 \end{proposition}
 
@@ -534,6 +534,6 @@ Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map
   Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces and $\pr{Y,\mathcal{T}}$ be a topological space. For each $i\in I$, consider a $\pr{\mathcal{T}_i,\mathcal{T}}$-continuous map $f_i:X_i\rightarrow Y$. Then the map $f:\pr{j,x}\in\bigsqcup_{i\in I}{X}\mapsto f_j\pr{x}\in Y$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}}$-continuous.
 
   \begin{proof}[\rm\textbf{Proof}]
-    
+    Given $i\in I$, since $f\circ\iota_i=f_i$ is $\pr{\mathcal{T}_i,\mathcal{T}}$-continuous, by \hyperref[Continuity with respect to the sum topology]{Corollary~\ref*{Continuity with respect to the sum topology}}, $f$ is  $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}}$-continuous.
   \end{proof}
 \end{proposition}
