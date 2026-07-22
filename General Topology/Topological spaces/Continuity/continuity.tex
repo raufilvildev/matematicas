@@ -41,7 +41,7 @@
 \end{proposition}
 
 \begin{example}
-  Let $X$ be a set, $\pr{Y,\mathcal{T}}$ be a topological space, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is trivially $\pr{\mathcal{T}_{\text{dis}},\mathcal{T}}$-continuous and $\pr{\mathcal{T}_{\text{ind}},\mathcal{T}_{\text{ind}}}$-continuous.
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces, $Z\subseteq Y$ and $f:X\rightarrow Z$ be a map. Then $f$ is trivially $\pr{\mathcal{T}_{\text{dis}},\mathcal{T}_2}$-continuous and $\pr{\mathcal{T}_1,\mathcal{T}_{\text{ind}}}$-continuous.
 \end{example}
 
 \begin{definition}
@@ -351,10 +351,10 @@ From now on, we will say that $\set{X_i}_{i\in I}$ is an indexed collection of s
 Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define the map $\pi_i:\prod_{i\in I}{X_i}\rightarrow X_i$ called the \textit{projection on the $i$-th component} as $\pi_i\pr{f}=f\pr{i}$.
 
 \begin{definition}
-  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. Consider the collection $\mathscr{F}:=\set{\pr{\pi_i,X_i,\mathcal{T}_i}\middle|i\in I}$. We define the \textit{product topology or Tychonoff topology} as the following topology on $X$:
+  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. We define the \textit{product topology or Tychonoff topology} as the following topology on $X$:
 
   \begin{equation}
-    \mathcal{T}_{\prod_{i\in I}{X_i}}:=\sigma\pr{\prod_{i\in I}{X_i},\mathcal{F}},
+    \mathcal{T}_{\prod_{i\in I}{X_i}}:=\sigma\pr{\prod_{i\in I}{X_i},\set{\pr{\pi_i,X_i,\mathcal{T}_i}\middle|i\in I}},
   \end{equation}
 
   that is to say, the coarsest topology on $\prod_{i\in I}{X_i}$ for which each projection $\pi_X$ is $\pr{\mathcal{T}_{\prod_{i\in I}{X_i}},\mathcal{T}_X}$-continuous with $X\in\mathcal{X}$.
@@ -388,3 +388,41 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
 \end{proposition}
 
 \section{Strong topology. Quotient topology and sum topology}
+
+\begin{proposition}
+  Let $X$ be a set. Consider a collection:
+  
+  \begin{equation}
+    \mathscr{F}\subseteq\set{\pr{f,Y,\mathcal{T}'}\middle|\pr{Y,\mathcal{T}'}\text{ is a topological space}, f\in X^Y}
+  \end{equation}
+
+  Then $\mathcal{T}:=\set{G\middle|G\subseteq X\text{ and }\forall\pr{f,Y,\mathcal{T}'}\in\mathscr{F},f^{-1}\pr{G}\in\mathcal{T}'}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$. Furthermore, for all $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\mathcal{T},\mathcal{T}'}$-continuous. Additionally, if $\widetilde{\mathcal{T}}\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ such that, for every $\pr{f,Y,\mathcal{T}'}\in\mathscr{F}$, $f$ is $\pr{\widetilde{\mathcal{T}},\mathcal{T}'}$-continuous, then $\widetilde{\mathcal{T}}\subseteq\mathcal{T}$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  Let $X$ be a set. Consider a collection:
+  
+  \begin{equation}
+    \mathscr{F}\subseteq\set{\pr{f,Y,\mathcal{T}'}\middle|\pr{Y,\mathcal{T}'}\text{ is a topological space}, f\in X^Y}
+  \end{equation}
+  
+  We define the \textit{final topology on $X$ induced by $\mathscr{F}$} as the finest topology on $X$ as the following topology on $X$:
+
+  \begin{equation}
+    \mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}:=\set{G\middle|G\subseteq X\text{ and }\forall\pr{f,Y,\mathcal{T}'}\in\mathscr{F},f^{-1}\pr{G}\in\mathcal{T}'},
+  \end{equation}
+
+  that is to say, the finest topology on $X$ for which each map $f:Y\rightarrow X$ is $\pr{\mathcal{T},\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}}$-continuous with $\pr{f,Y,\mathcal{T}}\in\mathscr{F}$.
+\end{definition}
+
+\begin{definition}
+  \rm Let $X$ be a set and $\thicksim$ an equivalence relation $X$. Let $\pi:x\in X\mapsto\br{x}\in X/\thicksim$ be the canonical projection. We define the \textit{quotient topology} with respect to $\pr{X,\mathcal{T}}$ and $\thicksim$ as the following topology on $X/\thicksim$:
+  
+  \begin{equation}
+    \mathcal{T}_{\thicksim}\pr{X,\mathcal{T}}:=\mathcal{T}_{\text{final}}\pr{X,\set{\pr{\pi,X,\mathcal{T}}}}.
+  \end{equation}
+\end{definition}
