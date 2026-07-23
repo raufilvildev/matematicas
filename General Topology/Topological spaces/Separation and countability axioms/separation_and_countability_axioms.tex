@@ -18,9 +18,9 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{1\Rightarrow2}]
-      \item[\boxed{2\Rightarrow3}]
-      \item[\boxed{3\Rightarrow1}]
+      \item[\boxed{1\Rightarrow2}] Suppose there exists a neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ (resp. $M\in\mathcal{N}_y\pr{X,\mathcal{T}}$) of $x$ (resp. $y$) such that $x\in N$ and $y\notin N$ (resp. $x\notin M$ and $y\in M$). Then there exists an open set $G\in\mathcal{T}$ containing $x$ (resp. $y$) such that $G\subseteq N$ (resp. $G\subseteq M$). Since $y\notin N$ (resp. $x\notin M$) and $G\subseteq N$ (resp. $G\subseteq M$), we know that $y\notin G$ (resp. $x\notin G$).
+      \item[\boxed{2\Rightarrow3}] Suppose there exists an open set $G\in\mathcal{T}$ containing $x$ (resp. $y$) such that $x\in G$ and $y\notin G$ (reso, $x\notin G$ and $y\in G$). Then there exists a basis set $B\in\mathcal{B}$ containing $x$ (resp. $y$) such that $B\subseteq G$. Since $y\notin G$ (resp. $x\notin G$) and $B\subseteq G$, then $y\notin B$ (resp. $x\notin B$).
+      \item[\boxed{3\Rightarrow1}] Trivial.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -36,8 +36,8 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
-      \item 
-      \item 
+      \item Let $x,y\in A$ be two distinct points. Then there exists $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ (resp. $M\in\mathcal{N}_y\pr{X,\mathcal{T}}$) of $x$ (resp. $y$) such that $y\notin N$ (resp. $x\notin M$). Observe that $N\cap A\in\mathcal{N}_x\pr{A,\mathcal{T}_A}$ (resp. $N\cap A\in\mathcal{N}_y\pr{A,\mathcal{T}_A}$) is a neighborhood of $x$ (resp. $y$). Therefore, $\pr{A,\mathcal{T}_A}$ is a Kolmogorov space. 
+      \item Let $x:=\pr{x_i}_{i\in I},y:=\pr{y_i}_{i\in I}\in\prod_{i\in I}{X_i}$ be two distinct points. Then there exists $i_0\in I$ such that $x_{i_0}\neq y_{i_0}$. Since $\pr{X_{i_0},\mathcal{T}_{i_0}}$ is a Kolmogorov space, there exists an open set $G_{i_0}\in\mathcal{T}_{i_0}$ containing $x$ (resp. $y$) such that $y\notin G_{i_0}$ (resp. $x\notin G_{i_0}$). Let $G=\prod_{i\in I}{G_i}$ where $G_i=X_i$ for all $i\in I\setminus\set{i_0}$. Then $G\in\mathcal{T}_{\prod_{i\in I}{X_i}}$ is an open set containing $x$ (resp. $y$) such that $y\notin G$ (resp. $x\notin G$). Therefore, $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Kolmogorov space.
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -54,13 +54,13 @@
     \item For every pair of distinct points $x,y\in X$, there exists a pair of open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1\setminus G_2$ and $y\in G_2\setminus G_1$.
     \item For every pair of distinct points $x,y\in X$,  there exists a pair of basis sets $B_1,B_2\in\mathcal{B}$ such that $x\in B_1\setminus B_2$ and $y\in B_2\setminus B_1$.
   \end{enumerate}
-   
+  
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{1\Rightarrow2}]
-      \item[\boxed{2\Rightarrow3}]
-      \item[\boxed{3\Rightarrow1}]
+      \item[\boxed{1\Rightarrow2}] Let $x,y\in X$ be two distinct points. Then there exists $N_1\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$ and $N_2\in\mathcal{N}_y\pr{X,\mathcal{T}}$ be a neighborhood of $y$ such that $x\in N_1\setminus N_2$ and $y\in N_2\setminus N_1$. Then there exists two open sets $G_1,G_2\in\mathcal{T}$ such that $G_1$ contains $x$, $G_1\subseteq N_1$, $G_2$ contains $y$ and $G_2\subseteq N_2$. Since $x\notin N_2$ and $G_2\subseteq N_2$, then $x\notin G_2$. Furthermore, as $y\notin N_1$ and $G_1\subseteq N_1$, then $y\notin G_1$. Therefore, $x\in G_1\setminus G_2$ and $y\in G_2\setminus G_1$.
+      \item[\boxed{2\Rightarrow3}] Let $x,y\in X$ be two distinct points and, $G_1,G_2\in\mathcal{T}$ be two open sets such that $x\in G_1\setminus G_2$ and $y\in G_2\setminus G_1$. Then there exists two basis sets $B_1,B_2\in\mathcal{B}$ such that $B_1$ contains $x$, $B_1\subseteq G_1$, $B_2$ contains $y$ and $B_2\subseteq G_2$. Since $x\notin G_2$ and $B_2\subseteq G_2$, then $x\notin B_2$. Furthermore, as $y\notin G_1$ and $B_1\subseteq G_1$, then $y\notin B_1$. Therefore, $x\in B_1\setminus B_2$ and $y\in B_2\setminus B_1$.
+      \item[\boxed{3\Rightarrow1}] Trivial.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -68,7 +68,7 @@
 \begin{proposition}
   A Fréchet space $\pr{X,\mathcal{T}}$ is a Kolmogorov space.
   \begin{proof}[\rm\textbf{Proof}]
-    
+    Trivial by the definition of Fréchet space.
   \end{proof}
 \end{proposition}
 
@@ -83,8 +83,8 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
-      \item 
-      \item 
+      \item Let $x,y\in A$ be two distinct points. Then there exists $N_1\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$ and $N_2\in\mathcal{N}_y\pr{X,\mathcal{T}}$ be a neighborhood of $y$ such that $x\in N_1\setminus N_2$ and $y\in N_2\setminus N_1$. Observe that $N_1\cap A\in\mathcal{N}_x\pr{X,\mathcal{T}_1}$ and $N_2\cap A\in\mathcal{N}_y\pr{X,\mathcal{T}}$. Therefore, $\pr{A,\mathcal{T}_A}$ is a Fréchet space.
+      \item Let $x:=\pr{x_i}_{i\in I},y:=\pr{y_i}_{i\in I}\in\prod_{i\in I}{X_i}$ be two distinct points. Then there exists $i_0\in I$ such that $x_{i_0}\neq y_{i_0}$. Since $\pr{X_{i_0},\mathcal{T}_{i_0}}$ is a Fréchet space, there exists two open set $G_{i_0,1},G_{i_0,2}\in\mathcal{T}_{i_0}$ such that $x\in G_{i_0,1}\setminus G_{i_0,2}$ and $y\in G_{i_0,2}\setminus G_{i_0,1}$. Let $G_1:=\prod_{i\in I}{G_{i,1}}$ amd $G_2:=\prod_{i\in I}{G'_{i,2}}$ where $G_{i,1}=G_{i,2}=X_i$ for all $i\in I\setminus\set{i_0}$. Then $G_1,G_2\in\mathcal{T}_{\prod_{i\in I}{X_i}}$ are open sets such that $x\notin G_1\setminus G_2$ and $y\in G_2\setminus G_1$. Therefore, $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Fréchet space.
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -100,19 +100,29 @@
 
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
-    \begin{enumerate}
-      \item 
-      \item 
-      \item 
-    \end{enumerate}
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] Let $x\in X$. Given $y\in X$, there exists an open set $G_y\in\mathcal{T}$ such that $x\notin G_y$. Then $X\setminus\set{x}=\bigcup_{y\in X\setminus\set{x}}{G_y}\in\mathcal{T}$ is an open set. Therefore, $\set{x}\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set.
+      \item[\boxed{2\Rightarrow3}] Trivial, because a finite set is finite union of singletons which by hypothesis are closed with respect to $\pr{X,\mathcal{T}}$.
+      \item[\boxed{3\Rightarrow1}] Let $x,y\in X$ two distinct points. Since $\set{x},\set{y}\in\mathcal{F}\pr{X,\mathcal{T}}$ are closed sets, then $G_1:=X\setminus\set{y},G_2:=X\setminus\set{x}\in\mathcal{T}$ are open sets. Furthermore, $x\in G_1\setminus G_2$ and $y\in G_2\setminus G_1$. Therefore, $\pr{X,\mathcal{T}}$ is a Fréchet space.
+    \end{itemize}
   \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}}$ be a Fréchet space and $A\subseteq X$. Then $x\in A'$ if and only if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, the set $N\cap A$ has infinite points.
+  Let $\pr{X,\mathcal{T}}$ be a Fréchet space, $x\in X$ and $A\subseteq X$. Then $x\in A'$ if and only if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, the set $N\cap A$ has infinite points.
   
   \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] By contradiction, suppose there exists a neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$, such that $N\cap A$ is a finite set. Since $\pr{X,\mathcal{T}}$ is a Fréchet space, we know that $N\cap A\in\mathcal{F}\pr{X,\mathcal{T}}$ is closed. Particularly, $F:=\pr{N\cap A}\setminus\set{x}\in\mathcal{F}\pr{X,\mathcal{T}}$ is closed. Let $G:=X\setminus F\in\mathcal{T}$. Observe that $x\in G$ and, consequently, $G\in\mathcal{N}_x\pr{X,\mathcal{T}}$. Thus $M:=N\cap G\in\mathcal{N}_x\pr{X,\mathcal{T}}$ is a neighborhood of $x$. However:
+      
+      \begin{equation}
+        M\cap A=\pr{N\cap G}\cap A=\pr{N\cap\pr{X\setminus F}}\cap A=\pr{N\cap\pr{X\setminus\pr{\pr{N\cap A}\setminus\set{x}}}}\cap A=\set{x}.
+      \end{equation}
     
+      Consequently, $\pr{M\cap A}\setminus\set{x}=\varnothing$. We have reached a contradiction, because $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $\pr{M\cap A}\setminus\set{x}=\varnothing$. Therefore, $x\in A'$.
+      \item[\boxed{\Leftarrow}] Let $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ be a neighborhood of $x$. Since $N\cap A$ has infinite points, then $\pr{N\cap A}\setminus\set{x}\neq\varnothing$. Therefore, $x\in A'$.
+    \end{itemize}
   \end{proof}
 \end{proposition}
 
@@ -132,9 +142,9 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{1\Rightarrow2}]
-      \item[\boxed{2\Rightarrow3}]
-      \item[\boxed{3\Rightarrow1}]
+      \item[\boxed{1\Rightarrow2}] Let $x,y\in X$ be two distinct points. Then there exists a neighborhood $N_1\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ and a neighborhood $N_2\in\mathcal{N}_y\pr{X,\mathcal{T}}$ such that $N_1\cap N_2=\varnothing$. Thus there exists two open sets $G_1,G_2\in\mathcal{T}$ such that $G_1$ contains $x$, $G_1\subseteq N_1$, $G_2$ contains $y$ and $G_2\subseteq N_2$. Since $N_1\cap N_2=\varnothing$, $G_1\subseteq N_1$ and $G_2\subseteq N_2$, we have $G_1\cap G_2=\varnothing$.
+      \item[\boxed{2\Rightarrow3}] Let $x,y\in X$ be two distinct points. Then there exists a pair of disjoint open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1$ and $y\in G_2$. Thus there exists two basis sets $B_1,B_2\in\mathcal{B}$ such that $B_1$ contains $x$, $B_1\subseteq G_1$, $B_2$ contains $y$ and $B_2\subseteq G_2$. Since $G_1\cap G_2=\varnothing$, $B_1\subseteq G_1$  and $B_2\subseteq G_2$, we have $B_1\cap B_2=\varnothing$.
+      \item[\boxed{3\Rightarrow1}] Trivial.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -143,15 +153,15 @@
   A Hausdorff space $\pr{X,\mathcal{T}}$ is a Fréchet space.
 
   \begin{proof}[\rm\textbf{Proof}]
-    
+    Trivial by the definition of Hausdorff space.
   \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  If $\pr{X,\mathcal{T}}$ is a Hausdorff space and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is a convergent sequence in $X$, there exists a unique $x\in X$ such that $\lim_{n\to\infty}{x_n}=x$.
+  If $\pr{X,\mathcal{T}}$ is a Hausdorff space and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is a convergent sequence in $X$, then there exists a unique $x\in X$ such that $\lim_{n\to\infty}{x_n}=x$.
 
   \begin{proof}[\rm\textbf{Proof}]
-    
+    By contradiction, suppose there exists two distinct points $x,y\in X$ such that $\lim_{n\to\infty}{x_n}=x$ and $\lim_{n\to\infty}{x_n}=y$. Let $G_x,G_y\in\mathcal{T}$ be a pair of disjoint open sets such that $x\in G_x$ and $y\in G_y$. Then there exists $n_1,n_2\in\mathbb{N}$ such that $x_n\in G_x$ for all $n\in\mathbb{N}$ with $n\geq n_1$ and $x_n\in G_y$ for all $n\in\mathbb{N}$ with $n\geq n_2$. Let $n_0:=\max\set{n_1,n_2}\in\mathbb{N}$. Then $x_n\in G_1\cap G_2$ for all $n\in\mathbb{N}$ with $n\geq n_0$. We have reached a contradiction, because $G_1\cap G_2=\varnothing$. Therefore, $x=y$.
   \end{proof}
 \end{proposition}
 
@@ -161,8 +171,20 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
-      \item[\boxed{\Rightarrow}]
-      \item[\boxed{\Leftarrow}]
+      \item[\boxed{\Rightarrow}] By contradiction, suppose there exists two distinct points $x,y\in X$ such that $\lim_{\lambda\in\Lambda}{x_{\lambda}}=x$ and $\lim_{\lambda\in\Lambda}{x_{\lambda}}=y$. Let $G_x,G_y\in\mathcal{T}$ be a pair of disjoint open sets such that $x\in G_x$ and $y\in G_y$. Then there exists $\lambda_1,\lambda_2\in\Lambda$ such that $x_{\lambda}\in G_x$ for all $\lambda\in\Lambda$ with $\lambda\geq \lambda_1$ and $x_{\lambda}\in G_y$ for all $\lambda\in\Lambda$ with $\lambda\geq \lambda_2$. Let $\lambda_0\in\Lambda$ such that $\lambda_0\geq\lambda_1,\lambda_2$. Then $x_\lambda\in G_1\cap G_2$ for all $\lambda\in\Lambda$ with $\lambda\geq\lambda_0$. We have reached a contradiction, because $G_1\cap G_2=\varnothing$. Therefore, $x=y$.
+      \item[\boxed{\Leftarrow}] By contradiction, suppose there exists a pair of distinct points $x,y\in X$ such that for any pair of open sets $G_1,G_2\in\mathcal{T}$, $x\in G_1$ and $y\in G_2$ implies that $G_1\cap G_2\neq\varnothing$. 
+      
+      Let $\Lambda:=\pr{\mathcal{N}_x\pr{X,\mathcal{T}}\cap\mathcal{T}}\times\pr{\mathcal{N}_y\pr{X,\mathcal{T}}\cap\mathcal{T}}$. For each $\lambda:=\pr{G_{1,\lambda},G_{2,\lambda}}\in\Lambda$ choose $x_\lambda\in G_{1,\lambda}\cap G_{2,\lambda}$. Define the relation $\leq$ on $\Lambda$ as follows: given $\pr{G_{1,\lambda},G_{2,\lambda}},\pr{G_{1,\lambda}',G_{2,\lambda}'}\in\Lambda$, $\pr{G_{1,\lambda},G_{2,\lambda}}\leq\pr{G_{1,\lambda}',G_{2,\lambda}'}$ if and only if $G_{1,\lambda}'\subseteq G_{1,\lambda}$ and $G_{2,\lambda}'\subseteq G_{2,\lambda}$. Let's prove that $\pr{\Lambda,\leq}$ is a directed set.
+
+      Given $\pr{G_{1,\lambda},G_{2,\lambda}}\in\Lambda$, it is clear that $\pr{G_{1,\lambda},G_{2,\lambda}}\leq\pr{G_{1,\lambda},G_{2,\lambda}}$, because $G_{1,\lambda}\leq G_{1,\lambda}$ and $G_{2,\lambda}\leq G_{2,\lambda}$.
+
+      Let $\pr{G_{1,\lambda},G_{2,\lambda}},\pr{G_{1,\lambda}',G_{2,\lambda}'},\pr{G_{1,\lambda}'',G_{2,\lambda}''}\in\Lambda$ such that $\pr{G_{1,\lambda},G_{2,\lambda}}\leq\pr{G_{1,\lambda}',G_{2,\lambda}'}$ and $\pr{G_{1,\lambda}',G_{2,\lambda}'}\leq\pr{G_{1,\lambda}'',G_{2,\lambda}''}$. Then $G_{1,\lambda}'\subseteq G_{1,\lambda}$, $G_{2,\lambda}'\leq G_{2,\lambda}$, $G_{1,\lambda}''\subseteq G_{1,\lambda}'$ and $G_{2,\lambda}''\leq G_{2,\lambda}'$. Thus $G_{1,\lambda}''\subseteq G_{1,\lambda}$ and $G_{2,\lambda}''\subseteq G_{2,\lambda}$. Hence $\pr{G_{1,\lambda},G_{2,\lambda}}\leq\pr{G_{1,\lambda}'',G_{2,\lambda}''}$.
+
+      Given $\lambda_1:=\pr{G_{1,\lambda},G_{2,\lambda}},\lambda_2:=\pr{G_{1,\lambda}',G_{2,\lambda}'}\in\Lambda$, set $\lambda_0:=\pr{G_{1,\lambda}\cap G_{1,\lambda}',G_{2,\lambda}\cap G_{2,\lambda}'}\in\Lambda$. It is easy to check that $\lambda_0\geq\lambda_1,\lambda_2$.
+
+      Therefore, $\pr{\Lambda,\leq}$ is a directed set.
+
+      Let $G\in\mathcal{T}$ be an open set containing $x$ and set $\lambda_0:=\pr{G,X}\in\Lambda$. Let $\lambda:=\pr{G',G''}\in\Lambda$ be such that $\lambda\geq\lambda_0$. Then $x_{\lambda}\in G'\subseteq G$. Hence $\lim_{\lambda\in\Lambda}{x_{\lambda}}=x$. The roles of $x$ and $y$ are symmetric. Consequently, $\lim_{\lambda\in\Lambda}{x_{\lambda}}=y$. By hypothesis, $x=y$. We have reached a contradiction, because $x\neq y$. Therefore, $\pr{X,\mathcal{T}}$ is a Hausdorff space.
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -173,8 +195,8 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
-      \item[\boxed{\Rightarrow}]
-      \item[\boxed{\Leftarrow}]
+      \item[\boxed{\Rightarrow}] We have already proved it.
+      \item[\boxed{\Leftarrow}] By contradiction,suppose there exists a pair of distinct points $x,y\in X$ such that for any pair of open sets $G_1,G_2\in\mathcal{T}$, $x\in G_1$ and $y\in G_2$ implies that $G_1\cap G_2\neq\varnothing$. FALTA POR PROBAr.
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -185,8 +207,9 @@
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
-      \item[\boxed{\Rightarrow}]
-      \item[\boxed{\Leftarrow}]
+      \item[\boxed{\Rightarrow}] For any pair of distinct points $x,y\in X$, let $G_x,G_y\in\mathcal{T}$ a pair of disjoint sets such that $x\in G_x$ and $y\in G_y$. Observe that $G_x\times G_y\in\mathcal{T}_{X\times X}$ and, necessarily, $\pr{G_x\times G_y}\cap\Delta_X=\varnothing$. Then $\pr{X\times X}\setminus\Delta=\bigcup_{x\in X}{\bigcup_{y\in X\setminus\set{x}}}{\set{\pr{x,y}}}\subseteq\bigcup_{x\in X}{\bigcup_{y\in X\setminus\set{x}}{G_x\times G_y}}\subseteq X\setminus\Delta$. Therefore, $X\setminus\Delta=\bigcup_{x\in X}{\bigcup_{y\in X\setminus\set{x}}{G_x\times G_y}}\in\mathcal{T}_{X\times X}$ is an open set. Therefore, $\Delta\in\mathcal{F}\pr{X\times X,\mathcal{T}_{X\times X}}$ is a closed set.
+      
+      \item[\boxed{\Leftarrow}] Let $x,y\in X$ be two distinct points. Then $\pr{x,y}\in\pr{X\times X}\setminus\Delta$. Since $\pr{X\times X}\setminus\Delta\in\mathcal{T}_{X\times X}$ is an open set, there exists $\mathcal{G}\subseteq\mathcal{T}\times\mathcal{T}$ such that $\pr{X\times X}\setminus\Delta=\bigcup{\mathcal{G}}$. Then there exists a pair of open sets $G_1,G_2\in\mathcal{T}$ with $G_1\times G_2\in\mathcal{G}$ such that $x\in G_1$ and $y\in G_2$. Furthermore, since $G_1\times G_2\in\mathcal{G}$, $G_1\times G_2\subseteq\pr{X\times X}\setminus\Delta$. Thus $G_1\cap G_2=\varnothing$. Therefore, $\pr{X,\mathcal{T}}$ is Hausdorff.
     \end{enumerate}
   \end{proof}
 \end{proposition}
@@ -283,8 +306,8 @@
   
   \begin{enumerate}
     \item $\pr{X,\mathcal{T}}$ is regular.
-    \item For any $x\in X$ and any open set $G\in\mathcal{T}$ containing $x$, there exists an open set $H\in\mathcal{T}$ containing $x$ such that $H\subseteq\overline{H}\subseteq G$.
-    \item For any $x\in X$ and any basis set $B_1\in\mathcal{B}$ containing $x$, there exists a basis set $B_2\in\mathcal{B}$ containing $x$ such that $B_2\subseteq\overline{B_2}\subseteq B_1$.
+    \item For any $x\in X$ and any open set $G\in\mathcal{T}$ containing $x$, there exists an open set $H\in\mathcal{T}$ containing $x$ such that $\overline{H}\subseteq G$.
+    \item For any $x\in X$ and any basis set $B_1\in\mathcal{B}$ containing $x$, there exists a basis set $B_2\in\mathcal{B}$ containing $x$ such that $\overline{B_2}\subseteq B_1$.
   \end{enumerate}
 
   \begin{proof}[\rm\textbf{Proof}]
