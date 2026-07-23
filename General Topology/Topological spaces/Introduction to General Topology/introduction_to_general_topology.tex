@@ -155,8 +155,12 @@ In general, the arbitrary union of closed sets in a topological space is not a c
 \section{Bases}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space. A \emph{basis for $\mathcal{T}$} is a collection $\mathcal{B}\subseteq\mathcal{T}$ of open sets in $\mathcal{T}$ such that for any $G\in\mathcal{T}$, there exists a basis set $\mathcal{B}'=\mathcal{B}'\pr{G}\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space. A \emph{basis for $\mathcal{T}$} is a collection $\mathcal{B}\subseteq\mathcal{T}$ of open sets in $\mathcal{T}$ such that for any $G\in\mathcal{T}$, there exists $\mathcal{B}'=\mathcal{B}'\pr{G}\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$.
 \end{definition}
+
+\begin{remark}
+  In every topological space $\pr{X,\mathcal{T}}$, $\mathcal{T}$ is a basis for itself.
+\end{remark}
 
 \begin{proposition}
   Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ be a basis for $\mathcal{T}$. Then $\mathcal{T}=\mathcal{T}\pr{\mathcal{B}}$.
@@ -410,6 +414,10 @@ In general, the arbitrary union of closed sets in a topological space is not a c
     Trivial because the arbitrary intersection of closed sets with respect to $\pr{X,\mathcal{T}}$ is a closed set with respect to that topological space.
   \end{proof}
 \end{proposition}
+
+\begin{definition}
+  A property $P$ of topological spaces is \textit{hereditary} if for any topological space $\pr{X,\mathcal{T}}$ with the property $P$ and any subset $A\subseteq X$ of $X$, the topological subspace $\pr{A,\mathcal{T}_A}$ has the property $P$.
+\end{definition}
 
 \section{Finite product topology}
 

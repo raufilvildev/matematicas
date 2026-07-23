@@ -13,7 +13,7 @@
     \hfill
     \begin{itemize}
       \item[\boxed{\Rightarrow}] Trivial.
-      \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}_2$. Then there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Since $f^{-1}\pr{B}\in\mathcal{T}_1$ for all $B\in\mathcal{B}'$, we have $f^{-1}\pr{G}=\bigcup_{B\in\mathcal{B}}{f^{-1}\pr{B}}\in\mathcal{T}_1$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
+      \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}_2$. Then there exists $\mathcal{B}'\subseteq\mathcal{B}$ such that $G=\bigcup{\mathcal{B}'}$. Since $f^{-1}\pr{B}\in\mathcal{T}_1$ for all $B\in\mathcal{B}'$, we have $f^{-1}\pr{G}=\bigcup_{B\in\mathcal{B}'}{f^{-1}\pr{B}}\in\mathcal{T}_1$. Therefore, $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
     \end{itemize}
   \end{proof}
 \end{proposition}
@@ -32,8 +32,8 @@
   \begin{enumerate}
     \item If $y\in Y$, the constant map $c_y:x\in X\mapsto y\in Y$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
     \item If $\mathcal{T}'_1\subseteq\mathcal{P}\pr{X}$ is a topology on $X$, the identity map $\text{id}_X:X\rightarrow X$ is $\pr{\mathcal{T}_1,\mathcal{T}_1'}$-continuous if and only if $\mathcal{T}_1'\subseteq\mathcal{T}_1$.
-    \item If $\mathcal{T}'_1\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ and $\mathcal{T}'_1\subseteq\mathcal{T}_1$, the inclusion $i_A:x\in A\mapsto x\in X$ in $A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_1'}$-continuous.
-    \item If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous and $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous, then $g\circ f$ is $\pr{\mathcal{T}_3,\mathcal{T}_1}$-continuous.
+    \item If $\mathcal{T}'_1\subseteq\mathcal{P}\pr{X}$ is a topology on $X$ and $\mathcal{T}'_1\subseteq\mathcal{T}_1$, the inclusion $\iota_A:x\in A\mapsto x\in X$ in $A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_1'}$-continuous.
+    \item If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous and $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous, then $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous.
     \item If $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous and $A\subseteq X$, then $\rest{f}{A}$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_2}$-continuous.
   \end{enumerate}
   \begin{proof}[\rm\textbf{Proof}]
@@ -41,7 +41,7 @@
     \begin{enumerate}
       \item Given an open set $G\in\mathcal{T}$, $c_y^{-1}\pr{G}=\varnothing$ if $y\notin G$ and $c_y^{-1}\pr{G}=X$ if $y\in G$. In any case, $c_y^{-1}\pr{G}\in\mathcal{T}_1$ for any open set $G\in\mathcal{T}_2$. Therefore, $c_y$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous.
       \item the identity map $\text{id}_X:X\rightarrow X$ is $\pr{\mathcal{T}_1,\mathcal{T}_1'}$-continuous if and only if $\text{id}_X^{-1}\pr{G}=G\in\mathcal{T}_1$ for all $G\in\mathcal{T}_1'$ which is equivalent to $\mathcal{T}_1'\subseteq\mathcal{T}_1$.
-      \item Let $G\in\mathcal{T}_1'$. Since $\mathcal{T}'_1\subseteq\mathcal{T}_1$, then $G\in\mathcal{T}_1$ and $i_A^{-1}\pr{G}=G\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $i_A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}'_1}$-continuous.
+      \item Let $G\in\mathcal{T}_1'$. Since $\mathcal{T}'_1\subseteq\mathcal{T}_1$, then $G\in\mathcal{T}_1$ and $\iota_A^{-1}\pr{G}=G\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $\iota_A$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}'_1}$-continuous.
       \item Let $G\in\mathcal{T}_3$. Since $g$ is $\pr{\mathcal{T}_2,\mathcal{T}_3}$-continuous, we have $g^{-1}\pr{G}\in\mathcal{T}_2$. As $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $\pr{g\circ f}^{-1}\pr{G}=f^{-1}\pr{g^{-1}\pr{G}}\in\mathcal{T}_1$. Therefore, $g\circ f$ is $\pr{\mathcal{T}_1,\mathcal{T}_3}$-continuous.
       \item Let $G\in\mathcal{T}_2$ be an open set. Since $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, $f^{-1}\pr{G}\in\mathcal{T}_1$. Then $\pr{\rest{f}{A}}^{-1}\pr{G}=f^{-1}\pr{G}\cap A\in\pr{\mathcal{T}_1}_A$. Therefore, $\rest{f}{A}$ is $\pr{\pr{\mathcal{T}_1}_A,\mathcal{T}_2}$-continuous.
     \end{enumerate}
@@ -398,11 +398,15 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
 \end{proposition}
 
 \begin{corollary}
-  Let $\pr{X,\mathcal{T}}$ be a topological space, $\set{\pr{Y_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. For each $i\in I$, consider a $\pr{\mathcal{T},\mathcal{T}_i}$-continuous map $f_i:X\rightarrow Y_i$. Then $f:x\in X\rightarrow\pr{f_i\pr{x}}_{i\in I}\in\prod_{i\in I}{X_i}$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{X_i}}}$-continuous.
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $\set{\pr{Y_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces. For each $i\in I$, consider a $\pr{\mathcal{T},\mathcal{T}_i}$-continuous map $f_i:X\rightarrow Y_i$. Then $f:x\in X\rightarrow\pr{f_i\pr{x}}_{i\in I}\in\prod_{i\in I}{Y_i}$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{Y_i}}}$-continuous.
   \begin{proof}[\rm\textbf{Proof}]
-    Given $i\in I$, since $\pi_i\circ f=f_i$ is $\pr{\mathcal{T},\mathcal{T}_i}$-continuous, by \hyperref[Continuity with respect to the product topology]{Corollary~\ref*{Continuity with respect to the product topology}}, $f$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{X_i}}}$-continuous.
+    Given $i\in I$, since $\pi_i\circ f=f_i$ is $\pr{\mathcal{T},\mathcal{T}_i}$-continuous, by \hyperref[Continuity with respect to the product topology]{Corollary~\ref*{Continuity with respect to the product topology}}, $f$ is $\pr{\mathcal{T},\mathcal{T}_{\prod_{i\in I}{Y_i}}}$-continuous.
   \end{proof}
 \end{corollary}
+
+\begin{definition}
+  A property $P$ of topological spaces is \textit{productive} if given an indexed collection of topological spaces $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ with the property $P$, the product space $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ has the property $P$.
+\end{definition}
 
 \section{Strong topology. Quotient topology and sum topology}
 
@@ -437,7 +441,7 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
     \mathscr{F}\subseteq\set{\pr{f,Y,\mathcal{T}'}\middle|\pr{Y,\mathcal{T}'}\text{ is a topological space}, f\in X^Y}
   \end{equation}
   
-  We define the \textit{strong topology or final topology on $X$ induced by $\mathscr{F}$} as the finest topology on $X$ as the following topology on $X$:
+  We define the \textit{strong topology or final topology on $X$ induced by $\mathscr{F}$} as the following topology on $X$:
 
   \begin{equation}
     \mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}:=\set{G\middle|G\subseteq X\text{ and }\forall\pr{f,Y,\mathcal{T}'}\in\mathscr{F},f^{-1}\pr{G}\in\mathcal{T}'},
@@ -457,16 +461,16 @@ Given an indexed collection of sets $\set{X_i}_{i\in I}$ and $i\in I$, we define
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{itemize}
-      \item[\boxed{\Rightarrow}] Trivial, because the composiition of continuous maps is continuous.
+      \item[\boxed{\Rightarrow}] Trivial, because the composition of continuous maps is continuous.
       \item[\boxed{\Leftarrow}] Let $G\in\mathcal{T}$ be an open set. We have to prove that $f^{-1}\pr{G}\in\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}}$ is an open set, that is to say, for every $\pr{g,Z,\mathcal{T}'}\in\mathscr{F}$, $g^{-1}\pr{f^{-1}\pr{G}}\in\mathcal{T}'$ which is true, because $f\circ g$ is $\pr{\mathcal{T}',\mathcal{T}}$-continuous for every $\pr{g,Z,\mathcal{T}'}\in\mathscr{F}$. Therefore, $f$ is $\pr{\mathcal{T}_{\text{final}}\pr{X,\mathscr{F}},\mathcal{T}}$-continuous. 
     \end{itemize}
   \end{proof}
 \end{proposition}
 
-Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map $\pi:X\rightarrow X/\thicksim$ called the \textit{canonical projection} as $\pi\pr{x}=\br{x}$.
+Given a set $X$ and an equivalence relation $\thicksim$ on $X$, we define the map $\pi:X\rightarrow X/\thicksim$ called the \textit{canonical projection} as $\pi\pr{x}=\br{x}$.
 
 \begin{definition}
-  \rm Let $X$ be a set and $\thicksim$ an equivalence relation on $X$. We define the \textit{quotient topology} with respect to $\pr{X,\mathcal{T}}$ and $\thicksim$ as the following topology on $X/\thicksim$:
+  \rm Let $\pr{X,\mathcal{T}}$ be a topological space and $\thicksim$ an equivalence relation on $X$. We define the \textit{quotient topology with respect to $\pr{X,\mathcal{T}}$ and $\thicksim$} as the following topology on $X/\thicksim$:
   
   \begin{equation}
     \mathcal{T}_{\thicksim}\pr{X,\mathcal{T}}:=\mathcal{T}_{\text{final}}\pr{X/\thicksim,\set{\pr{\pi,X,\mathcal{T}}}},
@@ -515,7 +519,7 @@ Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map
 \end{remark}
 
 \begin{corollary}\label{Continuity with respect to the sum topology}
-  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces, $\pr{Y,\mathcal{T}'}$ be a topological space and $f:\bigsqcup_{i\in i}{X_i}\rightarrow Y$ be a map. Then $f$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in i}{X_i}},\mathcal{T}'}$-continuous if and only if $f\circ\iota_j$ is $\pr{\mathcal{T}_j,\mathcal{T}'}$-continuous for all $j\in I$.
+  Let $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ be an indexed collection of topological spaces, $\pr{Y,\mathcal{T}'}$ be a topological space and $f:\bigsqcup_{i\in I}{X_i}\rightarrow Y$ be a map. Then $f$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}'}$-continuous if and only if $f\circ\iota_j$ is $\pr{\mathcal{T}_j,\mathcal{T}'}$-continuous for all $j\in I$.
 
   \begin{proof}[\rm\textbf{Proof}]
     It is a direct consequence of \hyperref[Continuity with respect to the strong topology]{Proposition~\ref*{Continuity with respect to the strong topology}}.
@@ -523,15 +527,15 @@ Given a set $X$ and a equivalence relation $\thicksim$ on $X$, we define the map
 \end{corollary}
 
 \begin{proposition}
-  \rm Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces. Then for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
+  \rm Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces. Then for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_j,\mathcal{T}_j}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
   
   \begin{proof}[\rm\textbf{Proof}]
-    Let $j\in I$. We know that $\iota_j$ is $\pr{\mathcal{T}_i,\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$-continuous and injective. Given an open set $G\in\mathcal{T}_j$, $\iota_j\pr{G}=\set{j}\times G\in\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}$. Thus $\iota_j$ is open with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$. Therefore, for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_i,\mathcal{T}_i}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
+    Let $j\in I$. We know that $\iota_j$ is $\pr{\mathcal{T}_j,\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$-continuous and injective. Given an open set $G\in\mathcal{T}_j$, $\iota_j\pr{G}=\set{j}\times G\in\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}$. Thus $\iota_j$ is open with respect to $\pr{X_j,\mathcal{T}_j}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$. Therefore, for all $j\in I$, the inclusion $\iota_j:X_j\rightarrow\bigsqcup_{i\in I}{X_i}$ of $X_j$ onto $\bigsqcup_{i\in I}{X_i}$ is an embedding with respect to $\pr{X_j,\mathcal{T}_j}$ and $\pr{\bigsqcup_{i\in I}{X_i},\mathcal{T}_{\bigsqcup_{i\in I}{X_i}}}$.
   \end{proof}
 \end{proposition}
 
 \begin{proposition}
-  Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces and $\pr{Y,\mathcal{T}}$ be a topological space. For each $i\in I$, consider a $\pr{\mathcal{T}_i,\mathcal{T}}$-continuous map $f_i:X_i\rightarrow Y$. Then the map $f:\pr{j,x}\in\bigsqcup_{i\in I}{X}\mapsto f_j\pr{x}\in Y$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}}$-continuous.
+  Let $\set{\pr{X_i,\mathcal{T}_i}}$ be an indexed collection of topological spaces and $\pr{Y,\mathcal{T}}$ be a topological space. For each $i\in I$, consider a $\pr{\mathcal{T}_i,\mathcal{T}}$-continuous map $f_i:X_i\rightarrow Y$. Then the map $f:\pr{j,x}\in\bigsqcup_{i\in I}{X_i}\mapsto f_j\pr{x}\in Y$ is $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}}$-continuous.
 
   \begin{proof}[\rm\textbf{Proof}]
     Given $i\in I$, since $f\circ\iota_i=f_i$ is $\pr{\mathcal{T}_i,\mathcal{T}}$-continuous, by \hyperref[Continuity with respect to the sum topology]{Corollary~\ref*{Continuity with respect to the sum topology}}, $f$ is  $\pr{\mathcal{T}_{\bigsqcup_{i\in I}{X_i}},\mathcal{T}}$-continuous.

@@ -1,0 +1,245 @@
+\chapter{Separation and countability axioms}
+
+\section{Separation axioms}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{$T_0$ or Kolmogorov} if for any pair of points $x,y\in X$, there exists a neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ such that $y\notin N$ or there exists a neighborhood $M\in\mathcal{N}_y\pr{X,\mathcal{T}}$ of $y$ such that $x\notin M$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $\pr{X,\mathcal{T}}$ is Kolmogorov.
+    \item For every pair of distinct points $x,y\in X$, there exists an open set $G\in\mathcal{T}$ such that $x\in G$ and $y\notin G$, or, $x\notin G$ and $y\in G$.
+    \item For every pair of distinct points $x,y\in X$, there exists a basis set $B\in\mathcal{B}$ such that $x\in B$ and $y\notin B$, or, $x\notin B$ and $y\in B$.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}]
+      \item[\boxed{2\Rightarrow3}]
+      \item[\boxed{3\Rightarrow1}]
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  The following properties hold:
+
+  \begin{enumerate}
+    \item If $\pr{X,\mathcal{T}}$ is a Kolmogorov space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Kolmogorov space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}$ is an indexed collection of Kolmogorov spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Kolmogorov space.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{$T_1$ or Fréchet} if for any pair of distinct points $x,y\in X$, there exists a neighborhood $N_1\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ and a neighborhood $N_2\in\mathcal{N}_y\pr{X,\mathcal{T}}$ of $y$ such that $x\in N_1\setminus N_2$ and $y\in N_2\setminus N_1$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $\pr{X,\mathcal{T}}$ is Fréchet.
+    \item For every pair of distinct points $x,y\in X$, there exists a pair of open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1\setminus G_2$ and $y\in G_2\setminus G_1$.
+    \item For every pair of distinct points $x,y\in X$,  there exists a pair of basis sets $B_1,B_2\in\mathcal{T}$ such that $x\in B_1\setminus B_2$ and $y\in B_2\setminus B_1$.
+  \end{enumerate}
+   
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}]
+      \item[\boxed{2\Rightarrow3}]
+      \item[\boxed{3\Rightarrow1}]
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  A Fréchet space $\pr{X,\mathcal{T}}$ is a Kolmogorov space.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  The following properties hold:
+
+  \begin{enumerate}
+    \item If $\pr{X,\mathcal{T}}$ is a Fréchet space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Fréchet space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}$ is an indexed collection of Fréchet spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Fréchet space.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space. The following are equivalent:
+
+  \begin{enumerate}
+    \item $\pr{X,\mathcal{T}}$ is a Fréchet space.
+    \item For every $x\in X$, $\set{x}\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set.
+    \item For every finite subset $A\subseteq X$ of $X$, $A\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a Fréchet space and $A\subseteq X$. Then $x\in A'$ if and only if for every neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, the set $N\cap A$ has infinite points.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{$T_2$ or Hausdorff} if for any pair of distinct points $x,y\in X$, there exists a neighborhood $N_1\in\mathcal{N}_x\pr{X,\mathcal{T}}$ of $x$ and a neighborhood $N_2\in\mathcal{N}_y\pr{X,\mathcal{T}}$ such that $N_1\cap N_2=\varnothing$.
+\end{definition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $\mathcal{B}\subseteq\mathcal{T}$ a basis for $\mathcal{T}$. The following are equivalent:
+
+  \begin{enumerate}
+    \item $\pr{X,\mathcal{T}}$ is Hausdorff.
+    \item For every pair of distinct points $x,y\in X$, there exists a pair of disjoint open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1$ and $y\in G_2$.
+    \item For every pair of distinct points $x,y\in X$, there exists a pair of disjoint basis sets $B_1,B_2\in\mathcal{T}$ such that $x\in B_1$ and $y\in B_2$.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}]
+      \item[\boxed{2\Rightarrow3}]
+      \item[\boxed{3\Rightarrow1}]
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  A Hausdorff space $\pr{X,\mathcal{T}}$ is a Fréchet space.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  If $\pr{X,\mathcal{T}}$ is a Hausdorff space and $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ is a convergent sequence in $X$, there exists a unique $x\in X$ such that $\lim_{n\to\infty}{x_n}=x$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  A topological space $\pr{X,\mathcal{T}}$ is Hausdorff if and only if for every convergent net $\set{x_\lambda}_{\lambda}\subseteq X$ in $X$, there exists a unique $x\in X$ such that $\lim_{\lambda\in\Lambda}{x_{\lambda}}=x$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item[\boxed{\Rightarrow}]
+      \item[\boxed{\Leftarrow}]
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  A Fréchet-Urysohn space $\pr{X,\mathcal{T}}$ is Hausdorff if and only if for every convergent sequence $\set{x_n}_{n\in\mathbb{N}}\subseteq X$ in $X$, there exists a unique $x\in X$ such that $\lim_{n\to\infty}{x_n}=x$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item[\boxed{\Rightarrow}]
+      \item[\boxed{\Leftarrow}]
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  A topological space $\pr{X,\mathcal{T}}$ is Hausdorff if and only if the diagonal $\Delta_X:=\set{\pr{x,x}\middle|x\in X}\in\mathcal{F}\pr{X\times X,\mathcal{T}_{X\times X}}$ is closed.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item[\boxed{\Rightarrow}]
+      \item[\boxed{\Leftarrow}]
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be topological spaces, $D\subseteq X$ be a dense set and $f,g:X\rightarrow Y$ two $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous maps such that $f\pr{x}=g\pr{x}$ for all $x\in D$. Then $f=g$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. If $\pr{Y,\mathcal{T}_2}$ is Hausdorff and $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, then $\pr{X,\mathcal{T}}$ is Hausdorff.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item[\boxed{\Rightarrow}]
+      \item[\boxed{\Leftarrow}]
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  The following properties hold:
+
+  \begin{enumerate}
+    \item If $\pr{X,\mathcal{T}}$ is a Hausdorff space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Hausdorff space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}$ is an indexed collection of Hausdorff spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Hausdorff space.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{regular} if for any $x\in X$ and any closed set $F\in\mathcal{F}\pr{X,\mathcal{T}}$ not containing $x$, there exists a pair of disjoint open sets $G,H\in\mathcal{T}$ such that $x\in G$ and $F\subseteq H$.
+
+  A $T_1$ and regular space is called a \textit{$T_3$ space}.
+\end{definition}
+
+\begin{proposition}
+  A $T_3$ space $\pr{X,\mathcal{T}}$ is a Hausdorff space.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\section{Countability axioms}
+
