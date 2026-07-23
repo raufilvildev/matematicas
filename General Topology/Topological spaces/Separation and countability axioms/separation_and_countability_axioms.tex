@@ -52,7 +52,7 @@
   \begin{enumerate}
     \item $\pr{X,\mathcal{T}}$ is Fréchet.
     \item For every pair of distinct points $x,y\in X$, there exists a pair of open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1\setminus G_2$ and $y\in G_2\setminus G_1$.
-    \item For every pair of distinct points $x,y\in X$,  there exists a pair of basis sets $B_1,B_2\in\mathcal{T}$ such that $x\in B_1\setminus B_2$ and $y\in B_2\setminus B_1$.
+    \item For every pair of distinct points $x,y\in X$,  there exists a pair of basis sets $B_1,B_2\in\mathcal{B}$ such that $x\in B_1\setminus B_2$ and $y\in B_2\setminus B_1$.
   \end{enumerate}
    
   \begin{proof}[\rm\textbf{Proof}]
@@ -126,7 +126,7 @@
   \begin{enumerate}
     \item $\pr{X,\mathcal{T}}$ is Hausdorff.
     \item For every pair of distinct points $x,y\in X$, there exists a pair of disjoint open sets $G_1,G_2\in\mathcal{T}$ such that $x\in G_1$ and $y\in G_2$.
-    \item For every pair of distinct points $x,y\in X$, there exists a pair of disjoint basis sets $B_1,B_2\in\mathcal{T}$ such that $x\in B_1$ and $y\in B_2$.
+    \item For every pair of distinct points $x,y\in X$, there exists a pair of disjoint basis sets $B_1,B_2\in\mathcal{B}$ such that $x\in B_1$ and $y\in B_2$.
   \end{enumerate}
   
   \begin{proof}[\rm\textbf{Proof}]
@@ -192,7 +192,7 @@
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be topological spaces, $D\subseteq X$ be a dense set and $f,g:X\rightarrow Y$ two $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous maps such that $f\pr{x}=g\pr{x}$ for all $x\in D$. Then $f=g$.
+  Let $\pr{X,\mathcal{T}_1}$ be a topological space, $\pr{Y,\mathcal{T}_2}$ be a Hausdorff space and $f,g:X\rightarrow Y$ be two $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous maps. Then $\set{x\middle|x\in X,f\pr{x}=g\pr{x}}\in\mathcal{F}\pr{X,\mathcal{T}}$ is a closed set.
 
   \begin{proof}[\rm\textbf{Proof}]
     
@@ -200,7 +200,23 @@
 \end{proposition}
 
 \begin{proposition}
-  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. If $\pr{Y,\mathcal{T}_2}$ is Hausdorff and $f$ is $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, then $\pr{X,\mathcal{T}}$ is Hausdorff.
+  Let $\pr{X,\mathcal{T}_1}$ be a topological space, $\pr{Y,\mathcal{T}_2}$ be a Hausdorff space and $f:X\rightarrow Y$ be a $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous. Then $\text{Graph}\pr{f}:=\set{\pr{x,f\pr{x}}\middle|x\in X}\subseteq\mathcal{F}\pr{X\times Y,\mathcal{T}_{X\times Y}}$ is a closed set.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{corollary}
+  Let $\pr{X,\mathcal{T}_1}$ be a topological space, $\pr{Y,\mathcal{T}_2}$ be a Hausdorff space, $D\subseteq X$ be a dense set and $f,g:X\rightarrow Y$ be two $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous maps such that $f\pr{x}=g\pr{x}$ for all $x\in D$. Then $f=g$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{corollary}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}_1}$ and $\pr{Y,\mathcal{T}_2}$ be two topological spaces and $f:X\rightarrow Y$ be a map. If $\pr{Y,\mathcal{T}_2}$ is Hausdorff and $f$ is injective and $\pr{\mathcal{T}_1,\mathcal{T}_2}$-continuous, then $\pr{X,\mathcal{T}}$ is Hausdorff.
 
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
@@ -247,7 +263,7 @@
   \begin{enumerate}
     \item If $\pr{X,\mathcal{T}}$ is a regular space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a regular space.
     \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of regular spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a regular space.
-    \item If $\pr{X,\mathcal{T}}$ is a $T_3$ space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Hausdorff space.
+    \item If $\pr{X,\mathcal{T}}$ is a $T_3$ space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a $T_3$ space.
     \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of $T_3$ spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a $T_3$ space.
   \end{enumerate}
   
@@ -268,7 +284,7 @@
   \begin{enumerate}
     \item $\pr{X,\mathcal{T}}$ is regular.
     \item For any $x\in X$ and any open set $G\in\mathcal{T}$ containing $x$, there exists an open set $H\in\mathcal{T}$ containing $x$ such that $H\subseteq\overline{H}\subseteq G$.
-    \item For any $x\in X$ and any basis set $B_1\in\mathcal{B}$ containing $x$, there exists a basis set $B_2\in\mathcal{T}$ containing $x$ such that $B_2\subseteq\overline{B_2}\subseteq B_1$.
+    \item For any $x\in X$ and any basis set $B_1\in\mathcal{B}$ containing $x$, there exists a basis set $B_2\in\mathcal{B}$ containing $x$ such that $B_2\subseteq\overline{B_2}\subseteq B_1$.
   \end{enumerate}
 
   \begin{proof}[\rm\textbf{Proof}]
@@ -285,7 +301,7 @@
 \section{Countability axioms}
 
 \begin{definition}
-  Let $\pr{X,\mathcal{T}}$ be a topological space and $x\in X$. A \textit{local basis of $x$ (with respect to $\pr{X,\mathcal{T}}$)} is a collection $\mathcal{N}_x\subseteq\mathcal{N}_x\pr{X,\mathcal{T}}$ of neighborhoods of $X$ such that for any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists a local basis neighborhood $M\in\mathcal{N}$ of $x$ such that $M\subseteq N$.
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $x\in X$. A \textit{local basis of $x$ (with respect to $\pr{X,\mathcal{T}}$)} is a collection $\mathcal{B}_x\subseteq\mathcal{N}_x\pr{X,\mathcal{T}}$ of neighborhoods of $X$ such that for any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists a local basis neighborhood $M\in\mathcal{B}_x$ of $x$ such that $M\subseteq N$.
 \end{definition}
 
 \begin{remark}
@@ -301,6 +317,14 @@
       \item[\boxed{\Rightarrow}] 
       \item[\boxed{\Leftarrow}] 
     \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space, $x\in X$ and $\mathcal{B}_x\in\mathcal{B}$ be a local basis of $x$. Then $\mathcal{B}_x':=\set{\interior\pr{B}\middle|B\in\mathcal{B}_x}$ is a local basis of $x$.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    
   \end{proof}
 \end{proposition}
 
@@ -321,7 +345,7 @@
 
   \begin{enumerate}
     \item If $\pr{X,\mathcal{T}}$ is a first-countable space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a first-countable space.
-    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of first-countable spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a first-countable space.
+    \item If $\set{\pr{X_n,\mathcal{T}_n}}_{n\in\mathbb{N}}$ is a countable collection of first-countable spaces, then the countable product space $\pr{\prod_{n\in\mathbb{N}}{X_n},\mathcal{T}_{\prod_{n\in\mathbb{N}}{X_n}}}$ is a first-countable space.
   \end{enumerate}
   
   \begin{proof}[\rm\textbf{Proof}]
@@ -335,10 +359,6 @@
 
 \begin{definition}
   A topological space $\pr{X,\mathcal{T}}$ is \textit{second-countable or 2AN} if there exists a countable basis for $\mathcal{T}$.
-  
-  \begin{proof}[\rm\textbf{Proof}]
-    
-  \end{proof}
 \end{definition}
 
 \begin{proposition}
