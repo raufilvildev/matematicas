@@ -30,7 +30,7 @@
 
   \begin{enumerate}
     \item If $\pr{X,\mathcal{T}}$ is a Kolmogorov space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Kolmogorov space.
-    \item If $\set{\pr{X_i,\mathcal{T}_i}}$ is an indexed collection of Kolmogorov spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Kolmogorov space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of Kolmogorov spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Kolmogorov space.
   \end{enumerate}
   
   \begin{proof}[\rm\textbf{Proof}]
@@ -77,7 +77,7 @@
 
   \begin{enumerate}
     \item If $\pr{X,\mathcal{T}}$ is a Fréchet space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Fréchet space.
-    \item If $\set{\pr{X_i,\mathcal{T}_i}}$ is an indexed collection of Fréchet spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Fréchet space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of Fréchet spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Fréchet space.
   \end{enumerate}
   
   \begin{proof}[\rm\textbf{Proof}]
@@ -216,7 +216,7 @@
 
   \begin{enumerate}
     \item If $\pr{X,\mathcal{T}}$ is a Hausdorff space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Hausdorff space.
-    \item If $\set{\pr{X_i,\mathcal{T}_i}}$ is an indexed collection of Hausdorff spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Hausdorff space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of Hausdorff spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a Hausdorff space.
   \end{enumerate}
   
   \begin{proof}[\rm\textbf{Proof}]
@@ -241,5 +241,144 @@
   \end{proof}
 \end{proposition}
 
+\begin{proposition}
+  The following properties hold:
+
+  \begin{enumerate}
+    \item If $\pr{X,\mathcal{T}}$ is a regular space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a regular space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of regular spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a regular space.
+    \item If $\pr{X,\mathcal{T}}$ is a $T_3$ space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a Hausdorff space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of $T_3$ spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a $T_3$ space.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$. The following are equivalent:
+  
+  \begin{enumerate}
+    \item $\pr{X,\mathcal{T}}$ is regular.
+    \item For any $x\in X$ and any open set $G\in\mathcal{T}$ containing $x$, there exists an open set $H\in\mathcal{T}$ containing $x$ such that $H\subseteq\overline{H}\subseteq G$.
+    \item For any $x\in X$ and any basis set $B_1\in\mathcal{B}$ containing $x$, there exists a basis set $B_2\in\mathcal{T}$ containing $x$ such that $B_2\subseteq\overline{B_2}\subseteq B_1$.
+  \end{enumerate}
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{1\Rightarrow2}] 
+      \item[\boxed{2\Rightarrow3}] 
+      \item[\boxed{3\Rightarrow1}] 
+    \end{itemize}
+  \end{proof}
+  
+\end{proposition}
+
 \section{Countability axioms}
 
+\begin{definition}
+  Let $\pr{X,\mathcal{T}}$ be a topological space and $x\in X$. A \textit{local basis of $x$ (with respect to $\pr{X,\mathcal{T}}$)} is a collection $\mathcal{N}_x\subseteq\mathcal{N}_x\pr{X,\mathcal{T}}$ of neighborhoods of $X$ such that for any neighborhood $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, there exists a local basis neighborhood $M\in\mathcal{N}$ of $x$ such that $M\subseteq N$.
+\end{definition}
+
+\begin{remark}
+  Let $\pr{X,\mathcal{T}}$ be a topological space with basis $\mathcal{B}\subseteq\mathcal{T}$ for $\mathcal{T}$. Then $\mathcal{B}_x:=\set{G\middle|G\in\mathcal{T},x\in G}$ and $\mathcal{B}_x':=\set{B\middle|B\in\mathcal{B},x\in B}$ are local bases of $x$.
+\end{remark}
+
+\begin{proposition}
+  A topological space $\pr{X,\mathcal{T}}$ is regular if and only if for any point $x\in X$, there exists a local basis of closed sets $\mathcal{F}_x\subseteq\mathcal{N}_x\pr{X,\mathcal{T}}\cap\mathcal{F}\pr{X,\mathcal{T}}$.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{itemize}
+      \item[\boxed{\Rightarrow}] 
+      \item[\boxed{\Leftarrow}] 
+    \end{itemize}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{first-countable or 1AN} if for every $x\in X$, there exists a countable local basis of $x$.
+\end{definition}
+
+\begin{proposition}
+  A first-countable space $\pr{X,\mathcal{T}}$ is a Fréchet-Urysohn space.
+
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  The following properties hold:
+
+  \begin{enumerate}
+    \item If $\pr{X,\mathcal{T}}$ is a first-countable space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a first-countable space.
+    \item If $\set{\pr{X_i,\mathcal{T}_i}}_{i\in I}$ is an indexed collection of first-countable spaces, then $\pr{\prod_{i\in I}{X_i},\mathcal{T}_{\prod_{i\in I}{X_i}}}$ is a first-countable space.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{second-countable or 2AN} if there exists a countable basis for $\mathcal{T}$.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{definition}
+
+\begin{proposition}
+  A second-countable space $\pr{X,\mathcal{T}}$ is first-countable.
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{proposition}
+  The following properties hold:
+
+  \begin{enumerate}
+    \item If $\pr{X,\mathcal{T}}$ is a second-countable space and $A\subseteq X$, the subspace $\pr{A,\mathcal{T}_A}$ is a second-countable space.
+    \item If $\set{\pr{X_n,\mathcal{T}_n}}_{n\in\mathbb{N}}$ is a countable collection of second-countable spaces, then the countable product space $\pr{\prod_{n\in\mathbb{N}}{X_n},\mathcal{T}_{\prod_{n\in\mathbb{N}}{X_n}}}$ is a second-countable space.
+  \end{enumerate}
+  
+  \begin{proof}[\rm\textbf{Proof}]
+    \hfill
+    \begin{enumerate}
+      \item 
+      \item 
+    \end{enumerate}
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  A topological space $\pr{X,\mathcal{T}}$ is \textit{separable} if there exists a countable dense set.
+\end{definition}
+
+\begin{proposition}
+  A second-countable space $\pr{X,\mathcal{T}}$ is separable.
+  \begin{proof}[\rm\textbf{Proof}]
+    
+  \end{proof}
+\end{proposition}
+
+\begin{definition}
+  Let  $\pr{X,\mathcal{T}}$ topological space. A subset $A\subseteq X$ of $X$ is \textit{Lindelöf (with respect to $\pr{X,\mathcal{T}}$)} if for every open cover $\mathcal{G}\subseteq\mathcal{T}$ of $A$, that is, a collection of open sets whose union contains $A$, there exists a countable subcover $\mathcal{G}'\subseteq\mathcal{G}$ of $A$.
+
+  We say that $\pr{X,\mathcal{T}}$ is a \textit{Lindelöf space} if $X$ is Lindelöf with respect to $\pr{X,\mathcal{T}}$.
+\end{definition}

@@ -506,6 +506,7 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
   Let $\pr{X,\mathcal{T}}$ be a topological space, $x\in X$ and $Y\subseteq X$. The following properties hold:
 
   \begin{enumerate}
+    \item If $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $\interior\pr{N}\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
     \item If $N,M\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $N\cap M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
     \item If $N\in\mathcal{N}_x\pr{X,\mathcal{T}}$ and $N\subseteq M$, then $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
     \item If $N,M\in\mathcal{N}_x\pr{X,\mathcal{T}}$, then $N\cup M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
@@ -515,6 +516,7 @@ Given $d\in\mathbb{N}$, $d$ sets $X_1,\dots,X_d$ and $k\in\set{1,\dots,d}$, we d
   \begin{proof}[\rm\textbf{Proof}]
     \hfill
     \begin{enumerate}
+      \item Let $G\in\mathcal{T}$ be an open set containing $x$ such that $G\subseteq N$. Then $x\in\interior\pr{N}$ and $G\subseteq\interior\pr{N}$. Therefore, $\interior\pr{N}\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
       \item Let $G_1,G_2\in\mathcal{T}$ be two open sets such that $x\in G_1\subseteq N$ and $x\in G_2\subseteq M$. Since $G_1\cap G_2\in\mathcal{T}$, we have that $x\in G_1\cap G_2\subseteq N\cap M$. Therefore, $N\cap M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
       \item Let $G\in\mathcal{T}$ be an open set such that $x\in G\subseteq N$. Since $N\subseteq M$, then $x\in G\subseteq M$. Therefore $M\in\mathcal{N}_x\pr{X,\mathcal{T}}$.
       \item Trivial by the previous property.
